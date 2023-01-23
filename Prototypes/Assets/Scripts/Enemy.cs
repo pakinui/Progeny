@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Bullet"){
             Destroy(other.gameObject);
-            enemyHealth -= 1;
+            enemyHealth -= 1; // TODO: Magic number ?
             if(enemyHealth == 0){
                 Destroy(this.gameObject);
             }

@@ -40,6 +40,6 @@ public class Shooting : MonoBehaviour
             canFire = false;
             Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
             timeSinceLastShot = 0;
-        }
+        }   
     }
 }
