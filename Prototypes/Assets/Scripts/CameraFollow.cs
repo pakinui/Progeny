@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO : it can be replaced by cinemachine: https://docs.unity.cn/Packages/com.unity.cinemachine@2.8/manual/index.html
+// TODO : it can be replaced by cinemachine: https://docs.unity3d.com/Packages/com.unity.cinemachine@2.9/manual/index.html
 
 
 public class CameraFollow : MonoBehaviour
