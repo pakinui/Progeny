@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
         rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+
+        // TODO : jump
     }
 
     private void Flip()

@@ -30,6 +30,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // TODO: should be removed when out of screen
     }
 }

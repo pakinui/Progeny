@@ -18,7 +18,7 @@ public class Parallax : MonoBehaviour
 
     float clippingPlane => (cam.transform.position.z + (distanceFromSubject > 0 ? cam.farClipPlane : cam.nearClipPlane));
 
-    float  parallaxFactor => Mathf.Abs(distanceFromSubject) / clippingPlane;
+    float parallaxFactor => Mathf.Abs(distanceFromSubject) / clippingPlane;
 
     public void Start(){
         startPosition = transform.position;
