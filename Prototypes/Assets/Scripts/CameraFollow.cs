@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float yOffset = 3;
-    public float xOffset = 3;
+    public float xOffset;
+    public float yOffset;
     public Transform target;
 
     void Start()

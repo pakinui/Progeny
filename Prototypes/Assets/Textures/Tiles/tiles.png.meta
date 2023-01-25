@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -1311,8 +1311,8 @@ TextureImporter:
       tiles_24: -1267652751
       tiles_13: -1570693322
       tiles_2: -780197476
-      tiles_17: 1440498966
       tiles_29: 564200081
+      tiles_17: 1440498966
       tiles_7: -1565135121
       tiles_9: -151971739
       tiles_38: -607143843
