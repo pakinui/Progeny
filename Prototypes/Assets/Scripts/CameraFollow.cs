@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public float xOffset;
     public float yOffset;
     public Transform target;
 
@@ -18,6 +19,6 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(target.position.x, target.position.y + yOffset, -10f);
+        transform.position = new Vector3(target.position.x + xOffset, target.position.y + yOffset, -10f);
     }
 }
