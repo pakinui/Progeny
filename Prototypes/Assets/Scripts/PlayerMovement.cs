@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         }
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
         rb.velocity = velocity;
-        if (direction != 0 && !audioSource.isPlaying)
+        if (direction != 0 && audioSource != null && !audioSource.isPlaying && footsteps != null)
         {
             audioSource.PlayOneShot(footsteps, 1f);
         }
