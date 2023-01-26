@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float enemyHealth = 3;
+    public float attackDamage = 34;
+    public float attackCooldown = 3;
+    private float cooldownStatus = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(cooldownStatus > 0){
+            cooldownStatus -= Time.deltaTime;
+        }
     }
 
     // When enemy collides with an object with a
@@ -28,6 +33,16 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        
+    }
+
+    public void Attack(GameObject player){
+        if(cooldownStatus <= 0){
+            // code for attack animation goes here
+            player.GetComponent<Player>().playerHealth -= attackDamage;
+            Debug.Log("attacked player for " + attackDamage + ". player health = " + player.GetComponent<Player>().playerHealth);
+            cooldownStatus = attackCooldown;
+        }else{
+            Debug.Log("attack cooldown: " + cooldownStatus);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
+    public float speed = 3;
 
     //public so cutscenes prototype can access it
     public Rigidbody2D rb;
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player is allowed to be moving
         if(moving){
             direction = Input.GetAxis("Horizontal");
 
@@ -42,14 +44,12 @@ public class PlayerMovement : MonoBehaviour
             }
             Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
             rb.velocity = velocity;
-            // if (direction != 0 && !audioSource.isPlaying)
-            // {
-            //     audioSource.PlayOneShot(footsteps, 1f);
-            // }
-
-            // TODO : jump
-        }
+            if (direction != 0 && audioSource != null && !audioSource.isPlaying && footsteps != null)
+            {
+                audioSource.PlayOneShot(footsteps, 1f);
+            }
         
+        }
     }
 
     private void Flip()
