@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       //audioSource = GetComponent<AudioSource>();
+       audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
             rb.velocity = velocity;
-            if (direction != 0 && audioSource != null && !audioSource.isPlaying && footsteps != null)
+            if (direction != 0 && audioSource != null && !audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(footsteps, 1f);
             }
