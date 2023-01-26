@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 51821153}
   - component: {fileID: 51821152}
   - component: {fileID: 51821151}
+  - component: {fileID: 51821154}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51821154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51821150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a58148e7aff1ed4a988bc0d0a685010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 3
+  yOffset: 3
+  target: {fileID: 1802499948}
 --- !u!1 &64875593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,6 +2886,7 @@ GameObject:
   - component: {fileID: 1802499945}
   - component: {fileID: 1802499944}
   - component: {fileID: 1802499949}
+  - component: {fileID: 1802499950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3019,7 +3036,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
---- !u!1001 &8955203601708898738
+--- !u!114 &1802499950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802499943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a915ea99f93d5d34c8afb46fa1e62df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redXOffset: 0
+  redYOffset: 0
+  redXSize: 0
+  redYSize: 0
+  greenXOffset: 0
+  greenYOffset: 0
+  greenXSize: 0
+  greenYSize: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1001 &1962300429
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3032,11 +3072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662963791699697313, guid: cccbe10df67987f428e406e7d08b1896, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.8
+      value: -6.86619
       objectReference: {fileID: 0}
     - target: {fileID: 3662963791699697313, guid: cccbe10df67987f428e406e7d08b1896, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -3.332197
       objectReference: {fileID: 0}
     - target: {fileID: 3662963791699697313, guid: cccbe10df67987f428e406e7d08b1896, type: 3}
       propertyPath: m_LocalPosition.z

@@ -36,7 +36,7 @@ public class Shooting : MonoBehaviour
                 canFire = true;
             }
         }
-        if(Input.GetMouseButton(0) && canFire){
+        if(Input.GetMouseButtonDown(0) && canFire){
             canFire = false;
             Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
             timeSinceLastShot = 0;
