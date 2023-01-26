@@ -1,0 +1,3 @@
+this is some story text. press the space bar to continue onto the next line.
+it reads text from a file and displays each new line at a time.
+once there is no text left in the file the story textbox will disappear.
