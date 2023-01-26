@@ -20,6 +20,7 @@ namespace Controller
         private IGunController _mGunController;
 
         private ExpiableProperty<bool> _mJumpDown;
+        private ExpiableProperty<bool> _mReloadDown;
         [SerializeField]
         private bool _mCrouchPressed;
         private bool _mFirePressed;
@@ -49,6 +50,11 @@ namespace Controller
             {
                 _mJumpDown.Value = true;
             }
+            if (Input.GetButtonDown("Reload"))
+            {
+                _mReloadDown.Value = true;
+            }
+            
             if (Input.GetButtonDown("Fire1"))
             {
                 _mFirePressed = true;

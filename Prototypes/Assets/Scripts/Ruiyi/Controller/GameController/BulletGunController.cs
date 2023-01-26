@@ -24,7 +24,7 @@ namespace Controller
             
             // TODO : mBulletPrefab = Resources.Load<>()
             
-            var bullet = Instantiate(mBulletPrefab, transform.position, transform.rotation);
+            var bullet = Instantiate(mBulletPrefab, transform.Find("Muzzle").position, mBulletPrefab.transform.rotation);
             bullet.transform.localScale = mBulletPrefab.transform.lossyScale;
 
             bullet.SetActive(true);

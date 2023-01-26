@@ -48,7 +48,7 @@ namespace Ruiyi.Model
         private Dictionary<string, GunConfigItem> mItems = new Dictionary<string, GunConfigItem>()
         {
             { "Pistol", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
-            { "Pistol", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
+            { "", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
             { "Pistol", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
             
         };
