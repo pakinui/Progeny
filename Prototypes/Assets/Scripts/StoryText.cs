@@ -26,7 +26,10 @@ public class StoryText : MonoBehaviour
 
     //player
     public PlayerMovement player;
-    private Rigidbody2D speechBubble;
+    // private Rigidbody2D speechBubble;
+
+    private bool storyComplete = false;
+    private Vector3 tempSpeed;
 
 
     // Start is called before the first frame update
@@ -34,7 +37,7 @@ public class StoryText : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMovement>();
         //speech bubbles rb
-        speechBubble = GetComponent<Rigidbody2D>();
+        //speechBubble = GetComponent<Rigidbody2D>();
 
 
         if(textFile != null){
@@ -46,6 +49,25 @@ public class StoryText : MonoBehaviour
             endLine = textLines.Length-1;
         }
 
+        
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collider){
+
+        if(collider.tag == "Player" && !storyComplete){
+            StartStoryText();
+            storyComplete = true;
+        }
+    }
+
+    void StartStoryText(){
+        
+        //stop player from being able to move
+        tempSpeed = player.rb.velocity;
+        player.rb.velocity = Vector3.zero;
+        player.setAbilityToMove(false);
+        textBox.SetActive(true);
         nextLine();
 
     }
@@ -58,7 +80,7 @@ public class StoryText : MonoBehaviour
         //theText.text = textLines[currLine];
         //Debug.Log("2: " + theText.text);
        // Vector2 velocity = new Vector2(player.speed, player.rb.velocity.y);
-        speechBubble.velocity = player.rb.velocity;
+        // speechBubble.velocity = player.rb.velocity;
 
 
 
@@ -78,6 +100,8 @@ public class StoryText : MonoBehaviour
 
         if(currLine > endLine){
             textBox.SetActive(false);
+            player.rb.velocity = tempSpeed;
+            player.setAbilityToMove(true);
         }else{
             theText.text = textLines[currLine];
         }

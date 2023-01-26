@@ -51,6 +51,7 @@ public class CutsceneTile : MonoBehaviour
         //thoughtBubble.SetActive(true);
         player.rb.velocity = tempSpeed;
         player.setAbilityToMove(true);
+        thoughtBubble.SetActive(true);
     }
 
 }
