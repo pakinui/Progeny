@@ -13,7 +13,7 @@ namespace Ruiyi.Model
     {
         public GunConfigItem(
             string name, 
-            int bulletMaxCount, 
+            int magazineCapacity, 
             float bulletSpeed, 
             float damage, 
             float shootCoolDown, 
@@ -21,7 +21,7 @@ namespace Ruiyi.Model
             float shootDistance) 
         {
             Name = name;
-            
+            MagazineCapacity = magazineCapacity;
             BulletSpeed = bulletSpeed;
             Damage = damage;
             ShootCoolDown = shootCoolDown;
@@ -48,9 +48,9 @@ namespace Ruiyi.Model
         private Dictionary<string, GunConfigItem> mItems = new Dictionary<string, GunConfigItem>()
         {
             { "Pistol", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
-            { "", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
-            { "Pistol", new GunConfigItem("Pistol", 6, 8, 1, 0.5f, 4, 5) },
-            
+            { "Sniper", new GunConfigItem("Sniper", 1, 20, 10, 1, 4, 10) },
+            // { "Shotgun", new GunConfigItem("Shotgun", 2, 5, 2, 1, 3, 5) },
+            // { "MachineGun", new GunConfigItem("MachineGun", 30, 10, 1, 0.1f, 3, 5) },
         };
 
         public GunConfigItem GetItemByName(string gunName)
