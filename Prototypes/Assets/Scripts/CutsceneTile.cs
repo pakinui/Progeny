@@ -8,6 +8,8 @@ public class CutsceneTile : MonoBehaviour
     
     public PlayerMovement player;
 
+    public GameObject thoughtBubble;
+
     // set to true once the cutscene has been watched
     public static bool completedCutscene = false;
 
@@ -46,7 +48,7 @@ public class CutsceneTile : MonoBehaviour
 
     public void EndCutscene(){
         Debug.Log("cutscene finished");
-
+        //thoughtBubble.SetActive(true);
         player.rb.velocity = tempSpeed;
         player.setAbilityToMove(true);
     }
