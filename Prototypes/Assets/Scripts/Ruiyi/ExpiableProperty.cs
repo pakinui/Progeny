@@ -12,7 +12,7 @@ public class ExpiableProperty<T>: IExpirable where T : new()
     private float mTimeout;
     private float mTimer;
     
-    public ExpiableProperty(float timeout, T defaultValue = default(T), T value = default(T))
+    public ExpiableProperty(float timeout = 0, T defaultValue = default(T), T value = default(T))
     {
         mTimeout = timeout;
         mTimer = Time.time;
@@ -36,7 +36,13 @@ public class ExpiableProperty<T>: IExpirable where T : new()
             mTimer = Time.time;
         }
     }
-
+    
+    public void SetWithTimeout(T value, float timeout)
+    {
+        mValue = value;
+        mTimer = Time.time;
+        mTimeout = timeout;
+    }
 
     public bool Expired()
     {

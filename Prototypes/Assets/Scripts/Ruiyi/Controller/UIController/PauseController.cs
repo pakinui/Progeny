@@ -11,6 +11,7 @@ namespace Ruiyi.UI
         public Button pauseButton;
         public GameObject pausePanel;
         public Button resumeButton;
+        public GameObject resumePanel;
         // Start is called before the first frame update
         private void Awake()
         {
@@ -26,18 +27,19 @@ namespace Ruiyi.UI
         private void Pause()
         {
             Debug.Log("pause");
-            pauseButton.gameObject.SetActive(false);
-            resumeButton.gameObject.SetActive(true);
+            //pauseButton.gameObject.SetActive(false);
+            //resumeButton.gameObject.SetActive(true);
             pausePanel.SetActive(true);
-            
+            // resumePanel.SetActive(false);
         }
       
 
         private void Resume()
         {
             Debug.Log("resume");
-            pauseButton.gameObject.SetActive(true);
-            resumeButton.gameObject.SetActive(false);
+            //pauseButton.gameObject.SetActive(true);
+            //resumeButton.gameObject.SetActive(false);
+            // resumePanel.SetActive(true);
             pausePanel.SetActive(false);
         }
 

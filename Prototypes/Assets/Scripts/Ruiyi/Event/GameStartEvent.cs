@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Framework;
-using UnityEngine;
-
-public class GameStartEvent
+namespace Ruiyi.Event
 {
+    public class GameStartEvent
+    {
     
+    }
 }

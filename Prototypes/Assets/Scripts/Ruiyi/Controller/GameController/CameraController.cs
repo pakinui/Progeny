@@ -1,10 +1,11 @@
 using UnityEngine;
 
-namespace Ruiyi.Controller
+namespace Ruiyi.Controller.GameController
 {
     public class CameraController : MonoBehaviour
     {
-        private Transform mPlayerTrans;
+        public float smoothSpeed = 2f;
+        public Transform mPlayerTrans;
 
         private float xMin = -5;
         private float xMax = 5;
@@ -29,20 +30,20 @@ namespace Ruiyi.Controller
                 }
             }
 
-            var isRight = Mathf.Sign(mPlayerTrans.transform.localScale.x);
+            var isRight = Mathf.Sign(mPlayerTrans.localScale.x);
 
-            var playerPos = mPlayerTrans.transform.position;
+            var playerPos = mPlayerTrans.position;
             mTargetPos.x = playerPos.x + 3 * isRight;
             mTargetPos.y = playerPos.y + 2;
             mTargetPos.z = -10;
-
-            var smoothSpeed = 2;
 
             var position = transform.position;
 
             position = Vector3.Lerp(position, mTargetPos, smoothSpeed * Time.deltaTime);
 
-            transform.position = new Vector3(Mathf.Clamp(position.x, xMin, xMax), Mathf.Clamp(position.y, yMin, yMax),
+            transform.position = new Vector3(
+                Mathf.Clamp(position.x, xMin, xMax), 
+                Mathf.Clamp(position.y, yMin, yMax),
                 position.z);
         }
     }
