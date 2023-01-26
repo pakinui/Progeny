@@ -1,12 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using Framework;
+using Ruiyi.Event;
 using UnityEngine;
 
-public class GamePauseCommand : ICommand
+namespace Ruiyi.Command
 {
-    public void Execute()
+    public class GamePauseCommand : AbstractCommand
     {
-        Time.timeScale = 0;
-        GamePauseEvent.Trigger();
+        protected override void OnExecute()
+        {
+            Time.timeScale = 0;
+            this.SendEvent<GamePauseEvent>();
+        }
     }
 }

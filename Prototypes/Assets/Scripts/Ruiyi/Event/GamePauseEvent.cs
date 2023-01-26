@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Framework;
 
-public class GamePauseEvent : EventSystem<GamePauseEvent>
+namespace Ruiyi.Event
 {
+    public class GamePauseEvent
+    {
     
+    }
 }
