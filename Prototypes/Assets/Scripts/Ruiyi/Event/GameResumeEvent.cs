@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Framework;
 
-public class GameResumeEvent : EventSystem<GameResumeEvent>
+namespace Ruiyi.Event
 {
+    public class GameResumeEvent
+    {
     
+    }
 }
