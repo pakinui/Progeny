@@ -20,7 +20,7 @@ public class GroundEnemy : MonoBehaviour
     public float pounceSpeedHorizontal = 10;
     public float prepareDuration = 1.5f;
     private float prepareTimer;
-    public GameObject player;
+    private GameObject player;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private float direction = -1;
