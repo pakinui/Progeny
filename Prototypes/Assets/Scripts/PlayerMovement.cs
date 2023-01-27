@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     public AudioClip footsteps;
     AudioSource audioSource;
+    //for climb
+    public Renderer render;
 
     //to stop player from being able to move during cutscenes.
     public static bool moving = true;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<Renderer>();
     }
 
     // Start is called before the first frame update
