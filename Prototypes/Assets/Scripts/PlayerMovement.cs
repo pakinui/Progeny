@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //public so cutscenes prototype can access it
     public Rigidbody2D rb;
     private float direction;
-    private bool facingRight = true;
+    public bool facingRight = true;
     public AudioClip footsteps;
     AudioSource audioSource;
 
