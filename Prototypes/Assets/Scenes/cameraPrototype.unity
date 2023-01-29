@@ -476,11 +476,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295780991}
   m_CullTransparentMesh: 1
---- !u!1 &304337428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3178642475267246676, guid: 108a2b69092ec384fb01ece5703b46ed, type: 3}
-  m_PrefabInstance: {fileID: 3178642474967373888}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &304337429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3178642475267246677, guid: 108a2b69092ec384fb01ece5703b46ed, type: 3}
@@ -672,15 +667,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 590313875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe2d15c58032481d959f7d6ca196092, type: 3}
+  m_Script: {fileID: 11500000, guid: 6000ea7f489db4bd3ae03eba36560921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mCurrentWeaponIndex: 0
-  mWeapons:
-  - {fileID: 304337428}
-  - {fileID: 828665165}
-  mGroundCheck: {fileID: 840249256}
-  mCeilingCheck: {fileID: 1210991927}
+  mWeapons: []
+  mGroundCheck: {fileID: 0}
+  mCeilingCheck: {fileID: 0}
   operationTimeout: 0.2
   crouchDuration: 0.5
 --- !u!1 &630925053
@@ -1277,11 +1270,6 @@ Transform:
   m_Father: {fileID: 708105861}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &828665165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5927204239415151760, guid: b25a414748ba30e4a9054ea24e136ef0, type: 3}
-  m_PrefabInstance: {fileID: 5927204239135990237}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &828665166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5927204239415151763, guid: b25a414748ba30e4a9054ea24e136ef0, type: 3}
