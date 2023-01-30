@@ -40,10 +40,10 @@ namespace Ruiyi.Controller.GameController
             var position = transform.position;
 
             position = Vector3.Lerp(position, mTargetPos, smoothSpeed * Time.deltaTime);
-
+            
             transform.position = new Vector3(
-                Mathf.Clamp(position.x, xMin, xMax), 
-                Mathf.Clamp(position.y, yMin, yMax),
+                position.x,
+                position.y,
                 position.z);
         }
     }
