@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
             Flip();
         }
         // rotate gun
-        // transform.rotation = Quaternion.Euler(0,0,rotZ);
+        transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
 
         // horizontal movement input
         float horizontalAxis = Input.GetAxis("Horizontal");
@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+        transform.GetChild(0).Rotate(0f, 0f, 180f);
     }
 
 }
