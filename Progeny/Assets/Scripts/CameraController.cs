@@ -5,46 +5,35 @@ namespace Ruiyi.Controller.GameController
     public class CameraController : MonoBehaviour
     {
         public float smoothSpeed = 2f;
-        public Transform mPlayerTrans;
+        public float yOffset = 2f;
+        public float xOffset = 2f;
+        public Transform player;
 
-        private float xMin = -5;
-        private float xMax = 5;
-        private float yMin = -5;
-        private float yMax = 5;
+        // private float xMin = -5;
+        // private float xMax = 5;
+        // private float yMin = -5;
+        // private float yMax = 5;
 
-        private Vector3 mTargetPos;
+        private Vector3 targetPos;
+        private Vector3 playerPos;
+
+        void Start()
+        {
+            player = GameObject.Find("Player").transform;
+            playerPos = player.position;
+            targetPos = new Vector3(playerPos.x + xOffset, playerPos.y + yOffset, -10f);
+        }
 
         void LateUpdate()
         {
-            if (!mPlayerTrans)
-            {
-                var playerGameObj = GameObject.FindWithTag("Player");
+            float isRight = Mathf.Sign(player.localScale.x);
 
-                if (playerGameObj)
-                {
-                    mPlayerTrans = playerGameObj.transform;
-                }
-                else
-                {
-                    return;
-                }
-            }
+            Vector3 playerPos = player.position;
+            targetPos.x = (playerPos.x + xOffset) * isRight;
+            targetPos.y = playerPos.y + yOffset;
 
-            var isRight = Mathf.Sign(mPlayerTrans.localScale.x);
-
-            var playerPos = mPlayerTrans.position;
-            mTargetPos.x = playerPos.x + 3 * isRight;
-            mTargetPos.y = playerPos.y + 2;
-            mTargetPos.z = -10;
-
-            var position = transform.position;
-
-            position = Vector3.Lerp(position, mTargetPos, smoothSpeed * Time.deltaTime);
-            
-            transform.position = new Vector3(
-                position.x,
-                position.y,
-                position.z);
+            // update camera position
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * smoothSpeed);
         }
     }
 }
