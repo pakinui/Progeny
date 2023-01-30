@@ -41,7 +41,7 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
-*.mdb
+*.mdbasse
 *.opendb
 *.VC.db
 
@@ -72,3 +72,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 .vscode
+
+# Unity User Settings
+UserSettings
