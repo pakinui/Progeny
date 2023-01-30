@@ -14,7 +14,7 @@ namespace Ruiyi.Controller.GameController
 
         private Vector3 mTargetPos;
 
-        void LateUpdate()
+        void FixedUpdate()
         {
             if (!mPlayerTrans)
             {
