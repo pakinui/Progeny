@@ -9,6 +9,8 @@
 /[Oo]bj/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Bb]uilds/
+/[Uu]ser[Ss]ettings/
 
 # Asset meta data should only be ignored when the corresponding asset
   is also ignored
@@ -72,6 +74,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 .vscode
-
+.idea
 # Unity User Settings
 UserSettings
