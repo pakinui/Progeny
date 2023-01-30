@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6389221574600859711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bullet spawn point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6389221574895916487}
   - component: {fileID: 6389221574895916493}
   - component: {fileID: 6389221574895916492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6389221575442252799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: point of rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6389221575675671401}
   - component: {fileID: 6389221575675671402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
