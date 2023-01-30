@@ -5,12 +5,12 @@ using UnityEngine;
 /**
     Parallax makes the background move is comparison to
     how far away it is from the player.
-
 */
 public class Parallax : MonoBehaviour
 {
+    // reference to the main camera
     public Camera cam;
-
+    // reference to the player
     public Transform player;
 
     Vector2 startPosition;
@@ -26,11 +26,16 @@ public class Parallax : MonoBehaviour
     float parallaxFactor => Mathf.Abs(distanceFromPlayer) / clippingPlane;
 
     public void Start(){
+        // assigning references
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        player = GameObject.Find("Player").transform;
+        // 
         startPosition = transform.position;
         startZ = transform.position.z;
     }
 
     public void Update(){
+        // 
         Vector2 newPos = startPosition + travel * parallaxFactor;
         transform.position = new Vector3(newPos.x, newPos.y, startZ);
     }

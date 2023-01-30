@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     {
         // assigning references
         player = GetComponent<Player>();
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
 
         // set initial cooldown
         cooldownLeft = cooldown;
@@ -50,7 +50,7 @@ public class PlayerShoot : MonoBehaviour
             player.movementSpeed = 2f;
         }
 
-        // if aiming
+        // while aiming
         if(player.isAiming()){
             // update mouse position
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
