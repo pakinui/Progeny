@@ -3248,6 +3248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  weapon: {fileID: 0}
   pointOfRotation: {fileID: 0}
   bulletSpawnPoint: {fileID: 0}
   cooldown: 0
@@ -3263,7 +3264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc3cd678bb4bd4cbcd5e91c87b3b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
 --- !u!114 &1171568553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3277,6 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  movementSpeed: 2
 --- !u!50 &1171568554
 Rigidbody2D:
   serializedVersion: 4
@@ -9608,8 +9609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25c6515ca754c5885cde482cb18be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 2
-  mPlayerTrans: {fileID: 479706090}
 --- !u!1 &1842327169
 GameObject:
   m_ObjectHideFlags: 0
