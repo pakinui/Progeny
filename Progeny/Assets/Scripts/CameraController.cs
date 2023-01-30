@@ -4,9 +4,10 @@ namespace Ruiyi.Controller.GameController
 {
     public class CameraController : MonoBehaviour
     {
-        public float smoothSpeed = 2f;
-        public float yOffset = 2f;
-        public float xOffset = 2f;
+        public float smoothSpeed = 4f;
+        public float xOffset = 3f;
+        public float yOffset = 3.25f;
+        
         public Transform player;
 
         // private float xMin = -5;
