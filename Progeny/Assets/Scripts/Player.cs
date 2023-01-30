@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
     public void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        //transform.Rotate(0f, 180f, 0f);
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
     // direction variable accessor
