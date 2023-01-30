@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // health of player
+    public int health = 100;
     // direction of player.
     private bool facingRight = true;
     // player states

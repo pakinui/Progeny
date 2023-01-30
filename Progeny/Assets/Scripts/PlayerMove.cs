@@ -25,17 +25,27 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // horizontal movement input
-        float horizontalAxis = Input.GetAxis("Horizontal");
+        float direction = Input.GetAxis("Horizontal");
 
         // horizontal movement
-        if(!player.isClimbing() && horizontalAxis != 0)
+        if(!player.isClimbing() && direction != 0)
         {
             player.setMoving(true);
-            rb.velocity = new Vector2(horizontalAxis * movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(direction * movementSpeed, rb.velocity.y);
         }
         else
         {
             player.setMoving(false);
+        }
+
+        // flip player in suitable direction
+        if (direction > 0 && !player.isFacingRight())
+        {
+            player.Flip();
+        }
+        else if (direction < 0 && player.isFacingRight())
+        {
+            player.Flip();
         }
     }
 
