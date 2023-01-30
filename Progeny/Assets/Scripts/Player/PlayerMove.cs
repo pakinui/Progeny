@@ -9,10 +9,6 @@ public class PlayerMove : MonoBehaviour
     // reference to the RigidBody component
     private Rigidbody2D rb;
 
-    // movement speed multiplier
-    // will increase/decrease depending on player state
-    public float movementSpeed = 2f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +27,7 @@ public class PlayerMove : MonoBehaviour
         if(!player.isClimbing() && direction != 0)
         {
             player.setMoving(true);
-            rb.velocity = new Vector2(direction * movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(direction * player.movementSpeed, rb.velocity.y);
         }
         else
         {

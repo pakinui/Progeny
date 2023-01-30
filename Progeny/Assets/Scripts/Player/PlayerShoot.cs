@@ -11,6 +11,8 @@ public class PlayerShoot : MonoBehaviour
     private Camera mainCam;
     // reference to the bullet object
     public GameObject bullet;
+    // reference to the weapon object
+    public GameObject weapon;
     // reference to the rotation point
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
@@ -18,7 +20,8 @@ public class PlayerShoot : MonoBehaviour
     // position of the mouse
     private Vector3 mousePos;
     // cooldown variables
-    public float cooldown = 3f;
+    public float cooldown = 2f;
+    private float cooldownLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,9 @@ public class PlayerShoot : MonoBehaviour
         // assigning references
         player = GetComponent<Player>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        // set initial cooldown
+        cooldownLeft = cooldown;
     }
 
     // Update is called once per frame
@@ -33,7 +39,15 @@ public class PlayerShoot : MonoBehaviour
     {
         // enter/exit aiming
         if(Input.GetMouseButtonDown(1)){
-            player.setAiming(!player.isAiming());
+            player.setAiming(true);
+            weapon.SetActive(true);
+            player.movementSpeed = 1f;
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            player.setAiming(false);
+            weapon.SetActive(false);
+            player.movementSpeed = 2f;
         }
 
         // if aiming
@@ -46,6 +60,7 @@ public class PlayerShoot : MonoBehaviour
             float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
             // flip player if suitable
+            Debug.Log(rotZ);
             if(Mathf.Abs(rotZ) > 90 && player.isFacingRight())
             {
                 player.Flip();
@@ -56,18 +71,21 @@ public class PlayerShoot : MonoBehaviour
             }
 
             // rotate (parent object of) gun
-            transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
+            if(rotZ > -60 || rotZ < -120)
+            {
+                transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
+            }
 
             // check weapon cooldown
-            if(cooldown > 0f)
+            if(cooldownLeft > 0f)
             {
                 // decrease cooldown
-                cooldown -= Time.deltaTime;
+                cooldownLeft -= Time.deltaTime;
             }
-            else if(cooldown <= 0 && Input.GetMouseButtonDown(0)){
+            else if(cooldownLeft <= 0 && Input.GetMouseButtonDown(0)){
                 // shoot and reset weapon cooldown
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
-                cooldown = 3f;
+                cooldownLeft = cooldown;
             }
         }
     }

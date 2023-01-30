@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
     // direction of player.
     private bool facingRight = true;
     // player states
-    private bool moving, crouching, climbing, aiming, shooting, reloading = false;
+    private bool moving, crouching, climbing, pushing, aiming, shooting, reloading = false;
+    // movement speed multiplier
+    // will increase/decrease depending on player state
+    public float movementSpeed = 2f;
 
     // Start is called before the first frame update
     public void Start(){}
@@ -20,8 +23,9 @@ public class Player : MonoBehaviour
     public void Flip()
     {
         facingRight = !facingRight;
-        //transform.Rotate(0f, 180f, 0f);
-        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        transform.Rotate(0f, 180f, 0f);
+        transform.GetChild(0).GetChild(0).Rotate(180f, 0f, 0f);
+
     }
 
     // direction variable accessor
@@ -36,6 +40,9 @@ public class Player : MonoBehaviour
 
     public bool isClimbing(){return climbing;}
     public void setClimbing(bool x){climbing = x;}
+
+    public bool isPushing(){return pushing;}
+    public void setPushing(bool x){pushing = x;}
 
     public bool isAiming(){return aiming;}
     public void setAiming(bool x){aiming = x;}
