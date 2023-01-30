@@ -11,6 +11,8 @@ public class PlayerShoot : MonoBehaviour
     private Camera mainCam;
     // reference to the bullet object
     public GameObject bullet;
+    // reference to the weapon object
+    public GameObject weapon;
     // reference to the rotation point
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
@@ -33,7 +35,13 @@ public class PlayerShoot : MonoBehaviour
     {
         // enter/exit aiming
         if(Input.GetMouseButtonDown(1)){
-            player.setAiming(!player.isAiming());
+            player.setAiming(true);
+            weapon.SetActive(true);
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            player.setAiming(false);
+            weapon.SetActive(false);
         }
 
         // if aiming
