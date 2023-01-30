@@ -9,6 +9,7 @@
 /[Oo]bj/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Uu]ser[Ss]ettings/
 
 # Asset meta data should only be ignored when the corresponding asset
   is also ignored
@@ -72,3 +73,4 @@ Icon?
 ehthumbs.db
 Thumbs.db
 .vscode
+.idea
