@@ -5,36 +5,59 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // player states
-    private bool isMoving = false;
-    private bool isCrouching = false;
-    private bool isClimbing = false;
-    private bool isShooting = false;
-    private bool isReloading = false;
+    private bool isMoving, isCrouching, isClimbing, isShooting, isReloading = false;
 
-    // movement speed
+    // movement speed multiplier
     // will increase/decrease depending on player state
-    public float movementSpeed = 4f;
-
+    public float movementSpeed = 2f;
     // direction of player.
-    // + is right, - is left.
-    int direction = 1;
+    private bool facingRight = true;
+    // reference to the RigidBody component
+    private Rigidbody2D rb;
+    // reference to the main camera object
+    private Camera mainCam;
+    // position of the mouse
+    private Vector3 mousePos;
+    // reference to the bullet object
+    public GameObject bullet;
+    // reference to the bullet spawn point (end of barrel)
+    public Transform bulletSpawnPoint;
 
-    // reference to the RigidBody
-    Rigidbody2D rb;
+    private bool canShoot = true;
+    private float timeSinceLastShot;
+    public float cooldown;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // update mouse position
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition); 
+        // calculate suitable rotation
+        Vector3 rotation = mousePos - transform.position;
+        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        // flip Player object if suitable
+        if(Mathf.Abs(rotZ) > 90 && facingRight)
+        {
+            Flip();
+        }
+        else if(Mathf.Abs(rotZ) < 90 && !facingRight)
+        {
+            Flip();
+        }
+        // rotate gun
+        // transform.rotation = Quaternion.Euler(0,0,rotZ);
+
         // horizontal movement input
         float horizontalAxis = Input.GetAxis("Horizontal");
 
-        // movement
+        // horizontal movement
         if(!isClimbing && horizontalAxis != 0)
         {
             isMoving = true;
@@ -44,5 +67,14 @@ public class Player : MonoBehaviour
         {
             isMoving = false;
         }
+
     }
+
+    // method to flip the Player object and update the direction variable
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
 }
