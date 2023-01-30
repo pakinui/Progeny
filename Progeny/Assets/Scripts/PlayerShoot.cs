@@ -36,11 +36,11 @@ public class PlayerShoot : MonoBehaviour
         Vector3 rotation = mousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         // flip Player object if suitable
-        if(Mathf.Abs(rotZ) > 90 && player.facingRight)
+        if(Mathf.Abs(rotZ) > 90 && player.isFacingRight())
         {
             player.Flip();
         }
-        else if(Mathf.Abs(rotZ) < 90 && !player.facingRight)
+        else if(Mathf.Abs(rotZ) < 90 && !player.isFacingRight())
         {
             player.Flip();
         }

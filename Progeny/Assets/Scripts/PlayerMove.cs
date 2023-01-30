@@ -28,14 +28,14 @@ public class PlayerMove : MonoBehaviour
         float horizontalAxis = Input.GetAxis("Horizontal");
 
         // horizontal movement
-        if(!player.isClimbing && horizontalAxis != 0)
+        if(!player.isClimbing() && horizontalAxis != 0)
         {
-            player.isMoving = true;
+            player.setMoving(true);
             rb.velocity = new Vector2(horizontalAxis * movementSpeed, rb.velocity.y);
         }
         else
         {
-            player.isMoving = false;
+            player.setMoving(false);
         }
     }
 
