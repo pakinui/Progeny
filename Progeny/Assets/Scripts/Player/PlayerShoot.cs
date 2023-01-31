@@ -5,14 +5,12 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     // reference to the 'Player' script
-    Player player;
+    private Player player;
 
     // reference to the main camera
     private Camera mainCam;
     // reference to the bullet object
     public GameObject bullet;
-    // reference to the weapon object
-    public GameObject weapon;
     // reference to the rotation point
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
@@ -38,20 +36,15 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         // enter/exit aiming
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1)) { 
             player.setAiming(true);
-            weapon.SetActive(true);
-            player.movementSpeed = 1f;
-        }
-        else if(Input.GetMouseButtonUp(1))
-        {
+        } else if(Input.GetMouseButtonUp(1)) {
             player.setAiming(false);
-            weapon.SetActive(false);
-            player.movementSpeed = 2f;
         }
 
         // while aiming
-        if(player.isAiming()){
+        if(player.isAiming())
+        {
             // update mouse position
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     // reference to the 'Player' script
-    Player player;
+    private Player player;
     // reference to the RigidBody component
     private Rigidbody2D rb;
 

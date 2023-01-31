@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     // movement speed multiplier
     // will increase/decrease depending on player state
     public float movementSpeed = 2f;
+    // reference to the player's gun object
+    public GameObject gun;
 
     // Start is called before the first frame update
     public void Start(){}
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+        // flip the gun
         transform.GetChild(0).GetChild(0).Rotate(180f, 0f, 0f);
     }
 
@@ -44,7 +47,17 @@ public class Player : MonoBehaviour
     public void setPushing(bool x){pushing = x;}
 
     public bool isAiming(){return aiming;}
-    public void setAiming(bool x){aiming = x;}
+    public void setAiming(bool x)
+    {
+        aiming = x;
+        if(x == true) {
+            gun.SetActive(true);
+            movementSpeed = 1f;
+        } else {
+            gun.SetActive(false);
+            movementSpeed = 2f;
+        }
+    }
 
     public bool isShooting(){return shooting;}
     public void setShooting(bool x){shooting = x;}
