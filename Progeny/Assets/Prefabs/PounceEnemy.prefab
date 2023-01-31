@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   idleRange: 9
-  approachRange: 6
+  approachRange: 5
   speed: 2
   pounceSpeedVertical: 6
   pounceSpeedHorizontal: 6
