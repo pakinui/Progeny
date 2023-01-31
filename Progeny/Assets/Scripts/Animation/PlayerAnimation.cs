@@ -5,6 +5,7 @@ public class PlayerAnimation : MonoBehaviour {
 
    // An array with the sprites used for animation
    public Sprite[] animSprites;
+   public Sprite idleSprite;
    
    // Controls how fast to change the sprites when
    // animation is running
@@ -19,12 +20,18 @@ public class PlayerAnimation : MonoBehaviour {
    
    // Indicates whether animation is running or not
    private bool animRunning = false;
+
+   //is player currently walking
+   private Player player;
    
    // Use this for initialization
    void Start () {
       // Get a reference to game object renderer and
       // cast it to a Sprite Rendere
       animRenderer = GetComponent<Renderer>() as SpriteRenderer;
+
+      //reference to player
+      player = GetComponent<Player>();
    }
 
    // At fixed time intervals...
@@ -47,7 +54,8 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      if(animRunning) {
+      if(player.isMoving()){
+         if(animRunning) {
          // Animation is running, so we need to 
          // figure out what frame to use at this point
          // in time
@@ -69,6 +77,11 @@ public class PlayerAnimation : MonoBehaviour {
             animRenderer.sprite = animSprites[0];
             animRunning = false;
          }
-      }   
+      }
+      }else{
+            animRenderer.sprite = idleSprite;
+      }
+
+         
    }
 }
