@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // health of player
-    public int health = 100;
+    public float health = 100f;
     // direction of player.
     private bool facingRight = true;
     // player states
@@ -84,4 +84,12 @@ public class Player : MonoBehaviour
 
     public bool isReloading(){return reloading;}
     public void setReloading(bool x){reloading = x;}
+
+
+    public void Die()
+    {
+        // temporary
+        Destroy(this.gameObject);
+        // TODO: create a proper death loop
+    }
 }
