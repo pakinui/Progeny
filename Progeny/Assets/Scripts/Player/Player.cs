@@ -10,14 +10,18 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     // player states
     private bool moving, crouching, climbing, vaulting, falling, pushing, aiming, shooting, reloading = false;
-    // movement speed multiplier
-    // will increase/decrease depending on player state
-    public float movementSpeed = 2f;
+    // default movement speed of player
+    public float movementSpeed;
     // reference to the player's gun object
     public GameObject gun;
 
+    //current speed of player, can change depending on state.
+    private float currentSpeed;
+
     // Start is called before the first frame update
-    public void Start(){}
+    public void Start(){
+        currentSpeed = movementSpeed;
+    }
     // Update is called once per frame
     public void Update(){}
 
@@ -35,6 +39,11 @@ public class Player : MonoBehaviour
         GetComponent<PlayerClimb>().xOffset *= -1;
     }
 
+    //getter for returning current speed of player.
+    public float getCurrentSpeed(){
+        return currentSpeed;
+    }
+    
     // direction variable accessor
     public bool isFacingRight(){return facingRight;}
     
@@ -63,10 +72,10 @@ public class Player : MonoBehaviour
         aiming = x;
         if(x == true) {
             gun.SetActive(true);
-            movementSpeed = 1f;
+            currentSpeed = movementSpeed/2f;
         } else {
             gun.SetActive(false);
-            movementSpeed = 2f;
+            currentSpeed = movementSpeed;
         }
     }
 
