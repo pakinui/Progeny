@@ -35,11 +35,11 @@ public class PlayerMove : MonoBehaviour
         }
 
         // flip player in suitable direction
-        if (direction > 0 && !player.isFacingRight())
+        if (direction > 0 && !player.isAiming() && !player.isFacingRight())
         {
             player.Flip();
         }
-        else if (direction < 0 && player.isFacingRight())
+        else if (direction < 0 && !player.isAiming() && player.isFacingRight())
         {
             player.Flip();
         }

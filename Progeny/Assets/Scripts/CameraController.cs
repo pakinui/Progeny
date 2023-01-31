@@ -10,7 +10,6 @@ namespace Ruiyi.Controller.GameController
         private Vector3 playerPos;
         // reference to the targetted position for the camera
         private Vector3 targetPos;
-        
 
         // speed at which the camera follows the player
         public float smoothSpeed = 4f;
