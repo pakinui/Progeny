@@ -32,7 +32,7 @@ public class PounceEnemy : MonoBehaviour
     private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
     // enemy health
-    public float health = 3f;
+    public int health = 3;
     // reference to the fangs
     GameObject fangs;
 
@@ -151,6 +151,17 @@ public class PounceEnemy : MonoBehaviour
         }
         else{
             direction = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Bullet")
+        {
+            Destroy(other.gameObject);
+            health -= 1;
+
+            if(health == 0) Destroy(this.gameObject);
         }
     }
 }
