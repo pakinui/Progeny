@@ -24,7 +24,6 @@ public class PlayerClimb : MonoBehaviour
     // which boxes are overlapping with ledge layer
     private bool highOver, midOver, lowOver;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +35,9 @@ public class PlayerClimb : MonoBehaviour
     void Update()
     {
         // update box positions
-        highPos = new Vector2(transform.position.x + (xOffset * transform.localScale.x), transform.position.y + highYOffset);
-        midPos = new Vector2(transform.position.x + (xOffset * transform.localScale.x), transform.position.y + midYOffset);
-        lowPos = new Vector2(transform.position.x + (xOffset * transform.localScale.x), transform.position.y + lowYOffset);
+        highPos = new Vector2(transform.position.x + xOffset, transform.position.y + highYOffset);
+        midPos = new Vector2(transform.position.x + xOffset, transform.position.y + midYOffset);
+        lowPos = new Vector2(transform.position.x + xOffset, transform.position.y + lowYOffset);
 
         // check for box overlaps with ledge layer
         highOver = Physics2D.OverlapBox(highPos, boxSize, 0f, ledgeMask);

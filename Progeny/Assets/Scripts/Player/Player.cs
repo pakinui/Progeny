@@ -21,13 +21,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Update(){}
 
-    // method to flip the Player object and update the direction variable
+    // method to flip the player
     public void Flip()
     {
+        // set the direction variable
         facingRight = !facingRight;
+        // flip the character
+        //transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         transform.Rotate(0f, 180f, 0f);
         // flip the gun
         transform.GetChild(0).GetChild(0).Rotate(180f, 0f, 0f);
+        // flip the ledge indicator boxes
+        GetComponent<PlayerClimb>().xOffset *= -1;
     }
 
     // direction variable accessor
