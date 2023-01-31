@@ -12,25 +12,32 @@ public class PounceEnemy : MonoBehaviour
         Pounce//leaps toward player
     }
 
+    // current state
     public State state = State.Idle;
-    public float idleRange; //range needed for idle to end 
-    public float approachRange; //range needed for approach to end
+    // state change ranges
+    public float idleRange; // range needed for idle to end 
+    public float approachRange; // range needed for approach to end
+    // movement and pounce speeds
     public float speed = 4;
     public float pounceSpeedVertical = 7;
     public float pounceSpeedHorizontal = 10;
-    public float prepareDuration = 1.5f; //time to wait before pounce
+    public float prepareDuration = 1.5f; // time to wait before pounce
     private float prepareTimer;
+    // reference to player
     private GameObject player;
+    // references to enemy components
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private float direction = -1; //negative for left, positive for right
-    private bool facingLeft = true; //starts facing left
+    private float direction = -1; // negative for left, positive for right
+    private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
+    // enemy health
+    public float health = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -139,6 +146,18 @@ public class PounceEnemy : MonoBehaviour
         }
         else{
             direction = 0;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Bullet")
+        {
+            health -= 1f;
+            Debug.Log("SHOT! new health: " + health);
+            Destroy(other.gameObject);
+
+            if(health == 0) {Destroy(this.gameObject);}
         }
     }
 }

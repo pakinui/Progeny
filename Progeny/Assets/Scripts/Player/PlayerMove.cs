@@ -20,11 +20,19 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if the player is falling
+        if(rb.velocity.y < 0f && !player.isFalling()) {
+            player.setFalling(true);
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        } else if(rb.velocity.y >= 0 && player.isFalling()) {
+            player.setFalling(false);
+        }
+
         // horizontal movement input
         float direction = Input.GetAxis("Horizontal");
 
         // horizontal movement
-        if(!player.isClimbing() && direction != 0)
+        if(!player.isClimbing() && !player.isFalling() && direction != 0)
         {
             player.setMoving(true);
             rb.velocity = new Vector2(direction * player.movementSpeed, rb.velocity.y);

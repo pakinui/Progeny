@@ -53,7 +53,6 @@ public class PlayerShoot : MonoBehaviour
             float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
             // flip player if suitable
-            Debug.Log(rotZ);
             if(Mathf.Abs(rotZ) > 90 && player.isFacingRight())
             {
                 player.Flip();
