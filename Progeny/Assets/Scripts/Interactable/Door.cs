@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         isUsable = true;
-        display = Instantiate(displayPrefab, this.transform, true);
+        display = Instantiate(displayPrefab, this.transform.parent);
     }
 
     void OnCollisionExit2D(Collision2D collision) {
