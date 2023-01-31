@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1821377403}
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
 --- !u!1 &207767677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2406,32 @@ Transform:
   m_Father: {fileID: 242193044}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.97}
+--- !u!1 &701413632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7276491471335496202, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+  m_PrefabInstance: {fileID: 849450580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &701413641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+  m_PrefabInstance: {fileID: 849450580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &701413642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701413632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fedcb150dc1cfe48b26fdc9ceae1bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crouchDuration: 0.2
+  ceilingCheck: {fileID: 1581867805}
+  mTargetColliderSize: {x: 0.75, y: 1}
+  mTargetColliderOffset: {x: 0, y: -0.5}
 --- !u!1 &702594548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,11 +3262,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1001132673 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3706353418794940100, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
-  m_PrefabInstance: {fileID: 849450580}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1075981047
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4760,22 @@ CompositeCollider2D:
         Y: -90000100
       - X: 1900000041
         Y: -90000100
+    - - X: -139999900
+        Y: -14375041
+      - X: -139999900
+        Y: -9999959
+      - X: -139999959
+        Y: -9999900
+      - X: -170000041
+        Y: -9999900
+      - X: -170000100
+        Y: -9999959
+      - X: -170000100
+        Y: -14375041
+      - X: -170000041
+        Y: -14375100
+      - X: -139999959
+        Y: -14375100
     - - X: 1829999900
         Y: -70000041
       - X: 1829999900
@@ -4906,6 +4943,10 @@ CompositeCollider2D:
       - {x: 169.00003, y: -8.00001}
       - {x: 172.99998, y: -8.000039}
       - {x: 173.00003, y: -9.00001}
+    - - {x: -14.000026, y: -1.43751}
+      - {x: -14.000026, y: -0.99999}
+      - {x: -17.00001, y: -1.0000252}
+      - {x: -16.999975, y: -1.43751}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1413506131
@@ -10323,6 +10364,36 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -17, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 31
+      m_TileSpriteIndex: 26
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 7
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -16, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 31
+      m_TileSpriteIndex: 26
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 7
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -15, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 31
+      m_TileSpriteIndex: 26
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 7
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 189, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -10667,6 +10738,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e4fab13c86a859743a686dbc58d2a759, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 46a61bf0afa38fc418d525419ede01d4, type: 2}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: fb58cc779a15b7d41b9c2f5138d36236, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -1237369299, guid: 79f49b0111297cb468b542a5c6e9b2c4, type: 3}
@@ -10720,8 +10793,10 @@ Tilemap:
     m_Data: {fileID: -821552039, guid: 79f49b0111297cb468b542a5c6e9b2c4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 500105306, guid: 79f49b0111297cb468b542a5c6e9b2c4, type: 3}
+  - m_RefCount: 3
+    m_Data: {fileID: -752631626, guid: 79f49b0111297cb468b542a5c6e9b2c4, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 560
+  - m_RefCount: 563
     m_Data:
       e00: 1
       e01: 0
@@ -10754,7 +10829,7 @@ Tilemap:
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
-  - m_RefCount: 560
+  - m_RefCount: 563
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -11263,7 +11338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1821377403}
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
 --- !u!1 &1475209927
 GameObject:
   m_ObjectHideFlags: 0
@@ -11600,6 +11675,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1581867805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581867808}
+  - component: {fileID: 1581867807}
+  - component: {fileID: 1581867806}
+  m_Layer: 6
+  m_Name: ceiling check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1581867806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581867805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968749d8b735b43458b5360ccb2ee69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  triggerCount: 0
+--- !u!61 &1581867807
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581867805}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1581867808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581867805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 701413641}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594246328
 GameObject:
   m_ObjectHideFlags: 0
@@ -11782,7 +11932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1821377403}
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
 --- !u!1 &1670596013
 GameObject:
   m_ObjectHideFlags: 0
@@ -12575,7 +12725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1821377403}
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
 --- !u!1 &1802973726
 GameObject:
   m_ObjectHideFlags: 0
@@ -12874,7 +13024,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1821377405
 MonoBehaviour:
@@ -12922,7 +13072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263dcd0b03402834882351fe5507c637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
   smoothSpeed: 4
   xOffset: 3
   yOffset: 3.25
@@ -13630,7 +13780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1821377403}
-  player: {fileID: 1001132673}
+  player: {fileID: 0}
 --- !u!1 &1998640640
 GameObject:
   m_ObjectHideFlags: 0
@@ -13751,7 +13901,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1001132673}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 6
