@@ -12,28 +12,38 @@ public class PounceEnemy : MonoBehaviour
         Pounce//leaps toward player
     }
 
+    // current state
     public State state = State.Idle;
-    public float idleRange; //range needed for idle to end 
-    public float approachRange; //range needed for approach to end
+    // state change ranges
+    public float idleRange; // range needed for idle to end 
+    public float approachRange; // range needed for approach to end
+    // movement and pounce speeds
     public float speed = 4;
     public float pounceSpeedVertical = 7;
     public float pounceSpeedHorizontal = 10;
-    public float prepareDuration = 1.5f; //time to wait before pounce
+    public float prepareDuration = 1.5f; // time to wait before pounce
     private float prepareTimer;
+    // reference to player
     private GameObject player;
+    // references to enemy components
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private float direction = -1; //negative for left, positive for right
-    private bool facingLeft = true; //starts facing left
+    private float direction = -1; // negative for left, positive for right
+    private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
+    // enemy health
+    public int health = 3;
+    // reference to the fangs
+    GameObject fangs;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        fangs = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -108,12 +118,14 @@ public class PounceEnemy : MonoBehaviour
     void Pounce()
     {
         if (rb.velocity.y == 0 && !isJumping){
-           rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical); 
+           rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical);
+           fangs.SetActive(true);
            isJumping = true;
         }
         else if (rb.velocity.y == 0 && isJumping){
             isJumping = false;
-            SwitchState(State.Approach);            
+            fangs.SetActive(false);
+            SwitchState(State.Approach);         
         }
     }
 
@@ -139,6 +151,17 @@ public class PounceEnemy : MonoBehaviour
         }
         else{
             direction = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Bullet")
+        {
+            Destroy(other.gameObject);
+            health -= 1;
+
+            if(health == 0) Destroy(this.gameObject);
         }
     }
 }

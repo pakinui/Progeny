@@ -5,31 +5,45 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // health of player
-    public int health = 100;
+    public float health = 100f;
     // direction of player.
     private bool facingRight = true;
     // player states
     private bool moving, crouching, climbing, vaulting, falling, pushing, aiming, shooting, reloading = false;
-    // movement speed multiplier
-    // will increase/decrease depending on player state
-    public float movementSpeed = 2f;
+    // default movement speed of player
+    public float movementSpeed;
     // reference to the player's gun object
     public GameObject gun;
 
+    //current speed of player, can change depending on state.
+    private float currentSpeed;
+
     // Start is called before the first frame update
-    public void Start(){}
+    public void Start(){
+        currentSpeed = movementSpeed;
+    }
     // Update is called once per frame
     public void Update(){}
 
-    // method to flip the Player object and update the direction variable
+    // method to flip the player
     public void Flip()
     {
+        // set the direction variable
         facingRight = !facingRight;
+        // flip the character
+        //transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         transform.Rotate(0f, 180f, 0f);
         // flip the gun
         transform.GetChild(0).GetChild(0).Rotate(180f, 0f, 0f);
+        // flip the ledge indicator boxes
+        GetComponent<PlayerClimb>().xOffset *= -1;
     }
 
+    //getter for returning current speed of player.
+    public float getCurrentSpeed(){
+        return currentSpeed;
+    }
+    
     // direction variable accessor
     public bool isFacingRight(){return facingRight;}
     
@@ -58,10 +72,10 @@ public class Player : MonoBehaviour
         aiming = x;
         if(x == true) {
             gun.SetActive(true);
-            movementSpeed = 1f;
+            currentSpeed = movementSpeed/2f;
         } else {
             gun.SetActive(false);
-            movementSpeed = 2f;
+            currentSpeed = movementSpeed;
         }
     }
 
@@ -70,4 +84,12 @@ public class Player : MonoBehaviour
 
     public bool isReloading(){return reloading;}
     public void setReloading(bool x){reloading = x;}
+
+
+    public void Die()
+    {
+        // temporary
+        Destroy(this.gameObject);
+        // TODO: create a proper death loop
+    }
 }
