@@ -22,6 +22,8 @@ public class MovingClimb : MonoBehaviour
     void Start(){
         boxX = transform.position.x;
         boxY = transform.position.y;
+        // assigning references
+       
     }
 
     // when player enters box collider and is close 
@@ -56,7 +58,7 @@ public class MovingClimb : MonoBehaviour
 
     void StartClimbing(){
 
-        player.SetMovement(false);
+        //player.SetMovement(false);
         
         // stop box from moving
         var tempMass = box.mass;
@@ -70,15 +72,19 @@ public class MovingClimb : MonoBehaviour
             float x = player.rb.transform.position.x - (player.render.bounds.size.x/2.0f);
             float y = (player.render.bounds.size.y/2.0f) + boxY;
 
+            Debug.Log("right climg : x= " + x + ", y= " + y);
+
             player.rb.transform.position = new Vector3(x, y, player.rb.transform.position.z);
         }else if (gameObject.tag == "LeftClimb"){
             float x = (player.render.bounds.size.x/2.0f) + boxX;
             float y = (player.render.bounds.size.y/2.0f) + boxY;
+            Debug.Log("left climb : x= " + x + ", y= " + y);
             player.rb.transform.position = new Vector3(x, y, player.rb.transform.position.z);
         }
 
         currClimbing = false;
         box.mass = tempMass;//return to normal mass
-        player.SetMovement(true);
+        //player.SetMovement(true);
     }
 }
+

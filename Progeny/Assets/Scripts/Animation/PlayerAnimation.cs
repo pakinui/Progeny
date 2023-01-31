@@ -54,7 +54,7 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      if(player.isMoving()){
+      //if(player.isMoving()){
          if(animRunning) {
          // Animation is running, so we need to 
          // figure out what frame to use at this point
@@ -78,9 +78,9 @@ public class PlayerAnimation : MonoBehaviour {
             animRunning = false;
          }
       }
-      }else{
-            animRenderer.sprite = idleSprite;
-      }
+      // }else{
+      //       animRenderer.sprite = idleSprite;
+      // }
 
          
    }

@@ -1322,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PounceEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996821, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_RootOrder
       value: 1
