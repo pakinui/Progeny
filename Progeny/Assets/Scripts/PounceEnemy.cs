@@ -33,6 +33,8 @@ public class PounceEnemy : MonoBehaviour
     private bool isJumping = false;
     // enemy health
     public float health = 3f;
+    // reference to the fangs
+    GameObject fangs;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class PounceEnemy : MonoBehaviour
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        fangs = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -115,12 +118,14 @@ public class PounceEnemy : MonoBehaviour
     void Pounce()
     {
         if (rb.velocity.y == 0 && !isJumping){
-           rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical); 
+           rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical);
+           fangs.SetActive(true);
            isJumping = true;
         }
         else if (rb.velocity.y == 0 && isJumping){
             isJumping = false;
-            SwitchState(State.Approach);            
+            fangs.SetActive(false);
+            SwitchState(State.Approach);         
         }
     }
 
@@ -146,18 +151,6 @@ public class PounceEnemy : MonoBehaviour
         }
         else{
             direction = 0;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Bullet")
-        {
-            health -= 1f;
-            Debug.Log("SHOT! new health: " + health);
-            Destroy(other.gameObject);
-
-            if(health == 0) {Destroy(this.gameObject);}
         }
     }
 }

@@ -11,7 +11,7 @@ public class PlayerCrouch : MonoBehaviour
     
     private Animator mAnimator;
     private Player mPlayer;
-    private BoxCollider2D collider2D;
+    private BoxCollider2D collider;
     
     
     private Color mOriginalColor;
@@ -31,9 +31,9 @@ public class PlayerCrouch : MonoBehaviour
         mPlayer = GetComponent<Player>();
         mCeilingTriggerCheck2D = ceilingCheck.GetComponent<TriggerCheck2D>();
         
-        collider2D = GetComponent<BoxCollider2D>();
-        mOriginalColliderOffset = collider2D.offset;
-        mOriginalColliderSize = collider2D.size;
+        collider = GetComponent<BoxCollider2D>();
+        mOriginalColliderOffset = collider.offset;
+        mOriginalColliderSize = collider.size;
         mOriginalColor = GetComponent<SpriteRenderer>().color;
         mCrouchColor = new Color(1, 0, 1, 1f);
     }
@@ -104,8 +104,8 @@ public class PlayerCrouch : MonoBehaviour
             if (mCrouchTimer > 0)
                 Debug.LogWarning("Animator is null");
             // Manually update collider to foot position
-            collider2D.size = Vector2.Lerp(mOriginalColliderSize, mTargetColliderSize, mCrouchTimer / crouchDuration);
-            collider2D.offset = Vector2.Lerp(mOriginalColliderOffset, mTargetColliderOffset, mCrouchTimer / crouchDuration);
+            collider.size = Vector2.Lerp(mOriginalColliderSize, mTargetColliderSize, mCrouchTimer / crouchDuration);
+            collider.offset = Vector2.Lerp(mOriginalColliderOffset, mTargetColliderOffset, mCrouchTimer / crouchDuration);
             // Manually update sprite color
             GetComponent<SpriteRenderer>().color = Color.Lerp(mOriginalColor, mCrouchColor, mCrouchTimer / crouchDuration);
         }
