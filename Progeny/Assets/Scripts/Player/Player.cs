@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     // direction of player.
     private bool facingRight = true;
     // player states
-    private bool moving, crouching, climbing, pushing, aiming, shooting, reloading = false;
+    private bool moving, crouching, climbing, vaulting, falling, pushing, aiming, shooting, reloading = false;
     // movement speed multiplier
     // will increase/decrease depending on player state
     public float movementSpeed = 2f;
@@ -42,6 +42,12 @@ public class Player : MonoBehaviour
 
     public bool isClimbing(){return climbing;}
     public void setClimbing(bool x){climbing = x;}
+
+    public bool isVaulting(){return vaulting;}
+    public void setVaulting(bool x){vaulting = x;}
+
+    public bool isFalling(){return falling;}
+    public void setFalling(bool x){falling = x;}
 
     public bool isPushing(){return pushing;}
     public void setPushing(bool x){pushing = x;}
