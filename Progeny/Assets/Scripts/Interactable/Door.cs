@@ -6,7 +6,7 @@ public class Door : MonoBehaviour
 {
     public GameObject displayPrefab;
     private GameObject display;
-    private bool isUsable;
+    private bool isUsable = false;
     // Start is called before the first frame update
     void Start()
     {
