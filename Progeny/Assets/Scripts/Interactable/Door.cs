@@ -22,13 +22,17 @@ public class Door : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        isUsable = true;
-        display = Instantiate(displayPrefab, this.transform.parent);
+        if (collision.gameObject.tag == "Player"){
+            isUsable = true;
+            display = Instantiate(displayPrefab, this.transform.parent);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        isUsable = false;
-        Destroy(display);
+        if (collision.gameObject.tag == "Player"){
+            isUsable = false;
+            Destroy(display);
+        }
     }
 
 }
