@@ -64,7 +64,7 @@ public class PlayerCrouch : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(30,30,100,100), mCrouchPressed+"");
+        GUI.Label(new Rect(30,30,100,100), "Crouching: " + mCrouchPressed);
     }
 
     private void FixedUpdate()

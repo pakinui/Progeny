@@ -193,5 +193,10 @@ public class PounceEnemy : MonoBehaviour
 
             if(health == 0) Destroy(this.gameObject);
         }
+        else if(other.tag == "MeleeWeapon")
+        {
+            health -= 1;
+            if(health == 0) Destroy(this.gameObject);
+        }
     }
 }

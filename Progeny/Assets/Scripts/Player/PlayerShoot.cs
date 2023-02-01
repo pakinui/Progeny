@@ -19,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
     private Vector3 mousePos;
     // cooldown variables
     private float cooldownLeft;
+    private float reloadLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,29 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // enter/exit aiming
         if(player.gun != null && Input.GetMouseButtonDown(1) && !player.isClimbing() && !player.isPushing()) { 
             player.setAiming(true);
-        } else if(Input.GetMouseButtonUp(1)) {
+        } else if(player.isAiming() && Input.GetMouseButtonUp(1)) {
             player.setAiming(false);
         }
+
+        // enter reload
+        if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
+        {
+            player.setReloading(true);
+        }
+        // countdown reload
+        if(player.isReloading())
+        {
+            reloadLeft -= Time.deltaTime;
+            if(reloadLeft <= 0f){
+                player.gun.ammoLeft = player.gun.ammoCapacity;
+                player.setReloading(false);
+            }
+        }
+
 
         // while aiming
         if(player.isAiming())
@@ -71,9 +89,10 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft -= Time.deltaTime;
             }
             else if(cooldownLeft <= 0 && Input.GetMouseButtonDown(0)){
-                // shoot and reset weapon cooldown
+                // shoot, decrease ammo and reset weapon cooldown
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
-                cooldownLeft = player.gun.GetComponent<Gun>().fireRate;
+                player.gun.ammoLeft--;
+                cooldownLeft = player.gun.fireRate;
             }
         }
     }
