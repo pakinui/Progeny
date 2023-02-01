@@ -97,7 +97,7 @@ public class PlayerCrouch : MonoBehaviour
         // Update animator
         if (mAnimator != null)
         {
-            mAnimator.SetFloat(Crouching, mCrouchTimer / crouchDuration);
+            //mAnimator.SetFloat(Crouching, mCrouchTimer / crouchDuration);
         }
         else 
         {

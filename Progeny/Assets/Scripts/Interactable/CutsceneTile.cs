@@ -15,11 +15,11 @@ public class CutsceneTile : MonoBehaviour
 
     private Vector3 tempSpeed;
 
-    //[SerializeField] private PlayableDirector _timeline;
+    [SerializeField] private PlayableDirector _timeline;
 
 
      void OnTriggerEnter2D(Collider2D tile){
-        Debug.Log("standing on tile");
+        //Debug.Log("standing on tile");
         if(tile.tag == "Player" && !completedCutscene){
             
             StartCutscene();
@@ -32,24 +32,24 @@ public class CutsceneTile : MonoBehaviour
 
 
     public void StartCutscene(){
-        Debug.Log("start cutscene");
+        Debug.Log("start cutscene: " + player.rb.transform.position.y);
 
 
 
         //stop player from being able to move
         tempSpeed = player.rb.velocity;
         player.rb.velocity = Vector3.zero;
-        player.player.setMoving(false);
+        //player.player.setMoving(false);
         player.player.setAllowedMovement(false);//stop player from being able to move
         
-        //_timeline.Play();
+        _timeline.Play();
         completedCutscene = true;
 
     }
 
 
     public void EndCutscene(){
-        Debug.Log("cutscene finished");
+        //Debug.Log("cutscene finished");
         //thoughtBubble.SetActive(true);
         player.rb.velocity = tempSpeed;
         player.player.setMoving(true);

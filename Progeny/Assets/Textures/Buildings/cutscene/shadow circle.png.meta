@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 549a151d9c1d3b9449c5eccf8cbc9ff0
+guid: 48593021348522042ad1c295b4ba6292
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -52,7 +52,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -117,66 +117,10 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape:
-    - - {x: -117, y: 88}
-      - {x: -117, y: -63}
-      - {x: -116, y: -88}
-      - {x: 118, y: -88}
-      - {x: 117, y: 60}
-      - {x: 58, y: 60}
-      - {x: 27, y: 60}
-      - {x: 26, y: 57}
-      - {x: 26, y: 54}
-      - {x: 29, y: 52}
-      - {x: 30, y: 35}
-      - {x: 30, y: 0}
-      - {x: 30, y: -4}
-      - {x: 28, y: -4}
-      - {x: 28, y: -5}
-      - {x: 29, y: -7}
-      - {x: 29, y: -23}
-      - {x: 28, y: -23}
-      - {x: 28, y: -26}
-      - {x: 29, y: -27}
-      - {x: 29, y: -88}
-      - {x: -1, y: -88}
-      - {x: -28, y: -88}
-      - {x: -26, y: -76}
-      - {x: -25, y: -25}
-      - {x: -27, y: -19}
-      - {x: -25, y: -4}
-      - {x: -24, y: -2}
-      - {x: -24, y: 4}
-      - {x: -26, y: 4}
-      - {x: -26, y: 10}
-      - {x: -25, y: 10}
-      - {x: -25, y: 15}
-      - {x: -26, y: 15}
-      - {x: -26, y: 19}
-      - {x: -27, y: 23}
-      - {x: -28, y: 23}
-      - {x: -25, y: 45}
-      - {x: -25, y: 47}
-      - {x: -27, y: 48}
-      - {x: -26, y: 52}
-      - {x: -26, y: 61}
-      - {x: -25, y: 61}
-      - {x: -25, y: 66}
-      - {x: -26, y: 66}
-      - {x: -26, y: 70}
-      - {x: -29, y: 71}
-      - {x: -33, y: 72}
-      - {x: -35, y: 74}
-      - {x: -37, y: 75}
-      - {x: -38, y: 76}
-      - {x: -39, y: 80}
-      - {x: -40, y: 82}
-      - {x: -42, y: 83}
-      - {x: -46, y: 85}
-      - {x: -47, y: 88}
+    physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []

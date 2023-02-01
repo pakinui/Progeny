@@ -36,25 +36,25 @@ public class PlayerMove : MonoBehaviour
         float direction = Input.GetAxis("Horizontal");
         if(player.isAllowedMovement()){
             // horizontal movement
-        if(!player.isClimbing() && !player.isFalling() && direction != 0)
-        {
-            player.setMoving(true);
-            rb.velocity = new Vector2(direction * player.getCurrentSpeed(), rb.velocity.y);
-        }
-        else
-        {
-            player.setMoving(false);
-        }
+            if(!player.isClimbing() && !player.isFalling() && direction != 0)
+            {
+                player.setMoving(true);
+                rb.velocity = new Vector2(direction * player.getCurrentSpeed(), rb.velocity.y);
+            }
+            else
+            {
+                player.setMoving(false);
+            }
 
-        // flip player in suitable direction
-        if (direction > 0 && !player.isAiming() && !player.isFacingRight())
-        {
-            player.Flip();
-        }
-        else if (direction < 0 && !player.isAiming() && player.isFacingRight())
-        {
-            player.Flip();
-        }
+            // flip player in suitable direction
+            if (direction > 0 && !player.isAiming() && !player.isFacingRight())
+            {
+                player.Flip();
+            }
+            else if (direction < 0 && !player.isAiming() && player.isFacingRight())
+            {
+                player.Flip();
+            }
         }
         
     }
