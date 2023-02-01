@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviour
     {
         if (isInteractable && Input.GetKeyDown("e")){
             // assign reference to gun in the Player script
-            player.gun = newGun;
+            player.gun = newGun.GetComponent<Gun>();
             // hide gun
             newGun.SetActive(false);
             // give the gun to the player object and move position

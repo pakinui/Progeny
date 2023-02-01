@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - LeftClimb
   - RightClimb
+  - MeleeWeapon
   layers:
   - Default
   - TransparentFX

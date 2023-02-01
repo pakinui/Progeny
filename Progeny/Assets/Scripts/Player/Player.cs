@@ -9,11 +9,11 @@ public class Player : MonoBehaviour
     // direction of player.
     private bool facingRight = true;
     // player states
-    private bool moving, crouching, climbing, vaulting, falling, pushing, aiming, shooting, reloading = false;
+    private bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting, reloading = false;
     // default movement speed of player
     public float movementSpeed;
     // reference to the player's gun object
-    public GameObject gun;
+    public Gun gun;
 
     //current speed of player, can change depending on state.
     [SerializeField] private float currentSpeed;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(30,60, 100, 100), "Health: " + currentHealth.ToString());
+        if(gun != null) {GUI.Label(new Rect(30,90, 100, 100), "Ammo: " + gun.ammoLeft);}
     }
 
     // method to flip the player
@@ -92,15 +93,18 @@ public class Player : MonoBehaviour
     public bool isPushing(){return pushing;}
     public void setPushing(bool x){pushing = x;}
 
+    public bool isHitting(){return hitting;}
+    public void setHitting(bool x){hitting = x;}
+
     public bool isAiming(){return aiming;}
     public void setAiming(bool x)
     {
         aiming = x;
         if(x == true) {
-            gun.SetActive(true);
+            gun.gameObject.SetActive(true);
             currentSpeed = movementSpeed/2f;
         } else {
-            gun.SetActive(false);
+            gun.gameObject.SetActive(false);
             currentSpeed = movementSpeed;
         }
     }
