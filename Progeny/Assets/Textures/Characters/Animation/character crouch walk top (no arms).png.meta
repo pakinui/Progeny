@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5560285be2f27b449523b0697600d76
+guid: 2b4bf690816637d49abee6aca0d41c3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character crouch walk legs_0
+      name: character crouch walk top (no arms)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0c118f7b78ba964aaca679455f4acd9
-      internalID: 28610966
+      spriteID: e4723bc4ba5d33e4b9529eba2008f680
+      internalID: 439851576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_1
+      name: character crouch walk top (no arms)_1
       rect:
         serializedVersion: 2
         x: 15
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a1b979297493da49a9408e6dce64358
-      internalID: -1729109286
+      spriteID: 13c0555285902134d89ab1da007f6131
+      internalID: 937346172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_2
+      name: character crouch walk top (no arms)_2
       rect:
         serializedVersion: 2
         x: 30
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e896b3131db4bc444ba246702692cf4e
-      internalID: -569880927
+      spriteID: da833d7b395d17f43979e28d8fddaf0f
+      internalID: 782179829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_3
+      name: character crouch walk top (no arms)_3
       rect:
         serializedVersion: 2
         x: 45
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5ba68f6b800f2b4d9a8b3bd4e5d149a
-      internalID: 169149253
+      spriteID: a8a47afe3d5c9034f928b610673b4e1a
+      internalID: 1608749036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_4
+      name: character crouch walk top (no arms)_4
       rect:
         serializedVersion: 2
         x: 60
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81931fc79847ac4a96de7acb68f7a62
-      internalID: 459787552
+      spriteID: 296bf5b9cddd9f6468da59f6dd53ac3e
+      internalID: -397650299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_5
+      name: character crouch walk top (no arms)_5
       rect:
         serializedVersion: 2
         x: 75
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70e31bedfdee5644fb44896f7df0614b
-      internalID: 1040396376
+      spriteID: 30463934b7981c54aa3a16e77cdca11c
+      internalID: -144482039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_6
+      name: character crouch walk top (no arms)_6
       rect:
         serializedVersion: 2
         x: 90
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a240b4fa7dada44b9c0d85d5bab54b
-      internalID: -1779981006
+      spriteID: dbea0c2ccb1fd1248ad36c40b4f63746
+      internalID: -2109500802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_7
+      name: character crouch walk top (no arms)_7
       rect:
         serializedVersion: 2
         x: 105
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f19b82b3f3fdaa4e99fd7537d6fd727
-      internalID: -1584878183
+      spriteID: 233750761c2317c43a8e4ead3c196ca7
+      internalID: 436637247
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character crouch walk legs_2: -569880927
-      character crouch walk legs_6: -1779981006
-      character crouch walk legs_7: -1584878183
-      character crouch walk legs_4: 459787552
-      character crouch walk legs_0: 28610966
-      character crouch walk legs_1: -1729109286
-      character crouch walk legs_3: 169149253
-      character crouch walk legs_5: 1040396376
+      character crouch walk top (no arms)_7: 436637247
+      character crouch walk top (no arms)_2: 782179829
+      character crouch walk top (no arms)_3: 1608749036
+      character crouch walk top (no arms)_1: 937346172
+      character crouch walk top (no arms)_4: -397650299
+      character crouch walk top (no arms)_6: -2109500802
+      character crouch walk top (no arms)_0: 439851576
+      character crouch walk top (no arms)_5: -144482039
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
