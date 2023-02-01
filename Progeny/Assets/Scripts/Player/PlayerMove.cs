@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
             if(!player.isClimbing() && !player.isFalling() && direction != 0)
             {
                 player.setMoving(true);
-                rb.velocity = new Vector2(direction * player.getCurrentSpeed(), rb.velocity.y);
+                rb.velocity = new Vector2(direction * player.GetCurrentSpeed(), rb.velocity.y);
             }
             else
             {
