@@ -355,10 +355,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 15
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c61c10242bfb24b8e72253a735ee21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSprites:
+  walkingSprites:
   - {fileID: -1203426657, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -445585987, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -1429764877, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
@@ -387,6 +387,16 @@ MonoBehaviour:
   - {fileID: -1016863458, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -1212949940, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -537057058, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
+  idleSprite: {fileID: 21300000, guid: 2d37974f39fb9f446b16a7d5a3b4bc3c, type: 3}
+  pushingSprites:
+  - {fileID: 1685240526, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: -666037438, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: -1223737485, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: 1772654743, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: -1313865256, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: 1339010519, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: 771960307, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
+  - {fileID: 1849832084, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
   framesPerSecond: 10
 --- !u!114 &7276491471710724730
 MonoBehaviour:
@@ -401,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  movementSpeed: 5
+  movementSpeed: 3
   gun: {fileID: 7276491470322930248}
 --- !u!114 &7276491471710724731
 MonoBehaviour:
@@ -415,6 +425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc3cd678bb4bd4cbcd5e91c87b3b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  render: {fileID: 0}
 --- !u!114 &7276491471710724732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +451,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7276491471335496202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da35364f6d212d40b87978b63dae000, type: 3}
   m_Name: 
