@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     //current speed of player, can change depending on state.
     private float currentSpeed;
 
+    //boolean to prevent player from moving when needed (i.e. cutscenes)
+    private bool allowMovement = true;
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
@@ -84,6 +87,9 @@ public class Player : MonoBehaviour
 
     public bool isReloading(){return reloading;}
     public void setReloading(bool x){reloading = x;}
+
+    public bool isAllowedMovement(){return allowMovement;}
+    public void setAllowedMovement(bool x){allowMovement = x;}
 
 
     public void Die()

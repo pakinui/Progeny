@@ -34,8 +34,8 @@ public class PlayerMove : MonoBehaviour
 
         // horizontal movement input
         float direction = Input.GetAxis("Horizontal");
-
-        // horizontal movement
+        if(player.isAllowedMovement()){
+            // horizontal movement
         if(!player.isClimbing() && !player.isFalling() && direction != 0)
         {
             player.setMoving(true);
@@ -55,6 +55,8 @@ public class PlayerMove : MonoBehaviour
         {
             player.Flip();
         }
+        }
+        
     }
 
 }
