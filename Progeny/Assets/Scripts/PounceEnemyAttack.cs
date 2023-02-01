@@ -7,13 +7,12 @@ public class PounceEnemyAttack : MonoBehaviour
     // reference to the player
     Player player;
     // damage dealt to player on successful atttack (currently does a third)
-    public float attackDamage;
+    public float attackDamage = 25;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        attackDamage = player.maxHealth / 3f;
     }
 
     // Update is called once per frame
