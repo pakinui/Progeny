@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     // reference to the 'Player' script
-    private Player player;
+    public Player player;
     // reference to the RigidBody component
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    public Renderer render;
 
     // Start is called before the first frame update
     void Start()
@@ -15,18 +17,20 @@ public class PlayerMove : MonoBehaviour
         // assigning references
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // check if the player is falling
-        if(rb.velocity.y < 0f && !player.isFalling()) {
-            player.setFalling(true);
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        } else if(rb.velocity.y >= 0 && player.isFalling()) {
-            player.setFalling(false);
-        }
+        // if(rb.velocity.y < 0f && !player.isFalling()) {
+        //     Debug.Log("falling"); //says falling while walking??
+        //     player.setFalling(true);
+        //     rb.velocity = new Vector2(0, rb.velocity.y);
+        // } else if(rb.velocity.y >= 0 && player.isFalling()) {
+        //     player.setFalling(false);
+        // }
 
         // horizontal movement input
         float direction = Input.GetAxis("Horizontal");
