@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // health of player
-    public float health = 100f;
+    // maxHealth of player
+    public float maxHealth = 100f;
     // direction of player.
     private bool facingRight = true;
     // player states
@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
 
     //current speed of player, can change depending on state.
     private float currentSpeed;
+    //current health
+    private float currentHealth;
 
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
+        currentHealth = maxHealth;
     }
     // Update is called once per frame
     public void Update(){}
@@ -40,8 +43,17 @@ public class Player : MonoBehaviour
     }
 
     //getter for returning current speed of player.
-    public float getCurrentSpeed(){
+    public float GetCurrentSpeed(){
         return currentSpeed;
+    }
+
+    public float GetCurrentHealth(){
+        return currentHealth;
+    }
+
+    //adds health to value (subtracts if negative)
+    public void SetCurrentHealth(float health){
+        currentHealth = health;
     }
     
     // direction variable accessor

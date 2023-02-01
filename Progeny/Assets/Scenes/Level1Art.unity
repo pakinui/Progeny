@@ -4289,7 +4289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0feaaed1e8282488cc6e55ed14e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 100
   movementSpeed: 2
   gun: {fileID: 0}
 --- !u!50 &1171568554
@@ -13898,10 +13898,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0bf82f0523e93ac4ba56c00139865216, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d1c29fdebea2b524eb08ebc1fbdf0714, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.62
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -15284,6 +15284,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359493715957194, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195359493715957204, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -6,26 +6,28 @@ public class PounceEnemyAttack : MonoBehaviour
 {
     // reference to the player
     Player player;
-    // damage dealt to player on successful atttack
-    public float attackDamage = 100f/3f;
+    // damage dealt to player on successful atttack (currently does a third)
+    public float attackDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        attackDamage = player.maxHealth / 3f;
     }
 
     // Update is called once per frame
     void Update(){}
 
     // attack
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
-        {
-            player.health -= attackDamage;
-            Debug.Log("OUCH! health: " + player.health);
-            if (player.health <= 0) {player.Die();}
+        if(other.tag == "Player")
+        {    
+            float newHealth;
+            player.SetCurrentHealth(newHealth = player.GetCurrentHealth() - attackDamage);
+            Debug.Log("OUCH! health: " + newHealth);
+            if (newHealth <= 0) {player.Die();}
         }
     }
 }
