@@ -4,8 +4,12 @@ using System.Collections;
 public class PlayerAnimation : MonoBehaviour {
 
    // An array with the sprites used for animation
-   public Sprite[] animSprites;
+   public Sprite[] walkingSprites;
    public Sprite idleSprite;
+   public Sprite[] pushingSprites;
+
+   //set to whatever action player is doing atm
+   private Sprite[] animSprites;
    
    // Controls how fast to change the sprites when
    // animation is running
@@ -29,6 +33,7 @@ public class PlayerAnimation : MonoBehaviour {
       // Get a reference to game object renderer and
       // cast it to a Sprite Rendere
       animRenderer = GetComponent<Renderer>() as SpriteRenderer;
+      animSprites = walkingSprites;
 
       //reference to player
       player = GetComponent<Player>();
@@ -54,8 +59,14 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      //if(player.isMoving()){
+      if(player.isMoving()){
          if(animRunning) {
+
+            if(player.isPushing()){
+               animSprites = pushingSprites;
+            }else{
+               animSprites = walkingSprites;
+            }
          // Animation is running, so we need to 
          // figure out what frame to use at this point
          // in time
@@ -78,9 +89,9 @@ public class PlayerAnimation : MonoBehaviour {
             animRunning = false;
          }
       }
-      // }else{
-      //       animRenderer.sprite = idleSprite;
-      // }
+      }else{
+         animRenderer.sprite = idleSprite;
+      }
 
          
    }

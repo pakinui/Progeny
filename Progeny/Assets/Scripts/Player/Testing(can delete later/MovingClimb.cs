@@ -14,7 +14,9 @@ public class MovingClimb : MonoBehaviour
     private float boxX;
     private float boxY;
 
-    private float animationTime = 3;
+    //private float animationTime = 3;
+
+    public PlayerAnimation playerAnimation;
 
     //boolean to see if character is currently climbing
     private bool currClimbing;
@@ -31,6 +33,7 @@ public class MovingClimb : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         if(collider.tag == "Player"){
             contact = true;
+            player.player.setPushing(true);
         }
     }
 
@@ -39,6 +42,7 @@ public class MovingClimb : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider){
         if(collider.tag == "Player"){
             contact = false;
+            player.player.setPushing(false);
         }
     }
 
@@ -46,11 +50,17 @@ public class MovingClimb : MonoBehaviour
     void Update()
     {
 
+        float userInput = Input.GetAxis("Horizontal");
         if(Input.GetKeyDown(KeyCode.Space) && contact){
             if(!currClimbing){
                 currClimbing = true; 
                 StartClimbing();
             }
+        }else if(userInput != 0f){
+            //player is pushing left or right buttons
+            //start pushing animation
+
+
         }   
         boxX = transform.position.x;
         boxY = transform.position.y;
