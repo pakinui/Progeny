@@ -10,9 +10,11 @@ public class MovingClimb : MonoBehaviour
 
     public PlayerMove player;
     public Rigidbody2D box; // corner of climbing box
+    public bool pushable = false; // is this obj pushable
     
     private float boxX;
     private float boxY;
+    
 
     //private float animationTime = 3;
 
@@ -33,7 +35,10 @@ public class MovingClimb : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         if(collider.tag == "Player"){
             contact = true;
-            player.player.setPushing(true);
+            if(pushable){
+                player.player.setPushing(true);
+            }
+            
         }
     }
 
@@ -42,7 +47,9 @@ public class MovingClimb : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider){
         if(collider.tag == "Player"){
             contact = false;
-            player.player.setPushing(false);
+            if(pushable){
+                player.player.setPushing(false);
+            }
         }
     }
 
