@@ -18,7 +18,6 @@ public class PlayerShoot : MonoBehaviour
     // position of the mouse
     private Vector3 mousePos;
     // cooldown variables
-    public float cooldown = 2f;
     private float cooldownLeft;
 
     // Start is called before the first frame update
@@ -27,16 +26,13 @@ public class PlayerShoot : MonoBehaviour
         // assigning references
         player = GetComponent<Player>();
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
-
-        // set initial cooldown
-        cooldownLeft = cooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
         // enter/exit aiming
-        if(Input.GetMouseButtonDown(1)) { 
+        if(player.gun != null && Input.GetMouseButtonDown(1) && !player.isClimbing() && !player.isPushing()) { 
             player.setAiming(true);
         } else if(Input.GetMouseButtonUp(1)) {
             player.setAiming(false);
@@ -77,7 +73,7 @@ public class PlayerShoot : MonoBehaviour
             else if(cooldownLeft <= 0 && Input.GetMouseButtonDown(0)){
                 // shoot and reset weapon cooldown
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
-                cooldownLeft = cooldown;
+                cooldownLeft = player.gun.GetComponent<Gun>().fireRate;
             }
         }
     }
