@@ -9,18 +9,23 @@ public class PounceEnemy : MonoBehaviour
         Idle, //does nothing until player is in range
         Approach,//starts to go towards player until in range of attack
         Prepare,//charges attack up
-        Pounce//leaps toward player
+        Pounce,//leaps toward player, deals damage if hit
+        Dash//dashes toward player, deals damage if hit
     }
 
     // current state
     public State state = State.Idle;
+     // enemy health
+    public int health = 3;
     // state change ranges
     public float idleRange; // range needed for idle to end 
     public float approachRange; // range needed for approach to end
     // movement and pounce speeds
     public float speed = 4;
+    public float pounceChance = 0.5f;
     public float pounceSpeedVertical = 7;
     public float pounceSpeedHorizontal = 10;
+    public float dashSpeed = 10;
     public float prepareDuration = 1.5f; // time to wait before pounce
     private float prepareTimer;
     // reference to player
@@ -31,8 +36,8 @@ public class PounceEnemy : MonoBehaviour
     private float direction = -1; // negative for left, positive for right
     private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
-    // enemy health
-    public int health = 3;
+    private bool dashStart = false;
+   
     // reference to the fangs
     GameObject fangs;
 
@@ -63,6 +68,9 @@ public class PounceEnemy : MonoBehaviour
             case State.Pounce:
                 Pounce();
                 break;
+            case State.Dash:
+                Dash();
+                break;
         }
     }
 
@@ -82,6 +90,9 @@ public class PounceEnemy : MonoBehaviour
                 break;
             case State.Pounce:
                 sr.color = new Color(0, 255f, 0f, 1f);
+                break;
+            case State.Dash:
+                sr.color = new Color(255f, 255f, 0f, 1f);
                 break;
         }
     }
@@ -111,9 +122,15 @@ public class PounceEnemy : MonoBehaviour
         CheckFacing();
         prepareTimer -= Time.deltaTime;
         if (prepareTimer <= 0){
-            SwitchState(State.Pounce);
+            float randomValue = Random.Range(0f, 1f);
+                if (randomValue <= pounceChance){
+                    SwitchState(State.Pounce);
+                }
+                else{
+                    SwitchState(State.Dash);
+                }
+            }
         } 
-    }
 
     void Pounce()
     {
@@ -126,6 +143,19 @@ public class PounceEnemy : MonoBehaviour
             isJumping = false;
             fangs.SetActive(false);
             SwitchState(State.Approach);         
+        }
+    }
+
+    void Dash(){
+        if (!dashStart){
+            dashStart = true;
+            rb.velocity = new Vector2(direction * dashSpeed, 0);
+            fangs.SetActive(true);
+        }
+        else if (rb.velocity.x == 0 && dashStart){
+            dashStart = false;
+            fangs.SetActive(false);
+            SwitchState(State.Approach);
         }
     }
 
