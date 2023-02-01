@@ -27,6 +27,9 @@ public class PlayerAnimation : MonoBehaviour {
 
    //is player currently walking
    private Player player;
+
+   //boolean true if cutscene is currently active
+   private bool cutsceneActive = false;
    
    // Use this for initialization
    void Start () {
@@ -44,7 +47,7 @@ public class PlayerAnimation : MonoBehaviour {
       if(!animRunning) {
          // The animation is triggered by user input
          float userInput = Input.GetAxis("Horizontal");
-         if(userInput != 0f) {
+         if(userInput != 0f || !player.isAllowedMovement()) {
             // User pressed the move left or right button
             
             // Animation will start playing
@@ -59,7 +62,7 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      if(player.isMoving()){
+      if(player.isMoving() ){
          if(animRunning) {
 
             if(player.isPushing()){
@@ -94,5 +97,19 @@ public class PlayerAnimation : MonoBehaviour {
       }
 
          
+   }
+
+
+   public void flipPlayer(){
+      player.Flip();
+   }
+
+   //methods to set movement during cutscenes
+   public void setPlayerMovementTrue(){
+      player.setMoving(true);
+   }
+
+    public void setPlayerMovementFalse(){
+      player.setMoving(false);
    }
 }
