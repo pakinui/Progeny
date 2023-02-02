@@ -59,7 +59,7 @@ public class Pickup : MonoBehaviour
         }
     }
 
-    void OnColliderExit2D(Collider2D other) {
+    void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Player"){
             isInteractable = false;
             //Destroy(display);
