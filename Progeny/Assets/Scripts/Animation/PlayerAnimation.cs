@@ -27,9 +27,6 @@ public class PlayerAnimation : MonoBehaviour {
 
    //is player currently walking
    private Player player;
-
-   //boolean true if cutscene is currently active
-   private bool cutsceneActive = false;
    
    // Use this for initialization
    void Start () {
