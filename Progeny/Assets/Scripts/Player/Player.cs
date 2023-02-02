@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     // reference to the player's gun object
     public Gun gun;
 
+    PlayerShoot playerShoot;
+
     //current speed of player, can change depending on state.
     [SerializeField] private float currentSpeed;
     //current health
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
     public void Start(){
         currentSpeed = movementSpeed;
         currentHealth = maxHealth;
+        playerShoot = GetComponent<PlayerShoot>();
     }
     // Update is called once per frame
     public void Update(){}
@@ -35,6 +38,7 @@ public class Player : MonoBehaviour
     {
         GUI.Label(new Rect(30,60, 100, 100), "Health: " + currentHealth.ToString());
         if(gun != null) {GUI.Label(new Rect(30,90, 100, 100), "Ammo: " + gun.ammoLeft);}
+        if(gun != null) {GUI.Label(new Rect(30,120, 100, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft());}
     }
 
     // method to flip the player

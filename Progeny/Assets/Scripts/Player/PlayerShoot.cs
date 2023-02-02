@@ -18,8 +18,8 @@ public class PlayerShoot : MonoBehaviour
     // position of the mouse
     private Vector3 mousePos;
     // cooldown variables
-    private float cooldownLeft;
-    private float reloadLeft;
+    private float cooldownLeft = 0;
+    private float reloadLeft = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -88,7 +88,9 @@ public class PlayerShoot : MonoBehaviour
                 // decrease cooldown
                 cooldownLeft -= Time.deltaTime;
             }
-            else if(cooldownLeft <= 0 && Input.GetMouseButtonDown(0)){
+
+            //fire
+            else if(cooldownLeft <= 0f && Input.GetMouseButtonDown(0) && player.gun.ammoLeft > 0){
                 // shoot, decrease ammo and reset weapon cooldown
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
                 player.gun.ammoLeft--;
@@ -96,4 +98,8 @@ public class PlayerShoot : MonoBehaviour
             }
         }
     }
+
+   public float GetCooldownLeft(){
+        return cooldownLeft;
+   }
 }
