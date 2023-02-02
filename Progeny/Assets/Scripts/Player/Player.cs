@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Player : MonoBehaviour
 
     PlayerShoot playerShoot;
 
+    SpriteRenderer sr;
+    private bool red = false;
+    private float redTimer, redDuration = 1f;
+
     //current speed of player, can change depending on state.
     [SerializeField] private float currentSpeed;
     //current health
@@ -30,9 +35,17 @@ public class Player : MonoBehaviour
         currentSpeed = movementSpeed;
         currentHealth = maxHealth;
         playerShoot = GetComponent<PlayerShoot>();
+        sr = GetComponent<SpriteRenderer>();
     }
     // Update is called once per frame
-    public void Update(){}
+    public void Update(){
+        if (isRed()){
+            redTimer -= Time.deltaTime;
+            if (redTimer <= 0){
+                setRed(false);
+            }
+        }
+    }
 
     private void OnGUI()
     {
@@ -70,6 +83,21 @@ public class Player : MonoBehaviour
         currentHealth = health;
     }
     
+    // red accessor
+    public bool isRed(){return red;}
+    // red mutator
+    public void setRed(bool x)
+    {
+        red = x;
+        if(x == true){
+            redTimer = redDuration;
+            sr.color = new Color(255f, 0f, 0f, 1f);
+        }else{
+            sr.color = new Color(255f, 255f, 255f, 1f);
+        }
+        
+    }
+
     // direction variable accessor
     public bool isFacingRight(){return facingRight;}
     
@@ -129,7 +157,8 @@ public class Player : MonoBehaviour
     public void Die()
     {
         // temporary
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // TODO: create a proper death loop
     }
 }

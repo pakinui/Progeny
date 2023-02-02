@@ -73,7 +73,7 @@ public class PlayerCrouch : MonoBehaviour
         if (mPlayer.isClimbing() || mPlayer.isPushing()) return;
         
         // Crouch
-        if (!mCrouchPressed && !mCeilingTriggerCheck2D.Triggered())
+        if (!mCrouchPressed && !mCeilingTriggerCheck2D.Triggered() && mPlayer.isCrouching())
         {
             // stand up
             mCrouchTimer -= Time.fixedDeltaTime;
