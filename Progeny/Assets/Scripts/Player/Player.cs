@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -156,7 +157,8 @@ public class Player : MonoBehaviour
     public void Die()
     {
         // temporary
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // TODO: create a proper death loop
     }
 }
