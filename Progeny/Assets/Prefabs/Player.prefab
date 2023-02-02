@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  movementSpeed: 3
+  movementSpeed: 4
   gun: {fileID: 0}
   currentSpeed: 0
   currentHealth: 0
