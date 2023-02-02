@@ -8,6 +8,7 @@ public class ShootingTutorial : MonoBehaviour
     //text to pass onto storyText and display
     public TextAsset textFile;
     public GroundEnemy enemy;
+    public GroundEnemy secondEnemy;
 
     private bool tutorialCompleted = false;
    
@@ -34,16 +35,24 @@ public class ShootingTutorial : MonoBehaviour
 
     void Update(){
 
+        //when storytext completed show thought
         if(story.storyComplete && !tutorialCompleted){
-
             bubble.SetBubbleText("hold right to aim, left click to shoot. . .");
             bubble.ShowBubble();
         }
 
+        //when enemy is killed get rid of thought
         if(enemy.health == 0 && !tutorialCompleted){
             bubble.hideBubble();
             tutorialCompleted = true;
         }
+
+        if(secondEnemy.health < 3){
+            bubble.SetBubbleText("this one can move!");
+            bubble.ShowBubbleForSeconds(2.0f);
+        }
+
+        
     }
 
 }

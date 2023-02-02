@@ -15,6 +15,7 @@ public class ThoughtBubble : MonoBehaviour
     //player
     private Player player;
     private Rigidbody2D rb;
+    private bool bubbleOnTimer = false;
      
 
     // Start is called before the first frame update
@@ -45,20 +46,37 @@ public class ThoughtBubble : MonoBehaviour
         showBubble = false;
     }
 
+    public void ShowBubbleForSeconds(float sec){
+        bubbleOnTimer = true;
+        timeRemaining = sec;
+        ShowBubble();
+        
+        
+
+    }
+
     // Update is called once per frame
     void Update()
     {
 
-        
-        if(timeRemaining > 0 || showBubble){
-            timeRemaining -= Time.deltaTime;
+        if(bubbleOnTimer){
+            //if bubble is on a timer
+            if(timeRemaining > 0 && showBubble){
+                timeRemaining -= Time.deltaTime;
 
-            rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
-        }else{   
-              
-            //speechBubble.SetActive(false);
-   
+                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
+            }else{
+                //timer is up
+                hideBubble();
+                bubbleOnTimer = false;
+            }
+        }else{
+            //if bubble is not on a timer
+            if(showBubble){
+                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
+            }
         }
+        
 
     }
 
