@@ -8,26 +8,23 @@ public class ThoughtBubble : MonoBehaviour
 {
     public float timeRemaining = 3;
     private bool showBubble = false;
-    //player
-    private Player player;
-    private GameObject speechBubble;
-    private Rigidbody2D rb;
+    
     public GameObject bubble;
     public TextMeshProUGUI theText;
+
+    //player
+    private Player player;
+    private Rigidbody2D rb;
      
-
-    
-    
-
 
     // Start is called before the first frame update
     void Start()
     {
         bubble.SetActive(false);
         player = GameObject.Find("Player").GetComponent<Player>();
-        //speech bubbles rb
-        rb = bubble.GetComponent<Rigidbody2D>();
-        //rb.SetActive(true);
+        
+        rb = gameObject.GetComponent<Rigidbody2D>();
+       
 
 
     }
@@ -56,7 +53,7 @@ public class ThoughtBubble : MonoBehaviour
         if(timeRemaining > 0 || showBubble){
             timeRemaining -= Time.deltaTime;
 
-            rb.transform.position = new Vector3 (player.transform.position.x + 0.7f, player.transform.position.y, player.transform.position.z);
+            rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
         }else{   
               
             //speechBubble.SetActive(false);
