@@ -25,13 +25,13 @@ public class TutorialTiles : MonoBehaviour
 
      private Player player;
      private StoryText story;
-     private PounceEnemy enemy;
+     private GroundEnemy enemy;
      // private StoryText story;
     private ThoughtBubble bubble;
 
     void Start(){
          player = GameObject.Find("Player").GetComponent<Player>();
-         enemy = GameObject.Find("ShootingEnemy"). GetComponent<PounceEnemy>();
+         enemy = GameObject.Find("ShootingEnemy"). GetComponent<GroundEnemy>();
         story = gameObject.GetComponent<StoryText>();
         bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
         // textFile = GetComponent<TextAsset>();

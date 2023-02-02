@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PounceEnemyAttack : MonoBehaviour
+public class GroundEnemyAttack : MonoBehaviour
 {
     // reference to the player
     Player player;

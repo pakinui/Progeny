@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PounceEnemy : MonoBehaviour
+public class GroundEnemy : MonoBehaviour
 {
     public enum State
     {
