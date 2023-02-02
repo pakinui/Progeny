@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
     {
         if (isUsable && Input.GetKeyDown("e")){
             _animator.SetTrigger("OpenDoor");
-
+            Destroy(display);
         }
     }
 
