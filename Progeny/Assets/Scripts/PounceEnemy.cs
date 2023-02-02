@@ -8,7 +8,8 @@ public class PounceEnemy : MonoBehaviour
     {
         Idle, //does nothing until player is in range
         Approach,//starts to go towards player until in range of attack
-        Prepare,//charges attack up
+        PouncePrep,//charges pounce attack up
+        DashPrep,//charges dash attack up
         Pounce,//leaps toward player, deals damage if hit
         Dash//dashes toward player, deals damage if hit
     }
@@ -65,8 +66,11 @@ public class PounceEnemy : MonoBehaviour
             case State.Approach:
                 Approach();
                 break;
-            case State.Prepare:
-                Prepare();
+            case State.PouncePrep:
+                PouncePrep();
+                break;
+            case State.DashPrep:
+                DashPrep();
                 break;
             case State.Pounce:
                 Pounce();
@@ -93,14 +97,18 @@ public class PounceEnemy : MonoBehaviour
                 //sr.color = new Color(255f, 255f, 255f, 1f);
                 break;
             case State.Approach:
-                //sr.color = new Color(255f, 0f, 0f, 1f);
+                sr.color = new Color(255f, 255f, 255f, 1f);
                 break;
-            case State.Prepare:
-                //sr.color = new Color(0f, 0f, 255f, 1f);
+            case State.PouncePrep:
+                sr.color = Color.yellow;
                 prepareTimer = prepareDuration;
                 break;
             case State.Pounce:
                 //sr.color = new Color(0, 255f, 0f, 1f);
+                break;
+            case State.DashPrep:
+                sr.color = Color.blue;
+                prepareTimer = prepareDuration;
                 break;
             case State.Dash:
                 //sr.color = new Color(255f, 255f, 0f, 1f);
@@ -124,24 +132,23 @@ public class PounceEnemy : MonoBehaviour
         if(Vector2.Distance(player.transform.position, transform.position) <= approachRange)
         {
             rb.velocity = new Vector2(0, 0);
-            SwitchState(State.Prepare);
+            float randomValue = Random.Range(0f, 1f);
+            if (randomValue <= pounceChance){
+                SwitchState(State.PouncePrep);
+            } else {
+                SwitchState(State.DashPrep);
+            }
         }
     }
 
-    void Prepare()
+    void PouncePrep()
     {
         CheckFacing();
         prepareTimer -= Time.deltaTime;
         if (prepareTimer <= 0){
-            float randomValue = Random.Range(0f, 1f);
-                if (randomValue <= pounceChance){
-                    SwitchState(State.Pounce);
-                }
-                else{
-                    SwitchState(State.Dash);
-                }
-            }
-        } 
+            SwitchState(State.Pounce);
+        }
+    } 
 
     void Pounce()
     {
@@ -154,6 +161,15 @@ public class PounceEnemy : MonoBehaviour
             isJumping = false;
             fangs.SetActive(false);
             SwitchState(State.Approach);         
+        }
+    }
+
+    void DashPrep()
+    {
+        CheckFacing();
+        prepareTimer -= Time.deltaTime;
+        if(prepareTimer <= 0){
+            SwitchState(State.Dash);
         }
     }
 
@@ -201,7 +217,11 @@ public class PounceEnemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             health -= 1;
-            if(health == 0) Destroy(this.gameObject);
+            if(health == 0){
+                Destroy(this.gameObject);
+            }else if(state == State.Idle){
+                SwitchState(State.Approach);
+            }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;

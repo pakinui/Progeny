@@ -25,7 +25,6 @@ public class PounceEnemyAttack : MonoBehaviour
         {    
             float newHealth;
             player.SetCurrentHealth(newHealth = player.GetCurrentHealth() - attackDamage);
-            Debug.Log("OUCH! health: " + newHealth);
             if (newHealth <= 0) {player.Die();}
 
             player.setRed(true);
