@@ -77,10 +77,8 @@ public class PounceEnemy : MonoBehaviour
         }
 
         if (isRed){
-            Debug.Log("HEllo");
             damageTimer -= Time.deltaTime;
             if (damageTimer <= 0){
-                Debug.Log("oh.");
                 sr.color = new Color(255f, 255f, 255f, 1f);
                 isRed = false;
             }
