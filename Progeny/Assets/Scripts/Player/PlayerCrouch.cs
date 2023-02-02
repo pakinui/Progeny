@@ -13,7 +13,6 @@ public class PlayerCrouch : MonoBehaviour
     private Player mPlayer;
     private BoxCollider2D collider;
     
-    
     private Color mOriginalColor;
     private Color mCrouchColor;
     public Vector2 mTargetColliderSize = new Vector2(0.75f, 1f);
@@ -42,14 +41,29 @@ public class PlayerCrouch : MonoBehaviour
     {
         // set player to crouching
         mPlayer.setCrouching(true);
+        // TEMPORARY WHILE TESTING: the final product should probs Lerp
+        // half the size of the player collider and adjust its position (offset)
+        collider.size = new Vector2(collider.size.x, collider.size.y / 2);
+        collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y/2);
+        // half the height of the player while crouched
+        transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y / 2);
+        transform.position = new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2);
     }
     
     void EndCrouch()
     {
         // set player to not crouching
         mPlayer.setCrouching(false);
+        // TEMPORARY WHILE TESTING: the final product should probs Lerp
+        // double the size of the player collider and adjust its position (offset)
+        collider.offset = new Vector2(collider.offset.x, collider.offset.y + collider.size.y/2);
+        collider.size = new Vector2(collider.size.x, collider.size.y * 2);
+        // double the height of the player while crouched
+        transform.position = new Vector2(transform.position.x, transform.position.y + transform.localScale.y/2);
+        transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * 2);
     }
     
+
     private void Update()
     {
         if (Input.GetButtonDown("Crouch"))
@@ -83,7 +97,7 @@ public class PlayerCrouch : MonoBehaviour
                 EndCrouch();
             }
         } 
-        else if (mCrouchPressed)
+        else if (mCrouchPressed && !mPlayer.isCrouching())
         {
             // crouch
             BeginCrouch();
@@ -104,8 +118,8 @@ public class PlayerCrouch : MonoBehaviour
             if (mCrouchTimer > 0)
                 Debug.LogWarning("Animator is null");
             // Manually update collider to foot position
-            collider.size = Vector2.Lerp(mOriginalColliderSize, mTargetColliderSize, mCrouchTimer / crouchDuration);
-            collider.offset = Vector2.Lerp(mOriginalColliderOffset, mTargetColliderOffset, mCrouchTimer / crouchDuration);
+            //collider.size = Vector2.Lerp(mOriginalColliderSize, mTargetColliderSize, mCrouchTimer / crouchDuration);
+            //collider.offset = Vector2.Lerp(mOriginalColliderOffset, mTargetColliderOffset, mCrouchTimer / crouchDuration);
             // Manually update sprite color
             GetComponent<SpriteRenderer>().color = Color.Lerp(mOriginalColor, mCrouchColor, mCrouchTimer / crouchDuration);
         }
