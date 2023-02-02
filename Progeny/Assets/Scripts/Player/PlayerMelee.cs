@@ -27,7 +27,7 @@ public class PlayerMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player.isAiming() && Input.GetMouseButtonDown(0) && cooldownLeft <= 0){
+        if(!player.isAiming() && !player.isCrouching() && Input.GetMouseButtonDown(0) && cooldownLeft <= 0){
             Swing();
         }
         if(player.isHitting()){
