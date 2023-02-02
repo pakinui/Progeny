@@ -9,6 +9,7 @@ TagManager:
   - LeftClimb
   - RightClimb
   - MeleeWeapon
+  - ThoughtBubble
   layers:
   - Default
   - TransparentFX
