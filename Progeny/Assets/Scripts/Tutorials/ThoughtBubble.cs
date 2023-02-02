@@ -7,7 +7,7 @@ using TMPro;
 public class ThoughtBubble : MonoBehaviour
 {
     public float timeRemaining = 3;
-    private bool showBubble = false;
+    public bool showBubble = false;
     
     public GameObject bubble;
     public TextMeshProUGUI theText;

@@ -9,6 +9,9 @@ public class MovingTutorial : MonoBehaviour
     private Player player;
     private Rigidbody2D rb;
     private Rigidbody2D checkpointRb;
+
+    private GameObject leftAndRight;
+    private GameObject interact;
     
 
     private bool checkPointReached = false;
@@ -19,6 +22,10 @@ public class MovingTutorial : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         checkpointRb = checkpoint.GetComponent<Rigidbody2D>();
+
+        leftAndRight = GameObject.Find("Move A/D");
+        interact = GameObject.Find("interact E");
+        interact.SetActive(false);
 
     }
 
@@ -35,8 +42,15 @@ public class MovingTutorial : MonoBehaviour
             if(player.transform.position.x > checkpointRb.transform.position.x) checkPointReached = true;
 
         }else{
-            checkPointReached = true;
-            Destroy(this.gameObject);
+            interact.SetActive(true);
+            leftAndRight.SetActive(false);
+            
+            if(Input.GetKeyDown("e")){
+                Destroy(this.gameObject);
+            }
+            
+            
+
         }
     }
 }
