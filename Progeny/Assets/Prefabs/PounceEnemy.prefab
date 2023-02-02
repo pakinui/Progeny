@@ -242,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   health: 3
+  damageDuration: 0.3
   idleRange: 20
   approachRange: 5
   speed: 4

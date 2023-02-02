@@ -17,6 +17,9 @@ public class PounceEnemy : MonoBehaviour
     public State state = State.Idle;
      // enemy health
     public int health = 3;
+    public float damageDuration = 1;
+    private float damageTimer;
+    private bool isRed = false;
     // state change ranges
     public float idleRange; // range needed for idle to end 
     public float approachRange; // range needed for approach to end
@@ -72,6 +75,16 @@ public class PounceEnemy : MonoBehaviour
                 Dash();
                 break;
         }
+
+        if (isRed){
+            Debug.Log("HEllo");
+            damageTimer -= Time.deltaTime;
+            if (damageTimer <= 0){
+                Debug.Log("oh.");
+                sr.color = new Color(255f, 255f, 255f, 1f);
+                isRed = false;
+            }
+        }
     }
 
     void SwitchState(State nextState){
@@ -79,20 +92,20 @@ public class PounceEnemy : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
-                sr.color = new Color(255f, 255f, 255f, 1f);
+                //sr.color = new Color(255f, 255f, 255f, 1f);
                 break;
             case State.Approach:
-                sr.color = new Color(255f, 0f, 0f, 1f);
+                //sr.color = new Color(255f, 0f, 0f, 1f);
                 break;
             case State.Prepare:
-                sr.color = new Color(0f, 0f, 255f, 1f);
+                //sr.color = new Color(0f, 0f, 255f, 1f);
                 prepareTimer = prepareDuration;
                 break;
             case State.Pounce:
-                sr.color = new Color(0, 255f, 0f, 1f);
+                //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             case State.Dash:
-                sr.color = new Color(255f, 255f, 0f, 1f);
+                //sr.color = new Color(255f, 255f, 0f, 1f);
                 break;
         }
     }
@@ -190,13 +203,18 @@ public class PounceEnemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             health -= 1;
-
             if(health == 0) Destroy(this.gameObject);
+            sr.color = new Color(255f, 0f, 0f, 1f);
+            isRed = true;
+            damageTimer = damageDuration;
         }
         else if(other.tag == "MeleeWeapon")
         {
             health -= 1;
             if(health == 0) Destroy(this.gameObject);
+            sr.color = new Color(255f, 0f, 0f, 1f);
+            isRed = true;
+            damageTimer = damageDuration;
         }
     }
 }
