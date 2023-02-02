@@ -96,8 +96,7 @@ public class StoryText : MonoBehaviour
 
         if(currLine > endLine){
             textBox.SetActive(false);
-            player.setAllowedMovement(true);
-            player.setMoving(true);
+            player.startPlayerMovement();
             storyComplete = true;
         }else{
             theText.text = textLines[currLine];

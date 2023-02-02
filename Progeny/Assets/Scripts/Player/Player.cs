@@ -153,6 +153,17 @@ public class Player : MonoBehaviour
     public bool isAllowedMovement(){return allowMovement;}
     public void setAllowedMovement(bool x){allowMovement = x;}
 
+    // to stop both allowing movement and movement animations
+    public void stopPlayerMovement(){
+        allowMovement = false;
+        moving = false;
+    }
+    // to start both allowing movement and movement animations
+    public void startPlayerMovement(){
+        allowMovement = true;
+        moving = true;
+    }
+
 
     public void Die()
     {
