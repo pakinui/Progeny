@@ -15,7 +15,10 @@ namespace Ruiyi.Controller.GameController
         public float smoothSpeed = 4f;
         // offset of camera position
         public float xOffset = 3f;
-        public float yOffset = 3.25f;
+        public float yOffset = 3.5f;
+
+        private float leftEdgeX = -10.5f;
+        private float rightEdgeX = 189.62f;
 
         // private float xMin = -5;
         // private float xMax = 5;
@@ -43,6 +46,12 @@ namespace Ruiyi.Controller.GameController
             targetPos.y = playerPos.y + yOffset;
 
             // update camera position
+            if(targetPos.x < leftEdgeX){
+                targetPos.x = leftEdgeX;
+            }
+            if(targetPos.x > rightEdgeX){
+                targetPos.x = rightEdgeX;
+            }
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * smoothSpeed);
         }
     }
