@@ -20,7 +20,11 @@ public class Player : MonoBehaviour
 
     SpriteRenderer sr;
     private bool red = false;
-    private float redTimer, redDuration = 1f;
+    private float redTimer, redDuration = 0.5f;
+
+    // variables to disable isShooting
+    public float outOfCombatDuration;
+    private float combatTimer;
 
     //current speed of player, can change depending on state.
     [SerializeField] private float currentSpeed;
@@ -45,6 +49,12 @@ public class Player : MonoBehaviour
                 setRed(false);
             }
         }
+
+        if(combatTimer > 0f){
+            combatTimer -= Time.deltaTime;
+        } else {
+            setShooting(false);
+        }
     }
 
     private void OnGUI()
@@ -67,6 +77,8 @@ public class Player : MonoBehaviour
         }
         // flip the ledge indicator boxes
         GetComponent<PlayerClimb>().xOffset *= -1;
+        // flip the camera controller direction
+        //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().direction *= -1;
     }
 
     //getter for returning current speed of player.
@@ -145,7 +157,13 @@ public class Player : MonoBehaviour
     }
 
     public bool isShooting(){return shooting;}
-    public void setShooting(bool x){shooting = x;}
+    public void setShooting(bool x){
+        shooting = x;
+        if(x == true) {
+            combatTimer = outOfCombatDuration;
+        }
+    }
+    public float getCombatTimer(){return combatTimer;}
 
     public bool isReloading(){return reloading;}
     public void setReloading(bool x){reloading = x;}

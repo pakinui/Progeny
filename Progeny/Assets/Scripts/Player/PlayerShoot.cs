@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
     {
         // assigning references
         player = GetComponent<Player>();
-        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        mainCam = Camera.main.GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -96,10 +96,10 @@ public class PlayerShoot : MonoBehaviour
 
             //fire
             else if(cooldownLeft <= 0f && Input.GetMouseButtonDown(0) && player.gun.ammoLeft > 0){
-                // shoot, decrease ammo and reset weapon cooldown
-                Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
-                player.gun.ammoLeft--;
-                cooldownLeft = player.gun.fireRate;
+                player.setShooting(true);// set player state
+                Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
+                player.gun.ammoLeft--;// decrease ammo
+                cooldownLeft = player.gun.fireRate;// reset weapon cooldown
             }
         }
 
