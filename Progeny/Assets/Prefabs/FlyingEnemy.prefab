@@ -151,11 +151,11 @@ MonoBehaviour:
   health: 1
   damageDuration: 1
   idleRange: 16
-  approachRange: 0.5
-  returnRange: 0.5
-  speed: 5
-  prepareDuration: 0.5
-  waitDuration: 1.5
+  approachRange: 0.3
+  returnRange: 0.3
+  speed: 6
+  prepareDuration: 0.25
+  waitDuration: 2
   shotPrefab: {fileID: 2010926792632297356, guid: e8ab5fe9d0c147d40b09dcd8184f9d92, type: 3}
 --- !u!58 &207197664884100003
 CircleCollider2D:
