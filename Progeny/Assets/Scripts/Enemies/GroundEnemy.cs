@@ -41,6 +41,10 @@ public class GroundEnemy : MonoBehaviour
     private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
     private bool dashStart = false;
+    //so only takes one melee hit per player attack
+    private PlayerMelee pm;
+    private bool hasTakenMelee = false;
+    private float meleeTimer;
    
     // reference to the fangs
     GameObject fangs;
@@ -52,6 +56,7 @@ public class GroundEnemy : MonoBehaviour
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        pm = player.GetComponent<PlayerMelee>();
         fangs = transform.GetChild(0).gameObject;
     }
 
@@ -85,6 +90,12 @@ public class GroundEnemy : MonoBehaviour
             if (damageTimer <= 0){
                 sr.color = new Color(255f, 255f, 255f, 1f);
                 isRed = false;
+            }
+        }
+
+        if (hasTakenMelee){
+            if (pm.GetAttackLeft() <= 0){
+                hasTakenMelee = false;
             }
         }
     }
@@ -189,6 +200,7 @@ public class GroundEnemy : MonoBehaviour
     private void Flip()
     {
         facingLeft = !facingLeft;
+        direction *= -1;
         transform.Rotate(0f, 180f, 0f);
     }
 
@@ -226,13 +238,18 @@ public class GroundEnemy : MonoBehaviour
             isRed = true;
             damageTimer = damageDuration;
         }
-        else if(other.tag == "MeleeWeapon")
+        else if(other.tag == "MeleeWeapon" && !hasTakenMelee)
         {
             health -= 1;
             if(health == 0) Destroy(this.gameObject);
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
+            if (state == State.Dash){
+                rb.velocity *= -0.5f;
+                Flip();
+            }
+            hasTakenMelee = true;
         }
     }
 }
