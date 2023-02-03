@@ -8562,6 +8562,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 207197664884100007, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
   m_PrefabInstance: {fileID: 826137051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &849803752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849803754}
+  - component: {fileID: 849803753}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &849803753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849803752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47f9194781a73e4d81f3a345c2363c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeOrder: 0.5
+--- !u!4 &849803754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849803752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &890970074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9044,6 +9089,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1581867805, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Name
+      value: head check
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581867807, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581867807, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7276491471335496202, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_Name
       value: Player
