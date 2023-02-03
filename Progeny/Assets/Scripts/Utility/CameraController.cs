@@ -22,7 +22,7 @@ using UnityEngine;
         public float xOffset = 3f;
         public float yOffset = 3.5f;
 
-        private float leftEdgeX = -10.5f;
+        private float leftEdgeX = -17.97f;
         private float rightEdgeX = 189.62f;
 
         // private float xMin = -5;

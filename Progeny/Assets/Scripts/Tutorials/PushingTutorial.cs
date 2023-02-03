@@ -8,6 +8,7 @@ public class PushingTutorial : MonoBehaviour
     public TextAsset textFile;
     public Pushable trash;
 
+
     //is pushing tutorial completed
     private bool pushTutorialCompleted = false;
     private bool pushStoryDone = false;// has player read slides
@@ -18,11 +19,12 @@ public class PushingTutorial : MonoBehaviour
     private StoryText story;
     private ThoughtBubble bubble;
     private Rigidbody2D rb;
+
+    //if player has not climbed the semi truck in 6 sec
+    //a thought bubble will help them
+    private float timeRemaining = 6;
     
-    void OnEnabled(){
-        pushTutorialCompleted = false;
-        pushStoryDone = false;
-    }
+    
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,9 @@ public class PushingTutorial : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
+        rb = GetComponent<Rigidbody2D>();
         //trash = GetComponent<Pushable>();
+        Debug.Log(rb.transform.position.x);
     }
 
     void OnTriggerEnter2D(Collider2D coll){
@@ -59,6 +63,28 @@ public class PushingTutorial : MonoBehaviour
                 bubble.ShowBubbleForSeconds(3);
                 pushTutorialCompleted = true;
                 
+                
+            }
+
+            //countdown time until hint
+            if(pushTutorialCompleted){
+                
+                if(timeRemaining > 0){
+                    timeRemaining -= Time.deltaTime;
+                }else if(timeRemaining == 0){
+                    //show hint
+                    bubble.SetBubbleText("maybe i could push the rubbish bin towards the semitruck and then climb it?");
+                    bubble.ShowBubbleForSeconds(3);
+                    timeRemaining -= Time.deltaTime;
+                }else{
+                    //for another hint if needed
+                    timeRemaining = 10;
+                }
+            }
+
+            if(player.transform.position.x > rb.transform.position.x){
+               //if player has climbed on the semi
+               Destroy(this.gameObject);
             }
 
             

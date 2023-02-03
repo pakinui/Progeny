@@ -36,12 +36,12 @@ public class MovingTutorial : MonoBehaviour
             if player hasnt moved to checkpoint 
             move the square to follow the player
         */
-        if(!checkPointReached){
-            rb.transform.position = new Vector3 (player.transform.position.x + 3.0f , player.transform.position.y, player.transform.position.z);
+        
+        rb.transform.position = new Vector3 (player.transform.position.x + 3.0f , player.transform.position.y, player.transform.position.z);
 
-            if(player.transform.position.x > checkpointRb.transform.position.x) checkPointReached = true;
+        if(player.transform.position.x > checkpointRb.transform.position.x) checkPointReached = true;
 
-        }else{
+        if(checkPointReached){
             interact.SetActive(true);
             leftAndRight.SetActive(false);
             

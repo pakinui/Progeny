@@ -8,6 +8,7 @@ public class ClimbingTutorial : MonoBehaviour
     public TextAsset textFile;
     public MovingClimb leftTrigger;
     
+    
     //is climbing tutorial completed
     private bool climbTutorialCompleted = false;
     private bool climbStoryDone = false;// has player read slides
@@ -67,8 +68,7 @@ public class ClimbingTutorial : MonoBehaviour
                     bubble.hideBubble();
                     bubble.SetBubbleText("nice");
                     bubble.ShowBubbleForSeconds(2);
-                    //Destroy(this.gameObject);//destroys both pushign and climbing tutorial
-                    //do this after pushing tut?
+                    Destroy(this.gameObject);
                     
         
             }
