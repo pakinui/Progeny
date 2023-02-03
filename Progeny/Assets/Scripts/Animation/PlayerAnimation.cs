@@ -20,6 +20,8 @@ public class PlayerAnimation : MonoBehaviour {
    // Controls how fast to change the sprites when
    // animation is running
    public float framesPerSecond;
+   // saves FPS value to allow for state specific adjustments
+   private float originalFPS;
    
    // Reference to the renderer of the sprite
    // game object
@@ -43,6 +45,9 @@ public class PlayerAnimation : MonoBehaviour {
 
       //reference to player
       player = GetComponent<Player>();
+
+      // set default frames per second;
+      originalFPS = framesPerSecond;
    }
 
    // At fixed time intervals...
@@ -52,10 +57,8 @@ public class PlayerAnimation : MonoBehaviour {
          float userInput = Input.GetAxis("Horizontal");
          if(userInput != 0f || !player.isAllowedMovement()) {
             // User pressed the move left or right button
-            
             // Animation will start playing
             animRunning = true;
-            
             // Record time at animation start
             timeAtAnimStart = Time.timeSinceLevelLoad;
          }
@@ -67,10 +70,14 @@ public class PlayerAnimation : MonoBehaviour {
 
       if(player.isMoving()){
          if(animRunning) {
+            // reset the frames per second
+            framesPerSecond = originalFPS;
 
+            // state specific animations
             if(player.isPushing()){
                animSprites = pushingSprites;
             }else if(player.isCrouching()){
+               framesPerSecond /= 2;
                animSprites = crouchWalkingSprites;
             }else{
                animSprites = walkingSprites;
