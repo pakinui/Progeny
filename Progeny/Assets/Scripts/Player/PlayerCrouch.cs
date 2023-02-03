@@ -47,7 +47,6 @@ public class PlayerCrouch : MonoBehaviour
         //collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y/2);
         // half the height of the player while crouched
             //transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y / 2);
-
         transform.position = new Vector2(transform.position.x, transform.position.y - ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
     
@@ -62,6 +61,7 @@ public class PlayerCrouch : MonoBehaviour
         // double the height of the player while crouched
             //transform.position = new Vector2(transform.position.x, transform.position.y + transform.localScale.y/2);
             //transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * 2);
+        transform.position = new Vector2(transform.position.x, transform.position.y + ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
     
 
