@@ -10,6 +10,7 @@ TagManager:
   - RightClimb
   - MeleeWeapon
   - ThoughtBubble
+  - StorySquare
   layers:
   - Default
   - TransparentFX

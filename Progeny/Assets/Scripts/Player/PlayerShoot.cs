@@ -32,6 +32,11 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(cooldownLeft > 0f)
+        {
+            // decrease cooldown
+            cooldownLeft -= Time.deltaTime;
+        }
 
         // enter/exit aiming
         if(player.gun != null && Input.GetMouseButtonDown(1) && !player.isClimbing() && !player.isPushing()) { 
@@ -55,7 +60,7 @@ public class PlayerShoot : MonoBehaviour
             }
         }
 
-
+        
         // while aiming
         if(player.isAiming())
         {
@@ -97,6 +102,7 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft = player.gun.fireRate;// reset weapon cooldown
             }
         }
+
     }
 
    public float GetCooldownLeft(){

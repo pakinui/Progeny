@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
     {
         GUI.Label(new Rect(30,60, 100, 100), "Health: " + currentHealth.ToString());
         if(gun != null) {GUI.Label(new Rect(30,90, 100, 100), "Ammo: " + gun.ammoLeft);}
-        if(gun != null) {GUI.Label(new Rect(30,120, 100, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft());}
+        if(gun != null) {GUI.Label(new Rect(30,120, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
     }
 
     // method to flip the player
@@ -170,6 +170,17 @@ public class Player : MonoBehaviour
 
     public bool isAllowedMovement(){return allowMovement;}
     public void setAllowedMovement(bool x){allowMovement = x;}
+
+    // to stop both allowing movement and movement animations
+    public void stopPlayerMovement(){
+        allowMovement = false;
+        moving = false;
+    }
+    // to start both allowing movement and movement animations
+    public void startPlayerMovement(){
+        allowMovement = true;
+        moving = true;
+    }
 
 
     public void Die()
