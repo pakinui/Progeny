@@ -4,9 +4,15 @@ using System.Collections;
 public class PlayerAnimation : MonoBehaviour {
 
    // An array with the sprites used for animation
-   public Sprite[] walkingSprites;
    public Sprite idleSprite;
+   public Sprite crouchIdleSprite;
+   public Sprite[] walkingSprites;
+   public Sprite[] crouchWalkingSprites;
    public Sprite[] pushingSprites;
+   public Sprite[] climbingSprites;
+   public Sprite[] fallingSprites;
+   public Sprite[] meleeSprites;
+   public Sprite[] reloadSprites;
 
    //set to whatever action player is doing atm
    private Sprite[] animSprites;
@@ -59,11 +65,13 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      if(player.isMoving() ){
+      if(player.isMoving()){
          if(animRunning) {
 
             if(player.isPushing()){
                animSprites = pushingSprites;
+            }else if(player.isCrouching()){
+               animSprites = crouchWalkingSprites;
             }else{
                animSprites = walkingSprites;
             }
@@ -90,7 +98,11 @@ public class PlayerAnimation : MonoBehaviour {
          }
       }
       }else{
-         animRenderer.sprite = idleSprite;
+         if(player.isCrouching()){
+            animRenderer.sprite = crouchIdleSprite;
+         }else{
+            animRenderer.sprite = idleSprite;
+         }
       }
 
          
