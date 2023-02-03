@@ -37,7 +37,7 @@ using UnityEngine;
             player = GameObject.Find("Player").GetComponent<Player>();
             rb = player.gameObject.GetComponent<Rigidbody2D>();
             playerPos = player.transform.position;
-            targetPos = new Vector3(playerPos.x + xOffset, playerPos.y + yOffset, -10f);
+            targetPos = new Vector3(playerPos.x + xOffset, yOffset-3, -10f);
         }
 
         // FixedUpdate is called once per fixed frame-rate frame
@@ -61,10 +61,9 @@ using UnityEngine;
                 camSpeed = smoothSpeed + (player.outOfCombatDuration - player.getCombatTimer()); 
             }
             
-
             // reassigning target camera position variables
             targetPos.x = playerPos.x + (xOffset * direction);
-            targetPos.y = playerPos.y + yOffset;
+            //targetPos.y = playerPos.y + yOffset;
 
             // update camera position
             if(targetPos.x < leftEdgeX){
