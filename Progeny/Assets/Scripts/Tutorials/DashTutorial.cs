@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using System.Security;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +6,7 @@ public class DashTutorial : MonoBehaviour
 {
     
     public TextAsset dashTextFile;
+    public TextAsset smashTextFile;
     public GameObject dashEnemy;
     public MeleeTutorial meleeWeapon;
     public GameObject smashTrigger;
@@ -18,7 +17,10 @@ public class DashTutorial : MonoBehaviour
     private GroundEnemy enemy;
     private BoxCollider2D triggerRb;
 
+
+    private bool currentlyDashTutorial = false;
     private bool dashPause = false;
+    private bool smashPause = false;
     private float playerPos;
     private float enemyPos;
     
@@ -26,14 +28,14 @@ public class DashTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dashEnemy.SetActive(false);
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         enemy = dashEnemy.GetComponent<GroundEnemy>();
         triggerRb = smashTrigger.GetComponent<BoxCollider2D>();
-
-        playerPos = player.transform.position.x;
-        enemyPos = enemy.transform.position.x;
-        //Debug.Log(playerPos);
+        //enemy.state = GroundEnemy.State.DashPrep;
+        Debug.Log(enemy.state);
+       
     }
 
 
@@ -41,41 +43,43 @@ public class DashTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //pause in dash prep phase
-        if(enemy.state == GroundEnemy.State.DashPrep && !dashPause){
-            
-            dashPause = true;
-            player.stopPlayerMovement();
-            story.PlayStoryText(dashTextFile);
-        }
+        
+        if(currentlyDashTutorial){
+            //pause in dash prep phase
+            playerPos = player.transform.position.x;
+            enemyPos = enemy.transform.position.x;
+            if(enemy.state == GroundEnemy.State.DashPrep && !dashPause){
+                player.stopPlayerMovement();
+                story.PlayStoryText(dashTextFile);
+                enemy.speed = 0;
+                enemy.dashSpeed = 0;
+                dashPause = true;
+            }
 
-        //keep in dashprep phase while story text plays
-        if(enemy.state == GroundEnemy.State.DashPrep && dashPause){
-            //enemy.speed = 0;
-            enemy.state = GroundEnemy.State.DashPrep;
-        }
+            if(dashPause && story.storyComplete){
+                enemy.speed = 3;
+                enemy.dashSpeed = 9;
 
-        if(story.storyComplete && dashPause){
-            enemy.speed = 3;
-            enemy.state = GroundEnemy.State.Dash;
-            dashPause = false;
+            }
+                Debug.Log(playerPos+ 3.0f);
+                Debug.Log(enemyPos);
+            if((playerPos + 3.0f) > enemyPos && dashPause){
+                enemy.speed = 0;
+                enemy.dashSpeed = 0;
+                player.stopPlayerMovement();
+                story.PlayStoryText(smashTextFile);
+            }
         }
-
-        if(enemy.state == GroundEnemy.State.Dash && !dashPause){
-            // triggerRb.OnTriggerEnter2D(Collider2D coll){
-            //     if(coll.tag == "Player"){
-            //         Debug.Log("hit");
-            //     }
-            // };
-            
-        }
+        
+        
         
     }
 
 
     public void StartDashTutorial(){
         dashEnemy.SetActive(true);
-
+        enemy.state = GroundEnemy.State.Approach;
+        currentlyDashTutorial = true;
 
     }
 }

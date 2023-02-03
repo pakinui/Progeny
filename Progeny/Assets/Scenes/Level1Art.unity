@@ -10839,6 +10839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashTextFile: {fileID: 4900000, guid: 0da5886d560fb5646b129fe1329dfbea, type: 3}
+  smashTextFile: {fileID: 4900000, guid: c338a72366c585e4eb573a7efc02c4e7, type: 3}
   dashEnemy: {fileID: 1501447228}
   meleeWeapon: {fileID: 1975405604}
   smashTrigger: {fileID: 231558758}
