@@ -6,7 +6,7 @@ public class MovingClimb : MonoBehaviour
 {
     //boolean, true when player is close enough 
     // (in contact with box) to climb
-    private bool contact = false;
+    public bool contact = false;
 
     public PlayerMove player;
     public Rigidbody2D box; // corner of climbing box
@@ -89,13 +89,13 @@ public class MovingClimb : MonoBehaviour
             float x = player.rb.transform.position.x - (player.render.bounds.size.x/2.0f);
             float y = (player.render.bounds.size.y/2.0f) + boxY;
 
-            Debug.Log("right climg : x= " + x + ", y= " + y);
+            //Debug.Log("right climg : x= " + x + ", y= " + y);
 
             player.rb.transform.position = new Vector3(x, y, player.rb.transform.position.z);
         }else if (gameObject.tag == "LeftClimb"){
             float x = (player.render.bounds.size.x/2.0f) + boxX;
             float y = (player.render.bounds.size.y/2.0f) + boxY;
-            Debug.Log("left climb : x= " + x + ", y= " + y);
+           // Debug.Log("left climb : x= " + x + ", y= " + y);
             player.rb.transform.position = new Vector3(x, y, player.rb.transform.position.z);
         }
 

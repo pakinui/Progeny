@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   box: {fileID: 4784152480164725108}
-  pushable: 1
+  pushable: 0
   playerAnimation: {fileID: 0}
 --- !u!61 &4784152478955254291
 BoxCollider2D:
@@ -151,7 +151,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4784152478960101270}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.85, y: -2.5301178, z: 24.539942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   box: {fileID: 4784152480164725108}
-  pushable: 1
+  pushable: 0
   playerAnimation: {fileID: 0}
 --- !u!61 &4784152479219933201
 BoxCollider2D:
@@ -298,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4784152480164725104}
   - component: {fileID: 4784152480164725107}
+  - component: {fileID: 4074523688597985992}
   - component: {fileID: 4784152480164725109}
   - component: {fileID: 4784152480164725108}
   m_Layer: 8
@@ -315,7 +316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4784152480164725105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.596618, y: 0.141, z: -25.23994}
+  m_LocalPosition: {x: 2.7, y: 0.25, z: -25.23994}
   m_LocalScale: {x: 1.1182623, y: 1.1476357, z: 0.989}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -364,7 +365,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f41077774a7dd154ba7e897974594bc9, type: 3}
   m_Color: {r: 0.7169812, g: 0.5983307, b: 0.5444999, a: 1}
   m_FlipX: 0
@@ -376,6 +377,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4074523688597985992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784152480164725105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114e23215da97b84aab41efb27e6c923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPushable: 1
+  leftClimbTrigger: {fileID: 4784152478955254288}
+  rightClimbTrigger: {fileID: 4784152479219933198}
 --- !u!61 &4784152480164725109
 BoxCollider2D:
   m_ObjectHideFlags: 0

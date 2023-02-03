@@ -12,6 +12,7 @@ public class ShootingTutorial : MonoBehaviour
     public GameObject melee;
 
     private bool tutorialCompleted = false;
+    
    
     private Player player;
     private StoryText story;
@@ -42,7 +43,7 @@ public class ShootingTutorial : MonoBehaviour
             //trigger tutorial
             player.stopPlayerMovement();
             story.PlayStoryText(shootingTextFile);
-
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         }
     }
 
