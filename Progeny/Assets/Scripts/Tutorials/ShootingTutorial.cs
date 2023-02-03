@@ -27,7 +27,6 @@ public class ShootingTutorial : MonoBehaviour
         if(coll.tag == "Player" && !tutorialCompleted){
             //trigger tutorial
             player.stopPlayerMovement();
-            Debug.Log(story.storyComplete);
             story.PlayStoryText(textFile);;
 
         }
