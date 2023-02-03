@@ -15,9 +15,9 @@ public class PlayerCrouch : MonoBehaviour
     
     private Color mOriginalColor;
     private Color mCrouchColor;
-    public Vector2 mTargetColliderSize = new Vector2(0.75f, 1f);
+    public Vector2 targetColliderSize = new Vector2(0.45f, 1.25f);
     public Vector2 mTargetColliderOffset = new Vector2(0, -0.5f);
-    private Vector2 mOriginalColliderSize;
+    private Vector2 originalColliderSize;
     private Vector2 mOriginalColliderOffset;
     
     private float mCrouchTimer;
@@ -32,7 +32,7 @@ public class PlayerCrouch : MonoBehaviour
         
         collider = GetComponent<BoxCollider2D>();
         mOriginalColliderOffset = collider.offset;
-        mOriginalColliderSize = collider.size;
+        originalColliderSize = collider.size;
         mOriginalColor = GetComponent<SpriteRenderer>().color;
         mCrouchColor = new Color(1, 0, 1, 1f);
     }
@@ -43,11 +43,11 @@ public class PlayerCrouch : MonoBehaviour
         mPlayer.setCrouching(true);
         // TEMPORARY WHILE TESTING: the final product should probs Lerp
         // half the size of the player collider and adjust its position (offset)
-        collider.size = new Vector2(collider.size.x, collider.size.y / 2);
-        collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y/2);
+        collider.size = new Vector2(targetColliderSize.x, targetColliderSize.y);
+        //collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y/2);
         // half the height of the player while crouched
-        transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y / 2);
-        transform.position = new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2);
+            //transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y / 2);
+        transform.position = new Vector2(transform.position.x, transform.position.y - ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
     
     void EndCrouch()
@@ -56,11 +56,12 @@ public class PlayerCrouch : MonoBehaviour
         mPlayer.setCrouching(false);
         // TEMPORARY WHILE TESTING: the final product should probs Lerp
         // double the size of the player collider and adjust its position (offset)
-        collider.offset = new Vector2(collider.offset.x, collider.offset.y + collider.size.y/2);
-        collider.size = new Vector2(collider.size.x, collider.size.y * 2);
+        //collider.offset = new Vector2(collider.offset.x, collider.offset.y + mOriginalColliderSize);
+        collider.size = new Vector2(originalColliderSize.x, originalColliderSize.y);
         // double the height of the player while crouched
-        transform.position = new Vector2(transform.position.x, transform.position.y + transform.localScale.y/2);
-        transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * 2);
+            //transform.position = new Vector2(transform.position.x, transform.position.y + transform.localScale.y/2);
+            //transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * 2);
+        transform.position = new Vector2(transform.position.x, transform.position.y + ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
     
 
