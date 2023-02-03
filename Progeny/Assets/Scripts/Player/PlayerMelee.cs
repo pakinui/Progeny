@@ -36,11 +36,14 @@ public class PlayerMelee : MonoBehaviour
                 // hide weapon and change player state
                 meleeWeapon.SetActive(false);
                 player.setHitting(false);
-                attackLeft = attackDuration;
             }
         } else if(!player.isHitting() && cooldownLeft > 0){
             cooldownLeft -= Time.deltaTime;
         }
+    }
+
+    public float GetAttackLeft(){
+        return attackLeft;
     }
 
     private void Swing(){
