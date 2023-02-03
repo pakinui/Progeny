@@ -1,18 +1,23 @@
 using UnityEngine;
 
-namespace Ruiyi.Controller.GameController
-{
+//namespace Ruiyi.Controller.GameController
+//{
     public class CameraController : MonoBehaviour
     {
         // reference to the player
-        public Transform player;
+        private Player player;
+        // reference to the player's rigid body
+        private Rigidbody2D rb;
         // reference to the position of the player
         private Vector3 playerPos;
         // reference to the targetted position for the camera
         private Vector3 targetPos;
 
         // speed at which the camera follows the player
-        public float smoothSpeed = 4f;
+        public float smoothSpeed;
+        private float camSpeed; // smooth speed when out of combat
+        // movement direction determined variable. +right, -left
+        float direction;
         // offset of camera position
         public float xOffset = 3f;
         public float yOffset = 3.5f;
@@ -29,20 +34,36 @@ namespace Ruiyi.Controller.GameController
         void Start()
         {
             // assigning references
-            player = GameObject.Find("Player").transform;
-            playerPos = player.position;
+            player = GameObject.Find("Player").GetComponent<Player>();
+            rb = player.gameObject.GetComponent<Rigidbody2D>();
+            playerPos = player.transform.position;
             targetPos = new Vector3(playerPos.x + xOffset, playerPos.y + yOffset, -10f);
         }
 
         // FixedUpdate is called once per fixed frame-rate frame
         void FixedUpdate()
         {
-            // direction determined variable
-            float isRight = Mathf.Sign(player.localScale.x);
+            // reassigning player position
+            playerPos = player.transform.position;
 
-            // reassigning references
-            playerPos = player.position;
-            targetPos.x = (playerPos.x + xOffset) * isRight;
+            if(!player.isShooting()){
+                camSpeed = smoothSpeed;
+                // reassigning the movement direction vairiable
+                if(Input.GetAxis("Horizontal") > 0){
+                    direction = 1;
+                }else if(Input.GetAxis("Horizontal") < 0){
+                    direction = -1;
+                }
+            } else {
+                // change variables if player is in combat
+                direction = 0;
+                // keeps up with player without being too quick
+                camSpeed = smoothSpeed + (player.outOfCombatDuration - player.getCombatTimer()); 
+            }
+            
+
+            // reassigning target camera position variables
+            targetPos.x = playerPos.x + (xOffset * direction);
             targetPos.y = playerPos.y + yOffset;
 
             // update camera position
@@ -52,7 +73,7 @@ namespace Ruiyi.Controller.GameController
             if(targetPos.x > rightEdgeX){
                 targetPos.x = rightEdgeX;
             }
-            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * smoothSpeed);
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * camSpeed);
         }
     }
-}
+//}
