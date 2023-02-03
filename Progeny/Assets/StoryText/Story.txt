@@ -1,3 +1,0 @@
-information will be displayed like this. while reading the player will be unable to move. press space to skip to the next slide. . .
-first lets learn how to shoot. . .
-hold the right mouse button to aim, click the left mouse button to shoot. . . 

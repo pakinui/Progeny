@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  fireRate: 2
+  fireRate: 0.5
   ammoCapacity: 6
   ammoLeft: 0
-  reloadTime: 6
+  reloadTime: 1
 --- !u!1 &3423010630635667146
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,6 +43,10 @@ public class PlayerMelee : MonoBehaviour
         return attackLeft;
     }
 
+    public float GetCooldownLeft(){
+        return cooldownLeft;
+    }
+
     private void Swing(){
         // change player state and show weapon
         player.setHitting(true);

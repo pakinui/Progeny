@@ -1,0 +1,2 @@
+you've picked up a melee weapon.
+melee weapons can be used to fight enemies in hand to hand combat.

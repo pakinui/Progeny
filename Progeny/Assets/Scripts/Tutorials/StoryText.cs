@@ -28,11 +28,18 @@ public class StoryText : MonoBehaviour
     private Player player;
     // private Rigidbody2D speechBubble;
 
+    //is the story currently playing
+    public bool storyInAction = false;
     public  bool storyComplete = false;
     //private Vector3 tempSpeed;
 
     private ThoughtBubble thought;
 
+
+    void OnEnable(){
+        storyComplete = false;
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +50,23 @@ public class StoryText : MonoBehaviour
 
     }
 
-    public void PlayStoryText(TextAsset file){
+    void NewStory(){
+        textLines = null;
+        storyInAction = false;
+        storyComplete = false;
+        currLine = 0;
+        endLine = 0;
+    }
 
+    public void PlayStoryText(TextAsset file){
+        NewStory();
+        storyComplete = false;
         if(thought.showBubble) thought.hideBubble();
 
         if(file != null){
             textLines = (file.text.Split('\n'));
+        }else{
+            Debug.Log("file is null");
         }
 
         
@@ -61,8 +79,9 @@ public class StoryText : MonoBehaviour
 
     void StartStoryText(){
         
-
-        textBox.SetActive(true);
+        storyInAction = true;
+        //textBox.SetActive(true);
+        textBox.SetActive(!textBox.activeSelf);
         nextLine();
 
     }
@@ -70,16 +89,13 @@ public class StoryText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if(Input.GetKeyDown(KeyCode.Space)){
-            currLine++;
-            nextLine();
+        if(storyInAction){
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse2)){
+                currLine++;
+                nextLine();
+            }
         }
-
         
-
-
 
     }
 
@@ -90,6 +106,7 @@ public class StoryText : MonoBehaviour
             textBox.SetActive(false);
             player.startPlayerMovement();
             storyComplete = true;
+            storyInAction = false;
         }else{
             theText.text = textLines[currLine];
         }
