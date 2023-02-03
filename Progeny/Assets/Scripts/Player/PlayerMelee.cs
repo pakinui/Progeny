@@ -14,14 +14,11 @@ public class PlayerMelee : MonoBehaviour
     // cooldown variables
     public float cooldown;
     private float cooldownLeft = 0f;
-    // direction of swing
-    private int swingDirection = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Player>();
-        if(!player.isFacingRight()) {swingDirection = -1;}
     }
 
     // Update is called once per frame
@@ -36,11 +33,18 @@ public class PlayerMelee : MonoBehaviour
                 // hide weapon and change player state
                 meleeWeapon.SetActive(false);
                 player.setHitting(false);
-                attackLeft = attackDuration;
             }
         } else if(!player.isHitting() && cooldownLeft > 0){
             cooldownLeft -= Time.deltaTime;
         }
+    }
+
+    public float GetAttackLeft(){
+        return attackLeft;
+    }
+
+    public float GetCooldownLeft(){
+        return cooldownLeft;
     }
 
     private void Swing(){
