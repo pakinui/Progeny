@@ -58,7 +58,7 @@ using UnityEngine;
                 // change variables if player is in combat
                 direction = 0;
                 // keeps up with player without being too quick
-                camSpeed = smoothSpeed + (player.outOfCombatDuration - player.getCombatTimer()); 
+                camSpeed = (player.outOfCombatDuration - player.getCombatTimer()); 
             }
             
             // reassigning target camera position variables
