@@ -10,7 +10,7 @@ public class PlayerCrouch : MonoBehaviour
     private bool crouchPressed;
     
     private Player player;
-    private BoxCollider2D collider;
+    private BoxCollider2D bc;
     
     public Vector2 targetColliderSize = new Vector2(0.45f, 1.25f);
     private Vector2 originalColliderSize;
@@ -23,8 +23,8 @@ public class PlayerCrouch : MonoBehaviour
         player = GetComponent<Player>();
         ceilingTriggerCheck2D = ceilingCheck.GetComponent<TriggerCheck2D>();
         
-        collider = GetComponent<BoxCollider2D>();
-        originalColliderSize = collider.size;
+        bc = GetComponent<BoxCollider2D>();
+        originalColliderSize = bc.size;
     }
     
     void BeginCrouch()
@@ -32,7 +32,7 @@ public class PlayerCrouch : MonoBehaviour
         // set player state
         player.setCrouching(true);
         // decrease the player collider's size and adjust its position to avoid a short fall
-        collider.size = new Vector2(targetColliderSize.x, targetColliderSize.y);
+        bc.size = new Vector2(targetColliderSize.x, targetColliderSize.y);
         //collider.size = Vector2.Lerp(originalColliderSize, targetColliderSize, crouchDuration);
         transform.position = new Vector2(transform.position.x, transform.position.y - ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
@@ -42,7 +42,7 @@ public class PlayerCrouch : MonoBehaviour
         // set player state
         player.setCrouching(false);
         // increase the player collider's size and adjust its position
-        collider.size = new Vector2(originalColliderSize.x, originalColliderSize.y);
+        bc.size = new Vector2(originalColliderSize.x, originalColliderSize.y);
         transform.position = new Vector2(transform.position.x, transform.position.y + ((originalColliderSize.y - targetColliderSize.y) / 2));
     }
     
@@ -84,12 +84,5 @@ public class PlayerCrouch : MonoBehaviour
                 crouchTimer = crouchDuration;
             }
         }
-        
- 
-        if (crouchTimer > 0){}
-        // Manually update collider to foot position
-        //collider.size = Vector2.Lerp(mOriginalColliderSize, mTargetColliderSize, crouchTimer / crouchDuration);
-        //collider.offset = Vector2.Lerp(mOriginalColliderOffset, mTargetColliderOffset, crouchTimer / crouchDuration);
-
     }
 }
