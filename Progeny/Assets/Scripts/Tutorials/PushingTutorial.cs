@@ -33,8 +33,6 @@ public class PushingTutorial : MonoBehaviour
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
         rb = GetComponent<Rigidbody2D>();
-        //trash = GetComponent<Pushable>();
-        Debug.Log(rb.transform.position.x);
     }
 
     void OnTriggerEnter2D(Collider2D coll){

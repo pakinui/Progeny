@@ -6,9 +6,14 @@ public class MeleeTutorial : MonoBehaviour
 {
     
     public TextAsset meleeTextFile;
+    public GameObject enemy;
+    public GameObject dashTrigger;
+
     
     private Player player;
     private StoryText story;
+    private DashTutorial dashTut;
+    private GroundEnemy dashEnemy;
     private bool interactZone = false;
     private bool meleePickedUp = false;
     
@@ -16,9 +21,11 @@ public class MeleeTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemy.SetActive(false);
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         
+        dashTut = dashTrigger.GetComponent<DashTutorial>();
     }
 
 
@@ -30,11 +37,16 @@ public class MeleeTutorial : MonoBehaviour
             //gameObject.SetActive(false);
 
             meleePickedUp = true;
-            gameObject.SetActive(false);
+            
             player.stopPlayerMovement();
             story.PlayStoryText(meleeTextFile);
-        }else if(story.storyComplete && meleePickedUp){
-            Destroy(this.gameObject);
+        }
+        
+        if(story.storyComplete && meleePickedUp){
+
+            dashTut.StartDashTutorial();
+            gameObject.SetActive(false);
+            //Destroy(this.gameObject);
         }
     }
 

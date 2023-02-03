@@ -42,8 +42,7 @@ public class ClimbingTutorial : MonoBehaviour
             //storyTextDone = true;
             
             startingPosition = rb.transform.position.y;//to check if player climbs
-            //Debug.Log(startingPosition);
-            //gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+
         }
     }
 
@@ -61,24 +60,15 @@ public class ClimbingTutorial : MonoBehaviour
             }
 
             if(Input.GetKeyDown(KeyCode.Space) && leftTrigger.contact && !climbTutorialCompleted){
-                // if(player.rb.transform.position.y)
-                
-                
-                    climbTutorialCompleted = true;
-                    bubble.hideBubble();
-                    bubble.SetBubbleText("nice");
-                    bubble.ShowBubbleForSeconds(2);
-                    Destroy(this.gameObject);
+            
+                climbTutorialCompleted = true;
+                bubble.hideBubble();
+                bubble.SetBubbleText("nice");
+                bubble.ShowBubbleForSeconds(2);
+                Destroy(this.gameObject);
                     
-        
             }
-
         }
-        
-
-
-
     }
 
-  
 }
