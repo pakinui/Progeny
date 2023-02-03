@@ -59,9 +59,9 @@ public class Player : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(30,60, 100, 100), "Health: " + currentHealth.ToString());
-        if(gun != null) {GUI.Label(new Rect(30,90, 100, 100), "Ammo: " + gun.ammoLeft);}
-        if(gun != null) {GUI.Label(new Rect(30,120, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
+        GUI.Label(new Rect(30,30, 100, 100), "Health: " + currentHealth.ToString());
+        if(gun != null) {GUI.Label(new Rect(30,45, 100, 100), "Ammo: " + gun.ammoLeft);}
+        if(gun != null) {GUI.Label(new Rect(30,60, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
     }
 
     // method to flip the player
