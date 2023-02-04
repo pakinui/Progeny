@@ -6,7 +6,7 @@ public class MeleeTutorial : MonoBehaviour
 {
     
     public TextAsset meleeTextFile;
-    public GameObject enemy;
+    public GroundEnemy enemy;
     public GameObject dashTrigger;
 
     
@@ -21,7 +21,7 @@ public class MeleeTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy.SetActive(false);
+        
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         
@@ -48,6 +48,7 @@ public class MeleeTutorial : MonoBehaviour
             gameObject.SetActive(false);
             //Destroy(this.gameObject);
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D coll){
