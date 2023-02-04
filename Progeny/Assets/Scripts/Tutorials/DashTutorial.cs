@@ -6,10 +6,13 @@ public class DashTutorial : MonoBehaviour
 {
     
     public TextAsset dashTextFile;
-    public TextAsset smashTextFile;
     public GameObject dashEnemy;
     public MeleeTutorial meleeWeapon;
+    public GameObject tutorial;
     public GameObject smashTrigger;
+
+    public GameObject displayPrefab;
+    private GameObject display;
 
 
     private Player player;
@@ -21,6 +24,7 @@ public class DashTutorial : MonoBehaviour
     private bool currentlyDashTutorial = false;
     private bool dashPause = false;
     private bool smashPause = false;
+    
     private float playerPos;
     private float enemyPos;
     
@@ -33,8 +37,6 @@ public class DashTutorial : MonoBehaviour
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         enemy = dashEnemy.GetComponent<GroundEnemy>();
         triggerRb = smashTrigger.GetComponent<BoxCollider2D>();
-        //enemy.state = GroundEnemy.State.DashPrep;
-        Debug.Log(enemy.state);
        
     }
 
@@ -47,7 +49,10 @@ public class DashTutorial : MonoBehaviour
         if(currentlyDashTutorial){
             //pause in dash prep phase
             playerPos = player.transform.position.x;
-            enemyPos = enemy.transform.position.x;
+            enemyPos = triggerRb.transform.position.x;
+
+
+
             if(enemy.state == GroundEnemy.State.DashPrep && !dashPause){
                 player.stopPlayerMovement();
                 story.PlayStoryText(dashTextFile);
@@ -56,21 +61,45 @@ public class DashTutorial : MonoBehaviour
                 dashPause = true;
             }
 
-            if(dashPause && story.storyComplete){
+            //keep in dash state while text plays
+            if(enemy.state != GroundEnemy.State.DashPrep && dashPause){
+                enemy.state = GroundEnemy.State.DashPrep;
+            }
+
+            //story text finished, enemy dashes
+            if(dashPause && story.storyComplete && !smashPause){
                 enemy.speed = 3;
                 enemy.dashSpeed = 9;
+                dashPause = false;
+                enemy.state = GroundEnemy.State.Dash;
+                display = Instantiate(displayPrefab, new Vector3(player.transform.position.x, player.transform.position.y+3.5f), new Quaternion(0,0,0,0), this.transform);
+                
 
             }
-                Debug.Log(playerPos+ 3.0f);
-                Debug.Log(enemyPos);
-            if((playerPos + 3.0f) > enemyPos && dashPause){
-                enemy.speed = 0;
-                enemy.dashSpeed = 0;
-                player.stopPlayerMovement();
-                story.PlayStoryText(smashTextFile);
+                 
+            if((playerPos + 1.0f) > enemyPos && !smashPause){
+
+                if(!Input.GetMouseButtonDown(0)){
+                    Time.timeScale = 0;
+                }else{
+                    
+                    Time.timeScale = 1;
+                    smashPause = true;
+                }
+            }
+
+            if(enemy.state != GroundEnemy.State.Dash && smashPause){
+                 //(this);
+                 Destroy(display);
+                 currentlyDashTutorial = false;
+                 
+                
             }
         }
         
+        if(dashEnemy == null){
+            Destroy(tutorial);
+        }
         
         
     }

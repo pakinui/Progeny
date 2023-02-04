@@ -1287,8 +1287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231558758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.701, y: 0.052, z: 0}
-  m_LocalScale: {x: 1, y: 0.2016, z: 1}
+  m_LocalPosition: {x: -0.7793, y: 0.052, z: 0}
+  m_LocalScale: {x: 1.0157177, y: 0.2016, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1501447229}
@@ -3377,11 +3377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27
+      value: -5.08
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10811,10 +10811,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashTextFile: {fileID: 4900000, guid: 0da5886d560fb5646b129fe1329dfbea, type: 3}
-  smashTextFile: {fileID: 4900000, guid: c338a72366c585e4eb573a7efc02c4e7, type: 3}
   dashEnemy: {fileID: 1501447228}
   meleeWeapon: {fileID: 1975405604}
+  tutorial: {fileID: 1598674475}
   smashTrigger: {fileID: 231558758}
+  displayPrefab: {fileID: 1837505623940100544, guid: 17dfb27f197ed964c9313a55d597c327, type: 3}
 --- !u!1 &1617889557
 GameObject:
   m_ObjectHideFlags: 0
