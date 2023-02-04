@@ -6,13 +6,24 @@ public class FlyingEnemyAttack : MonoBehaviour
 {
     // reference to the player
     Player player;
+    // reference to the projectile's rigidbody
+    Rigidbody2D rb;
     // damage dealt to player on successful atttack (currently does a third)
-    public float attackDamage = 25;
+    public float attackDamage = 10f;
+    // force behind the projectile's velocity
+    public float force;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        rb = GetComponent<Rigidbody2D>();
+        // target players location when projectile instantiated
+        Vector3 target = player.gameObject.transform.position;
+        // find direction of shot
+        Vector3 direction = target - transform.position;
+        // set velocity
+        rb.velocity = new Vector3(direction.x, direction.y).normalized * force;
     }
 
     // Update is called once per frame

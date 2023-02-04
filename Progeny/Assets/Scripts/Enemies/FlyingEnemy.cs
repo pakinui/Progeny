@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random=UnityEngine.Random;
 using System;
 
 public class FlyingEnemy : MonoBehaviour
@@ -22,14 +23,18 @@ public class FlyingEnemy : MonoBehaviour
     private float damageTimer;
     private bool isRed = false;
 
-    public float idleRange;
-    public float approachRange;
+    public float idleRange; // range enemy will swap from idle to approach
+    public float approachRange; // range enemy will swap from approach to prepare
     public float returnRange;
     public float speed = 4;
     public float prepareDuration = 0.5f;
     private float prepareTimer;
     public float waitDuration = 1.5f;
     private float waitTimer;
+
+	public float bobRate; // Rate of the 'bob' movement
+	public float avgBobScale; // Scale of the 'bob' movement
+
     public Transform shotPrefab;
     private GameObject player;
     private SpriteRenderer sr;
@@ -123,6 +128,12 @@ public class FlyingEnemy : MonoBehaviour
         CheckFacing();
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
         rb.velocity = velocity;
+
+        // Change in vertical distance 
+		float dy = (Random.Range(avgBobScale - avgBobScale/10f, avgBobScale + avgBobScale/10f)) * Mathf.Sin(bobRate * Time.time);
+		// Move the game object on the vertical axis
+		transform.Translate(new Vector3(0, dy, 0));
+
         if (Math.Abs(player.transform.position.x - transform.position.x) <= approachRange)
         {
             rb.velocity = new Vector2(0, 0);
