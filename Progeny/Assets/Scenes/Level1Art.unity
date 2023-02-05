@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 181291348}
   - component: {fileID: 181291350}
   - component: {fileID: 181291349}
+  - component: {fileID: 181291351}
   m_Layer: 0
   m_Name: truck puddle
   m_TagString: Untagged
@@ -749,6 +750,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e3741a660a6db40a257a793594a60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &181291351
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181291346}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &188592921
 GameObject:
   m_ObjectHideFlags: 3
@@ -3085,6 +3107,7 @@ GameObject:
   - component: {fileID: 806920039}
   - component: {fileID: 806920041}
   - component: {fileID: 806920040}
+  - component: {fileID: 806920042}
   m_Layer: 0
   m_Name: end puddle
   m_TagString: Untagged
@@ -3099,14 +3122,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806920037}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 186.83, y: -4.72, z: -8.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.002804253, w: -0.99999607}
+  m_LocalPosition: {x: 187.03, y: -4.69, z: -8.4}
+  m_LocalScale: {x: 1, y: -1.0879, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1216258416}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.321}
 --- !u!212 &806920039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3169,7 +3192,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3206,6 +3229,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e3741a660a6db40a257a793594a60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &806920042
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806920037}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &822745929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,11 +3529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.63
+      value: 58.2
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.852
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3497,7 +3541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724727, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_Size.x
@@ -13923,7 +13967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1913387666
 Transform:
   m_ObjectHideFlags: 0
