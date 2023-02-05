@@ -9,4 +9,10 @@ public class OptionPanelController : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    
+    // 
+    public void SetKey()
+    {
+        
+    } 
 }
