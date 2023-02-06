@@ -3628,6 +3628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570214515, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2932510332713000449, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: idleSprite
       value: 

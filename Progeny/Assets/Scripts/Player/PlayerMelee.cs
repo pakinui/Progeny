@@ -52,7 +52,8 @@ public class PlayerMelee : MonoBehaviour
         player.setHitting(true);
         meleeWeapon.SetActive(true);
         //Debug.Log("swing and a miss");
-        meleeWeapon.transform.RotateAround(transform.position, Vector3.forward, 360*Time.deltaTime);
+        // BELOW LINE NEEDS FIXING - CURRENTLY DOESN'T ROTATE BACK
+        //meleeWeapon.transform.RotateAround(transform.position, Vector3.forward, 360*Time.deltaTime);
         attackLeft = attackDuration;
         cooldownLeft = cooldown;
     }
