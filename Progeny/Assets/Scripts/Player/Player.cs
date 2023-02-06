@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    // reference to the GameMaster component
+    private GameMaster gm;
     // maxHealth of player
     public float maxHealth = 100f;
     // direction of player.
@@ -39,6 +41,10 @@ public class Player : MonoBehaviour
     public void Start(){
         currentSpeed = movementSpeed;
         currentHealth = maxHealth;
+
+        gm =GameObject.Find("GameMaster").GetComponent<GameMaster>();
+        transform.position = gm.getLastCheckpoint();        
+
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();
         sr = GetComponent<SpriteRenderer>();
@@ -62,7 +68,7 @@ public class Player : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(30,30, 100, 100), "Health: " + currentHealth.ToString());
-        GUI.Label(new Rect(30,45, 200, 100), "Melee Cooldown: " + playerMelee.GetCooldownLeft().ToString("0.0"));
+        //if(meleeWeapon != null) {GUI.Label(new Rect(30,45, 200, 100), "Melee Cooldown: " + playerMelee.GetCooldownLeft().ToString("0.0"));}
         if(gun != null) {GUI.Label(new Rect(30,60, 100, 100), "Ammo: " + gun.ammoLeft);}
         if(gun != null) {GUI.Label(new Rect(30,75, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
     }

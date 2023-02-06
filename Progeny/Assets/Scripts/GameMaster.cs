@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour
     public float timeOrder;
 
     private static GameMaster instance;
-    private Vector2 lastCheckpointPos;
+    public Vector3 lastCheckpointPos;
 
     void Awake(){
         if(instance == null){
@@ -23,7 +23,6 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -44,7 +43,6 @@ public class GameMaster : MonoBehaviour
         slowMoDuration = t;
     }
 
-    public void checkpoint(Vector2 pos){
-        lastCheckpointPos = pos;
-    }
+    public void setCheckpoint(Vector2 pos){lastCheckpointPos = pos;}
+    public Vector2 getLastCheckpoint(){return lastCheckpointPos;}
 }
