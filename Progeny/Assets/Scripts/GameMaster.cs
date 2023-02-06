@@ -8,6 +8,18 @@ public class GameMaster : MonoBehaviour
     private float slowMoDuration;
     public float timeOrder;
 
+    private static GameMaster instance;
+    private Vector2 lastCheckpointPos;
+
+    void Awake(){
+        if(instance == null){
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }else{
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +42,9 @@ public class GameMaster : MonoBehaviour
 
     public void slowMo(float t){
         slowMoDuration = t;
+    }
+
+    public void checkpoint(Vector2 pos){
+        lastCheckpointPos = pos;
     }
 }
