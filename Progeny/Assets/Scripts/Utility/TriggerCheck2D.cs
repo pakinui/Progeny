@@ -45,10 +45,12 @@ namespace Utility
             {
                 triggerCount--;
             }
+            /* temp disable
             else if (other.tag == "Enemy")
             {
                 gm.slowMo(3f);
             }
+            */
         }
 
         private bool CheckLayerMask(GameObject other)

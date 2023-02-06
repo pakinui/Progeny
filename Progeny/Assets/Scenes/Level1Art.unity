@@ -1842,7 +1842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: dashSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: pounceChance
@@ -2760,6 +2760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1598674476}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: dashSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: pounceChance
       value: 0
@@ -4821,6 +4825,10 @@ PrefabInstance:
     - target: {fileID: 4174507615990268470, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174507615990268471, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+      propertyPath: fireRate
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4174507616314824645, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_Name
