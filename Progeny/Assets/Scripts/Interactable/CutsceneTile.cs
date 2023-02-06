@@ -7,6 +7,7 @@ public class CutsceneTile : MonoBehaviour
 {
     
     public PlayerMove player;
+    public GameObject monster;
 
     //public GameObject thoughtBubble;
 
@@ -15,13 +16,22 @@ public class CutsceneTile : MonoBehaviour
 
     private Vector3 tempSpeed;
 
+    
+
+
+
     [SerializeField] private PlayableDirector _timeline;
 
 
-     void OnTriggerEnter2D(Collider2D tile){
+    void Start(){
+        monster.SetActive(false);
+    }
+
+
+    void OnTriggerEnter2D(Collider2D tile){
         //Debug.Log("standing on tile");
         if(tile.tag == "Player" && !completedCutscene){
-            
+            monster.SetActive(true);
             StartCutscene();
             
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -32,5 +33,9 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // TODO: should be removed when out of screen
+         if (!VisibleCheck.isVisible(GetComponent<Renderer>(), Camera.main))
+        {
+            Destroy(gameObject);
+        }
     }
 }

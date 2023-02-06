@@ -925,7 +925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cac38dcae8ce24ab65b9cdb5e1f9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionPanel: {fileID: 0}
 --- !u!1 &1005915406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2275873278365377357, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2275873278365377358, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1790,6 +1793,14 @@ PrefabInstance:
     - target: {fileID: 2275873278365377358, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063340405649961115, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057046300976304000, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
