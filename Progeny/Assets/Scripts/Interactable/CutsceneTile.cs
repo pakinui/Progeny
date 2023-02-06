@@ -8,6 +8,8 @@ public class CutsceneTile : MonoBehaviour
     
     public PlayerMove player;
     public GameObject monster;
+    public GameObject TopBar;
+    public GameObject BottomBar;
 
     //public GameObject thoughtBubble;
 
@@ -45,7 +47,8 @@ public class CutsceneTile : MonoBehaviour
         Debug.Log("start cutscene: " + player.rb.transform.position.y);
 
 
-
+        TopBar.SetActive(true);
+        BottomBar.SetActive(true);
         //stop player from being able to move
         tempSpeed = player.rb.velocity;
         player.rb.velocity = Vector3.zero;
@@ -61,6 +64,8 @@ public class CutsceneTile : MonoBehaviour
     public void EndCutscene(){
         //Debug.Log("cutscene finished");
         //thoughtBubble.SetActive(true);
+        TopBar.SetActive(false);
+        BottomBar.SetActive(false);
         player.rb.velocity = tempSpeed;
         player.player.setMoving(true);
         player.player.setAllowedMovement(true);//allow player from being able to move
