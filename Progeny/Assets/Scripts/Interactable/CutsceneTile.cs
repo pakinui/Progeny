@@ -48,7 +48,7 @@ public class CutsceneTile : MonoBehaviour
 
 
         //TopBar.SetActive(true);
-        BottomBar.SetActive(true);
+        //BottomBar.SetActive(true);
         //stop player from being able to move
         tempSpeed = player.rb.velocity;
         player.rb.velocity = Vector3.zero;
@@ -65,7 +65,7 @@ public class CutsceneTile : MonoBehaviour
         //Debug.Log("cutscene finished");
         //thoughtBubble.SetActive(true);
         //TopBar.SetActive(false);
-        BottomBar.SetActive(false);
+        //BottomBar.SetActive(false);
         player.rb.velocity = tempSpeed;
         player.player.setMoving(true);
         player.player.setAllowedMovement(true);//allow player from being able to move
