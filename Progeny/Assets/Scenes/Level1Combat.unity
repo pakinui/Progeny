@@ -1962,7 +1962,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -9687,6 +9687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PausePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7125016121612090595, guid: 35f3b5bd00f5e4ab292d4a70a1de5067, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f3b5bd00f5e4ab292d4a70a1de5067, type: 3}
 --- !u!224 &526014609 stripped
@@ -11158,6 +11162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeOrder: 0.5
+  lastCheckpointPos: {x: 0, y: 0, z: 0}
 --- !u!4 &849803754
 Transform:
   m_ObjectHideFlags: 0

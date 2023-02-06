@@ -96,8 +96,9 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft -= Time.deltaTime;
             }
 
-            //fire
-            else if(cooldownLeft <= 0f && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Q)) && player.gun.ammoLeft > 0){
+                //fire
+                //optimize the shoot way, not only click right and left at the same time can shoot
+                else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Q)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                 player.gun.ammoLeft--;// decrease ammo

@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PausePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7125016121612090595, guid: 35f3b5bd00f5e4ab292d4a70a1de5067, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f3b5bd00f5e4ab292d4a70a1de5067, type: 3}
 --- !u!224 &25643840 stripped
@@ -516,7 +520,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2275873278365377357, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
       propertyPath: m_Name
-      value: OptionPanel
+      value: SettingsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2275873278365377357, guid: 769eff20e8c8749b6bb0f41b69a64626, type: 3}
       propertyPath: m_IsActive
