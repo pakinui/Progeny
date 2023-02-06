@@ -248,6 +248,6 @@ MonoBehaviour:
   speed: 3
   pounceChance: 0.5
   pounceSpeedVertical: 6
-  pounceSpeedHorizontal: 10
-  dashSpeed: 12
+  pounceSpeedHorizontal: 8
+  dashSpeed: 10
   prepareDuration: 0.75
