@@ -48,7 +48,6 @@ public class ElectricPuddle : MonoBehaviour
            }else{
             playerRb.velocity = new Vector2((puddleRb.position.x - playerRb.transform.position.x) * -1.5f , playerRb.velocity.y);
            }
-           
         }
     }
 
@@ -63,6 +62,7 @@ public class ElectricPuddle : MonoBehaviour
                 
                 player.setAllowedMovement(true);
                 bouncing = false;
+                timeRemaining = 0.3f;
             }
         }
     }

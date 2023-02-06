@@ -8,7 +8,8 @@ public class MeleeTutorial : MonoBehaviour
     public TextAsset meleeTextFile;
     public GroundEnemy enemy;
     public GameObject dashTrigger;
-
+    public GameObject displayPrefab;
+    private GameObject display;
     
     private Player player;
     private StoryText story;
@@ -35,7 +36,7 @@ public class MeleeTutorial : MonoBehaviour
     {
         if(interactZone && Input.GetKeyDown("e")){
             //gameObject.SetActive(false);
-
+            Destroy(display);
             meleePickedUp = true;
             
             player.stopPlayerMovement();
@@ -54,6 +55,8 @@ public class MeleeTutorial : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll){
         if(coll.tag == "Player"){
             interactZone = true;
+            display = Instantiate(displayPrefab, this.transform);
+            display.transform.Translate(0, 2.5f, 0);
         }
         
     }
@@ -61,6 +64,7 @@ public class MeleeTutorial : MonoBehaviour
     void OnTriggerExit2D(Collider2D coll){
         if(coll.tag == "Player"){
             interactZone = false;
+            Destroy(display);
         }
         
     }
