@@ -48,15 +48,6 @@ public class ElectricPuddle : MonoBehaviour
            }else{
             playerRb.velocity = new Vector2((puddleRb.position.x - playerRb.transform.position.x) * -1.5f , playerRb.velocity.y);
            }
-           
-        // }else if(coll.tag == "Enemy"){
-        // //     playerRb = coll.GetComponent<Rigidbody2D>();
-        // //     //make enemy hurt by water too
-        // //     if(playerRb.transform.position.x < puddleRb.transform.position.x){
-        // //     playerRb.velocity = new Vector2((playerRb.transform.position.x - puddleRb.position.x) * 0.5f , playerRb.velocity.y);
-        // //    }else{
-        // //     playerRb.velocity = new Vector2((puddleRb.position.x - playerRb.transform.position.x) * -0.5f , playerRb.velocity.y);
-        //    }
         }
     }
 
@@ -71,6 +62,7 @@ public class ElectricPuddle : MonoBehaviour
                 
                 player.setAllowedMovement(true);
                 bouncing = false;
+                timeRemaining = 0.3f;
             }
         }
     }
