@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
 
         gm =GameObject.Find("GameMaster").GetComponent<GameMaster>();
-        transform.position = gm.getLastCheckpoint();        
+        //transform.position = gm.getLastCheckpoint();        
 
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();

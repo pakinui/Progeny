@@ -43,6 +43,8 @@ public class GameMaster : MonoBehaviour
         slowMoDuration = t;
     }
 
+    /*
     public void setCheckpoint(Vector2 pos){lastCheckpointPos = pos;}
     public Vector2 getLastCheckpoint(){return lastCheckpointPos;}
+    */
 }
