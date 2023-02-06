@@ -56,15 +56,19 @@ public class PounceTutorial : MonoBehaviour
             enemy.speed = 3;
             enemy.state = GroundEnemy.State.Pounce;
             pouncePause = false;
-            display = Instantiate(displayPrefab, new Vector3(player.transform.position.x, player.transform.position.y+3.5f), new Quaternion(0,0,0,0), this.transform);
+            display = Instantiate(displayPrefab, new Vector3(player.transform.position.x, player.transform.position.y-1.5f), new Quaternion(0,0,0,0), this.transform);
+            SpriteRenderer rend = display.GetComponent<SpriteRenderer>();
+            rend.sortingOrder = 3;
         }
 
         if(enemy.state == GroundEnemy.State.Pounce && !pouncePause){
             pouncePhase = true;
             if (!Input.GetKey("s")){
+                display.SetActive(true);
                 Time.timeScale = 0;
             }
             else{
+                display.SetActive(false);
                 Time.timeScale = 1;
             }
         }

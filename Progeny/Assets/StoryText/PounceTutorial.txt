@@ -1,1 +1,1 @@
-this one's a jumper! dodge its attack by pressing S to crouch!
+this one's a jumper! dodge its attack by holding down S to crouch!

@@ -70,7 +70,6 @@ public class ShootingTutorial : MonoBehaviour
                 bubble.SetBubbleText("this one is faster!");
                 bubble.ShowBubbleForSeconds(2.0f);
             }
-            if (enemy.health == 1) secondEnemy.idleRange = 30;
 
             //when enemy is killed get rid of thought
             if(enemy.health <= 1 && !tutorialCompleted){

@@ -1,4 +1,4 @@
 these monsters you have been fighting are able to perform a special move called a dash attack.
-you know the creature will be preforming a dash because it starts preparing for the attack by turning blue.
-The creature will then dash towards you quickly and the only way to avoid this attack is with a smash(?) performed just before you are hit.
-To perform a smash press ___ right before the creature hits you and it will become dazed(?). 
+you know the creature will be performing a dash because it starts preparing for the attack by turning blue.
+the creature will then dash towards you quickly and the only way to avoid this attack is with a PARRY performed just before you are hit.
+To perform a PARRY, LEFT CLICK right before the creature hits you and it will get knocked back. 

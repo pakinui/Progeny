@@ -1,2 +1,2 @@
 some objects, like the rubbish bin in front of you are able to be climbed.
-to climb an object walk into it and press space.
+to climb an object, walk into it and press SPACE.
