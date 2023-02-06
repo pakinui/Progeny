@@ -97,7 +97,7 @@ public class PlayerShoot : MonoBehaviour
             }
 
             //fire
-            else if(cooldownLeft <= 0f && Input.GetMouseButtonDown(0) && player.gun.ammoLeft > 0){
+            else if(cooldownLeft <= 0f && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Q)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                 player.gun.ammoLeft--;// decrease ammo
