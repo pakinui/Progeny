@@ -97,7 +97,7 @@ public class DashTutorial : MonoBehaviour
             }
         }
         
-        if(dashEnemy == null){
+        if(dashEnemy == null || enemy.health == 0){
             Destroy(tutorial);
         }
         

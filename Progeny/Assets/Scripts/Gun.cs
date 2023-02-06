@@ -10,7 +10,17 @@ public class Gun : MonoBehaviour
     public int ammoLeft; // current number of rounds left
     public float reloadTime; // time taken to reload
 
+    private ThoughtBubble bubble;
+
     void Start(){
         ammoLeft = ammoCapacity;
+        bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
+    }
+
+    void Update(){
+        if(ammoLeft == 0){
+            bubble.SetBubbleText("i need to reload ('R')");
+            bubble.ShowBubbleForSeconds(2);
+        }
     }
 }

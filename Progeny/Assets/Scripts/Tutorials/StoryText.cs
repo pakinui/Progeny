@@ -90,7 +90,7 @@ public class StoryText : MonoBehaviour
     void Update()
     {
         if(storyInAction){
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse2)){
+            if(Input.GetKeyDown(KeyCode.Space)){
                 currLine++;
                 nextLine();
             }
