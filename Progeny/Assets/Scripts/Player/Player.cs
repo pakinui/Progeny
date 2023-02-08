@@ -184,6 +184,7 @@ public class Player : MonoBehaviour
     public void stopPlayerMovement(){
         allowMovement = false;
         moving = false;
+        setAiming(false);
     }
     // to start both allowing movement and movement animations
     public void startPlayerMovement(){
