@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PausePanelController : MonoBehaviour
 {
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Space)){
+            ClosePanel();
+        }
+    }
     // Start is called before the first frame update
     private void OnEnable()
     {

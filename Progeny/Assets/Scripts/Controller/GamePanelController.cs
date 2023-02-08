@@ -16,16 +16,11 @@ namespace Controller
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Debug.Log("Quit Game");
-                Application.Quit();
-            }
             if (player.GetCurrentHealth() <= 0)
             {
                 deathpanel.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.P))
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !pausePanel.activeSelf)
             {
                 Debug.Log("Pause Game");
                 pausePanel.SetActive(true);
