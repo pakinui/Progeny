@@ -41,9 +41,9 @@ public class PlayerShoot : MonoBehaviour
         }
 
         // enter/exit aiming
-        if(player.gun != null && Input.GetMouseButtonDown(1) && !player.isClimbing() && !player.isPushing()) { 
+        if(player.gun != null && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
             player.setAiming(true);
-        } else if(player.isAiming() && Input.GetMouseButtonUp(1)) {
+        } else if(player.isAiming() && (Input.GetMouseButtonUp(1) || Input.GetKeyUp(KeyCode.LeftShift))) {
             player.setAiming(false);
         }
 
@@ -97,8 +97,7 @@ public class PlayerShoot : MonoBehaviour
             }
 
                 //fire
-                //optimize the shoot way, not only click right and left at the same time can shoot
-                else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Q)) && player.gun.ammoLeft > 0){
+                else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                 player.gun.ammoLeft--;// decrease ammo

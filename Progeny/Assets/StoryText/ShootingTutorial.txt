@@ -1,5 +1,5 @@
 information will be displayed like this. press space to skip to the next slide. . .
 that thing seems to be injured so let's use it to learn how to shoot. . .
-hold the RIGHT MOUSE BUTTON or Q to aim, click the LEFT MOUSE BUTTON to shoot. 
+hold the RIGHT MOUSE BUTTON or LEFT SHIFT to aim, click the LEFT MOUSE BUTTON to shoot. 
 your remaining ammo along with your health will be displayed in the top left corner of the screen. 
 if you run out of ammo and need to reload your gun press 'R'.
