@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeWeapon: {fileID: 1570214512}
-  attackDuration: 0.15
+  attackDuration: 0.2
   cooldown: 0.5
 --- !u!114 &1012909204
 MonoBehaviour:
