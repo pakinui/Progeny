@@ -8,7 +8,7 @@ public class MovingClimb : MonoBehaviour
     // (in contact with box) to climb
     public bool contact = false;
 
-    public PlayerMove player;
+    private PlayerMove player;
     public Rigidbody2D box; // corner of climbing box
     public bool pushable = false; // is this obj pushable
     
@@ -24,6 +24,8 @@ public class MovingClimb : MonoBehaviour
     private bool currClimbing;
 
     void Start(){
+
+        player = GameObject.Find("Player").GetComponent<Player>().GetComponent<PlayerMove>();
         boxX = transform.position.x;
         boxY = transform.position.y;
         // assigning references
