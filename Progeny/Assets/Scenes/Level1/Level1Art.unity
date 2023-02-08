@@ -3638,6 +3638,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570214512, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570214513, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570214514, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Size.x
+      value: 0.13310118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570214514, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6837852
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570214514, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0012508407
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570214514, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.003458351
+      objectReference: {fileID: 0}
     - target: {fileID: 1570214515, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -4644,7 +4668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
-  player: {fileID: 1703243247}
   box: {fileID: 2016998572}
   pushable: 0
   playerAnimation: {fileID: 0}
