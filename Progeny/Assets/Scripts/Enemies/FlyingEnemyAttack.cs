@@ -19,7 +19,7 @@ public class FlyingEnemyAttack : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         // target players location when projectile instantiated
-        Vector3 target = player.gameObject.transform.position;
+        Vector3 target = new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y+3);
         // find direction of shot
         Vector3 direction = target - transform.position;
         // set velocity

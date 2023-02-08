@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1073,8 +1085,8 @@ TextureImporter:
       house flashback  wife animation_17: -1157724475
       house flashback  wife animation_33: 76116140
       house flashback  wife animation_36: 229619221
-      house flashback  wife animation_15: -947782784
       house flashback  wife animation_22: -504495633
+      house flashback  wife animation_15: -947782784
       house flashback  wife animation_10: -808252563
       house flashback  wife animation_27: -859834263
       house flashback  wife animation_31: -2084670482

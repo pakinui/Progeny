@@ -25,15 +25,17 @@ public class FlyingEnemy : MonoBehaviour
 
     public float idleRange; // range enemy will swap from idle to approach
     public float approachRange; // range enemy will swap from approach to prepare
-    public float returnRange;
+    public float returnRange; // range enemy will return to after attacking - MUST BE GREATER THAN APPROACH
     public float speed = 4;
-    public float prepareDuration = 0.5f;
+    public float prepareDuration = 1.5f;
     private float prepareTimer;
-    public float waitDuration = 1.5f;
-    private float waitTimer;
+    // public float waitDuration = 1.5f;
+    // private float waitTimer;
 
 	public float bobRate; // Rate of the 'bob' movement
 	public float avgBobScale; // Scale of the 'bob' movement
+    [Range(1f,5f)]
+    public float bobScaleVariance; // Variance on bobScale
 
     public Transform shotPrefab;
     private GameObject player;
@@ -70,9 +72,9 @@ public class FlyingEnemy : MonoBehaviour
             case State.Attack:
                 Attack();
                 break;
-            case State.Wait:
-                Wait();
-                break;
+            // case State.Wait:
+            //     Wait();
+            //     break;
             case State.Return:
                 Return();
                 break;
@@ -105,10 +107,10 @@ public class FlyingEnemy : MonoBehaviour
             case State.Attack:
                 sr.color = new Color(0, 255f, 0f, 1f);
                 break;
-            case State.Wait:
-                sr.color = new Color(0, 255f, 0f, 1f);
-                waitTimer = waitDuration;
-                break;
+            // case State.Wait:
+            //     sr.color = new Color(0, 255f, 0f, 1f);
+            //     waitTimer = waitDuration;
+            //     break;
             case State.Return:
                 sr.color = new Color(0, 0f, 0f, 1f);
                 break;
@@ -130,7 +132,7 @@ public class FlyingEnemy : MonoBehaviour
         rb.velocity = velocity;
 
         // Change in vertical distance 
-		float dy = (Random.Range(avgBobScale - avgBobScale/10f, avgBobScale + avgBobScale/10f)) * Mathf.Sin(bobRate * Time.time);
+		float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
 		// Move the game object on the vertical axis
 		transform.Translate(new Vector3(0, dy, 0));
 
@@ -158,15 +160,15 @@ public class FlyingEnemy : MonoBehaviour
         // Set the position of the projectile object
         // to the position of the firing game object
         shot.position = transform.position;
-        SwitchState(State.Wait);
+        SwitchState(State.Return);
     }
 
-    void Wait(){
-        waitTimer = Timer(waitTimer);
-        if (waitTimer <= 0){
-            SwitchState(State.Return);
-        }
-    }
+    // void Wait(){
+    //     waitTimer = Timer(waitTimer);
+    //     if (waitTimer <= 0){
+    //         SwitchState(State.Attack);
+    //     }
+    // }
 
     void Return(){
         if (originalPosition.x > transform.position.x)
@@ -190,8 +192,15 @@ public class FlyingEnemy : MonoBehaviour
             direction = 0;
         }
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
-        rb.velocity = velocity;
-        if (Math.Abs(originalPosition.x - transform.position.x) <= returnRange)
+        if (Math.Abs(player.transform.position.x - transform.position.x) < returnRange)
+        {
+            rb.velocity = velocity;
+            // Change in vertical distance 
+            float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
+            // Move the game object on the vertical axis
+            transform.Translate(new Vector3(0, dy, 0));
+        } 
+        else if (Math.Abs(player.transform.position.x - transform.position.x) >= returnRange)
         {
             rb.velocity = new Vector2(0, 0);
             SwitchState(State.Idle);
