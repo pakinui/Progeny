@@ -7,9 +7,12 @@ public class PlayerAnimation : MonoBehaviour {
    public Sprite idleSprite;
    public Sprite crouchIdleSprite;
    public Sprite[] walkingSprites;
+   public Sprite[] walkingShoot;
    public Sprite[] crouchWalkingSprites;
+   public Sprite[] crouchingShoot;
    public Sprite[] pushingSprites;
    public Sprite[] climbingSprites;
+   public Sprite[] shortClimbSprites;
    public Sprite[] fallingSprites;
    public Sprite[] meleeSprites;
    public Sprite[] reloadSprites;
@@ -107,6 +110,8 @@ public class PlayerAnimation : MonoBehaviour {
       }else{
          if(player.isCrouching()){
             animRenderer.sprite = crouchIdleSprite;
+         }else if(player.isClimbing()){
+            
          }else{
             animRenderer.sprite = idleSprite;
          }

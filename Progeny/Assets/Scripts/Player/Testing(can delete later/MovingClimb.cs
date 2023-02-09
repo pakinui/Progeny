@@ -8,12 +8,18 @@ public class MovingClimb : MonoBehaviour
     // (in contact with box) to climb
     public bool contact = false;
 
+    //boolean to check if climb trigger should 
+    //do short or normal climb animation
+    public bool shortClimb = false;
+
     private PlayerMove player;
     public Rigidbody2D box; // corner of climbing box
     public bool pushable = false; // is this obj pushable
     
     private float boxX;
     private float boxY;
+
+    
     
 
     //private float animationTime = 3;
