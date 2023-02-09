@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
-  player: {fileID: 0}
   box: {fileID: 4784152480164725108}
   pushable: 0
   playerAnimation: {fileID: 0}
@@ -260,7 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
-  player: {fileID: 0}
   box: {fileID: 4784152480164725108}
   pushable: 0
   playerAnimation: {fileID: 0}
@@ -368,7 +366,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: f41077774a7dd154ba7e897974594bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fd8a33c36e698d4c86dec9cd921ab21, type: 3}
   m_Color: {r: 0.7169812, g: 0.5983307, b: 0.5444999, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -391,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114e23215da97b84aab41efb27e6c923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPushable: 1
+  isPushable: 0
   leftClimbTrigger: {fileID: 4784152478955254288}
   rightClimbTrigger: {fileID: 4784152479219933198}
 --- !u!61 &4784152480164725109
