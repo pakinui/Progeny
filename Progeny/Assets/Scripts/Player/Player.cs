@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     // reference to the GameMaster component
     private GameMaster gm;
+    // reference to respawn screen
+    private Canvas canvas;
     // maxHealth of player
     public float maxHealth = 100f;
     // direction of player.
@@ -42,8 +44,8 @@ public class Player : MonoBehaviour
         currentSpeed = movementSpeed;
         currentHealth = maxHealth;
 
-        gm =GameObject.Find("GameMaster").GetComponent<GameMaster>();
-        //transform.position = gm.getLastCheckpoint();        
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();
@@ -192,13 +194,8 @@ public class Player : MonoBehaviour
         moving = true;
     }
 
-
     public void Die()
     {
-        // temporary
-        //Destroy(this.gameObject);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //GameObject.Find("DeathPanel").SetActive(true);
-        // TODO: create a proper death loop
+        canvas.deathPanel.SetActive(true);
     }
 }

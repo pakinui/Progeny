@@ -5,7 +5,7 @@ using UnityEngine;
 public class Canvas : MonoBehaviour
 {
     private Player player;
-    private GameObject deathPanel;
+    public GameObject deathPanel;
     private GameObject pausePanel;
 
     void Start()
@@ -21,10 +21,10 @@ public class Canvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetCurrentHealth() <= 0)
-        {
-            deathPanel.SetActive(true);
-        }
+        // if (player.GetCurrentHealth() <= 0)
+        // {
+        //     deathPanel.SetActive(true);
+        // }
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !pausePanel.activeSelf)
         {
             Debug.Log("Pause Game");
