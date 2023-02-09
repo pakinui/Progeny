@@ -230,11 +230,9 @@ public class GroundEnemy : MonoBehaviour
     {
         if(other.tag =="Player"){
             playerCollide = true;
-            Debug.Log("player hit");
         }
         else if(other.tag =="MeleeWeapon"){
             meleeCollide = true;
-            Debug.Log("melee hit");
         }
         else if(other.tag == "Bullet")
         {
