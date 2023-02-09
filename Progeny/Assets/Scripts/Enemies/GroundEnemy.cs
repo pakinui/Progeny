@@ -45,6 +45,9 @@ public class GroundEnemy : MonoBehaviour
     private PlayerMelee pm;
     private bool hasTakenMelee = false;
     private float meleeTimer;
+
+    private bool playerCollide;
+    private bool meleeCollide;
    
     // reference to the fangs
     GameObject fangs;
@@ -225,7 +228,13 @@ public class GroundEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Bullet")
+        if(other.tag =="Player"){
+            playerCollide = true;
+        }
+        else if(other.tag =="MeleeWeapon"){
+            meleeCollide = true;
+        }
+        else if(other.tag == "Bullet")
         {
             Destroy(other.gameObject);
             health -= 1;
@@ -238,7 +247,7 @@ public class GroundEnemy : MonoBehaviour
             isRed = true;
             damageTimer = damageDuration;
         }
-        else if(other.tag == "MeleeWeapon" && !hasTakenMelee)
+        if(!playerCollide && meleeCollide && !hasTakenMelee)
         {
             health -= 1;
             if(health == 0) Destroy(this.gameObject);
@@ -250,6 +259,15 @@ public class GroundEnemy : MonoBehaviour
                 Flip();
             }
             hasTakenMelee = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if (other.tag == "Player"){
+            playerCollide = false;
+        }
+        else if (other.tag == "MeleeWeapon"){
+            meleeCollide = false;
         }
     }
 }

@@ -7,9 +7,12 @@ public class PlayerAnimation : MonoBehaviour {
    public Sprite idleSprite;
    public Sprite crouchIdleSprite;
    public Sprite[] walkingSprites;
+   public Sprite[] walkingShoot;
    public Sprite[] crouchWalkingSprites;
+   public Sprite[] crouchingShoot;
    public Sprite[] pushingSprites;
    public Sprite[] climbingSprites;
+   public Sprite[] shortClimbSprites;
    public Sprite[] fallingSprites;
    public Sprite[] meleeSprites;
    public Sprite[] reloadSprites;
@@ -35,6 +38,13 @@ public class PlayerAnimation : MonoBehaviour {
 
    //is player currently walking
    private Player player;
+
+
+   //player bottom left coords
+   private float playerX;
+   private float playerY;
+
+   
    
    // Use this for initialization
    void Start () {
@@ -68,6 +78,8 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
+      
+
       if(player.isMoving()){
          if(animRunning) {
             // reset the frames per second
@@ -79,6 +91,11 @@ public class PlayerAnimation : MonoBehaviour {
             }else if(player.isCrouching()){
                framesPerSecond /= 2;
                animSprites = crouchWalkingSprites;
+            }else if(player.isClimbing()){
+
+               animSprites = climbingSprites;
+               
+               
             }else{
                animSprites = walkingSprites;
             }
