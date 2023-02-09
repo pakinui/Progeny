@@ -48,6 +48,9 @@ public class GroundEnemy : MonoBehaviour
 
     private bool playerCollide;
     private bool meleeCollide;
+
+    //current colour
+    private Color color;
    
     // reference to the fangs
     GameObject fangs;
@@ -91,7 +94,7 @@ public class GroundEnemy : MonoBehaviour
         if (isRed){
             damageTimer -= Time.deltaTime;
             if (damageTimer <= 0){
-                sr.color = new Color(255f, 255f, 255f, 1f);
+                sr.color = color;
                 isRed = false;
             }
         }
@@ -112,9 +115,11 @@ public class GroundEnemy : MonoBehaviour
                 break;
             case State.Approach:
                 sr.color = new Color(255f, 255f, 255f, 1f);
+                color = sr.color;
                 break;
             case State.PouncePrep:
                 sr.color = Color.yellow;
+                color = sr.color;
                 prepareTimer = prepareDuration;
                 break;
             case State.Pounce:
@@ -122,6 +127,7 @@ public class GroundEnemy : MonoBehaviour
                 break;
             case State.DashPrep:
                 sr.color = Color.blue;
+                color = sr.color;
                 prepareTimer = prepareDuration;
                 break;
             case State.Dash:
