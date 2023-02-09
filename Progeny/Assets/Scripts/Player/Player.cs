@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
         // temporary
         //Destroy(this.gameObject);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameObject.Find("DeathPanel").SetActive(true);
+        //GameObject.Find("DeathPanel").SetActive(true);
         // TODO: create a proper death loop
     }
 }

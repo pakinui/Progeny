@@ -17,6 +17,7 @@ public class DeathPanelController : MonoBehaviour
 
     public void Restart()
     {
+        gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
