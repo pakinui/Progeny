@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
+  shortClimb: 0
   box: {fileID: 4784152480164725108}
   pushable: 0
+  climbable: 1
   playerAnimation: {fileID: 0}
 --- !u!61 &4784152478955254291
 BoxCollider2D:
@@ -259,8 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
+  shortClimb: 0
   box: {fileID: 4784152480164725108}
   pushable: 0
+  climbable: 1
   playerAnimation: {fileID: 0}
 --- !u!61 &4784152479219933201
 BoxCollider2D:

@@ -11,11 +11,13 @@ public class MovingClimb : MonoBehaviour
     //boolean to check if climb trigger should 
     //do short or normal climb animation
     public bool shortClimb = false;
+    public Rigidbody2D box; // corner of climbing box
+    public bool pushable = false; // is this obj pushable
+    public bool climbable = false;
 
     private PlayerMove playerMove;
     private Player player;
-    public Rigidbody2D box; // corner of climbing box
-    public bool pushable = false; // is this obj pushable
+    
     
     private float boxX;
     private float boxY;
@@ -78,7 +80,7 @@ public class MovingClimb : MonoBehaviour
 
         float userInput = Input.GetAxis("Horizontal");
         if(Input.GetKeyDown(KeyCode.Space) && contact){
-            if(!currClimbing){
+            if(!currClimbing && climbable){
                 currClimbing = true; 
                 player.setPushing(false);
                 player.setAllowedMovement(false);
