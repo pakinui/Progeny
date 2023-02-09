@@ -55,7 +55,8 @@ public class MeleeTutorial : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll){
         if(coll.tag == "Player"){
             interactZone = true;
-            display = Instantiate(displayPrefab, this.transform);
+            display = Instantiate(displayPrefab, this.transform.parent);
+            display.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             display.transform.Translate(0, 2.5f, 0);
         }
         

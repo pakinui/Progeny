@@ -56,7 +56,7 @@ public class PounceTutorial : MonoBehaviour
             enemy.speed = 3;
             enemy.state = GroundEnemy.State.Pounce;
             pouncePause = false;
-            display = Instantiate(displayPrefab, new Vector3(player.transform.position.x, player.transform.position.y-1.5f), new Quaternion(0,0,0,0), this.transform);
+            display = Instantiate(displayPrefab, new Vector3(player.transform.position.x+0.15f, player.transform.position.y-1.4f), new Quaternion(0,0,0,0), this.transform);
             SpriteRenderer rend = display.GetComponent<SpriteRenderer>();
             rend.sortingOrder = 3;
         }

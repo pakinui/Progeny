@@ -45,6 +45,10 @@ public class DashTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(dashEnemy == null || enemy.health == 0){
+            Destroy(tutorial);
+        }
         
         if(currentlyDashTutorial){
             //pause in dash prep phase
@@ -97,9 +101,6 @@ public class DashTutorial : MonoBehaviour
             }
         }
         
-        if(dashEnemy == null || enemy.health == 0){
-            Destroy(tutorial);
-        }
         
         
     }

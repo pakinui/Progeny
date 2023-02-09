@@ -435,6 +435,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &33952477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3898786014389630412, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+  m_PrefabInstance: {fileID: 1082009976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &33952480
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33952477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3676153e9dd207c469ff1b158acb1da3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &46352018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,11 +5689,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.09
+      value: -22.53
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.813
+      value: -1.83
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6645,6 +6670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contact: 0
+  shortClimb: 0
   box: {fileID: 2016998572}
   pushable: 0
   playerAnimation: {fileID: 0}
@@ -6743,6 +6769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216258416}
     m_Modifications:
+    - target: {fileID: 3898786014389630412, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3898786014389630413, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -15809,6 +15839,7 @@ GameObject:
   - component: {fileID: 1975405604}
   - component: {fileID: 1975405603}
   - component: {fileID: 1975405602}
+  - component: {fileID: 1975405607}
   m_Layer: 0
   m_Name: melee
   m_TagString: Untagged
@@ -15946,6 +15977,26 @@ Transform:
   m_Father: {fileID: 478983233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1975405607
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975405601}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 075df0f5fcba78b4893cc371c2796d02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1979200707
 GameObject:
   m_ObjectHideFlags: 0

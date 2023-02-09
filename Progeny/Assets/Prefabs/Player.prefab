@@ -389,6 +389,7 @@ MonoBehaviour:
   - {fileID: -1016863458, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -1212949940, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
   - {fileID: -537057058, guid: 132f5caa2c8911b45b3226d04c3ea5b5, type: 3}
+  walkingShoot: []
   crouchWalkingSprites:
   - {fileID: -199262975, guid: aeec6c8f026bc0845897de25725b4188, type: 3}
   - {fileID: -111296369, guid: aeec6c8f026bc0845897de25725b4188, type: 3}
@@ -398,6 +399,7 @@ MonoBehaviour:
   - {fileID: -1686303973, guid: aeec6c8f026bc0845897de25725b4188, type: 3}
   - {fileID: -1450216541, guid: aeec6c8f026bc0845897de25725b4188, type: 3}
   - {fileID: -963598148, guid: aeec6c8f026bc0845897de25725b4188, type: 3}
+  crouchingShoot: []
   pushingSprites:
   - {fileID: 1685240526, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
   - {fileID: -666037438, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
@@ -408,6 +410,7 @@ MonoBehaviour:
   - {fileID: 771960307, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
   - {fileID: 1849832084, guid: 54c6bafa2582cca45bad3a4e9869c819, type: 3}
   climbingSprites: []
+  shortClimbSprites: []
   fallingSprites: []
   meleeSprites: []
   reloadSprites: []
@@ -425,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  movementSpeed: 2.5
+  movementSpeed: 3.25
   gun: {fileID: 0}
   outOfCombatDuration: 5
   currentSpeed: 0
