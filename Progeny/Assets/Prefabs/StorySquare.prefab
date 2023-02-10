@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.00006, y: -0.0007}
-  m_SizeDelta: {x: 19.70293, y: 1.9493}
+  m_AnchoredPosition: {x: 0.0009, y: -0.0008}
+  m_SizeDelta: {x: 66.90762, y: 0.77128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6665153966601100512
 Canvas:
@@ -136,8 +136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00013161, y: -0.012663}
-  m_SizeDelta: {x: 19.703, y: 1.9746}
+  m_AnchoredPosition: {x: -0.000087711, y: 0.0185}
+  m_SizeDelta: {x: 66.908, y: 0.7343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6665153966668942877
 CanvasRenderer:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.36268044, y: 0.18134117, z: 0.28712368, w: 0.21156406}
+  m_margin: {x: 0.36268044, y: 0.074018896, z: 0.28712368, w: 0.0756224}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -261,7 +261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6665153966766080137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.9301019, y: -0.12495142, z: 25.341492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 6665153967938085286}
   theText: {fileID: 6665153966668942874}
+  storyInAction: 0
   storyComplete: 0
 --- !u!1 &6665153967938085286
 GameObject:
@@ -331,8 +332,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6665153967938085286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0356, y: 4.4728, z: -14.341492}
-  m_LocalScale: {x: 19.7289, y: 1.9945, z: 1}
+  m_LocalPosition: {x: -2.8092, y: 4.4452, z: -14.341492}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6665153966601100319}
@@ -380,8 +381,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4039216, g: 0.4784314, b: 0.454902, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 257dbb64083963548aa74e66d88dce58, type: 3}
+  m_Color: {r: 0.6240655, g: 0.6074226, b: 0.6603774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

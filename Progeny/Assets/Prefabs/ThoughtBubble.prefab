@@ -161,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 7942472801277666391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8344, y: 0.825, z: -12.79407}
-  m_LocalScale: {x: 3.3539667, y: 0.859, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7942472802750217304}
@@ -208,9 +208,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.20784315, g: 0.2901961, b: 0.23529413, a: 0.74509805}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 78618ab886b05c84181bf056d389186d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -279,7 +279,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &7942472802750217306
 MonoBehaviour:
@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 3
+  showBubble: 0
   bubble: {fileID: 7942472801277666391}
   theText: {fileID: 7942472801265218120}
 --- !u!50 &7942472803063250717
