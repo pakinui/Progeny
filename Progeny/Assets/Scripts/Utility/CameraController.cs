@@ -25,6 +25,11 @@ using UnityEngine;
         private float leftEdgeX = -17.97f;
         private float rightEdgeX = 189.62f;
 
+        private bool reduceVolume = false;
+        private float changeDuration = 0;
+        private float muteDuration = 0;
+
+        private AudioSource audioSource;
         // private float xMin = -5;
         // private float xMax = 5;
         // private float yMin = -5;
@@ -38,6 +43,20 @@ using UnityEngine;
             rb = player.gameObject.GetComponent<Rigidbody2D>();
             playerPos = player.transform.position;
             targetPos = new Vector3(playerPos.x + xOffset, yOffset-3, -10f);
+            audioSource = GetComponent<AudioSource>();
+        }
+
+
+        void Update(){
+            if (muteDuration >= 0){
+                muteDuration -= Time.deltaTime;
+            }
+            if (reduceVolume && audioSource.volume > 0){
+                audioSource.volume -= Time.deltaTime / changeDuration;
+            }
+            else if (!reduceVolume && audioSource.volume < 1 && muteDuration <= 0){
+                audioSource.volume += Time.deltaTime / changeDuration;
+            }
         }
 
         // FixedUpdate is called once per fixed frame-rate frame
@@ -73,6 +92,29 @@ using UnityEngine;
                 targetPos.x = rightEdgeX;
             }
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * camSpeed);
+        }
+
+        public void Mute(bool mute, float cDuration){
+            if (mute){
+                audioSource.volume = 1;
+            }
+            else{
+                audioSource.volume = 0;
+            }
+            reduceVolume = mute;
+            changeDuration = cDuration;
+        }
+
+        public void Mute(bool mute, float cDuration, float mDuration){
+            if (mute){
+                audioSource.volume = 1;
+            }
+            else{
+                audioSource.volume = 0;
+            }
+            reduceVolume = mute;
+            changeDuration = cDuration;
+            muteDuration = mDuration;
         }
     }
 //}

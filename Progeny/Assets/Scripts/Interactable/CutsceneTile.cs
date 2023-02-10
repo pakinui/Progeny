@@ -10,6 +10,10 @@ public class CutsceneTile : MonoBehaviour
     public GameObject monster;
     public GameObject TopBar;
     public GameObject BottomBar;
+    public AudioClip cutsceneSound;
+
+    private AudioSource audioSource;
+    private CameraController cameraController;
 
     //public GameObject thoughtBubble;
 
@@ -27,6 +31,8 @@ public class CutsceneTile : MonoBehaviour
 
     void Start(){
         monster.SetActive(false);
+        audioSource = player.GetComponent<AudioSource>();
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
 
@@ -45,7 +51,8 @@ public class CutsceneTile : MonoBehaviour
 
     public void StartCutscene(){
         Debug.Log("start cutscene: " + player.rb.transform.position.y);
-
+        cameraController.Mute(true, 1f, cutsceneSound.length);
+        audioSource.PlayOneShot(cutsceneSound, 1);
 
         //TopBar.SetActive(true);
         //BottomBar.SetActive(true);
@@ -57,11 +64,11 @@ public class CutsceneTile : MonoBehaviour
         
         _timeline.Play();
         completedCutscene = true;
-
     }
 
 
     public void EndCutscene(){
+        cameraController.Mute(false, 1.5f);
         //Debug.Log("cutscene finished");
         //thoughtBubble.SetActive(true);
         //TopBar.SetActive(false);

@@ -8516,6 +8516,7 @@ MonoBehaviour:
   monster: {fileID: 1509747444}
   TopBar: {fileID: 7529614}
   BottomBar: {fileID: 1979704971}
+  cutsceneSound: {fileID: 8300000, guid: 00f15498d8bcf5b46bd6f7897cd77e78, type: 3}
   _timeline: {fileID: 858427157}
 --- !u!212 &1357381669
 SpriteRenderer:

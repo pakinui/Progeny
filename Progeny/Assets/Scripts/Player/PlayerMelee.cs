@@ -56,7 +56,7 @@ public class PlayerMelee : MonoBehaviour
         // change player state and show weapon
         player.setHitting(true);
         meleeWeapon.SetActive(true);
-        audioSource.PlayOneShot(meleeSound, 0.9f);
+        audioSource.PlayOneShot(meleeSound, 1f);
         //Debug.Log("swing and a miss");
         // BELOW LINE NEEDS FIXING - CURRENTLY DOESN'T ROTATE BACK
         //meleeWeapon.transform.RotateAround(transform.position, Vector3.forward, 360*Time.deltaTime);

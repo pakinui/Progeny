@@ -106,7 +106,7 @@ public class PlayerShoot : MonoBehaviour
             else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
-                audioSource.PlayOneShot(player.gun.gunshotSound, 0.4f);
+                audioSource.PlayOneShot(player.gun.gunshotSound, 0.25f);
                 player.gun.ammoLeft--;// decrease ammo
                 cooldownLeft = player.gun.fireRate;// reset weapon cooldown
             }
