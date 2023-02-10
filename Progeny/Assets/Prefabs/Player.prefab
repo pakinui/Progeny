@@ -464,6 +464,7 @@ MonoBehaviour:
   bullet: {fileID: 4252723909647868397, guid: 2a5e4f4482605de43955620e71f9e0a5, type: 3}
   pointOfRotation: {fileID: 7276491470161232988}
   bulletSpawnPoint: {fileID: 0}
+  shotOnCooldown: {fileID: 8300000, guid: d0b210a3766f19841ba2c4e36782b1ec, type: 3}
   noAmmo: {fileID: 8300000, guid: 19f780bb193ac864bba43796b0428565, type: 3}
 --- !u!114 &7276491471710724733
 MonoBehaviour:

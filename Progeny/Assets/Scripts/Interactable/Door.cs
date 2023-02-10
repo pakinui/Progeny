@@ -5,6 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public GameObject displayPrefab;
+    public AudioClip doorSound;
+    private AudioSource audioSource;
+
     private GameObject display;
     private bool isUsable = false;
 
@@ -15,13 +18,16 @@ public class Door : MonoBehaviour
     {
         boxCol = gameObject.GetComponent<BoxCollider2D>();
         _animator = gameObject.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (isUsable && Input.GetKeyDown("e")){
+            isUsable = false;
             _animator.SetTrigger("OpenDoor");
+            audioSource.PlayOneShot(doorSound, 1f);
             Destroy(display);
         }
     }

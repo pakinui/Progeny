@@ -15,7 +15,9 @@ public class PlayerShoot : MonoBehaviour
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
     public Transform bulletSpawnPoint;
-
+    
+    //sound that plays when shot still onCooldown;
+    public AudioClip shotOnCooldown;
     //sound that plays when there is no ammo
     public AudioClip noAmmo;
     // position of the mouse
@@ -102,8 +104,9 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft -= Time.deltaTime;
             }
 
+
                 //fire
-            else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
+            if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                 audioSource.PlayOneShot(player.gun.gunshotSound, 0.25f);
@@ -113,6 +116,10 @@ public class PlayerShoot : MonoBehaviour
 
             else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
                  audioSource.PlayOneShot(noAmmo, 0.8f);
+            }
+
+            else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
+                audioSource.PlayOneShot(shotOnCooldown, 1f);
             }
         }
         }
