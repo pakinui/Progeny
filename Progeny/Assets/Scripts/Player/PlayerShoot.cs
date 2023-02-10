@@ -15,11 +15,15 @@ public class PlayerShoot : MonoBehaviour
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
     public Transform bulletSpawnPoint;
+
+    //sound that plays when there is no ammo
+    public AudioClip noAmmo;
     // position of the mouse
     private Vector3 mousePos;
     // cooldown variables
     private float cooldownLeft = 0;
     private float reloadLeft = 0;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,7 @@ public class PlayerShoot : MonoBehaviour
         // assigning references
         player = GetComponent<Player>();
         mainCam = Camera.main.GetComponent<Camera>();
+        audioSource = player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +56,7 @@ public class PlayerShoot : MonoBehaviour
         if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
         {
             player.setReloading(true);
+            audioSource.PlayOneShot(player.gun.reloadSound, 1f);
         }
         // countdown reload
         if(player.isReloading())
@@ -97,11 +103,16 @@ public class PlayerShoot : MonoBehaviour
             }
 
                 //fire
-                else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
+            else if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
+                audioSource.PlayOneShot(player.gun.gunshotSound, 0.4f);
                 player.gun.ammoLeft--;// decrease ammo
                 cooldownLeft = player.gun.fireRate;// reset weapon cooldown
+            }
+
+            else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
+                 audioSource.PlayOneShot(noAmmo, 0.8f);
             }
         }
         }

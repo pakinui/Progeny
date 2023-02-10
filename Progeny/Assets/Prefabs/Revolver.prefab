@@ -103,6 +103,8 @@ MonoBehaviour:
   ammoCapacity: 6
   ammoLeft: 0
   reloadTime: 1
+  gunshotSound: {fileID: 8300000, guid: 112c2f3a9b74cc0458e5a5187ef92255, type: 3}
+  reloadSound: {fileID: 8300000, guid: cd308feb7dbe2294eb59a614054a323b, type: 3}
 --- !u!1 &3423010630635667146
 GameObject:
   m_ObjectHideFlags: 0

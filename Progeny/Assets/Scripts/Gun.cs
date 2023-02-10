@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     public int ammoCapacity; // max number of rounds between reloads
     public int ammoLeft; // current number of rounds left
     public float reloadTime; // time taken to reload
+    public AudioClip gunshotSound;
+    public AudioClip reloadSound;
 
     private ThoughtBubble bubble;
 
