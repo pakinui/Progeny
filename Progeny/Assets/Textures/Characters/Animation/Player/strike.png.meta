@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa03769ca558a5c43bcb35547fe4b1f5
+guid: c5e39b18d35089e4ab7f88b4b9460f2a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking top_0
+      name: character walkin strike2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 32
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 754e4422099095d49b6e6559c2322cb1
-      internalID: -2083495070
+      spriteID: ad5813426f9d83f41adf9deba3e71dc7
+      internalID: 892659211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top_1
+      name: character walkin strike2_1
       rect:
         serializedVersion: 2
-        x: 9
+        x: 31
         y: 0
-        width: 9
-        height: 32
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68eea588a880d4240b8a97d1ef2a35dc
-      internalID: -290757878
+      spriteID: ee8363b059d1b6a40897fbb882a4af19
+      internalID: 491080403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top_2
+      name: character walkin strike2_2
       rect:
         serializedVersion: 2
-        x: 18
+        x: 62
         y: 0
-        width: 9
-        height: 32
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b5dd443a9445a144bd6ec5807a17989
-      internalID: -356016119
+      spriteID: a3bf6dcc2dc67a341ab4e0677e10f648
+      internalID: -1286125974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top_3
+      name: character walkin strike2_3
       rect:
         serializedVersion: 2
-        x: 27
+        x: 93
         y: 0
-        width: 9
-        height: 32
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4701252f7ba6ef44a6e9cd85708684b
-      internalID: -828452110
+      spriteID: fb4180fe036f66d449762ec55e59d634
+      internalID: -2049173006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top_4
+      name: character walkin strike2_4
       rect:
         serializedVersion: 2
-        x: 36
+        x: 124
         y: 0
-        width: 9
-        height: 32
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,113 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a6b1a901cfae0e4eab1f098bd2c9f7c
-      internalID: -1622332741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking top_5
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1bd946262d4faa409c9ea212bf6be1e
-      internalID: 695667029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking top_6
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c4851252d927df4d80ba5fd8493c6e2
-      internalID: -886498354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking top_7
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd52b7bff8f31164eb3cc01efa79a7dd
-      internalID: 1691422639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking top_8
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16308adc17cd317448e9e512a97403a9
-      internalID: -564497838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking top_9
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fd195b88730d8b4e922de83b22aee30
-      internalID: -1417196386
+      spriteID: cc1641038978214469137582f8d1440d
+      internalID: 717071989
       vertices: []
       indices: 
       edges: []
@@ -337,16 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walking top_2: -356016119
-      walking top_6: -886498354
-      walking top_1: -290757878
-      walking top_7: 1691422639
-      walking top_5: 695667029
-      walking top_9: -1417196386
-      walking top_4: -1622332741
-      walking top_3: -828452110
-      walking top_8: -564497838
-      walking top_0: -2083495070
+      character walkin strike2_2: -1286125974
+      character walkin strike2_3: -2049173006
+      character walkin strike2_4: 717071989
+      character walkin strike2_0: 892659211
+      character walkin strike2_1: 491080403
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
