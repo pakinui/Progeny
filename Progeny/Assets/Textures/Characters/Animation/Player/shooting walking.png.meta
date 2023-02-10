@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c025cc611b643648aa1d5ec799f29ba
+guid: 640ba085e01f5a340b4d1d5a3c61fc53
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_0
+      name: walking without arms_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa6e5b18a76554847b6f363aff8f1ab9
-      internalID: -1776436868
+      spriteID: 33da2a9135d3d88498bf2486c2239f3a
+      internalID: 1883518837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_1
+      name: walking without arms_1
       rect:
         serializedVersion: 2
         x: 9
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 452e1f97e1c4d584b9e231624565ac6e
-      internalID: -497710943
+      spriteID: 27ae2a5227301014c8b4312b4b702f3d
+      internalID: 317964912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_2
+      name: walking without arms_2
       rect:
         serializedVersion: 2
         x: 18
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abecb3c41ca786e408f2e65199853ff8
-      internalID: -1820913358
+      spriteID: 2709eba7f0c9bc845a58e7626834e1ed
+      internalID: -759452590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_3
+      name: walking without arms_3
       rect:
         serializedVersion: 2
         x: 27
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3aa22757639bced49a58192893bd3b0c
-      internalID: 383699773
+      spriteID: 2c8e8cffd045a444a9ad8aff5eabea61
+      internalID: -1924466088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_4
+      name: walking without arms_4
       rect:
         serializedVersion: 2
         x: 36
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33d12001408983e4cb12c80f26efc4c8
-      internalID: -1359763283
+      spriteID: 4d4f90856eff04e4793e65a02b9e8f60
+      internalID: -192789381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_5
+      name: walking without arms_5
       rect:
         serializedVersion: 2
         x: 45
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81c6539ad6a8ee4597f9e432d01ad3e
-      internalID: 1506885058
+      spriteID: 705e7991056cc104b8e5da71ed0bb344
+      internalID: -1462723350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_6
+      name: walking without arms_6
       rect:
         serializedVersion: 2
         x: 54
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e42ecf713b5308748b953a7a6e030f8d
-      internalID: -611827453
+      spriteID: ff23ddc33c8a6c342bc08e90f460787b
+      internalID: -1097154283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_7
+      name: walking without arms_7
       rect:
         serializedVersion: 2
         x: 63
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c2c7a409d79db34495db24dcf1f1733
-      internalID: -1754365599
+      spriteID: 764aee7f3a378914791e99c200cd242d
+      internalID: -1502912669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_8
+      name: walking without arms_8
       rect:
         serializedVersion: 2
         x: 72
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0431e9ed5b875af4b912e15363df860a
-      internalID: -155003564
+      spriteID: e97a524b3fcd2f14ca93685ce72720a1
+      internalID: -645942201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking top without arms (for shooting)_9
+      name: walking without arms_9
       rect:
         serializedVersion: 2
         x: 81
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5efa4bc275e075f458feeaa97ea1bd96
-      internalID: 1293459800
+      spriteID: 5e7fe93042df38b458d43292ec869ae9
+      internalID: 1272473786
       vertices: []
       indices: 
       edges: []
@@ -337,16 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walking top without arms (for shooting)_2: -1820913358
-      walking top without arms (for shooting)_4: -1359763283
-      walking top without arms (for shooting)_3: 383699773
-      walking top without arms (for shooting)_1: -497710943
-      walking top without arms (for shooting)_0: -1776436868
-      walking top without arms (for shooting)_8: -155003564
-      walking top without arms (for shooting)_7: -1754365599
-      walking top without arms (for shooting)_9: 1293459800
-      walking top without arms (for shooting)_5: 1506885058
-      walking top without arms (for shooting)_6: -611827453
+      walking without arms_8: -645942201
+      walking without arms_7: -1502912669
+      walking without arms_3: -1924466088
+      walking without arms_2: -759452590
+      walking without arms_9: 1272473786
+      walking without arms_1: 317964912
+      walking without arms_5: -1462723350
+      walking without arms_4: -192789381
+      walking without arms_6: -1097154283
+      walking without arms_0: 1883518837
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

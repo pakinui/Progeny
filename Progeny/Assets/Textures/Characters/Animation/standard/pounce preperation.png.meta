@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68de5143b8ac9014bbc7838020900fba
+guid: ca0d14fc12fd31f4abad40469e21fb12
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking legs_0
+      name: pounce preperation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 32
+        width: 24
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55c0083ffda14784785ca1a8b77e6200
-      internalID: 565388678
+      spriteID: 052e99c98ce54fa4883d3ef8bb3f57ac
+      internalID: 1594531083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking legs_1
+      name: pounce preperation_1
       rect:
         serializedVersion: 2
-        x: 9
+        x: 24
         y: 0
-        width: 9
-        height: 32
+        width: 24
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b08494f665c226b4483dfdaedb86b706
-      internalID: 1575557296
+      spriteID: 700d34c736c1560479cbe2e513a9b60b
+      internalID: -1622559182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking legs_2
+      name: pounce preperation_2
       rect:
         serializedVersion: 2
-        x: 18
+        x: 48
         y: 0
-        width: 9
-        height: 32
+        width: 24
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,125 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aad89161c2c4b74c9e6bfdf83b081eb
-      internalID: 540952209
+      spriteID: 892559e4b0b312543a9f0b58e2eefe58
+      internalID: 707089546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking legs_3
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30d65af4ec92a8b468b737d3dac62c03
-      internalID: 899794202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_4
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66105a7978246b942895bc6ebf0f957c
-      internalID: 1990489296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_5
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27279a4c333d72e4cbad9fc4b04b21c7
-      internalID: -2118917554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_6
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b86283b0e131994daf7c22f9d35d1c6
-      internalID: 1703760424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_7
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b131a56b45f9c6446864b493d7cfa2a2
-      internalID: -889416312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_8
+      name: pounce preperation_3
       rect:
         serializedVersion: 2
         x: 72
         y: 0
-        width: 9
-        height: 32
+        width: 24
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,29 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fac3fca91bf42f4db4e861949115334
-      internalID: -867841409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking legs_9
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 9
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 259ff417e70524e4e8823c2a19922153
-      internalID: 1267500755
+      spriteID: ddcca110deae8f548917a267cfe7c28b
+      internalID: -1089365296
       vertices: []
       indices: 
       edges: []
@@ -337,16 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walking legs_6: 1703760424
-      walking legs_2: 540952209
-      walking legs_4: 1990489296
-      walking legs_7: -889416312
-      walking legs_1: 1575557296
-      walking legs_0: 565388678
-      walking legs_3: 899794202
-      walking legs_5: -2118917554
-      walking legs_9: 1267500755
-      walking legs_8: -867841409
+      pounce preperation_0: 1594531083
+      pounce preperation_2: 707089546
+      pounce preperation_3: -1089365296
+      pounce preperation_1: -1622559182
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

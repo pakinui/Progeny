@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5560285be2f27b449523b0697600d76
+guid: 434ba38ceeab7aa4ea50fe762799efce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character crouch walk legs_0
+      name: standard enemy idle animation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 23
+        width: 23
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0c118f7b78ba964aaca679455f4acd9
-      internalID: 28610966
+      spriteID: 6780fbfd2dfb8444493aefb8cba98f88
+      internalID: 1324069940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_1
+      name: standard enemy idle animation_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 23
         y: 0
-        width: 15
-        height: 23
+        width: 23
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a1b979297493da49a9408e6dce64358
-      internalID: -1729109286
+      spriteID: 2b41b1e23f10eff4887bfb90db83d90c
+      internalID: -395705100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk legs_2
+      name: standard enemy idle animation_2
       rect:
         serializedVersion: 2
-        x: 30
+        x: 46
         y: 0
-        width: 15
-        height: 23
+        width: 23
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,113 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e896b3131db4bc444ba246702692cf4e
-      internalID: -569880927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk legs_3
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5ba68f6b800f2b4d9a8b3bd4e5d149a
-      internalID: 169149253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk legs_4
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e81931fc79847ac4a96de7acb68f7a62
-      internalID: 459787552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk legs_5
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70e31bedfdee5644fb44896f7df0614b
-      internalID: 1040396376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk legs_6
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40a240b4fa7dada44b9c0d85d5bab54b
-      internalID: -1779981006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk legs_7
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f19b82b3f3fdaa4e99fd7537d6fd727
-      internalID: -1584878183
+      spriteID: 6ed6313fe0ce6e44b8a3c62de7ffb521
+      internalID: -24034479
       vertices: []
       indices: 
       edges: []
@@ -295,14 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character crouch walk legs_2: -569880927
-      character crouch walk legs_6: -1779981006
-      character crouch walk legs_7: -1584878183
-      character crouch walk legs_4: 459787552
-      character crouch walk legs_0: 28610966
-      character crouch walk legs_1: -1729109286
-      character crouch walk legs_3: 169149253
-      character crouch walk legs_5: 1040396376
+      standard enemy idle animation_1: -395705100
+      standard enemy idle animation_0: 1324069940
+      standard enemy idle animation_2: -24034479
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

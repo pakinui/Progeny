@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21e181a5b1c891049838222a5c119b3f
+guid: 5e0d0784a2666e1408ffa9a11cb80a21
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character crouch walk top_0
+      name: normal death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 23
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,41 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e25c7f7c0e44e7c4a952492729897fe7
-      internalID: -422974010
+      spriteID: 83e84117c797a9346bc5f838c48fa6a9
+      internalID: -1003942602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk top_1
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f0f1e90a3a2c704aa4645bd5b9dd2ad
-      internalID: 994567922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk top_2
+      name: normal death_1
       rect:
         serializedVersion: 2
         x: 30
         y: 0
-        width: 15
-        height: 23
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,41 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e036bf7905cae4bbd2ecf8b23dc824
-      internalID: 1785298310
+      spriteID: f966ea75862579d449f66d8c0189072e
+      internalID: 1349754175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk top_3
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cf9124243c76be44b0354869bac972a
-      internalID: -1512501719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk top_4
+      name: normal death_2
       rect:
         serializedVersion: 2
         x: 60
         y: 0
-        width: 15
-        height: 23
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,41 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfc05cee69a92d644833573c9bdd79e2
-      internalID: 654526690
+      spriteID: 087217be8e9e9a24295d5a26716ce4af
+      internalID: 1988352005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk top_5
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02850a5b23d1c7e49bdec4c2bb6250ee
-      internalID: -2034724724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character crouch walk top_6
+      name: normal death_3
       rect:
         serializedVersion: 2
         x: 90
         y: 0
-        width: 15
-        height: 23
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef746b396232a174cbb727da84874d90
-      internalID: -688174332
+      spriteID: 3422bba3ddf315143a9d6197b318cce2
+      internalID: 2051164838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character crouch walk top_7
+      name: normal death_4
       rect:
         serializedVersion: 2
-        x: 105
+        x: 120
         y: 0
-        width: 15
-        height: 23
+        width: 30
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +215,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff0fc65b0e4d210409ce4020c1eccc47
-      internalID: -107524185
+      spriteID: 940ba5ceeb8670b42a05fbf161ce2375
+      internalID: -560341537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52e07c0d1ceab048bd90c163703410a
+      internalID: 1394577167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd6c4191a0ea47439f441244313e16b
+      internalID: 1471131522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_7
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2ec4cf58d05d84fb1c2e28668a8cd2
+      internalID: -801985297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8d3f3ceb711064f9555ff20db772b8
+      internalID: -334877700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a6682bc69db0442be84ef5b89e8301
+      internalID: 1195240381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68f0e09d3af633428857a3d7788b785
+      internalID: 1323244532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c8e6ccb54bf6749b4cb5ba76f78e9f
+      internalID: 1836421528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal death_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0f09c49eb37e34f80d0945a8b23369
+      internalID: -727229091
       vertices: []
       indices: 
       edges: []
@@ -295,14 +400,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character crouch walk top_2: 1785298310
-      character crouch walk top_4: 654526690
-      character crouch walk top_3: -1512501719
-      character crouch walk top_6: -688174332
-      character crouch walk top_5: -2034724724
-      character crouch walk top_0: -422974010
-      character crouch walk top_7: -107524185
-      character crouch walk top_1: 994567922
+      normal death_10: 1323244532
+      normal death_8: -334877700
+      normal death_5: 1394577167
+      normal death_6: 1471131522
+      normal death_4: -560341537
+      normal death_2: 1988352005
+      normal death_0: -1003942602
+      normal death_3: 2051164838
+      normal death_9: 1195240381
+      normal death_11: 1836421528
+      normal death_12: -727229091
+      normal death_1: 1349754175
+      normal death_7: -801985297
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
