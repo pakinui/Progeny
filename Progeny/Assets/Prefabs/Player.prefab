@@ -512,6 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeWeapon: {fileID: 1570214512}
+  meleeSound: {fileID: 8300000, guid: a34052becd9609944abc7aa7903cbb28, type: 3}
   attackDuration: 0.2
   cooldown: 0.5
 --- !u!114 &1012909204
