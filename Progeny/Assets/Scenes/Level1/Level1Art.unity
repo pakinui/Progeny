@@ -6925,8 +6925,8 @@ MonoBehaviour:
   contact: 0
   shortClimb: 0
   box: {fileID: 2016998572}
-  pushable: 0
-  climbable: 0
+  pushable: 1
+  climbable: 1
   playerAnimation: {fileID: 0}
 --- !u!212 &1061817628
 SpriteRenderer:
@@ -17628,6 +17628,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1703243247}
+    - target: {fileID: 6726856148435138108, guid: 5c3d20487a86c0e48a11bf828bb83e3c, type: 3}
+      propertyPath: pushable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726856148435138108, guid: 5c3d20487a86c0e48a11bf828bb83e3c, type: 3}
+      propertyPath: climbable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6726856148435138110, guid: 5c3d20487a86c0e48a11bf828bb83e3c, type: 3}
       propertyPath: m_RootOrder
       value: 0
