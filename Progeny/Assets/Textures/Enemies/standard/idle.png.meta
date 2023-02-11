@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 434ba38ceeab7aa4ea50fe762799efce
+guid: 5e74c9950f8c6c446aefebeb5ef9ff5e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: standard enemy idle animation_0
+      name: idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6780fbfd2dfb8444493aefb8cba98f88
-      internalID: 1324069940
+      spriteID: 6863f797c9310b04cb5fc933053921e0
+      internalID: -1048048690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: standard enemy idle animation_1
+      name: idle_1
       rect:
         serializedVersion: 2
         x: 23
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b41b1e23f10eff4887bfb90db83d90c
-      internalID: -395705100
+      spriteID: 2f295afb460b7484a9453cf2d149082f
+      internalID: 1934473281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: standard enemy idle animation_2
+      name: idle_2
       rect:
         serializedVersion: 2
         x: 46
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ed6313fe0ce6e44b8a3c62de7ffb521
-      internalID: -24034479
+      spriteID: 360711704b8d72b42aa6c5bcc494c8bd
+      internalID: -1380519939
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      standard enemy idle animation_1: -395705100
-      standard enemy idle animation_0: 1324069940
-      standard enemy idle animation_2: -24034479
+      idle_0: -1048048690
+      idle_1: 1934473281
+      idle_2: -1380519939
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
