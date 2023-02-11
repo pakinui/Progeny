@@ -36,6 +36,7 @@ public class HouseInteract : MonoBehaviour
         //if player presses e and img is not open yet
         if(contact && !imgOpen){
             if(Input.GetKeyDown("e")){
+                bubble.hideBubble();//incase bubble is currently open
                 player.stopPlayerMovement();
                 bigPhoto.SetActive(true);
                 interactBackground.SetActive(true);
@@ -47,7 +48,7 @@ public class HouseInteract : MonoBehaviour
                 else if(calendar) block.calendar = true;
                 
             }
-        }else if(contact && imgOpen){
+        }else if(imgOpen){
             if(Input.GetKeyDown(KeyCode.Space)){
                 StartThought();
             }

@@ -6,15 +6,13 @@ using TMPro;
 
 public class ThoughtBubble : MonoBehaviour
 {
-    public float timeRemaining = 3;
+    private float timeRemaining = 3;
     public bool showBubble = false;
     
     public GameObject bubble;
     public TextMeshProUGUI theText;
 
-    //if script is on a trigger then it uses this text
-    public string bubbleText;
-    public bool isTimed = false; //should the bubble be on a timer
+    
 
     //player
     private Player player;
@@ -31,23 +29,35 @@ public class ThoughtBubble : MonoBehaviour
     }
 
     /**
+        method to set the text of the thoughtbubble
     */
     public void SetBubbleText(string text){
         theText.text = text;
     }
 
-
+    /**
+        method to show the thoughtbubble
+        will be shown until hideBubble() is called
+    */
     public void ShowBubble(){
         hideBubble();//incase another bubble is open atm
         bubble.SetActive(true);
         showBubble = true;
     }
 
+    /**
+        method to hide the thoughtbubble
+    */
     public void hideBubble(){
         bubble.SetActive(false);
         showBubble = false;
     }
 
+    /**
+        method to show the thoughtbubble
+        will automatically hide the thoughtbubble after
+        a set amount of seconds
+    */
     public void ShowBubbleForSeconds(float sec){
         bubbleOnTimer = true;
         timeRemaining = sec;
@@ -80,13 +90,7 @@ public class ThoughtBubble : MonoBehaviour
         }
     }
 
-
-    void OnTriggerEnter2D(Collider2D coll){
-        if(coll.tag == "Player"){
-            SetBubbleText(bubbleText);
-
-        }
-    }
+    
     
 }
 
