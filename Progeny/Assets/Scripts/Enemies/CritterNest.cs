@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class CritterNest : MonoBehaviour
 {
-    public Transform player; // reference to the player (for distance)
+    //track colour
+    private bool isRed = false;
+    public float redDuration = 1;
+    private float redTimer;
+    private Transform player; // reference to the player (for distance)
     public GameObject critter; // reference to the critter object to be spawned
     public int health; // shots taken to destroy nest
     public float spawnFrequency; // rate at which critters are spawned
@@ -13,13 +17,15 @@ public class CritterNest : MonoBehaviour
     // public int spawnLimit; // limit to how many critters can be spawned
     public bool rangeEnabled;
     public float spawnRange; // range in which the player has to be in order to spawn a critter
-    
+    //sprite renderer for colour
+    private SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
         spawnTimer = spawnFrequency;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +44,14 @@ public class CritterNest : MonoBehaviour
                 // spawnLimit--;
             }
         }
+
+        if (isRed){
+            redTimer -= Time.deltaTime;
+            if (redTimer <= 0){
+                sr.color = new Color(255f, 255f, 255f, 1f);
+                isRed = false;
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -47,6 +61,9 @@ public class CritterNest : MonoBehaviour
             if(health == 0){
                 Destroy(this.gameObject);
             }
+            sr.color = new Color(255f, 0f, 0f, 1f);
+            isRed = true;
+            redTimer = redDuration;
         }
     }
 }

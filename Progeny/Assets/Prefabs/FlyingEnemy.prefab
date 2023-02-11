@@ -151,11 +151,11 @@ MonoBehaviour:
   state: 0
   health: 1
   damageDuration: 1
-  idleRange: 16
-  approachRange: 4
-  returnRange: 6
-  speed: 5
-  prepareDuration: 1.5
+  idleRange: 9999999
+  approachRange: 1.5
+  returnRange: 0.5
+  speed: 15
+  prepareDuration: 0.65
   bobRate: 20
   avgBobScale: 0.0025
   bobScaleVariance: 4.08

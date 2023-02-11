@@ -27,7 +27,12 @@ public class FlyingEnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){}
+    void Update(){
+        if (!VisibleCheck.isVisible(GetComponent<Renderer>(), Camera.main))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // attack
     void OnTriggerEnter2D(Collider2D other)

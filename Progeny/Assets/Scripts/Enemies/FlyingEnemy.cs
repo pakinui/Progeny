@@ -95,24 +95,24 @@ public class FlyingEnemy : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
-                sr.color = new Color(255f, 255f, 255f, 1f);
+                //sr.color = new Color(255f, 255f, 255f, 1f);
                 break;
             case State.Approach:
-                sr.color = new Color(255f, 0f, 0f, 1f);
+                //sr.color = new Color(255f, 0f, 0f, 1f);
                 break;
             case State.Prepare:
-                sr.color = new Color(0f, 0f, 255f, 1f);
+                //sr.color = new Color(0f, 0f, 255f, 1f);
                 prepareTimer = prepareDuration;
                 break;
             case State.Attack:
-                sr.color = new Color(0, 255f, 0f, 1f);
+                //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             // case State.Wait:
             //     sr.color = new Color(0, 255f, 0f, 1f);
             //     waitTimer = waitDuration;
             //     break;
             case State.Return:
-                sr.color = new Color(0, 0f, 0f, 1f);
+                //sr.color = new Color(0, 0f, 0f, 1f);
                 break;
         }
     }
@@ -192,7 +192,7 @@ public class FlyingEnemy : MonoBehaviour
             direction = 0;
         }
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
-        if (Math.Abs(player.transform.position.x - transform.position.x) < returnRange)
+        if (Math.Abs(originalPosition.x - transform.position.x) > returnRange)
         {
             rb.velocity = velocity;
             // Change in vertical distance 
@@ -200,7 +200,7 @@ public class FlyingEnemy : MonoBehaviour
             // Move the game object on the vertical axis
             transform.Translate(new Vector3(0, dy, 0));
         } 
-        else if (Math.Abs(player.transform.position.x - transform.position.x) >= returnRange)
+        else if (Math.Abs(originalPosition.x - transform.position.x) <= returnRange)
         {
             rb.velocity = new Vector2(0, 0);
             SwitchState(State.Idle);

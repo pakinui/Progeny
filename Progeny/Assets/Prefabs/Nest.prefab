@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0b3c34c8486dc4099e97d0f96fe431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  redDuration: 0.3
   critter: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
   health: 5
   spawnFrequency: 6
+  rangeEnabled: 0
   spawnRange: 16
 --- !u!61 &4591452100568464064
 BoxCollider2D:
@@ -113,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

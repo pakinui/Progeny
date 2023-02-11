@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     private bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting, reloading = false;
     // default movement speed of player
     public float movementSpeed;
+
+    // sounds the player makes when hurt
+    public AudioClip[] hurtSounds;
+
+    public AudioClip deathSound;
+
     // reference to the player's gun object
     public Gun gun;
 
@@ -105,6 +111,13 @@ public class Player : MonoBehaviour
 
     //adds health to value (subtracts if negative)
     public void SetCurrentHealth(float health){
+        if (currentHealth > health && health > 0){
+            int randomValue = Random.Range(0, hurtSounds.Length);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.5f);
+        }
+        else if (health <= 0){
+            audioSource.PlayOneShot(deathSound, 0.5f);
+        }
         currentHealth = health;
     }
     
