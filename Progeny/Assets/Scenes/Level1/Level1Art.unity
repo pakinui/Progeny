@@ -7023,6 +7023,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216258416}
     m_Modifications:
+    - target: {fileID: 4174507615990268468, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4174507616314824645, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_Name
       value: GunPickup

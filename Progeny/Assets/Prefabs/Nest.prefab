@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0b3c34c8486dc4099e97d0f96fe431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redDuration: 0.3
   critter: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
   health: 5
   spawnFrequency: 6

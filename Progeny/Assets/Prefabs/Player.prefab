@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  movementSpeed: 3.25
+  movementSpeed: 4
   gun: {fileID: 0}
   outOfCombatDuration: 5
   currentSpeed: 0
