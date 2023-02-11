@@ -9,7 +9,6 @@ public class Pickup : MonoBehaviour
 
     //private reference to said display
     //private GameObject display;
-
     //interactable flag
     private bool isInteractable = false;
 
@@ -23,7 +22,6 @@ public class Pickup : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-
     }
 
     // Update is called once per frame
@@ -43,6 +41,7 @@ public class Pickup : MonoBehaviour
             }
             // assign reference to the bulletSpawnPoint
             player.gameObject.GetComponent<PlayerShoot>().bulletSpawnPoint = newGun.transform.GetChild(0);
+            player.gotGun();
             // destroy the pickup object
             Destroy(this.gameObject);
         }

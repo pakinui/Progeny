@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 
     //boolean to prevent player from moving when needed (i.e. cutscenes)
     private bool allowMovement = true;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     public void Start(){
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     public void Update(){
@@ -192,6 +194,10 @@ public class Player : MonoBehaviour
     public void startPlayerMovement(){
         allowMovement = true;
         moving = true;
+    }
+
+    public void gotGun(){
+        audioSource.PlayOneShot(gun.pickupSound, 0.7f);
     }
 
     public void Die()
