@@ -430,6 +430,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   movementSpeed: 4
+  hurtSounds:
+  - {fileID: 8300000, guid: 75db55a0e86945442aff6ae74637d9fc, type: 3}
+  - {fileID: 8300000, guid: df960662a777f3d45b890ac99529420e, type: 3}
+  - {fileID: 8300000, guid: 923eb9c547256564086e17bd2aa51860, type: 3}
   gun: {fileID: 0}
   outOfCombatDuration: 5
   currentSpeed: 0
