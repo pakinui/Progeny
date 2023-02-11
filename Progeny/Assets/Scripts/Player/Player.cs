@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
     public void SetCurrentHealth(float health){
         if (currentHealth > health && health > 0){
             int randomValue = Random.Range(0, hurtSounds.Length);
-            audioSource.PlayOneShot(hurtSounds[randomValue], 0.5f);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         else if (health <= 0){
             audioSource.PlayOneShot(deathSound, 0.5f);
@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
     }
 
     public void gotGun(){
-        audioSource.PlayOneShot(gun.pickupSound, 0.7f);
+        audioSource.PlayOneShot(gun.pickupSound, 0.35f);
     }
 
     public void Die()

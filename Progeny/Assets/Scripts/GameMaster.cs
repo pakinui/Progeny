@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour 
 {
+    private FadeToBlack ftb;
+    private CameraController cameraController;
+
+    private bool changingLevel = false;
+    private bool startingLevel = true;
+    private bool readyToStart = true;
+    private string nextLevelName;
+
     private float slowMoDuration;
     public float timeOrder;
 
@@ -23,6 +31,25 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+    }
+
+    void Update(){
+        if (changingLevel){
+            if (ftb.isBlack){
+                changingLevel = false;
+                SceneManager.LoadScene(nextLevelName);
+                Debug.Log("I HAVE FINALLY LOST VISION1");
+                startingLevel = true;
+            }
+        }
+        else if (startingLevel){
+            ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+            cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+            StartLevel();
+            startingLevel = false;
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +64,19 @@ public class GameMaster : MonoBehaviour
             Time.timeScale = 1f;
             slowMoDuration = 0;
         }
+    }
+
+    public void NextLevel(string sceneName){
+        StartCoroutine(ftb.FadeBlackSquare(true, 0.25f));
+        cameraController.Mute(true, 4f);
+        nextLevelName = sceneName;
+        changingLevel = true;
+    }
+
+    private void StartLevel(){
+        ftb.InstantBlack();
+        StartCoroutine(ftb.FadeBlackSquare(false, 0.25f));
+        cameraController.Mute(false, 4f);
     }
 
     public void slowMo(float t){

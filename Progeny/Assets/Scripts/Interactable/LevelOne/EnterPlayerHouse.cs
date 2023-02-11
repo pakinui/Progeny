@@ -8,15 +8,12 @@ public class EnterPlayerHouse : MonoBehaviour
     
     //the display to be hovered once interactable
     public GameObject display;
-
+    private GameMaster gm;
     private bool isTriggered = false;
-    
-    
-    
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     void OnTriggerEnter2D(Collider2D coll){
@@ -40,7 +37,8 @@ public class EnterPlayerHouse : MonoBehaviour
     {
         if(isTriggered){
             if(Input.GetKeyDown("e")){
-                SceneManager.LoadScene("LevelDone");
+                Destroy(display);
+                gm.NextLevel("LevelTwo");
             }
         }
     }
