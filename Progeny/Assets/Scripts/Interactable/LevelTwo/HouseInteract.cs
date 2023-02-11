@@ -2,25 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FamilyPhoto : MonoBehaviour
+public class HouseInteract : MonoBehaviour
 {
     public GameObject bigPhoto; 
     public GameObject display; // E to display
     public GameObject interactBackground;
+    public string thoughtText;
+
+    //which obj is this one
+    public bool familyPhoto = false;
+    public bool workLetter = false;
+    public bool calendar = false;
+    
+
+    //to change booleans in doorblock
+    public DoorBlock block;
 
     private Player player;
     private ThoughtBubble bubble;
     private bool contact = false;
     private bool imgOpen = false;
     
-    
-    
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
-
     }
 
     // Update is called once per frame
@@ -34,6 +41,10 @@ public class FamilyPhoto : MonoBehaviour
                 interactBackground.SetActive(true);
                 imgOpen = true;
                 display.SetActive(false);
+
+                if(familyPhoto) block.photo = true;
+                else if(workLetter) block.letter = true;
+                else if(calendar) block.calendar = true;
                 
             }
         }else if(contact && imgOpen){
@@ -48,8 +59,9 @@ public class FamilyPhoto : MonoBehaviour
         interactBackground.SetActive(false);
         imgOpen = false;
         player.startPlayerMovement();
-        bubble.SetBubbleText("Maybe I could trap it at Bates Farm?\n I just need to find something that will hurt it.");
+        bubble.SetBubbleText(thoughtText);
         bubble.ShowBubbleForSeconds(3);
+        Destroy(this.gameObject);// so player cant see them a second time
     }
 
     // when player enters box collider and is close 
