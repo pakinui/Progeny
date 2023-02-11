@@ -38,7 +38,8 @@ public class MeleeTutorial : MonoBehaviour
             //gameObject.SetActive(false);
             Destroy(display);
             meleePickedUp = true;
-            
+            PlayerMelee pm = player.GetComponent<PlayerMelee>();
+            pm.hasObtainedMelee = true;
             player.stopPlayerMovement();
             story.PlayStoryText(meleeTextFile);
         }

@@ -220,13 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb0932d7291663499284f80aad11375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSprites:
-  - {fileID: -240795898, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
-  - {fileID: -24885292, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
-  - {fileID: 1470836982, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
-  - {fileID: 2124463374, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
-  - {fileID: -1624972488, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
-  - {fileID: -2120329326, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  idleSprites: []
+  approachSprites: []
+  pouncePrepSprites: []
+  pounceSprites: []
+  deathSprites: []
   framesPerSecond: 10
 --- !u!114 &4195359494059996816
 MonoBehaviour:
@@ -245,9 +243,9 @@ MonoBehaviour:
   damageDuration: 0.3
   idleRange: 16
   approachRange: 6
-  speed: 3
+  speed: 4.8
   pounceChance: 0.5
   pounceSpeedVertical: 6
-  pounceSpeedHorizontal: 8
-  dashSpeed: 10
+  pounceSpeedHorizontal: 9
+  dashSpeed: 11
   prepareDuration: 0.75

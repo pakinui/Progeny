@@ -9,6 +9,8 @@ public class PlayerMelee : MonoBehaviour
     // reference to the melee weapon
     public GameObject meleeWeapon;
 
+    public bool hasObtainedMelee = true;
+    private bool meleeEnabled = false;
     // melee sound
     public AudioClip meleeSound;
     // speed of attack
@@ -24,12 +26,15 @@ public class PlayerMelee : MonoBehaviour
     {
         player = GetComponent<Player>();
         audioSource = player.GetComponent<AudioSource>();
+        if(hasObtainedMelee){
+            meleeEnabled = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!player.isAiming() && !player.isCrouching() && Input.GetMouseButtonDown(0) && cooldownLeft <= 0){
+        if(!player.isAiming() && !player.isCrouching() && meleeEnabled && Input.GetMouseButtonDown(0) && cooldownLeft <= 0){
             Swing();
         }
         if(player.isHitting()){
@@ -52,6 +57,14 @@ public class PlayerMelee : MonoBehaviour
         return cooldownLeft;
     }
 
+    public void setMelee(bool meleeEnable){
+        if (hasObtainedMelee && meleeEnable){
+            meleeEnabled = meleeEnable;
+        }
+        else{
+            meleeEnabled = false;
+        }
+    }
     private void Swing(){
         // change player state and show weapon
         player.setHitting(true);

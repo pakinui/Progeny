@@ -9,9 +9,7 @@ namespace Controller
         public GameObject pausePanel;
         void Start()
         {
-            // assigning references
-            
-            
+            player = GameObject.Find("Player").GetComponent<Player>();
         }
 
         private void Update()

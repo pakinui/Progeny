@@ -201,12 +201,14 @@ public class Player : MonoBehaviour
     public void stopPlayerMovement(){
         allowMovement = false;
         moving = false;
+        playerMelee.setMelee(false);
         setAiming(false);
     }
     // to start both allowing movement and movement animations
     public void startPlayerMovement(){
         allowMovement = true;
         moving = true;
+        playerMelee.setMelee(true);
     }
 
     public void gotGun(){

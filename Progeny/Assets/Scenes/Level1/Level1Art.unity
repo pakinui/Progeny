@@ -5756,6 +5756,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 613461573, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: hasObtainedMelee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1570214512, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17647,6 +17651,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374803926}
     m_Modifications:
+    - target: {fileID: 5977074574008371645, guid: eb9aba3dc3fbaa448aa0a77a2dead7ca, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5977074574008371646, guid: eb9aba3dc3fbaa448aa0a77a2dead7ca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

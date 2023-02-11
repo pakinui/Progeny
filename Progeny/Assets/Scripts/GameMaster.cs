@@ -10,13 +10,14 @@ public class GameMaster : MonoBehaviour
 
     private bool changingLevel = false;
     private bool startingLevel = true;
-    private bool readyToStart = true;
     private string nextLevelName;
 
     private float slowMoDuration;
     public float timeOrder;
 
     private static GameMaster instance;
+    private Player player;
+    private PlayerMelee pm;
     public Vector3 lastCheckpointPos;
 
     void Awake(){
@@ -31,8 +32,6 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
-        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void Update(){
@@ -40,13 +39,13 @@ public class GameMaster : MonoBehaviour
             if (ftb.isBlack){
                 changingLevel = false;
                 SceneManager.LoadScene(nextLevelName);
-                Debug.Log("I HAVE FINALLY LOST VISION1");
                 startingLevel = true;
             }
         }
         else if (startingLevel){
             ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
             cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+            player = GameObject.Find("Player").GetComponent<Player>();
             StartLevel();
             startingLevel = false;
         }
@@ -71,6 +70,7 @@ public class GameMaster : MonoBehaviour
         cameraController.Mute(true, 4f);
         nextLevelName = sceneName;
         changingLevel = true;
+        player.stopPlayerMovement();
     }
 
     private void StartLevel(){
