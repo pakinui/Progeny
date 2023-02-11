@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PostItInteract : MonoBehaviour
+public class FamilyPhoto : MonoBehaviour
 {
-    
-    public GameObject bigPostIt; 
+    public GameObject bigPhoto; 
     public GameObject display; // E to display
     public GameObject interactBackground;
 
     private Player player;
     private ThoughtBubble bubble;
-    
     private bool contact = false;
     private bool imgOpen = false;
     
@@ -22,7 +20,7 @@ public class PostItInteract : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         bubble =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
-        
+
     }
 
     // Update is called once per frame
@@ -32,7 +30,7 @@ public class PostItInteract : MonoBehaviour
         if(contact && !imgOpen){
             if(Input.GetKeyDown("e")){
                 player.stopPlayerMovement();
-                bigPostIt.SetActive(true);
+                bigPhoto.SetActive(true);
                 interactBackground.SetActive(true);
                 imgOpen = true;
                 display.SetActive(false);
@@ -46,7 +44,7 @@ public class PostItInteract : MonoBehaviour
     }
 
     private void StartThought(){
-        bigPostIt.SetActive(false);
+        bigPhoto.SetActive(false);
         interactBackground.SetActive(false);
         imgOpen = false;
         player.startPlayerMovement();
