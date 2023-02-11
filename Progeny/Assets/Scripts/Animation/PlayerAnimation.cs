@@ -30,7 +30,7 @@ public class PlayerAnimation : MonoBehaviour {
    // game object
    SpriteRenderer animRenderer;
    
-   // Time passed since the start of animatin
+   // Time passed since the start of animation
    private float timeAtAnimStart;
    
    // Indicates whether animation is running or not
