@@ -58,7 +58,7 @@ public class PlayerShoot : MonoBehaviour
         if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
         {
             player.setReloading(true);
-            audioSource.PlayOneShot(player.gun.reloadSound, 1f);
+            audioSource.PlayOneShot(player.gun.reloadSound, 0.5f);
         }
         // countdown reload
         if(player.isReloading())
@@ -109,13 +109,13 @@ public class PlayerShoot : MonoBehaviour
             if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                 player.setShooting(true);// set player state
                 Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
-                audioSource.PlayOneShot(player.gun.gunshotSound, 0.25f);
+                audioSource.PlayOneShot(player.gun.gunshotSound, 0.2f);
                 player.gun.ammoLeft--;// decrease ammo
                 cooldownLeft = player.gun.fireRate;// reset weapon cooldown
             }
 
             else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
-                 audioSource.PlayOneShot(noAmmo, 0.8f);
+                 audioSource.PlayOneShot(noAmmo, 0.6f);
             }
 
             else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
