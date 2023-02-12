@@ -115,7 +115,7 @@ public class PlayerShoot : MonoBehaviour
             }
 
             else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
-                 audioSource.PlayOneShot(noAmmo, 0.6f);
+                 audioSource.PlayOneShot(noAmmo, 0.9f);
             }
 
             else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
