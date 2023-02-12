@@ -95,7 +95,8 @@ public class ShootingTutorial : MonoBehaviour
                 
                 
                 story.storyComplete = false;//reset story
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);//dont destroy(for checkpoint)
                 
             }
         
