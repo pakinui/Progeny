@@ -20,6 +20,7 @@ public class DeathPanelController : MonoBehaviour
     private void OnEnable()
     {
         Time.timeScale = 0;
+        player.stopPlayerMovement();
     }
 
     public void RedirectToMainMenu()
