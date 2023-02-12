@@ -5,6 +5,7 @@ public class PlayerAnimation : MonoBehaviour {
 
    // An array with the sprites used for animation
    public Sprite idleSprite;
+   public Sprite fallingSprite;
    public Sprite crouchIdleSprite;
    public Sprite[] walkingSprites;
    public Sprite[] walkingShoot;
@@ -13,7 +14,6 @@ public class PlayerAnimation : MonoBehaviour {
    public Sprite[] pushingSprites;
    public Sprite[] climbingSprites;
    public Sprite[] shortClimbSprites;
-   public Sprite[] fallingSprites;
    public Sprite[] meleeSprites;
    public Sprite[] reloadSprites;
 
