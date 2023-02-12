@@ -12,6 +12,7 @@ public class PlayerAnimationController : MonoBehaviour
     //for climbing
     private Vector2 topOfPlayer;
     private Collider2D col;
+    private bool startedHit = false;
     
 
     // Start is called before the first frame update
@@ -34,9 +35,16 @@ public class PlayerAnimationController : MonoBehaviour
         if(player.GetCurrentHealth() <= 0)anim.SetBool("dying", true);
 
         else if(player.isHitting()){ 
-            anim.SetBool("isStriking", true);
-            anim.SetTrigger("strike"); 
-        } 
+            if(!startedHit){
+                anim.SetBool("isStriking", true);
+                anim.SetTrigger("strike"); 
+            }else{
+                startedHit = true;
+            }
+            
+        }else if(!player.isHitting()){
+            startedHit = false;
+        }
         else if(player.isFalling()) anim.SetBool("falling", true);
         else if(player.isClimbing()){
 
@@ -44,7 +52,7 @@ public class PlayerAnimationController : MonoBehaviour
             anim.SetBool("climbing", true);
         } 
         else if(player.isPushing()) anim.SetBool("pushing", true);
-        else if(player.isAiming())anim.SetBool("aiming", true);
+        if(player.isAiming())anim.SetBool("aiming", true);
         
         if(player.isMoving()) anim.SetBool("moving", true);
         else anim.SetBool("idle", true);
