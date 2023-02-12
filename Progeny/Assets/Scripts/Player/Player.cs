@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     PlayerShoot playerShoot;
     PlayerMelee playerMelee;
+    PlayerMove playerMove;
 
     SpriteRenderer sr;
     private bool red = false;
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
 
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();
+        playerMove = GetComponent<PlayerMove>();
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -204,6 +206,7 @@ public class Player : MonoBehaviour
         allowMovement = false;
         moving = false;
         playerMelee.setMelee(false);
+        playerMove.stopVelocity();
         setAiming(false);
     }
     // to start both allowing movement and movement animations

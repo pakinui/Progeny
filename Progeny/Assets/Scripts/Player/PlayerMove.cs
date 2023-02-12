@@ -59,4 +59,8 @@ public class PlayerMove : MonoBehaviour
         
     }
 
+    public void stopVelocity(){
+        rb.velocity = new Vector2(0, 0);
+    }
+
 }
