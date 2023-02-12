@@ -62,7 +62,7 @@ public class ShootingTutorial : MonoBehaviour
 
             }
             //first enemy died
-            if(enemy == null && !tutorialCompleted){
+            if(enemy.health == 0 && !tutorialCompleted){
                 bubble.hideBubble();
                 tutorialCompleted = true;
                 story.storyComplete = false;
@@ -81,7 +81,7 @@ public class ShootingTutorial : MonoBehaviour
                 enemyDeathSpot = enemyRb.position;
 
             }
-            if(secondEnemy == null && !meleeDropped){
+            if(secondEnemy.health == 0 && !meleeDropped){
                 enemyTwoDead = true;
                 meleeRb.transform.position = enemyDeathSpot;
                 melee.SetActive(true);
