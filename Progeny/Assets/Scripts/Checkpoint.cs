@@ -9,11 +9,13 @@ public class Checkpoint : MonoBehaviour
     public bool checkPointReached = false;
     public GameObject checkpointEnemies;
     public GroundEnemy[] enemies;
+    public CritterNest[] nests;
 
     
 
     private ReturnToCheckpoint returnPlayer;
     private int arrLength;
+    private int critterArrLength;
 
     private Player player;
     private bool backToStart = false;
@@ -25,6 +27,7 @@ public class Checkpoint : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         returnPlayer = player.GetComponent<ReturnToCheckpoint>();
         arrLength = enemies.Length;
+        critterArrLength = nests.Length;
     }
 
     // Update is called once per frame
@@ -61,6 +64,14 @@ public class Checkpoint : MonoBehaviour
                 }
                 
 
+            }
+        }
+
+        for(int i = 0; i < critterArrLength; i++){
+            if(!checkPointReached){
+                nests[i].ResetNest();
+            }else{
+                nests[i].DestroyNest();
             }
         }
         

@@ -19,6 +19,7 @@ public class CritterNest : MonoBehaviour
     public float spawnRange; // range in which the player has to be in order to spawn a critter
     //sprite renderer for colour
     private SpriteRenderer sr;
+    private int startingHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class CritterNest : MonoBehaviour
         player = GameObject.Find("Player").transform;
         spawnTimer = spawnFrequency;
         sr = GetComponent<SpriteRenderer>();
+        startingHealth = health;
     }
 
     // Update is called once per frame
@@ -59,11 +61,24 @@ public class CritterNest : MonoBehaviour
             Destroy(other.gameObject);
             health--;
             if(health == 0){
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             redTimer = redDuration;
         }
+    }
+
+
+    public void ResetNest(){
+        this.gameObject.SetActive(true);
+        health = startingHealth;
+        redTimer = 0;
+        spawnTimer = spawnFrequency;
+    }
+
+    public void DestroyNest(){
+        Destroy(this.gameObject);
     }
 }
