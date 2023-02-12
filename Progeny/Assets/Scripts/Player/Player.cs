@@ -253,6 +253,7 @@ public class Player : MonoBehaviour
         aiming = false;
         shooting = false;
         reloading = false;
+        gun.ammoLeft = gun.ammoCapacity;
 
         
     }

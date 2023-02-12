@@ -21,6 +21,7 @@ public class DisceateBarController : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        
         toggle.SetActive(false);
     }
 

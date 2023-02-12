@@ -58,6 +58,8 @@ public class FlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(player.GetComponent<Player>().GetCurrentHealth() < 0) Destroy(this.gameObject);
         switch (state)
         {
             case State.Idle:
