@@ -9,7 +9,7 @@ public class PetrolInteract : MonoBehaviour
     public GameObject afterPetrol;// no jerry cans and cart ready to push
     public GameObject display; // E to display
 
-
+    private MusicChange musicChange;
     private Player player;
     private bool contact =  false;
     private ThoughtBubble thought;
@@ -19,6 +19,7 @@ public class PetrolInteract : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         thought = GameObject.Find("ThoughtBubble").GetComponent<ThoughtBubble>();
+        musicChange = GameObject.Find("PetrolStation").GetComponent<MusicChange>();
         
         beforePetrol.SetActive(true);
         afterPetrol.SetActive(false);
@@ -56,6 +57,7 @@ public class PetrolInteract : MonoBehaviour
 
                 // and then cut to after petrol station
                 // and cart is full of jerry cans and pushable
+                musicChange.ChangeMusic();
                 beforePetrol.SetActive(false);
                 afterPetrol.SetActive(true);
             }

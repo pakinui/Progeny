@@ -10,7 +10,7 @@ public class PlayerMelee : MonoBehaviour
     public GameObject meleeWeapon;
 
     public bool hasObtainedMelee = true;
-    private bool meleeEnabled = false;
+    public bool meleeEnabled = false;
     // melee sound
     public AudioClip meleeSound;
     // speed of attack

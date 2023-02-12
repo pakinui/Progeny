@@ -9,6 +9,8 @@ public class MeleeTutorial : MonoBehaviour
     public GroundEnemy enemy;
     public GameObject dashTrigger;
     public GameObject displayPrefab;
+    public MeleeBlock block;
+
     private GameObject display;
     
     private Player player;
@@ -36,6 +38,7 @@ public class MeleeTutorial : MonoBehaviour
     {
         if(interactZone && Input.GetKeyDown("e")){
             //gameObject.SetActive(false);
+            block.melee = true;
             Destroy(display);
             meleePickedUp = true;
             PlayerMelee pm = player.GetComponent<PlayerMelee>();

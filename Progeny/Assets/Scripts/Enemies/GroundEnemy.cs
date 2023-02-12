@@ -116,7 +116,7 @@ public class GroundEnemy : MonoBehaviour
         switch (nextState)
         {
             case State.Idle:
-                //sr.color = new Color(255f, 255f, 255f, 1f);
+                sr.color = new Color(255f, 255f, 255f, 1f);
                 break;
             case State.Approach:
                 sr.color = new Color(255f, 255f, 255f, 1f);
@@ -290,11 +290,14 @@ public class GroundEnemy : MonoBehaviour
 
 
     public void resetPosition(){
-
         rb.transform.position = startingPosition;
+        rb.velocity = new Vector2(0, 0);
+        if(!facingLeft){
+            Flip();
+        }
         health = 3;
         prepareTimer = prepareDuration;
-        state = State.Idle;
+        SwitchState(State.Idle);
         gameObject.SetActive(true);
     }
 
