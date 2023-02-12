@@ -47,7 +47,9 @@ public class DashTutorial : MonoBehaviour
     {
 
         if(dashEnemy == null || enemy.health == 0){
-            Destroy(tutorial);
+           // Destroy(tutorial);
+           //Destroy(this.gameObject);
+            this.gameObject.SetActive(false);//dont destroy(for checkpoint)
         }
         
         if(currentlyDashTutorial){
