@@ -8,6 +8,7 @@ public class PetrolInteract : MonoBehaviour
     public GameObject beforePetrol; // jerry cans and cart empty
     public GameObject afterPetrol;// no jerry cans and cart ready to push
     public GameObject display; // E to display
+    public bool hasCart = false;
 
     private MusicChange musicChange;
     private Player player;
@@ -60,6 +61,8 @@ public class PetrolInteract : MonoBehaviour
                 musicChange.ChangeMusic();
                 beforePetrol.SetActive(false);
                 afterPetrol.SetActive(true);
+
+                hasCart = true;
             }
         }
     }
