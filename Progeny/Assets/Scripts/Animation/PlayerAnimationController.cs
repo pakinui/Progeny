@@ -9,8 +9,9 @@ public class PlayerAnimationController : MonoBehaviour
    Animator anim;
    private Player player;
     
-
-
+    //for climbing
+    private Vector2 topOfPlayer;
+    private Collider2D col;
     
 
     // Start is called before the first frame update
@@ -19,75 +20,17 @@ public class PlayerAnimationController : MonoBehaviour
         // Initialise the reference to the Animator component
       anim = GetComponent<Animator>();
       player = GameObject.Find("Player").GetComponent<Player>();
+      col = player.GetComponent<Collider2D>();
+      topOfPlayer = new Vector2(col.bounds.max.x + .1f, col.bounds.max.y);
+      Debug.Log("play: " + topOfPlayer);
     }
 
     // Update is called once per frame
     void Update()
     {
        FalseAll();
-        // if(player.isClimbing()){
-            
-        //     anim.SetBool("climb", true);
-
-
-        // }else if(player.isFalling()){
-        //     ///FalseAll();
-        //     anim.SetBool("falling", true);
-        // }else if(player.isHitting()){
-        //     //FalseAll();
-            
-        //     anim.SetTrigger("strike");
-            
-        // }else if(player.isAiming() && !player.isMoving()){
-        //     //idle shooting
-        //     anim.SetBool("aiming", true);
-        //     if(player.isCrouching()){
-                
-        //         anim.SetBool("shootingCrouch", true);
-        //     }else{
-                
-        //         anim.SetBool("idleStand", true);
-        //         anim.SetBool("aiming", true);
-        //     }
-         
-            
-        // }else if(player.isMoving()){
-        //     //stopAim();//player isnt aiming
-        //     if(player.isPushing()){
-        //         //FalseAll();
-        //         anim.SetBool("pushing", true);
-        //     }else if(player.isCrouching()){
-        //         //FalseAll();
-        //         if(player.isAiming()){
-        //             anim.SetBool("shootingCrouch", true);
-        //         }else{
-        //             anim.SetBool("crouching", true);
-        //         }
-                    
-                
-                
-        //     }else{
-        //         //FalseAll();
-        //         if(player.isAiming()){
-        //             anim.SetBool("shootingWalk", true);
-        //         }else{
-        //             //stopAim();//player isnt aiming
-        //             anim.SetBool("walking", true);
-        //         }
-                
-        //     }
-
-        // }else{
-        //     if(player.isCrouching()){
-        //         //idle crouch
-        //         //FalseAll();
-        //         anim.SetBool("idleCrouch", true);
-        //     }else{
-        //         //standing idle
-        //         //FalseAll();
-        //         anim.SetBool("idleStand", true);
-        //     }
-        // }
+        
+        
         if(player.GetCurrentHealth() <= 0)anim.SetBool("dying", true);
 
         else if(player.isHitting()){ 
@@ -95,7 +38,11 @@ public class PlayerAnimationController : MonoBehaviour
             anim.SetTrigger("strike"); 
         } 
         else if(player.isFalling()) anim.SetBool("falling", true);
-        else if(player.isClimbing()) anim.SetBool("climbing", true);
+        else if(player.isClimbing()){
+
+
+            anim.SetBool("climbing", true);
+        } 
         else if(player.isPushing()) anim.SetBool("pushing", true);
         else if(player.isAiming())anim.SetBool("aiming", true);
         
