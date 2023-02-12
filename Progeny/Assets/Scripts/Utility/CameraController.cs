@@ -18,13 +18,13 @@ using UnityEngine;
         private float camSpeed; // smooth speed when out of combat
         // movement direction determined variable. +right, -left
         float direction;
-        // offset of camera position
+        // offset of camera position    
         public float xOffset = 3f;
         public float yOffset = 3.5f;
 
-        private float leftEdgeX = -17.97f;
-        private float rightEdgeX = 189.62f;
-
+        public float leftEdgeX = -17.97f;
+        public float rightEdgeX = 189.62f;
+        
         private bool reduceVolume = false;
         private float changeDuration = 0;
         private float muteDuration = 0;
@@ -82,7 +82,6 @@ using UnityEngine;
             
             // reassigning target camera position variables
             targetPos.x = playerPos.x + (xOffset * direction);
-            //targetPos.y = playerPos.y + yOffset;
 
             // update camera position
             if(targetPos.x < leftEdgeX){
