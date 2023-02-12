@@ -82,6 +82,7 @@ public class PounceTutorial : MonoBehaviour
             }
         }
         if (enemy.health == 0){
+            Time.timeScale = 1;
             block.pounceKilled = true;
             Destroy(this);
         }
