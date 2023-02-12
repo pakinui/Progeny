@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         //canvas.deathPanel.SetActive(true);
-        Debug.Log("current Health :" + currentHealth);
+        //Debug.Log("current Health :" + currentHealth);
         --currentHealth;
 
 
