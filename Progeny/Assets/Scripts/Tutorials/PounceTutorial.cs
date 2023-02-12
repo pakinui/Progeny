@@ -10,14 +10,16 @@ public class PounceTutorial : MonoBehaviour
     public TextAsset pounceTextFile;
     public GameObject pounceEnemy;
     public GameObject displayPrefab;
+    public PounceBlock block;
     private GameObject display;
-
+    
     private Player player;
     private StoryText story;
     private GroundEnemy enemy;
 
     private bool pouncePhase = false;
     private bool pouncePause = false;
+    private bool tutorialActive = true;
     private float playerPos;
     private float enemyPos;
     
@@ -38,44 +40,50 @@ public class PounceTutorial : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //pause in dash prep phase
-        if(enemy.state == GroundEnemy.State.PouncePrep && !pouncePause){
-            
-            pouncePause = true;
-            player.stopPlayerMovement();
-            story.PlayStoryText(pounceTextFile);
-        }
-
-        //keep in dashprep phase while story text plays
-        if(enemy.state != GroundEnemy.State.PouncePrep && pouncePause){
-            enemy.state = GroundEnemy.State.PouncePrep;
-        }
-
-        if(story.storyComplete && pouncePause){
-            enemy.speed = 3;
-            enemy.state = GroundEnemy.State.Pounce;
-            pouncePause = false;
-            display = Instantiate(displayPrefab, new Vector3(player.transform.position.x+0.15f, player.transform.position.y-1.4f), new Quaternion(0,0,0,0), this.transform);
-            SpriteRenderer rend = display.GetComponent<SpriteRenderer>();
-            rend.sortingOrder = 3;
-        }
-
-        if(enemy.state == GroundEnemy.State.Pounce && !pouncePause){
-            pouncePhase = true;
-            if (!Input.GetKey("s")){
-                display.SetActive(true);
-                Time.timeScale = 0;
+    {   
+        if (tutorialActive){
+            //pause in dash prep phase
+            if(enemy.state == GroundEnemy.State.PouncePrep && !pouncePause){
+                
+                pouncePause = true;
+                player.stopPlayerMovement();
+                story.PlayStoryText(pounceTextFile);
             }
-            else{
-                display.SetActive(false);
-                Time.timeScale = 1;
+
+            //keep in dashprep phase while story text plays
+            if(enemy.state != GroundEnemy.State.PouncePrep && pouncePause){
+                enemy.state = GroundEnemy.State.PouncePrep;
+            }
+
+            if(story.storyComplete && pouncePause){
+                enemy.speed = 5;
+                enemy.state = GroundEnemy.State.Pounce;
+                pouncePause = false;
+                display = Instantiate(displayPrefab, new Vector3(player.transform.position.x+0.15f, player.transform.position.y-1.4f), new Quaternion(0,0,0,0), this.transform);
+                SpriteRenderer rend = display.GetComponent<SpriteRenderer>();
+                rend.sortingOrder = 3;
+            }
+
+            if(enemy.state == GroundEnemy.State.Pounce && !pouncePause){
+                pouncePhase = true;
+                if (!Input.GetKey("s")){
+                    display.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                else{
+                    display.SetActive(false);
+                    Time.timeScale = 1;
+                }
+            }
+
+            if (enemy.state != GroundEnemy.State.Pounce && pouncePhase){
+                tutorialActive = false;
+                Destroy(display);
             }
         }
-
-        if (enemy.state != GroundEnemy.State.Pounce && pouncePhase){
+        if (enemy.health == 0){
+            block.pounceKilled = true;
             Destroy(this);
-            Destroy(display);
         }
         
     }
