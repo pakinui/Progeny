@@ -255,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942472803063250719, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7942472803063250719, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,7 +330,7 @@ Transform:
   - {fileID: 1108197739}
   - {fileID: 861282671}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757067996
 GameObject:
@@ -513,6 +513,10 @@ PrefabInstance:
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996821, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_RootOrder
@@ -4648,7 +4652,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1634655587}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
           m_MethodName: setPlayerMovementTrue
           m_Mode: 1
@@ -4662,7 +4666,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1634655587}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
           m_MethodName: setPlayerMovementFalse
           m_Mode: 1
@@ -4674,29 +4678,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1634655587 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2932510332713000449, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
-  m_PrefabInstance: {fileID: 1400314693}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634655575}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c61c10242bfb24b8e72253a735ee21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1634655602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634655575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769406edec35685408e9ad21812ea521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1644813382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6726856148435138110, guid: 5c3d20487a86c0e48a11bf828bb83e3c, type: 3}
