@@ -199,7 +199,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.1374
+  m_Mass: 1.3555279
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -220,11 +220,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb0932d7291663499284f80aad11375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprites: []
-  approachSprites: []
+  idleSprites:
+  - {fileID: -1048048690, guid: 5e74c9950f8c6c446aefebeb5ef9ff5e, type: 3}
+  - {fileID: 1934473281, guid: 5e74c9950f8c6c446aefebeb5ef9ff5e, type: 3}
+  - {fileID: -1380519939, guid: 5e74c9950f8c6c446aefebeb5ef9ff5e, type: 3}
+  - {fileID: 1934473281, guid: 5e74c9950f8c6c446aefebeb5ef9ff5e, type: 3}
+  approachSprites:
+  - {fileID: -240795898, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  - {fileID: -24885292, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  - {fileID: 1470836982, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  - {fileID: 2124463374, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  - {fileID: -1624972488, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
+  - {fileID: -2120329326, guid: 1d6b4b2df7226034cb016747b9e9a7ab, type: 3}
   pouncePrepSprites: []
-  pounceSprites: []
-  deathSprites: []
+  pounceSprites:
+  - {fileID: 930806603, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -1423221076, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -912929097, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -1729101300, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -884934190, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 1010880542, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 1267780546, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -1286007631, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -1286007631, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 289600526, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 289600526, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 289600526, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -372565620, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -372565620, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -372565620, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: -372565620, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  - {fileID: 1687610111, guid: fc4e68388bd9d934cbb2ff45d0c6f061, type: 3}
+  deathSprites:
+  - {fileID: -1003942602, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1349754175, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1988352005, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 2051164838, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: -560341537, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1394577167, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1471131522, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1323244532, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: 1836421528, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
+  - {fileID: -727229091, guid: 5e0d0784a2666e1408ffa9a11cb80a21, type: 3}
   framesPerSecond: 10
 --- !u!114 &4195359494059996816
 MonoBehaviour:

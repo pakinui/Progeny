@@ -52,6 +52,8 @@ public class StandardEnemyController : MonoBehaviour {
       // Record time at animation start
       timeAtAnimStart = Time.timeSinceLevelLoad;
 
+      currSprites = idleSprites;
+
      
    }
 

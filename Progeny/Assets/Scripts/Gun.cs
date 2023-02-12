@@ -21,9 +21,9 @@ public class Gun : MonoBehaviour
     }
 
     void Update(){
-        if(ammoLeft == 0){
-            bubble.SetBubbleText("i need to reload ('R')");
-            bubble.ShowBubbleForSeconds(2);
-        }
+        // if(ammoLeft == 0){
+        //     bubble.SetBubbleText("i need to reload ('R')");
+        //     bubble.ShowBubbleForSeconds(2);
+        // }
     }
 }

@@ -18,6 +18,8 @@ public class ThoughtBubble : MonoBehaviour
     private Player player;
     private Rigidbody2D rb;
     private bool bubbleOnTimer = false;
+
+    private float bubbleZPos;
      
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class ThoughtBubble : MonoBehaviour
         bubble.SetActive(false);
         player = GameObject.Find("Player").GetComponent<Player>();
         rb = gameObject.GetComponent<Rigidbody2D>();//rb to move thought bubble
+        bubbleZPos = rb.transform.position.z;
     }
 
     /**
@@ -40,7 +43,6 @@ public class ThoughtBubble : MonoBehaviour
         will be shown until hideBubble() is called
     */
     public void ShowBubble(){
-        hideBubble();//incase another bubble is open atm
         bubble.SetActive(true);
         showBubble = true;
     }
@@ -76,7 +78,7 @@ public class ThoughtBubble : MonoBehaviour
             if(timeRemaining > 0 && showBubble){
                 timeRemaining -= Time.deltaTime;
 
-                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
+                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, bubbleZPos);
             }else{
                 //timer is up
                 hideBubble();
@@ -85,7 +87,7 @@ public class ThoughtBubble : MonoBehaviour
         }else{
             //if bubble is not on a timer
             if(showBubble){
-                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, player.transform.position.z);
+                rb.transform.position = new Vector3 (player.transform.position.x - 6.0f, player.transform.position.y + 0.8f, bubbleZPos);
             }
         }
     }

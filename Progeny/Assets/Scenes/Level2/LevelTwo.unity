@@ -763,6 +763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy
@@ -3975,7 +3979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576703327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5159, y: 0.5497, z: -9.712593}
+  m_LocalPosition: {x: 2.06, y: 0.56, z: -9.712593}
   m_LocalScale: {x: 0.37973377, y: 2.7006, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5509,6 +5513,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (1)
@@ -5570,6 +5578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (3)
@@ -6759,6 +6771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (2)
@@ -8158,7 +8174,7 @@ PrefabInstance:
       objectReference: {fileID: 3423010630120244695, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: currentSpeed
@@ -8979,6 +8995,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (4)
@@ -9173,6 +9193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996819, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: m_Name
       value: GroundEnemy (5)
@@ -9810,7 +9834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716848966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2323, y: -0.92, z: -9.712593}
+  m_LocalPosition: {x: 1.63, y: -0.95, z: -9.712593}
   m_LocalScale: {x: 0.37467465, y: 0.50798285, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
