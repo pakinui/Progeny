@@ -56,10 +56,7 @@ public class ShootingTutorial : MonoBehaviour
             
             bubble.SetBubbleText("hold right to aim, left click to shoot. . .");
             bubble.ShowBubble();
-            enemy.speed = 1.5f;
-            enemy.dashSpeed = 1.5f;
             
-
             }
             //first enemy died
             if(enemy.health == 0 && !tutorialCompleted){
