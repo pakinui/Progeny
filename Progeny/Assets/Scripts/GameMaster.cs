@@ -66,6 +66,7 @@ public class GameMaster : MonoBehaviour
     }
 
     public void NextLevel(string sceneName){
+        ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         StartCoroutine(ftb.FadeBlackSquare(true, 0.25f));
         cameraController.Mute(true, 4f);
         nextLevelName = sceneName;
