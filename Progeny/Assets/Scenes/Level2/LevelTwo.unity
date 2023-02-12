@@ -8174,7 +8174,7 @@ PrefabInstance:
       objectReference: {fileID: 3423010630120244695, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: currentSpeed
@@ -11158,7 +11158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 4
   xOffset: 4.5
-  yOffset: 3.25
+  yOffset: 3.73
+  leftEdgeX: -17.8
+  rightEdgeX: 150.7
 --- !u!81 &2082924890
 AudioListener:
   m_ObjectHideFlags: 0

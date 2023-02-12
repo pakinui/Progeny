@@ -2502,6 +2502,8 @@ MonoBehaviour:
   smoothSpeed: 4
   xOffset: 4.5
   yOffset: 3.25
+  leftEdgeX: -17.97
+  rightEdgeX: 189.62
 --- !u!81 &393005575
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4373,7 +4375,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 4
   xOffset: 4.5
-  yOffset: 3.25
+  yOffset: 3.52
+  leftEdgeX: -17.85
+  rightEdgeX: 216.5
 --- !u!81 &1061570790
 AudioListener:
   m_ObjectHideFlags: 0
