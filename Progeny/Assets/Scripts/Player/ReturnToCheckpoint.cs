@@ -12,6 +12,7 @@ public class ReturnToCheckpoint : MonoBehaviour
 
     public bool reset = false;
 
+    private float timeReminaing = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,17 @@ public class ReturnToCheckpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timeReminaing < 0 && reset){
+            reset = false;
+            timeReminaing = 1;
+        }else if(reset){
+           timeReminaing -= Time.deltaTime;
+        }
     }
 
     public void resetLevel(){
-
-        player.SetCurrentHealth(player.maxHealth);
-        player.transform.position = gm.getLastCheckpoint();
-        player.startPlayerMovement();
+        
+        player.resetPlayer();
         reset = true;
         //deathPanel.SetActive(false);
     }

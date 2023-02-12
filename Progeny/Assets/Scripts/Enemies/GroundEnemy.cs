@@ -69,6 +69,7 @@ public class GroundEnemy : MonoBehaviour
         fangs = transform.GetChild(0).gameObject;
 
         startingPosition = rb.transform.position;
+        //Debug.Log("start: " + startingPosition);
     }
 
     // Update is called once per frame

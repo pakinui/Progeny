@@ -20,7 +20,7 @@ namespace Controller
             }
             if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !pausePanel.activeSelf)
             {
-                Debug.Log("Pause Game");
+                //Debug.Log("Pause Game");
                 pausePanel.SetActive(true);
                 //gameObject.SetActive(false);
             }

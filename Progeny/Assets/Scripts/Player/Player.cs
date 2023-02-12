@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
             gun.gameObject.SetActive(true);
             currentSpeed = movementSpeed/2f;
         } else {
-            gun.gameObject.SetActive(false);
+            if(gun != null)gun.gameObject.SetActive(false);
             currentSpeed = movementSpeed;
         }
     }
@@ -236,6 +236,25 @@ public class Player : MonoBehaviour
 
 
 
+    }
+
+
+    public void resetPlayer(){
+        currentHealth = maxHealth;
+        transform.position = gm.getLastCheckpoint();
+        startPlayerMovement();
+        moving = false;
+        crouching = false;
+        climbing = false;
+        vaulting = false;
+        falling = false;
+        pushing = false;
+        hitting = false;
+        aiming = false;
+        shooting = false;
+        reloading = false;
+
+        
     }
 
    

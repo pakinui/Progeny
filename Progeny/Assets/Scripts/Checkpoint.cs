@@ -30,10 +30,13 @@ public class Checkpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (returnPlayer.reset == true && !backToStart){
-            resetLevel();
+        if (returnPlayer.reset && !backToStart){
             
-            //returnPlayer.reset = false;//stop resetting
+            resetCheckpoint();
+
+        }
+        else if (!returnPlayer.reset && backToStart){
+            backToStart = false;
         }
     }
 
@@ -45,13 +48,12 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    public void resetLevel(){
+    public void resetCheckpoint(){
         
         
         for(int i = 0 ; i < arrLength ; i++){
             if(!checkPointReached){
                 //if the player has not reached the checkpoint then reset the enemies
-                
                 enemies[i].resetPosition();
             }else{
                 if(enemies[i] != null){
@@ -61,6 +63,8 @@ public class Checkpoint : MonoBehaviour
 
             }
         }
+        
+        
         
     backToStart = true;
 
