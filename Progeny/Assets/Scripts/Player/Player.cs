@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     private bool allowMovement = true;
     private AudioSource audioSource;
 
+    public ReturnToCheckpoint returnPlayer;
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
@@ -217,6 +219,12 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        canvas.deathPanel.SetActive(true);
+        ///canvas.deathPanel.SetActive(true);
+        
+
+
+
     }
+
+   
 }

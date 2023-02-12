@@ -55,6 +55,9 @@ public class GroundEnemy : MonoBehaviour
     // reference to the fangs
     GameObject fangs;
 
+    //starting position for checkpoints
+    public Vector2 startingPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +67,8 @@ public class GroundEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pm = player.GetComponent<PlayerMelee>();
         fangs = transform.GetChild(0).gameObject;
+
+        startingPosition = rb.transform.position;
     }
 
     // Update is called once per frame
@@ -245,7 +250,9 @@ public class GroundEnemy : MonoBehaviour
             Destroy(other.gameObject);
             health -= 1;
             if(health == 0){
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                //dont destroy so checkpoint can revive them
+                gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
             }
@@ -256,7 +263,11 @@ public class GroundEnemy : MonoBehaviour
         if(!playerCollide && meleeCollide && !hasTakenMelee)
         {
             health -= 1;
-            if(health == 0) Destroy(this.gameObject);
+            if(health == 0){
+                //Destroy(this.gameObject);
+                //dont destroy for checkpoint
+                gameObject.SetActive(false);
+            } 
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
@@ -275,5 +286,19 @@ public class GroundEnemy : MonoBehaviour
         else if (other.tag == "MeleeWeapon"){
             meleeCollide = false;
         }
+    }
+
+
+    public void resetPosition(){
+
+        rb.transform.position = startingPosition;
+        health = 3;
+        prepareTimer = prepareDuration;
+        state = State.Idle;
+        gameObject.SetActive(true);
+    }
+
+    public void DestroyEnemy(){
+        Destroy(this.gameObject);
     }
 }
