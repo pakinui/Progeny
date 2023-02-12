@@ -14,7 +14,7 @@ namespace Controller
 
         private void Update()
         {
-            if (player.GetCurrentHealth() <= 0)
+            if (player.GetCurrentHealth() < 0)
             {
                 deathpanel.SetActive(true);
             }

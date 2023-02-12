@@ -17,6 +17,9 @@ public class PlayerAnimation : MonoBehaviour {
    public Sprite[] meleeSprites;
    public Sprite[] reloadSprites;
 
+
+   public Animation strikeAnimation;
+
    //set to whatever action player is doing atm
    private Sprite[] animSprites;
    
@@ -78,7 +81,8 @@ public class PlayerAnimation : MonoBehaviour {
    // Before rendering next frame...
    void Update () {
 
-      
+      if(player.isHitting()){
+      }
 
       if(player.isMoving()){
          if(animRunning) {
@@ -90,14 +94,27 @@ public class PlayerAnimation : MonoBehaviour {
                animSprites = pushingSprites;
             }else if(player.isCrouching()){
                framesPerSecond /= 2;
-               animSprites = crouchWalkingSprites;
+               if(player.isAiming()){
+                  animSprites = crouchingShoot;
+               }else{
+                  animSprites = crouchWalkingSprites;
+               }
+               
+               
             }else if(player.isClimbing()){
 
                animSprites = climbingSprites;
                
-               
+            }else if(player.isHitting()){
+               strikeAnimation.Play();
+               //animSprites = meleeSprites;
             }else{
-               animSprites = walkingSprites;
+               if(player.isAiming()){
+                  animSprites = walkingShoot;
+               }else{
+                  animSprites = walkingSprites;
+               }
+               
             }
          // Animation is running, so we need to 
          // figure out what frame to use at this point

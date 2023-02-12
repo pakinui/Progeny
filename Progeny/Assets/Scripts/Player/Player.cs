@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+
         if(combatTimer > 0f){
             combatTimer -= Time.deltaTime;
         } else {
@@ -119,6 +121,7 @@ public class Player : MonoBehaviour
         }
         else if (health <= 0){
             audioSource.PlayOneShot(deathSound, 0.5f);
+            health = 0;//to make sure health doesnt go below 0
         }
         currentHealth = health;
     }
@@ -211,16 +214,22 @@ public class Player : MonoBehaviour
         allowMovement = true;
         moving = true;
         playerMelee.setMelee(true);
+        hitting = false;
     }
 
     public void gotGun(){
         audioSource.PlayOneShot(gun.pickupSound, 0.35f);
     }
 
+    public void NoHealth(){
+        stopPlayerMovement();
+        currentHealth = 0;
+    }
     public void Die()
     {
-        ///canvas.deathPanel.SetActive(true);
-        
+        //canvas.deathPanel.SetActive(true);
+        Debug.Log("current Health :" + currentHealth);
+        --currentHealth;
 
 
 
