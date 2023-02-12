@@ -30,14 +30,14 @@ public class StandardEnemyController : MonoBehaviour {
 
    private GroundEnemy ground;
 
-   private bool deathAnimation = false;//if currently doing death animation
+   //private bool deathAnimation = false;//if currently doing death animation
 
    //stuff to check if last frame is apart of the same animation
    private bool idle = false;
    private bool approach = false;
    private bool pouncePrep = false;
-   private bool pounce = false;
-   private bool death = false;
+   //private bool pounce = false;
+   //private bool death = false;
    
    // Use this for initialization
    void Start () {
