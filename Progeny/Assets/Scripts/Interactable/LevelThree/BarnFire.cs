@@ -12,10 +12,11 @@ public class BarnFire : MonoBehaviour
     
     private Player player;
     private ThoughtBubble thought;
-
+    private FadeToBlack ftb;
+    private GameMaster gm;
     private bool contact = false;
-
-    
+    private bool transition = false;
+    private float timer = 0;
     
 
 
@@ -24,6 +25,8 @@ public class BarnFire : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         thought = GameObject.Find("ThoughtBubble").GetComponent<ThoughtBubble>();
+        ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+        gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -34,10 +37,25 @@ public class BarnFire : MonoBehaviour
                 display.SetActive(false);
                 cart.SetActive(false);
                 //add black screen for a lil transistion
+                StartCoroutine(ftb.FadeBlackSquare(true, 0.5f));
+                contact = false;
+                transition = true;
+            }
+        }
+        if(transition){
+            if (ftb.isBlack){
+                StartCoroutine(ftb.FadeBlackSquare(false, 0.5f));
                 player.transform.position = new Vector3(221.3287f, -2.990383f, 7.8f);
                 fireAnimation.SetActive(true);
-                
-                //wait a bit then end game
+                player.Flip();
+                transition = false;
+                timer = 8f;
+            }
+        }
+        if(timer > 0){
+            timer -= Time.deltaTime;
+            if (timer <= 0){
+                gm.NextLevel("MainMenu");
             }
         }
     }
