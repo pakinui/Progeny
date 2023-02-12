@@ -4069,6 +4069,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195359494059996816, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
       propertyPath: dashSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -6147,6 +6151,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
 --- !u!1 &858427156
@@ -6166,7 +6174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &858427157
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -8916,7 +8924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1357381667
 BoxCollider2D:
   m_ObjectHideFlags: 0
