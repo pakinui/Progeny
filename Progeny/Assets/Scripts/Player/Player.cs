@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // direction of player.
     private bool facingRight = true;
     // player states
-    private bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting, reloading = false;
+    public bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting, reloading = false;
     // default movement speed of player
     public float movementSpeed;
 

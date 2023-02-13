@@ -23,7 +23,7 @@ public class PlayerClimb : MonoBehaviour
 
     // which boxes are overlapping with ledge layer
     private bool highOver, midOver, lowOver;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,22 +45,30 @@ public class PlayerClimb : MonoBehaviour
         lowOver = Physics2D.OverlapBox(lowPos, boxSize, 0f, ledgeMask);
 
         // climb
-        if(midOver && !highOver && !player.isClimbing() && Input.GetKey("space")){
-            player.setClimbing(true);
-            if(player.isFacingRight()) {
-                transform.position = new Vector2(transform.position.x + .5f, transform.position.y + 2f);
-            } else {
-                transform.position = new Vector2(transform.position.x - .5f, transform.position.y + 2f);
+        if (midOver && !highOver && !player.isClimbing() && Input.GetKey("space"))
+        {
+            //player.setClimbing(true);
+            if (player.isFacingRight())
+            {
+                // transform.position = new Vector2(transform.position.x + .5f, transform.position.y + 2f);
             }
-            player.setClimbing(false);
+            else
+            {
+                // transform.position = new Vector2(transform.position.x - .5f, transform.position.y + 2f);
+            }
+            //player.setClimbing(false);
         }
 
         // mantle
-        if(lowOver && !midOver && !player.isClimbing() && !player.isVaulting() && Input.GetKey("space")){
+        if (lowOver && !midOver && !player.isClimbing() && !player.isVaulting() && Input.GetKey("space"))
+        {
             player.setVaulting(true);
-            if(player.isFacingRight()) {
+            if (player.isFacingRight())
+            {
                 transform.position = new Vector2(transform.position.x + 1f, transform.position.y);
-            } else {
+            }
+            else
+            {
                 transform.position = new Vector2(transform.position.x - 1f, transform.position.y);
             }
             player.setVaulting(false);
@@ -69,7 +77,8 @@ public class PlayerClimb : MonoBehaviour
 
     // draw gizmos when player is selected
     // helps to visualise the boxes
-    private void OnDrawGizmosSelected(){
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(highPos, boxSize);
         Gizmos.color = Color.yellow;
