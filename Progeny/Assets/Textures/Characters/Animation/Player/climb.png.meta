@@ -117,253 +117,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character climb_0
+      name: climb_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 58
-      alignment: 9
-      pivot: {x: 0.1826606, y: 0.27738804}
+        width: 8
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4372e994decaf174fb99497180927857
-      internalID: -620384758
+      spriteID: c5e18b6eb468949a1b767fb6fcf8d95c
+      internalID: 1852780237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_1
+      name: climb_1
       rect:
         serializedVersion: 2
         x: 24
         y: 0
-        width: 24
-        height: 58
+        width: 11
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54452c1de81274a498661c3959760530
-      internalID: -1528921001
+      spriteID: a94e6b95c79ce49eba451c22e1ffa10a
+      internalID: 114677447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_2
+      name: climb_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 24
-        height: 58
+        width: 14
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd79c430f0804a7489c933de0bcb6ab0
-      internalID: -219691810
+      spriteID: 9bb335106d7dc4eefaf9cabdf0b645bd
+      internalID: 1986738263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_3
+      name: climb_3
       rect:
         serializedVersion: 2
-        x: 72
+        x: 73
         y: 0
-        width: 24
-        height: 58
+        width: 14
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb4fc7ce1d8eea443844b7278b119588
-      internalID: 499293136
+      spriteID: 0f9560105c4e6457597525ab4bdebb63
+      internalID: -1980395616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_4
+      name: climb_4
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 0
-        width: 24
-        height: 58
+        width: 14
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff7cad231050bc84a9676fa4c698ffc0
-      internalID: -1425538948
+      spriteID: b9914355481624c53bd14af9e7a4924f
+      internalID: -758674366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_5
+      name: climb_5
       rect:
         serializedVersion: 2
-        x: 120
+        x: 121
         y: 0
-        width: 24
-        height: 58
+        width: 15
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca5c0f4d1d46704418971846a9eaf186
-      internalID: 914074994
+      spriteID: 0d2d27a3f78b74f719fc891fe1a13dc1
+      internalID: -169154412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_6
+      name: climb_6
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 24
-        height: 58
+        x: 146
+        y: 3
+        width: 15
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53f8be8cc659ee0479f2bf94b1bfa6d9
-      internalID: 230243277
+      spriteID: 69ada613bb5454bc1806b40365696fc6
+      internalID: -1608556234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_7
+      name: climb_7
       rect:
         serializedVersion: 2
-        x: 168
-        y: 0
-        width: 24
-        height: 58
+        x: 171
+        y: 7
+        width: 14
+        height: 35
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e76a7c9d262e0f94d872c5d6ccd0d4a9
-      internalID: -1802994391
+      spriteID: 8fa4ddcec92c54bfaba98903ed737bc0
+      internalID: 914194408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_8
+      name: climb_8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 24
-        height: 58
+        x: 196
+        y: 11
+        width: 15
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48d753e91a3dc3e4286989b4c977ea95
-      internalID: 1612935915
+      spriteID: 051944b1d8870484c9bc1b4bb1f45e5f
+      internalID: -1883988678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_9
+      name: climb_9
       rect:
         serializedVersion: 2
-        x: 216
-        y: 0
-        width: 24
-        height: 58
+        x: 220
+        y: 26
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148d33e101864b640a72d124acd2826e
-      internalID: 925692431
+      spriteID: 75ecb9a377452433483a8dcc02ce9da1
+      internalID: -1770102936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_10
+      name: climb_10
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 24
-        height: 58
+        x: 248
+        y: 27
+        width: 16
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03f552e8930e8e647b04eb5c50902c7f
-      internalID: -459128161
+      spriteID: 0ed2d109e4a5d4068b34cbf3b4d7c271
+      internalID: 279902813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character climb_11
+      name: climb_11
       rect:
         serializedVersion: 2
-        x: 264
-        y: 0
-        width: 24
-        height: 58
+        x: 274
+        y: 27
+        width: 8
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da380a5772cc474380a235340c05ef3
-      internalID: 1607426458
+      spriteID: c80d94b3cbf1b456e9c609b79891d374
+      internalID: 1569251631
       vertices: []
       indices: 
       edges: []
@@ -379,18 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character climb_1: -1528921001
-      character climb_8: 1612935915
-      character climb_6: 230243277
-      character climb_2: -219691810
-      character climb_3: 499293136
-      character climb_10: -459128161
-      character climb_4: -1425538948
-      character climb_11: 1607426458
-      character climb_9: 925692431
-      character climb_5: 914074994
-      character climb_7: -1802994391
-      character climb_0: -620384758
+      climb_11: 1569251631
+      climb_10: 279902813
+      climb_6: -1608556234
+      climb_1: 114677447
+      climb_2: 1986738263
+      climb_3: -1980395616
+      climb_9: -1770102936
+      climb_5: -169154412
+      climb_0: 1852780237
+      climb_4: -758674366
+      climb_8: -1883988678
+      climb_7: 914194408
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
