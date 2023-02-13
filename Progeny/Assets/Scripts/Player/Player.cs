@@ -98,12 +98,10 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
         // flip the gun
         if(gun != null){
-            transform.GetChild(0).GetChild(0).Rotate(180f, 0f, 0f);
+            gun.transform.Rotate(180f, 0f, 0f);
         }
         // flip the ledge indicator boxes
         GetComponent<PlayerClimb>().xOffset *= -1;
-        // flip the camera controller direction
-        //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().direction *= -1;
     }
 
     //getter for returning current speed of player.
