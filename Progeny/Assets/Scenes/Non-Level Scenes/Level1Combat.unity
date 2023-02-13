@@ -1302,6 +1302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 207197664884100007, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2283,6 +2287,8 @@ MonoBehaviour:
   smoothSpeed: 4
   xOffset: 4.5
   yOffset: 3.25
+  leftEdgeX: -17.97
+  rightEdgeX: 189.62
 --- !u!81 &435029975
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2316,6 +2322,10 @@ PrefabInstance:
     - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 207197664884100007, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_RootOrder
@@ -10000,6 +10010,7 @@ MonoBehaviour:
   shortClimb: 0
   box: {fileID: 2076477284}
   pushable: 0
+  climbable: 0
   playerAnimation: {fileID: 0}
 --- !u!212 &603157524
 SpriteRenderer:
@@ -10369,6 +10380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayPrefab: {fileID: 1149985490995785805, guid: 3c6547885505e8a47bd0e1b2d70c4062, type: 3}
+  doorSound: {fileID: 0}
 --- !u!61 &758023095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12771,6 +12783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 207197664884100007, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -14397,6 +14413,10 @@ PrefabInstance:
     - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 207197664884100005, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 207197664884100007, guid: ae2655da75bc84c419f4c3fc22ddd7e9, type: 3}
       propertyPath: m_RootOrder

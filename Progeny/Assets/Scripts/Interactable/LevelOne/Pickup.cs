@@ -40,7 +40,7 @@ public class Pickup : MonoBehaviour
             newGun.SetActive(false);
             // give the gun to the player object and move position
             newGun.transform.parent = player.transform.GetChild(0);
-            newGun.transform.localPosition = new Vector3(0.75f, 0f, -1f);
+            newGun.transform.localPosition = new Vector3(0.60f, 0f, -1f);
             // rotate if necessary
             if(!player.isFacingRight()){
                 newGun.transform.Rotate(0f, 0f, 180f);

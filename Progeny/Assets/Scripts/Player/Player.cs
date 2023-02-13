@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     // reference to the player's gun object
     public Gun gun;
+    private GameObject arm;
 
     PlayerShoot playerShoot;
     PlayerMelee playerMelee;
@@ -56,6 +57,9 @@ public class Player : MonoBehaviour
 
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        arm = GameObject.Find("player-arm");
+        arm.SetActive(false);
 
         playerShoot = GetComponent<PlayerShoot>();
         playerMelee = GetComponent<PlayerMelee>();
@@ -180,9 +184,11 @@ public class Player : MonoBehaviour
         aiming = x;
         if(x == true) {
             gun.gameObject.SetActive(true);
+            arm.SetActive(true);
             currentSpeed = movementSpeed/2f;
         } else {
             if(gun != null)gun.gameObject.SetActive(false);
+            arm.SetActive(false);
             currentSpeed = movementSpeed;
         }
     }
