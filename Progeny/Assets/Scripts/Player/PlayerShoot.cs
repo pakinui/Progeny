@@ -25,6 +25,8 @@ public class PlayerShoot : MonoBehaviour
     // cooldown variables
     private float cooldownLeft = 0;
     private float reloadLeft = 0;
+    public float recoilRot = 70f;
+    private float gunRot = 0f;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -42,89 +44,101 @@ public class PlayerShoot : MonoBehaviour
         if(player.isAllowedMovement()){
 
             if(cooldownLeft > 0f)
-        {
-            // decrease cooldown
-            cooldownLeft -= Time.deltaTime;
-        }
-
-        // enter/exit aiming
-        if(player.gun != null && (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
-            player.setAiming(true);
-        } else if(player.isAiming() && !Input.GetMouseButton(1) && !Input.GetKey(KeyCode.LeftShift)) {
-            player.setAiming(false);
-        }
-
-        // enter reload
-        if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
-        {
-            player.setReloading(true);
-            audioSource.PlayOneShot(player.gun.reloadSound, 0.5f);
-        }
-        // countdown reload
-        if(player.isReloading())
-        {
-            reloadLeft -= Time.deltaTime;
-            if(reloadLeft <= 0f){
-                player.gun.ammoLeft = player.gun.ammoCapacity;
-                player.setReloading(false);
-            }
-        }
-
-        
-        // while aiming
-        if(player.isAiming())
-        {
-            // update mouse position
-            mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-
-            // calculate rotation of mouse position from player
-            Vector3 rotation = mousePos - transform.position;
-            float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
-            // flip player if suitable
-            if(Mathf.Abs(rotZ) > 90 && player.isFacingRight())
-            {
-                player.Flip();
-            }
-            else if(Mathf.Abs(rotZ) < 90 && !player.isFacingRight())
-            {
-                player.Flip();
-            }
-
-            // rotate (parent object of) gun
-            if(rotZ > -60 || rotZ < -120)
-            {
-                transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
-            }
-
-            // check weapon cooldown
-            if(cooldownLeft > 0f)
             {
                 // decrease cooldown
                 cooldownLeft -= Time.deltaTime;
+                // recoil control
+                gunRot -= ((cooldownLeft/player.gun.fireRate) * recoilRot) * Time.deltaTime;
+                if(player.isFacingRight()){
+                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, gunRot);
+                }else{
+                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 360-gunRot);
+                }
+            }else if(gunRot > 0){
+                gunRot = 0f;
+                player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 0);
             }
 
-
-                //fire
-            if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
-                player.setShooting(true);// set player state
-                Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
-                audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
-                player.gun.ammoLeft--;// decrease ammo
-                cooldownLeft = player.gun.fireRate;// reset weapon cooldown
+            // enter/exit aiming
+            if(player.gun != null && (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
+                player.setAiming(true);
+            } else if(player.isAiming() && !Input.GetMouseButton(1) && !Input.GetKey(KeyCode.LeftShift)) {
+                player.setAiming(false);
             }
 
-            else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
-                 audioSource.PlayOneShot(noAmmo, 0.9f);
+            // enter reload
+            if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
+            {
+                player.setReloading(true);
+                reloadLeft = player.gun.reloadTime;
+                audioSource.PlayOneShot(player.gun.reloadSound, 0.5f);
+            }
+            // countdown reload
+            if(player.isReloading())
+            {
+                reloadLeft -= Time.deltaTime;
+                if(reloadLeft <= 0f){
+                    player.gun.ammoLeft = player.gun.ammoCapacity;
+                    player.setReloading(false);
+                }
             }
 
-            else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
-                audioSource.PlayOneShot(shotOnCooldown, 0.5f);
+            
+            // while aiming
+            if(player.isAiming())
+            {
+                // update mouse position
+                mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+
+                // calculate rotation of mouse position from player
+                Vector3 rotation = mousePos - transform.GetChild(0).position;
+                float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+
+                // flip player if suitable
+                if(Mathf.Abs(rotZ) > 90 && player.isFacingRight())
+                {
+                    player.Flip();
+                }
+                else if(Mathf.Abs(rotZ) < 90 && !player.isFacingRight())
+                {
+                    player.Flip();
+                }
+
+                // rotate (parent object of) gun
+                if(rotZ > -60 || rotZ < -120)
+                {
+                    transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
+                }
+
+                // check weapon cooldown
+                // if(cooldownLeft > 0f)
+                // {
+                //     // decrease cooldown
+                //     cooldownLeft -= Time.deltaTime;
+                // }
+
+
+                    //fire
+                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
+                    player.setShooting(true);// set player state
+                    Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
+                    audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
+                    player.gun.ammoLeft--;// decrease ammo
+                    cooldownLeft = player.gun.fireRate;// reset weapon cooldown
+                    //kickback
+                    gunRot = recoilRot;
+                }
+
+                else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
+                    audioSource.PlayOneShot(noAmmo, 0.9f);
+                }
+
+                else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
+                    audioSource.PlayOneShot(shotOnCooldown, 0.5f);
+                }
             }
-        }
         }
         
-
     }
 
    public float GetCooldownLeft(){
