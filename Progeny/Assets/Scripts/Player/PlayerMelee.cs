@@ -34,7 +34,10 @@ public class PlayerMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player.isAiming() && !player.isCrouching() && meleeEnabled && Input.GetMouseButtonDown(0) && cooldownLeft <= 0){
+        if(!player.isCrouching() && meleeEnabled && Input.GetMouseButtonDown(1) && cooldownLeft <= 0){
+            if(player.isAiming()){
+                player.setAiming(false);
+            }
             Swing();
         }
         if(player.isHitting()){
