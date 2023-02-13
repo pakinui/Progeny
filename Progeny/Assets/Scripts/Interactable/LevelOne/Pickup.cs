@@ -47,6 +47,9 @@ public class Pickup : MonoBehaviour
             }
             // assign reference to the bulletSpawnPoint
             player.gameObject.GetComponent<PlayerShoot>().bulletSpawnPoint = newGun.transform.GetChild(0);
+            // assign reference to muzzleFlash
+            player.gameObject.GetComponent<PlayerShoot>().muzzleFlash = newGun.transform.GetChild(1).gameObject;
+            newGun.transform.GetChild(1).gameObject.SetActive(false);
             player.gotGun();
             // destroy the pickup object
             Destroy(this.gameObject);
