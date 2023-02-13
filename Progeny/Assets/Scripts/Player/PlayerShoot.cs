@@ -122,7 +122,7 @@ public class PlayerShoot : MonoBehaviour
                 }
 
                 // fire
-                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
+                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0 && !player.isReloading()){
                     player.setShooting(true);// set player state
                     Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                     audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
