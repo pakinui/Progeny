@@ -70,9 +70,9 @@ public class PlayerShoot : MonoBehaviour
             }
 
             // enter/exit aiming
-            if(player.gun != null && (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
+            if(player.gun != null && (Input.GetKey(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
                 player.setAiming(true);
-            } else if(player.isAiming() && !Input.GetMouseButton(1) && !Input.GetKey(KeyCode.LeftShift)) {
+            } else if(player.isAiming() && !Input.GetKey(KeyCode.LeftShift)) {
                 player.setAiming(false);
             }
 
