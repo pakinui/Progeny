@@ -16,6 +16,7 @@ public class PounceTutorial : MonoBehaviour
     private Player player;
     private StoryText story;
     private GroundEnemy enemy;
+    private Rigidbody2D enemyRb;
 
     private bool pouncePhase = false;
     private bool pouncePause = false;
@@ -30,7 +31,7 @@ public class PounceTutorial : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         enemy = pounceEnemy.GetComponent<GroundEnemy>();
-
+        enemyRb = enemy.GetComponent<Rigidbody2D>();
         playerPos = player.transform.position.x;
         enemyPos = enemy.transform.position.x;
         //Debug.Log(playerPos);
@@ -64,7 +65,13 @@ public class PounceTutorial : MonoBehaviour
                 rend.sortingOrder = 3;
             }
 
-            if(enemy.state == GroundEnemy.State.Pounce && !pouncePause){
+             if (enemyRb.velocity.y <= 0 && pouncePhase){
+                Time.timeScale = 1;
+                tutorialActive = false;
+                Destroy(display);
+            }
+
+            if(enemy.state == GroundEnemy.State.Pounce && !pouncePause && tutorialActive){
                 pouncePhase = true;
                 if (!Input.GetKey("s")){
                     display.SetActive(true);
@@ -74,11 +81,6 @@ public class PounceTutorial : MonoBehaviour
                     display.SetActive(false);
                     Time.timeScale = 1;
                 }
-            }
-
-            if (enemy.state != GroundEnemy.State.Pounce && pouncePhase){
-                tutorialActive = false;
-                Destroy(display);
             }
         }
         if (enemy.health == 0){

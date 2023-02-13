@@ -54,7 +54,7 @@ public class ShootingTutorial : MonoBehaviour
             //when storytext completed show thought
             if( story.storyComplete && !tutorialCompleted){
             
-            bubble.SetBubbleText("hold right to aim, left click to shoot. . .");
+            bubble.SetBubbleText("hold left shift to aim, left click to shoot. . .");
             bubble.ShowBubble();
             
             }
@@ -64,15 +64,15 @@ public class ShootingTutorial : MonoBehaviour
                 tutorialCompleted = true;
                 story.storyComplete = false;
                 
-                bubble.SetBubbleText("this one is faster!");
-                bubble.ShowBubbleForSeconds(2.0f);
+                bubble.SetBubbleText("looks like there's a moving one up ahead");
+                bubble.ShowBubbleForSeconds(3.0f);
             }
 
             //when enemy is killed get rid of thought
             if(enemy.health <= 1 && !tutorialCompleted){
-                
-                
+                    
             }
+
             if(secondEnemy.health > 0){
                 //update melee weapon drop position
                 enemyDeathSpot = enemyRb.position;
@@ -82,7 +82,7 @@ public class ShootingTutorial : MonoBehaviour
                 enemyTwoDead = true;
                 meleeRb.transform.position = enemyDeathSpot;
                 melee.SetActive(true);
-                bubble.SetBubbleText("whats that?");
+                bubble.SetBubbleText("what's that?");
                 bubble.ShowBubbleForSeconds(2);
                 meleeDropped = true;
             } 

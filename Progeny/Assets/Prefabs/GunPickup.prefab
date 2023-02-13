@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 3898786014389630412}
+  block: {fileID: 0}
   newGun: {fileID: 4174507615990268468}
+  firstLevel: 0
 --- !u!61 &4174507616314824647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,9 +266,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4174507616314824646}
     m_Modifications:
+    - target: {fileID: 852442539772710684, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422556521352942990, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973049482251496620, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244692, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_Name
       value: Revolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423010630120244692, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244693, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_RootOrder
@@ -286,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244693, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.672
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244693, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_LocalPosition.z
