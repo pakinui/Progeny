@@ -74,7 +74,7 @@ public class DashTutorial : MonoBehaviour
 
             //story text finished, enemy dashes
             if(dashPause && story.storyComplete && !smashPause){
-                enemy.speed = 3;
+                enemy.speed = 5;
                 enemy.dashSpeed = 9;
                 dashPause = false;
                 enemy.state = GroundEnemy.State.Dash;
@@ -85,7 +85,7 @@ public class DashTutorial : MonoBehaviour
                  
             if((playerPos + 1.0f) > enemyPos && !smashPause){
 
-                if(!Input.GetMouseButtonDown(0)){
+                if(!Input.GetMouseButtonDown(1)){
                     Time.timeScale = 0;
                 }else{
                     
