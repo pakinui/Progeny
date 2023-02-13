@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 231558760}
   m_Layer: 7
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6310,7 +6310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1570214512, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570214514, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_Size.x
