@@ -72,6 +72,11 @@ public class GroundEnemy : MonoBehaviour
         //Debug.Log("start: " + startingPosition);
     }
 
+    void OnEnable()
+    {
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+    }
+
     // Update is called once per frame
     void Update()
     {
