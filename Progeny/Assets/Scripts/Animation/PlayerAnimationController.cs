@@ -6,13 +6,11 @@ public class PlayerAnimationController : MonoBehaviour
 {
     
     // Reference to animator component
-   Animator anim;
+   public Animator anim;
    private Player player;
     
-    //for climbing
-    private Vector2 topOfPlayer;
-    private Collider2D col;
     private bool startedHit = false;
+
     
 
     // Start is called before the first frame update
@@ -21,9 +19,7 @@ public class PlayerAnimationController : MonoBehaviour
         // Initialise the reference to the Animator component
       anim = GetComponent<Animator>();
       player = GameObject.Find("Player").GetComponent<Player>();
-      col = player.GetComponent<Collider2D>();
-      topOfPlayer = new Vector2(col.bounds.max.x + .1f, col.bounds.max.y);
-      Debug.Log("play: " + topOfPlayer);
+    
     }
 
     // Update is called once per frame
@@ -47,7 +43,9 @@ public class PlayerAnimationController : MonoBehaviour
         }
        if(player.isFalling()) anim.SetBool("falling", true);
         else if(player.isClimbing()){
-            anim.SetBool("climb", true);    
+            
+            anim.SetBool("climb", true);
+            anim.SetTrigger("climbing");    
         } 
         else if(player.isPushing()) anim.SetBool("pushing", true);
 
@@ -64,6 +62,8 @@ public class PlayerAnimationController : MonoBehaviour
         
 
     }
+
+
 
 
 

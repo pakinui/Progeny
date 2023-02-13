@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     public Renderer render;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class PlayerMove : MonoBehaviour
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<Renderer>();
+        
     }
 
     // Update is called once per frame
@@ -41,8 +44,12 @@ public class PlayerMove : MonoBehaviour
                 player.setMoving(true);
                 rb.velocity = new Vector2(direction * player.GetCurrentSpeed(), rb.velocity.y);
             }
+            else if(player.isClimbing()){
+                player.setMoving(true);
+            }
             else
             {
+
                 player.setMoving(false);
             }
 

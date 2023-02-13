@@ -100,12 +100,13 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         // flip the character
         transform.Rotate(0f, 180f, 0f);
-        // flip the gun
+        // flip the gun and arm
         if(gun != null){
             gun.transform.Rotate(180f, 0f, 0f);
+            arm.transform.Rotate(180f, 0f, 0f);
         }
         // flip the ledge indicator boxes
-        GetComponent<PlayerClimb>().xOffset *= -1;
+        //GetComponent<PlayerClimb>().xOffset *= -1;
     }
 
     //getter for returning current speed of player.
@@ -157,9 +158,12 @@ public class Player : MonoBehaviour
         crouching = x;
         if (x == true){
             currentSpeed = movementSpeed/2f;
+            // move aim rotation point (and therefore arm+gun)
+            arm.transform.parent.localPosition = new Vector2(arm.transform.parent.localPosition.x + 0.08f, 0.2f);
         }
         else{
             currentSpeed = movementSpeed;
+            arm.transform.parent.localPosition = new Vector2(arm.transform.parent.localPosition.x - 0.08f, 0.52f);
         }
     }
 
@@ -241,6 +245,8 @@ public class Player : MonoBehaviour
 
 
     }
+
+
 
 
     public void resetPlayer(){

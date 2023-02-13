@@ -15,6 +15,9 @@ public class PlayerShoot : MonoBehaviour
     public GameObject pointOfRotation;
     // reference to the bullet spawn point (end of barrel)
     public Transform bulletSpawnPoint;
+    public GameObject muzzleFlash;
+    public float muzzleFlashTime = 0.1f;
+    private float flashTimer;
     
     //sound that plays when shot still onCooldown;
     public AudioClip shotOnCooldown;
@@ -25,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     // cooldown variables
     private float cooldownLeft = 0;
     private float reloadLeft = 0;
-    public float recoilRot = 70f;
+    public float recoilRot = 55f;
     private float gunRot = 0f;
     private AudioSource audioSource;
 
@@ -49,14 +52,22 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft -= Time.deltaTime;
                 // recoil control
                 gunRot -= ((cooldownLeft/player.gun.fireRate) * recoilRot) * Time.deltaTime;
-                if(player.isFacingRight()){
-                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, gunRot);
-                }else{
-                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 360-gunRot);
-                }
+                updateGunRot();
+                // if(player.isFacingRight()){
+                //     player.gun.transform.localRotation = Quaternion.Euler(0, 0, gunRot);
+                // }else{
+                //     player.gun.transform.localRotation = Quaternion.Euler(180f, 0, 360-gunRot);
+                // }
             }else if(gunRot > 0){
                 gunRot = 0f;
-                player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 0);
+                updateGunRot();
+            }
+
+            if(flashTimer > 0){
+                flashTimer -= Time.deltaTime;
+                if(flashTimer <= 0f){
+                    muzzleFlash.SetActive(false);
+                }
             }
 
             // enter/exit aiming
@@ -110,15 +121,7 @@ public class PlayerShoot : MonoBehaviour
                     transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
                 }
 
-                // check weapon cooldown
-                // if(cooldownLeft > 0f)
-                // {
-                //     // decrease cooldown
-                //     cooldownLeft -= Time.deltaTime;
-                // }
-
-
-                    //fire
+                // fire
                 if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0){
                     player.setShooting(true);// set player state
                     Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
@@ -127,6 +130,9 @@ public class PlayerShoot : MonoBehaviour
                     cooldownLeft = player.gun.fireRate;// reset weapon cooldown
                     //kickback
                     gunRot = recoilRot;
+                    // muzzle flash
+                    muzzleFlash.SetActive(true);
+                    flashTimer = muzzleFlashTime;
                 }
 
                 else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
@@ -141,7 +147,15 @@ public class PlayerShoot : MonoBehaviour
         
     }
 
-   public float GetCooldownLeft(){
-        return cooldownLeft;
-   }
+    private void updateGunRot(){
+        if(player.isFacingRight()){
+            player.gun.transform.localRotation = Quaternion.Euler(0, 0, gunRot);
+        }else{
+            player.gun.transform.localRotation = Quaternion.Euler(180f, 0, gunRot);
+        }
+    }
+
+    public float GetCooldownLeft(){
+            return cooldownLeft;
+    }
 }
