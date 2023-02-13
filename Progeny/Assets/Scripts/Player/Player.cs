@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
     }
 
     public void gotGun(){
-        audioSource.PlayOneShot(gun.pickupSound, 0.35f);
+        audioSource.PlayOneShot(gun.pickupSound, 0.25f);
     }
 
     public void NoHealth(){

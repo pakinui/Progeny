@@ -135,7 +135,7 @@ public class PlayerShoot : MonoBehaviour
                     flashTimer = muzzleFlashTime;
                 }
 
-                else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0){
+                else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0 && !player.isReloading()){
                     audioSource.PlayOneShot(noAmmo, 0.9f);
                 }
 
