@@ -35,6 +35,7 @@ public class Pickup : MonoBehaviour
                 block.gun = true;
             }
             // assign reference to gun in the Player script
+            player.gunObj = newGun;
             player.gun = newGun.GetComponent<Gun>();
             // hide gun
             newGun.SetActive(false);
