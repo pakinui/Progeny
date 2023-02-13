@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
             gun.transform.Rotate(180f, 0f, 0f);
         }
         // flip the ledge indicator boxes
-        GetComponent<PlayerClimb>().xOffset *= -1;
+        //GetComponent<PlayerClimb>().xOffset *= -1;
     }
 
     //getter for returning current speed of player.
@@ -241,6 +241,8 @@ public class Player : MonoBehaviour
 
 
     }
+
+
 
 
     public void resetPlayer(){

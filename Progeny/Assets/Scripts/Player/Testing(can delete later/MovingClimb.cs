@@ -36,6 +36,7 @@ public class MovingClimb : MonoBehaviour
     //private float animationTime = 3;
 
     public PlayerAnimation playerAnimation;
+    private PlayerAnimationController ac;
 
     //boolean to see if character is currently climbing
     private bool currClimbing;
@@ -49,6 +50,7 @@ public class MovingClimb : MonoBehaviour
         boxY = transform.position.y;
         tempMass = box.mass;
         // assigning references
+        ac = player.GetComponent<PlayerAnimationController>();
 
     }
 
@@ -92,7 +94,8 @@ public class MovingClimb : MonoBehaviour
             {
                 currClimbing = true;
                 player.setPushing(false);
-                player.stopPlayerMovement();
+                ac.anim.SetTrigger("climbing");
+                //player.stopPlayerMovement();
                 player.setClimbing(true);
 
                 // stop box from moving
@@ -105,36 +108,20 @@ public class MovingClimb : MonoBehaviour
                 if (gameObject.tag == "RightClimb")
                 {
                     x = player.transform.position.x - (playerMove.render.bounds.size.x / 3.0f);
-                    // x = player.transform.position.x - (playerMove.render.bounds.size.x/4.0f);
-
-                    //climbing sprites diff size so need to set new starting coords
-
-                    //var tempX = player.transform.position.x + playerMove.render.bounds.size.x;
-                    // var tempY = player.transform.position.y + playerMove.render.bounds.size.y;
-                    // //tempY -= 288;
-                    // player.transform.position = new Vector3(player.transform.position.x, tempY, player.transform.position.z);
-                    //Debug.Log(" new player :" + player.transform.position.x + " || " + player.transform.position.y);
-
+                   
                 }
                 else if (gameObject.tag == "LeftClimb")
                 {
                     x = player.transform.position.x + (playerMove.render.bounds.size.x / 3.0f);
-                    // x = (playerMove.render.bounds.size.x/2.0f) + boxX;  
-                    //var tempX = player.transform.position.x + playerMove.render.bounds.size.x;
-                    // var tempY = player.transform.position.y + playerMove.render.bounds.size.y;
-                    // //tempY -= 288;
-                    // player.transform.position = new Vector3(player.transform.position.x, tempY, player.transform.position.z);
-                    //Debug.Log(" new 2player :" + player.transform.position.x + " || " + player.transform.position.y);
-
+                    
                 }
                 y = (playerMove.render.bounds.size.y / 2.0f) + boxY;
-                //Debug.Log(x + " || " + y);
-                //var tempY = player.transform.position.y + 0.1f;
-                //tempY -= 288;
-                //var tempY = player.transform.position.y + (playerMove.render.bounds.size.y/2);
-                //player.transform.position = new Vector3(player.transform.position.x, tempY, player.transform.position.z);
-
+        
+                player.transform.position = new Vector3(x, y, player.transform.position.z);
+                player.setClimbing(false);
             }
+            
+            
         }
         else if (userInput != 0f)
         {
@@ -144,29 +131,24 @@ public class MovingClimb : MonoBehaviour
 
         }
 
-        if (currClimbing && climbingTimeRemaining < 0)
-        {
+        // if (currClimbing && climbingTimeRemaining < 0)
+        // {
 
-            player.transform.position = new Vector3(x, y, player.transform.position.z);
-            currClimbing = false;
-            box.mass = tempMass;//return to normal mass
-                                //player.SetMovement(true);
-
-            //finish climbing animation
-            player.setClimbing(false);
-            player.startPlayerMovement();
-            //Debug.Log("time remaining: " + climbingTimeRemaining);
-            climbingTimeRemaining = 1.2f;
+        //     player.transform.position = new Vector3(x, y, player.transform.position.z);
+        //     currClimbing = false;
+        //     box.mass = tempMass;//return to normal mass
+        //     player.setClimbing(false);
+        //     climbingTimeRemaining = 1.2f;
 
 
-        }
-        else if (currClimbing)
-        {
+        // }
+        // else if (currClimbing)
+        // {
 
-            climbingTimeRemaining -= Time.deltaTime;
+        //     climbingTimeRemaining -= Time.deltaTime;
 
-            //Debug.Log(playerMove.render.bounds.size.y + " |1| " + y);
-        }
+            
+        // }
 
         boxX = transform.position.x;
         boxY = transform.position.y;
