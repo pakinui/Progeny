@@ -270,6 +270,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2422556521352942990, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973049482251496620, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244692, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_Name
       value: Revolver
@@ -296,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244693, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.672
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3423010630120244693, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
       propertyPath: m_LocalPosition.z

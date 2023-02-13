@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
     // reference to the bullet spawn point (end of barrel)
     public Transform bulletSpawnPoint;
     public GameObject muzzleFlash;
-    public float muzzleFlashTime = 0.5f;
+    public float muzzleFlashTime = 0.1f;
     private float flashTimer;
     
     //sound that plays when shot still onCooldown;
@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     // cooldown variables
     private float cooldownLeft = 0;
     private float reloadLeft = 0;
-    public float recoilRot = 70f;
+    public float recoilRot = 55f;
     private float gunRot = 0f;
     private AudioSource audioSource;
 
@@ -52,14 +52,15 @@ public class PlayerShoot : MonoBehaviour
                 cooldownLeft -= Time.deltaTime;
                 // recoil control
                 gunRot -= ((cooldownLeft/player.gun.fireRate) * recoilRot) * Time.deltaTime;
-                if(player.isFacingRight()){
-                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, gunRot);
-                }else{
-                    player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 360-gunRot);
-                }
+                updateGunRot();
+                // if(player.isFacingRight()){
+                //     player.gun.transform.localRotation = Quaternion.Euler(0, 0, gunRot);
+                // }else{
+                //     player.gun.transform.localRotation = Quaternion.Euler(180f, 0, 360-gunRot);
+                // }
             }else if(gunRot > 0){
                 gunRot = 0f;
-                player.gun.transform.localRotation = Quaternion.Euler(player.gun.transform.rotation.x, 0, 0);
+                updateGunRot();
             }
 
             if(flashTimer > 0){
@@ -146,7 +147,15 @@ public class PlayerShoot : MonoBehaviour
         
     }
 
-   public float GetCooldownLeft(){
-        return cooldownLeft;
-   }
+    private void updateGunRot(){
+        if(player.isFacingRight()){
+            player.gun.transform.localRotation = Quaternion.Euler(0, 0, gunRot);
+        }else{
+            player.gun.transform.localRotation = Quaternion.Euler(180f, 0, gunRot);
+        }
+    }
+
+    public float GetCooldownLeft(){
+            return cooldownLeft;
+    }
 }
