@@ -31,6 +31,9 @@ public class GroundEnemy : MonoBehaviour
     public float pounceSpeedHorizontal = 10;
     public float dashSpeed = 10;
     public float prepareDuration = 1.5f; // time to wait before pounce
+    public float slowdownMeleeCollideAmount = 0.8f;
+    public float ricochetMeleeAmount = 0.7f;
+    public float slowdownPounceCollideAmount = 0.8f;
     private float prepareTimer;
     // reference to player
     private GameObject player;
@@ -40,12 +43,15 @@ public class GroundEnemy : MonoBehaviour
     private float direction = -1; // negative for left, positive for right
     private bool facingLeft = true; // starts facing left
     private bool isJumping = false;
+    private bool pounceCollide;
     private bool dashStart = false;
     //so only takes one melee hit per player attack
     private PlayerMelee pm;
     private bool hasTakenMelee = false;
     private float meleeTimer;
 
+    //for checking if landed
+    private float lastYPosition;
     private bool playerCollide;
     private bool meleeCollide;
 
@@ -76,6 +82,7 @@ public class GroundEnemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(255f, 255f, 255f, 1f);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        pounceCollide = false;
     }
 
     // Update is called once per frame
@@ -184,6 +191,7 @@ public class GroundEnemy : MonoBehaviour
 
     void Pounce()
     {
+        
         if (rb.velocity.y == 0 && !isJumping){
            rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical);
            fangs.SetActive(true);
@@ -192,6 +200,7 @@ public class GroundEnemy : MonoBehaviour
         else if (rb.velocity.y == 0 && isJumping){
             isJumping = false;
             fangs.SetActive(false);
+            pounceCollide = false;
             SwitchState(State.Approach);         
         }
     }
@@ -244,10 +253,21 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other){
+        if(state == State.Pounce && !pounceCollide){
+            pounceCollide = true;
+            rb.velocity *= slowdownPounceCollideAmount;
+            Debug.Log("Slowdown successful");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
-    {
+    {   
         if(other.tag =="Player"){
             playerCollide = true;
+            if (state == State.Dash){
+                rb.velocity *= slowdownMeleeCollideAmount;
+            }
         }
         else if(other.tag =="MeleeWeapon"){
             meleeCollide = true;
@@ -279,7 +299,7 @@ public class GroundEnemy : MonoBehaviour
             isRed = true;
             damageTimer = damageDuration;
             if (state == State.Dash){
-                rb.velocity *= -0.5f;
+                rb.velocity *= -ricochetMeleeAmount;
                 Flip();
             }
             hasTakenMelee = true;
