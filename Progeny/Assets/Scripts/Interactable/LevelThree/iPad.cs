@@ -12,16 +12,22 @@ public class iPad : MonoBehaviour
     public Canvas canvas;
     public GameObject speech;
     public TextMeshProUGUI text;
-
     public Animator anim;
+    public Sprite[] scientistImg;
+    public Sprite[] scientistImgCharged;
+    
+    public GameObject scientistObject;
+    public BarnFire barn;// to access booleans
 
     private Player player;
     private ThoughtBubble thought;
-
+    private SpriteRenderer scientist;
     //story stuff
     //text to display
     public TextAsset file;
+    public TextAsset secondFile;
     private string[] textLines;
+    private string[] secondLines;
 
     //what line currently on
     private int currLine;
@@ -35,8 +41,10 @@ public class iPad : MonoBehaviour
     private bool watching = false;
     private bool storyTextDone = false;
     private bool pause = true;
+    private bool charged = false;
 
     private float flatTime = 1.2f;
+    private int currImg = 0;
     
     
     
@@ -47,7 +55,7 @@ public class iPad : MonoBehaviour
        thought =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
        //anim = GetComponent<Animator>();
        textLines = null;
-        
+        scientist = scientistObject.GetComponent<SpriteRenderer>();
         currLine = 0;
         endLine = 0;
         speech.SetActive(false);
@@ -65,31 +73,33 @@ public class iPad : MonoBehaviour
                 watching = true;
                 display.SetActive(false);
                 iPadVideo.SetActive(true);
-                
-                Debug.Log("reaching");
+    
             }
         }else if(watching && !watched){
             //currently watchign video
-
             if(pause){
                 if(Input.GetMouseButtonDown(0)){
                     //clicked pause button
                     anim.SetTrigger("Start");
                     pause = false;
                     speech.SetActive(true);//speech img
-                    if(file != null){
+                    if(file != null || secondFile != null){
                         textLines = (file.text.Split('\n'));
+                        secondLines = (secondFile.text.Split('\n'));
                     }else{
                         Debug.Log("file is null");
                     }
 
-                    if(endLine == 0){
+                    if(endLine == 0 && !charged){
                         endLine = textLines.Length-1;
+                    }else if(endLine == 0 && charged){
+                        endLine = secondLines.Length-1;
                     }
                     NextSlide();
                 }
             }else{
                 if(Input.GetKeyDown(KeyCode.Space)){
+                    
                     currLine++;
                     NextSlide();
                 }
@@ -103,8 +113,26 @@ public class iPad : MonoBehaviour
             }
         }
     }
-
+//221.3287 -2.990382
     
+    public void Charged(){
+        watched = false;
+        watching = true;
+        charged = true;
+        iPadVideo.SetActive(true);
+        speech.SetActive(true);
+        anim.SetTrigger("SecondPause");
+        background.SetActive(true);
+        textLines = null;
+        currLine = 0;
+        endLine = 0;
+        scientistObject.SetActive(true);
+        currImg = 0;
+        pause = true;
+        contact = false;
+        gameObject.SetActive(true);
+
+    }
 
     public void CloseVideo(){
         
@@ -115,22 +143,44 @@ public class iPad : MonoBehaviour
         speech.SetActive(false);
         player.startPlayerMovement();
         gameObject.SetActive(false);
-        thought.SetBubbleText("you've got to be joking me it went flat?!?!");
-        thought.ShowBubbleForSeconds(2);
+        if(!charged){
+            thought.SetBubbleText("you've got to be joking me it went flat?!?!");
+            thought.ShowBubbleForSeconds(2);
+        }else{
+            Destroy(this.gameObject);
+        }
+        
     }
 
 
     //to change wife sprite on screen
     public void NextSlide(){
 
-        if(currLine > endLine){
+        if(currLine > endLine ){
+            //video done
             speech.SetActive(false);
-            //player.startPlayerMovement();
-            anim.SetTrigger("flat");
+            scientistObject.SetActive(false);
+            if(!charged){
+                anim.SetTrigger("flat");
+            
+            }else{
+                //will make the player pick ending
+                barn.finishedVideo = true;
+                CloseVideo();
+
+            }
             
             watched = true;
         }else{
-            text.text = textLines[currLine];
+            if(!charged){
+                text.text = textLines[currLine];
+                scientist.sprite = scientistImg[currImg++];
+            }else{
+                text.text = secondLines[currLine];
+                scientist.sprite = scientistImgCharged[currImg++];
+            }
+            
+            
         }
     }
 
