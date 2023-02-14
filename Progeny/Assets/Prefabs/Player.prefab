@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 050930b2c5db59b43aff6e790aafa23d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -418,7 +418,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09, y: 0}
+  m_Offset: {x: 0.118344426, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -429,7 +429,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.99}
+  m_Size: {x: 0.50668883, y: 1.99}
   m_EdgeRadius: 0
 --- !u!50 &7276491471710724729
 Rigidbody2D:
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0feaaed1e8282488cc6e55ed14e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
   moving: 0
   crouching: 0
   climbing: 0
@@ -474,18 +474,18 @@ MonoBehaviour:
   hitting: 0
   aiming: 0
   shooting: 0
-  reloading: 0
   movementSpeed: 4
   hurtSounds:
   - {fileID: 8300000, guid: 75db55a0e86945442aff6ae74637d9fc, type: 3}
   - {fileID: 8300000, guid: df960662a777f3d45b890ac99529420e, type: 3}
   - {fileID: 8300000, guid: 923eb9c547256564086e17bd2aa51860, type: 3}
   deathSound: {fileID: 8300000, guid: a72b369f46d5ecd4eb1aad059f44bf3c, type: 3}
-  gun: {fileID: 0}
+  gun: {fileID: 3423010630120244695, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}
   outOfCombatDuration: 5
   currentSpeed: 0
   currentHealth: 0
   returnPlayer: {fileID: 0}
+  climbPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8978308827140214577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,8 +530,9 @@ MonoBehaviour:
   bullet: {fileID: 4252723909647868397, guid: 2a5e4f4482605de43955620e71f9e0a5, type: 3}
   pointOfRotation: {fileID: 7276491470161232988}
   bulletSpawnPoint: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  muzzleFlashTime: 0.1
   shotOnCooldown: {fileID: 8300000, guid: d0b210a3766f19841ba2c4e36782b1ec, type: 3}
-  noAmmo: {fileID: 8300000, guid: 19f780bb193ac864bba43796b0428565, type: 3}
   recoilRot: 70
 --- !u!114 &7276491471710724733
 MonoBehaviour:
@@ -893,6 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769406edec35685408e9ad21812ea521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!114 &1703243279
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,8 +44,8 @@ public class PlayerAnimationController : MonoBehaviour
        if(player.isFalling()) anim.SetBool("falling", true);
         else if(player.isClimbing()){
             
-            anim.SetBool("climb", true);
-            anim.SetTrigger("climbing");    
+            // anim.SetBool("climb", true);
+            // anim.SetTrigger("climbing");    
         } 
         else if(player.isPushing()) anim.SetBool("pushing", true);
 

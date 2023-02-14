@@ -30,7 +30,7 @@ public class MovingClimb : MonoBehaviour
     private float tempMass;
 
     // time left for climbing animation to finish
-    private float climbingTimeRemaining = 1.2f;
+    private float climbTime = 1.1f;
 
 
     //private float animationTime = 3;
@@ -75,6 +75,7 @@ public class MovingClimb : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
+            currClimbing = false;
             contact = false;
             if (pushable)
             {
@@ -103,22 +104,32 @@ public class MovingClimb : MonoBehaviour
                 box.mass = 100;
 
                 //wait for animation TODO
-                //Debug.Log("player :" + player.transform.position.x + " || " + player.transform.position.y);
+                Debug.Log("player :" + player.transform.position.x + " || " + player.transform.position.y);
                 //teleport character
                 if (gameObject.tag == "RightClimb")
                 {
-                    x = player.transform.position.x - (playerMove.render.bounds.size.x / 3.0f);
+                    x = player.transform.position.x - (playerMove.render.bounds.size.x /2.0f);
                    
                 }
                 else if (gameObject.tag == "LeftClimb")
                 {
-                    x = player.transform.position.x + (playerMove.render.bounds.size.x / 3.0f);
+                    x = player.transform.position.x + (playerMove.render.bounds.size.x /2.0f);
                     
                 }
-                y = (playerMove.render.bounds.size.y / 2.0f) + boxY;
+                y = (playerMove.render.bounds.size.y / 2.0f) + (boxY+0.1f);
+
+                player.climbPosition = new Vector3(x, y, player.transform.position.z);
         
-                player.transform.position = new Vector3(x, y, player.transform.position.z);
-                player.setClimbing(false);
+                //player.transform.position = new Vector3(x, y, player.transform.position.z);
+                //player.setClimbing(false);
+            }else if (currClimbing){
+                if(climbTime <= 0) {
+                    player.ClimbAction();
+                    currClimbing = false;
+                }else{
+                    Debug.Log("time: " + climbTime);
+                    climbTime -= Time.deltaTime;
+                }
             }
             
             
