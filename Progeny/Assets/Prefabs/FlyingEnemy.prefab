@@ -156,8 +156,8 @@ MonoBehaviour:
   returnRange: 0.5
   speed: 15
   prepareDuration: 0.65
-  bobRate: 20
-  avgBobScale: 0.0025
+  bobRate: 15
+  avgBobScale: 0.01
   bobScaleVariance: 4.08
   shotPrefab: {fileID: 2010926792632297356, guid: e8ab5fe9d0c147d40b09dcd8184f9d92, type: 3}
 --- !u!58 &207197664884100003
