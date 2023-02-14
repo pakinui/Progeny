@@ -53,6 +53,7 @@ public class PostItInteract : MonoBehaviour
         player.startPlayerMovement();
         bubble.SetBubbleText("Maybe I could trap it at Bates Farm?\n I just need to find something that will hurt it.");
         bubble.ShowBubbleForSeconds(3);
+        Destroy(this.gameObject);
     }
 
     // when player enters box collider and is close 
