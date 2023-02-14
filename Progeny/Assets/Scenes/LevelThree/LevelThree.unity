@@ -1937,7 +1937,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &183765645
@@ -5368,7 +5368,7 @@ AudioSource:
   m_GameObject: {fileID: 1061570786}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8581234013944367639, guid: 5f788317829a1b4469465146a5900001, type: 2}
   m_audioClip: {fileID: 8300000, guid: 17b635b875c3cbc479e4108b497ec559, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -7428,10 +7428,6 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1025154441}
-    - target: {fileID: 2324591853460159802, guid: 50f6a205457e1ed4aa9b9160e1091b51, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f6a205457e1ed4aa9b9160e1091b51, type: 3}
 --- !u!224 &1720347515 stripped

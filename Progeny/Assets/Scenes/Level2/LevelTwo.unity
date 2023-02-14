@@ -811,6 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackOutSquare: {fileID: 696134342}
   isBlack: 0
+  isTransparent: 1
   objectColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &198659510
 MonoBehaviour:
@@ -13271,7 +13272,7 @@ AudioSource:
   m_GameObject: {fileID: 2082924887}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8581234013944367639, guid: 5f788317829a1b4469465146a5900001, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0bf82f0523e93ac4ba56c00139865216, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
