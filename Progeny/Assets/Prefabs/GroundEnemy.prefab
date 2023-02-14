@@ -286,4 +286,7 @@ MonoBehaviour:
   pounceSpeedHorizontal: 9.5
   dashSpeed: 11.5
   prepareDuration: 0.75
+  slowdownMeleeCollideAmount: 0.75
+  ricochetMeleeAmount: 0.7
+  slowdownPounceCollideAmount: 0.7
   startingPosition: {x: 0, y: 0}

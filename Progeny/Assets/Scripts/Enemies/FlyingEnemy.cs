@@ -56,7 +56,7 @@ public class FlyingEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if(player.GetComponent<Player>().GetCurrentHealth() < 0) Destroy(this.gameObject);
@@ -129,14 +129,16 @@ public class FlyingEnemy : MonoBehaviour
 
     void Approach()
     {
-        CheckFacing();
-        Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
-        rb.velocity = velocity;
-
         // Change in vertical distance 
 		float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
+
+        CheckFacing();
+        Vector2 velocity = new Vector2(direction * speed, dy);
+        rb.velocity = velocity;
+
+        
 		// Move the game object on the vertical axis
-		transform.Translate(new Vector3(0, dy, 0));
+		//transform.Translate(new Vector3(0, dy, 0));
 
         if (Math.Abs(player.transform.position.x - transform.position.x) <= approachRange)
         {
