@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -113,18 +113,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 64
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 326c83aee98918645b5349625cd6827a
-      internalID: 1524961973
+      spriteID: ced711a048c46514da7f9effe6e708b4
+      internalID: -1728669217
       vertices: []
       indices: 
       edges: []
@@ -153,10 +141,10 @@ TextureImporter:
       name: house flashback  balloons animation_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
-        width: 48
-        height: 64
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f09b292317d09749be9a84cc8519ef7
-      internalID: 1679996645
+      spriteID: 565489852f316f04c9446aa1936148e9
+      internalID: 75668118
       vertices: []
       indices: 
       edges: []
@@ -174,10 +162,10 @@ TextureImporter:
       name: house flashback  balloons animation_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 0
-        width: 48
-        height: 64
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee4857fcaaf875145834775f097c5e95
-      internalID: 430906469
+      spriteID: aa6ab236c4671ea489ca2ba2cef10c09
+      internalID: 1303125978
       vertices: []
       indices: 
       edges: []
@@ -195,10 +183,10 @@ TextureImporter:
       name: house flashback  balloons animation_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 96
         y: 0
-        width: 48
-        height: 64
+        width: 32
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06bd36f5ee0faec4b975ae8a521b9445
-      internalID: 29771244
+      spriteID: 0d889e9333dddcd4182bb0c4f775e316
+      internalID: -820884751
       vertices: []
       indices: 
       edges: []
@@ -223,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      house flashback  balloons animation_3: 29771244
-      house flashback  balloons animation_0: 1524961973
-      house flashback  balloons animation_1: 1679996645
-      house flashback  balloons animation_2: 430906469
+      house flashback  balloons animation_3: -820884751
+      house flashback  balloons animation_0: -1728669217
+      house flashback  balloons animation_1: 75668118
+      house flashback  balloons animation_2: 1303125978
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

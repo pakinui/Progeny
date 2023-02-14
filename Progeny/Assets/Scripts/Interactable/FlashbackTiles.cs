@@ -25,7 +25,7 @@ public class FlashbackTiles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.Find("Player").GetComponent<Player>();
+        
         thought =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
         orange.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
