@@ -82,15 +82,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.3
-    functionName: startPlayerMovement
+  - time: 0
+    functionName: Swing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.3
-    functionName: Swing
+    functionName: startPlayerMovement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
