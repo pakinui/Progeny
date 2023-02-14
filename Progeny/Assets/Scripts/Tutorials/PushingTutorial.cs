@@ -46,6 +46,7 @@ public class PushingTutorial : MonoBehaviour
             trash.SetPushable(true);//allows trash to be pushable
             
             
+            
         }
     }
 
@@ -57,6 +58,7 @@ public class PushingTutorial : MonoBehaviour
             //if finished story text            
             if(!pushTutorialCompleted){
                 //bubble until player climbs
+                
                 bubble.SetBubbleText("could i push that trash bin?");
                 bubble.ShowBubbleForSeconds(3);
                 pushTutorialCompleted = true;

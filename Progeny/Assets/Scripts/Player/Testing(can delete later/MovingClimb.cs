@@ -96,7 +96,7 @@ public class MovingClimb : MonoBehaviour
                 currClimbing = true;
                 player.setPushing(false);
                 ac.anim.SetTrigger("climbing");
-                //player.stopPlayerMovement();
+                player.stopPlayerMovement();
                 player.setClimbing(true);
 
                 // stop box from moving

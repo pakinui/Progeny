@@ -248,10 +248,13 @@ public class Player : MonoBehaviour
     }
 
     public void ClimbAction(){
-        Debug.Log("climb pos: " + climbPosition);
         transform.position = climbPosition;
         climbing = false;
-        //startPlayerMovement();
+        startPlayerMovement();
+    }
+
+    public void StrikeAction(){
+        playerMelee.Swing();
     }
 
 

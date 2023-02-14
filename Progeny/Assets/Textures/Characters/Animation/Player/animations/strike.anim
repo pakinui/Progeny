@@ -20,15 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 892659211, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
+      value: {fileID: -752289654, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
     - time: 0.1
-      value: {fileID: 491080403, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
+      value: {fileID: -1307730289, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
     - time: 0.2
-      value: {fileID: -1286125974, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
+      value: {fileID: 1355143785, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
     - time: 0.3
-      value: {fileID: -2049173006, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
-    - time: 0.4
-      value: {fileID: 717071989, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
+      value: {fileID: -583750431, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 892659211, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
-    - {fileID: 491080403, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
-    - {fileID: -1286125974, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
-    - {fileID: -2049173006, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
-    - {fileID: 717071989, guid: c5e39b18d35089e4ab7f88b4b9460f2a, type: 3}
+    - {fileID: -752289654, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
+    - {fileID: -1307730289, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
+    - {fileID: 1355143785, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
+    - {fileID: -583750431, guid: a6928cb2702836e48a62a41c556a308c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,8 +82,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.4
+  - time: 0.3
     functionName: startPlayerMovement
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3
+    functionName: Swing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
