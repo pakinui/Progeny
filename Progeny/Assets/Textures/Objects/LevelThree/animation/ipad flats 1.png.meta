@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8a34be7bf8cb074088d46a1a10fb6e3
+guid: 5480763e7a1c55c4a83f09b8d9ac899c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,259 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ipad animation_0
+      name: ipad flats 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 894
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a400b9868cd39a44f80e4f50836bb186
+      internalID: 123168785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_1
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 894
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255fe2dbb17b61b40a690bd80bee41eb
+      internalID: -1938641271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_2
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 894
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7209c4b9ca52cd47b63cd7dbf9a9761
+      internalID: 1118413587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_3
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 894
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b591aebaea2de0845bdf5fb9bfeed3b9
+      internalID: 1185265619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8487cabbd09d7ed4b9591ad0f0687e11
+      internalID: -317371587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_5
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 596
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b53e5c72def8942a1f81bad68aade1
+      internalID: 282381729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_6
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 596
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997423fe6fa92f2459a351926a316259
+      internalID: 1702893500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_7
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 596
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff570e7ed8e5004e8e379e29818a300
+      internalID: -947164804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4509e99af44a25142bd999bdad4384ad
+      internalID: -1064649789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_9
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 298
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2862370e43d0bec40af234f7c7550450
+      internalID: 587043714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_10
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 298
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fd3afa2bd31534fa817213d4b5cfca
+      internalID: -490794505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_11
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 298
+        width: 449
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9912796c5eed0da46bc7207b2d685d2f
+      internalID: 994623052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ipad flats 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bfb2e6bb23634d459aa8892d61ad01e
-      internalID: 432348834
+      spriteID: 3bfe7a2277c704a459b455a017974d55
+      internalID: -429533568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ipad animation_1
+      name: ipad flats 1_13
       rect:
         serializedVersion: 2
         x: 449
@@ -152,260 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4227b6e2d7a3304a8ff8eb1bb724d84
-      internalID: -1376879747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_2
-      rect:
-        serializedVersion: 2
-        x: 898
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fef4aca67daa42045812479a6670d841
-      internalID: 2030769675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_3
-      rect:
-        serializedVersion: 2
-        x: 1347
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dfc9ad049d555945aec4cb4c12629fe
-      internalID: 1737047725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_4
-      rect:
-        serializedVersion: 2
-        x: 1796
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 452e5981ba6cadb4b823e3b2a2356b97
-      internalID: -323367134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_5
-      rect:
-        serializedVersion: 2
-        x: 2245
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ca3fbb072dff734f8ec2caaddb4fd0d
-      internalID: 1028251900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_6
-      rect:
-        serializedVersion: 2
-        x: 2694
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb5100c6ec3154d48ba0d198a5678ea1
-      internalID: -256916645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_7
-      rect:
-        serializedVersion: 2
-        x: 3143
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e7bedf56165a54448151205707e7c97
-      internalID: 389554909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_8
-      rect:
-        serializedVersion: 2
-        x: 3592
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98ec3ffa0b3c53645b8e23022bb010d1
-      internalID: 1418939670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_9
-      rect:
-        serializedVersion: 2
-        x: 4041
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47c97df8bf6272f4c94504de0f963738
-      internalID: 1823589171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_10
-      rect:
-        serializedVersion: 2
-        x: 4490
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 378b76b10d52d0a4996f5fef74b421fc
-      internalID: -68301411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_11
-      rect:
-        serializedVersion: 2
-        x: 4939
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3a75f2d4035401488f747bbcc002bdd
-      internalID: 1042577068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_12
-      rect:
-        serializedVersion: 2
-        x: 5388
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e9cf99437d8f3245a1681c32207ae61
-      internalID: 1886773259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad animation_13
-      rect:
-        serializedVersion: 2
-        x: 5837
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f8e070ba9cb8c844a63c1525d1350e8
-      internalID: -1498719601
+      spriteID: a10e07e2804cb5040ad6209829b9b296
+      internalID: 1508398104
       vertices: []
       indices: 
       edges: []
@@ -421,20 +421,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ipad animation_5: 1028251900
-      ipad animation_11: 1042577068
-      ipad animation_1: -1376879747
-      ipad animation_12: 1886773259
-      ipad animation_10: -68301411
-      ipad animation_9: 1823589171
-      ipad animation_3: 1737047725
-      ipad animation_8: 1418939670
-      ipad animation_7: 389554909
-      ipad animation_13: -1498719601
-      ipad animation_4: -323367134
-      ipad animation_0: 432348834
-      ipad animation_6: -256916645
-      ipad animation_2: 2030769675
+      ipad flats 1_0: 123168785
+      ipad flats 1_2: 1118413587
+      ipad flats 1_8: -1064649789
+      ipad flats 1_4: -317371587
+      ipad flats 1_12: -429533568
+      ipad flats 1_5: 282381729
+      ipad flats 1_6: 1702893500
+      ipad flats 1_3: 1185265619
+      ipad flats 1_11: 994623052
+      ipad flats 1_13: 1508398104
+      ipad flats 1_10: -490794505
+      ipad flats 1_9: 587043714
+      ipad flats 1_1: -1938641271
+      ipad flats 1_7: -947164804
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

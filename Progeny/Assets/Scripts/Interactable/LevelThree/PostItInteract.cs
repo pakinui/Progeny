@@ -31,6 +31,7 @@ public class PostItInteract : MonoBehaviour
         //if player presses e and img is not open yet
         if(contact && !imgOpen){
             if(Input.GetKeyDown("e")){
+                bubble.hideBubble();
                 player.stopPlayerMovement();
                 bigPostIt.SetActive(true);
                 interactBackground.SetActive(true);

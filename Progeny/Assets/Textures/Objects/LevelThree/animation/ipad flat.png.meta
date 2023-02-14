@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 894
         width: 449
         height: 298
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98794a8bb371f1c4981186d9bb4710d7
-      internalID: -1009380024
+      spriteID: d7e5ac35c2943874099838b57ffb87bc
+      internalID: -1506143846
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 449
-        y: 0
+        y: 894
         width: 449
         height: 298
       alignment: 0
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc00f2a7fed303f4a8a874b320172ae3
-      internalID: -997475076
+      spriteID: 628b0f9046979e945a1fb02c566b496b
+      internalID: 1489932446
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 898
-        y: 0
+        y: 894
         width: 449
         height: 298
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f4b27b51d00bbf4ca176b2e2c6e3322
-      internalID: -10789550
+      spriteID: 0966abb38a00abb4db29b034b5255fd0
+      internalID: -198448582
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1347
-        y: 0
+        y: 894
         width: 449
         height: 298
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1dd7793d7786941a902bb28d7a0202
-      internalID: -488535953
+      spriteID: a1cd5f2bba4421444a2c52aee4f6038d
+      internalID: -1095796925
       vertices: []
       indices: 
       edges: []
@@ -204,8 +204,8 @@ TextureImporter:
       name: ipad flat_4
       rect:
         serializedVersion: 2
-        x: 1796
-        y: 0
+        x: 0
+        y: 596
         width: 449
         height: 298
       alignment: 0
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: decf5d54dd413ec4e9386d063abff443
-      internalID: 1453390769
+      spriteID: 8ab75ab9694e0684098a5507fa6b14c9
+      internalID: -967370319
       vertices: []
       indices: 
       edges: []
@@ -225,8 +225,8 @@ TextureImporter:
       name: ipad flat_5
       rect:
         serializedVersion: 2
-        x: 2245
-        y: 0
+        x: 449
+        y: 596
         width: 449
         height: 298
       alignment: 0
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3085f3bcf382243429e101e268350d58
-      internalID: 1525968292
+      spriteID: 0350ec9853fd04e4ca5e4d6f6e039b89
+      internalID: -595558737
       vertices: []
       indices: 
       edges: []
@@ -246,8 +246,8 @@ TextureImporter:
       name: ipad flat_6
       rect:
         serializedVersion: 2
-        x: 2694
-        y: 0
+        x: 898
+        y: 596
         width: 449
         height: 298
       alignment: 0
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a947d9359a9178c43a3c7cf3c7ad2f63
-      internalID: 1111096080
+      spriteID: bac8c9b5416b3634fa771c9da1f9c4e1
+      internalID: -1021166454
       vertices: []
       indices: 
       edges: []
@@ -267,8 +267,8 @@ TextureImporter:
       name: ipad flat_7
       rect:
         serializedVersion: 2
-        x: 3143
-        y: 0
+        x: 1347
+        y: 596
         width: 449
         height: 298
       alignment: 0
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b2494b957d0ec42a4ef6dd193d5d74
-      internalID: 557494140
+      spriteID: 3d4d041f56c57e04ba09ba7cb2c1713b
+      internalID: -921410010
       vertices: []
       indices: 
       edges: []
@@ -288,8 +288,8 @@ TextureImporter:
       name: ipad flat_8
       rect:
         serializedVersion: 2
-        x: 3592
-        y: 0
+        x: 0
+        y: 298
         width: 449
         height: 298
       alignment: 0
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abfe71cbbc4a65c4bab19ba0317ff697
-      internalID: -1534745115
+      spriteID: cad02991b8fd3ab46964db3c6a8b8cfb
+      internalID: -1503086305
       vertices: []
       indices: 
       edges: []
@@ -309,8 +309,8 @@ TextureImporter:
       name: ipad flat_9
       rect:
         serializedVersion: 2
-        x: 4041
-        y: 0
+        x: 449
+        y: 298
         width: 449
         height: 298
       alignment: 0
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b03292872b5caff418c8d307ea6b0270
-      internalID: -1487379690
+      spriteID: ae66613ea8df9274ab88c44a33a5b814
+      internalID: -473373831
       vertices: []
       indices: 
       edges: []
@@ -330,8 +330,8 @@ TextureImporter:
       name: ipad flat_10
       rect:
         serializedVersion: 2
-        x: 4490
-        y: 0
+        x: 898
+        y: 298
         width: 449
         height: 298
       alignment: 0
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37506b58e307e7e4d9c0cb95f0da64ae
-      internalID: -694231641
+      spriteID: 49f75d83633a0b648be6af716281c99a
+      internalID: -619891412
       vertices: []
       indices: 
       edges: []
@@ -351,8 +351,8 @@ TextureImporter:
       name: ipad flat_11
       rect:
         serializedVersion: 2
-        x: 4939
-        y: 0
+        x: 1347
+        y: 298
         width: 449
         height: 298
       alignment: 0
@@ -362,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2890124c5a1244438fcb0e9387bb007
-      internalID: -1461455612
+      spriteID: b6476982ed324b64ab3e033f9ace67b5
+      internalID: 1847707826
       vertices: []
       indices: 
       edges: []
@@ -372,7 +372,7 @@ TextureImporter:
       name: ipad flat_12
       rect:
         serializedVersion: 2
-        x: 5388
+        x: 0
         y: 0
         width: 449
         height: 298
@@ -383,29 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0baabfb0683b884eadaaa86613a3aa6
-      internalID: 534396070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad flat_13
-      rect:
-        serializedVersion: 2
-        x: 5837
-        y: 0
-        width: 449
-        height: 298
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79974493db44782459b0dc6cb180f3aa
-      internalID: -1848797932
+      spriteID: 2ac9e0e3747b6b14ba4fd140bda2cefd
+      internalID: 329333521
       vertices: []
       indices: 
       edges: []
@@ -421,20 +400,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ipad flat_9: -1487379690
-      ipad flat_10: -694231641
-      ipad flat_6: 1111096080
-      ipad flat_0: -1009380024
-      ipad flat_8: -1534745115
-      ipad flat_11: -1461455612
-      ipad flat_1: -997475076
-      ipad flat_12: 534396070
-      ipad flat_13: -1848797932
-      ipad flat_4: 1453390769
-      ipad flat_5: 1525968292
-      ipad flat_7: 557494140
-      ipad flat_2: -10789550
-      ipad flat_3: -488535953
+      ipad flat_9: -473373831
+      ipad flat_10: -619891412
+      ipad flat_6: -1021166454
+      ipad flat_0: -1506143846
+      ipad flat_8: -1503086305
+      ipad flat_11: 1847707826
+      ipad flat_1: 1489932446
+      ipad flat_12: 329333521
+      ipad flat_4: -967370319
+      ipad flat_5: -595558737
+      ipad flat_7: -921410010
+      ipad flat_2: -198448582
+      ipad flat_3: -1095796925
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
