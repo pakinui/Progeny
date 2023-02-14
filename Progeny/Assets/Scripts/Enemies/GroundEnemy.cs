@@ -75,6 +75,7 @@ public class GroundEnemy : MonoBehaviour
     void OnEnable()
     {
         player = GameObject.Find("Player");
+        sr.color = new Color(255f, 255f, 255f, 1f);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 

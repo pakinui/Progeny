@@ -280,9 +280,10 @@ MonoBehaviour:
   damageDuration: 0.3
   idleRange: 16
   approachRange: 6
-  speed: 5
+  speed: 6
   pounceChance: 0.5
   pounceSpeedVertical: 5.5
-  pounceSpeedHorizontal: 9
-  dashSpeed: 11
+  pounceSpeedHorizontal: 9.5
+  dashSpeed: 11.5
   prepareDuration: 0.75
+  startingPosition: {x: 0, y: 0}
