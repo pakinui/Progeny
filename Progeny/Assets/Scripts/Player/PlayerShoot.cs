@@ -42,7 +42,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.isAllowedMovement()){
+        if(player.isAllowedMovement() && player.gun != null){
 
             if(cooldownLeft > 0f)
             {
@@ -68,13 +68,30 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
 
+             // fire
+                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0))){
+                    player.setShooting(true);// set player state
+                    Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
+                    audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
+                    cooldownLeft = player.gun.fireRate;// reset weapon cooldown
+                    //kickback
+                    gunRot = recoilRot;
+                    // muzzle flash
+                    muzzleFlash.SetActive(true);
+                    flashTimer = muzzleFlashTime;
+                }
+
+                else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
+                    audioSource.PlayOneShot(shotOnCooldown, 0.5f);
+                }
+
             // enter/exit aiming
-            if(player.gun != null && (Input.GetKey(KeyCode.LeftShift)) && !player.isClimbing() && !player.isPushing()) { 
+            if(player.gun != null && !player.isClimbing() && !player.isPushing() && player.getCombatTimer() > 0) { 
                 player.setAiming(true);
-            } else if(player.isAiming() && !Input.GetKey(KeyCode.LeftShift)) {
+            } 
+            else{
                 player.setAiming(false);
             }
-
 
             
             // while aiming
@@ -103,22 +120,6 @@ public class PlayerShoot : MonoBehaviour
                     transform.GetChild(0).rotation = Quaternion.Euler(0,0,rotZ);
                 }
 
-                // fire
-                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0))){
-                    player.setShooting(true);// set player state
-                    Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
-                    audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
-                    cooldownLeft = player.gun.fireRate;// reset weapon cooldown
-                    //kickback
-                    gunRot = recoilRot;
-                    // muzzle flash
-                    muzzleFlash.SetActive(true);
-                    flashTimer = muzzleFlashTime;
-                }
-
-                else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
-                    audioSource.PlayOneShot(shotOnCooldown, 0.5f);
-                }
             }
         }
         

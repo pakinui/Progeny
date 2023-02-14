@@ -1,3 +1,2 @@
 information will be displayed like this. press space to skip to the next slide. . .
-that monster may attack you, so let's learn how to shoot. . .
-hold LEFT SHIFT to aim, LEFT CLICK to shoot. 
+that monster may attack you, click LEFT CLICK to shoot. 

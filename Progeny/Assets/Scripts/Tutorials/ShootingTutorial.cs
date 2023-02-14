@@ -54,7 +54,7 @@ public class ShootingTutorial : MonoBehaviour
             //when storytext completed show thought
             if( story.storyComplete && !tutorialCompleted){
             
-            bubble.SetBubbleText("hold left shift to aim, left click to shoot. . .");
+            bubble.SetBubbleText("left click to shoot. . .");
             bubble.ShowBubble();
             
             }

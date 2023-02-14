@@ -192,7 +192,6 @@ public class Player : MonoBehaviour
         if(x == true) {
             gun.gameObject.SetActive(true);
             arm.SetActive(true);
-            currentSpeed = movementSpeed/2f;
         } else {
             if(gun != null)gun.gameObject.SetActive(false);
             arm.SetActive(false);
