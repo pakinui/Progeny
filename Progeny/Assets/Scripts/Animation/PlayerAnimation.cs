@@ -15,7 +15,6 @@ public class PlayerAnimation : MonoBehaviour {
    public Sprite[] climbingSprites;
    public Sprite[] shortClimbSprites;
    public Sprite[] meleeSprites;
-   public Sprite[] reloadSprites;
 
 
    public Animation strikeAnimation;

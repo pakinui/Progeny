@@ -61,9 +61,7 @@ public class GroundEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        sr = GetComponent<SpriteRenderer>();
+        player = GameObject.Find("Player"); 
         rb = GetComponent<Rigidbody2D>();
         pm = player.GetComponent<PlayerMelee>();
         fangs = transform.GetChild(0).gameObject;
@@ -75,6 +73,8 @@ public class GroundEnemy : MonoBehaviour
     void OnEnable()
     {
         player = GameObject.Find("Player");
+        sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(255f, 255f, 255f, 1f);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 

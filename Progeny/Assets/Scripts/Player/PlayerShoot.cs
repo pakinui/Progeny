@@ -21,13 +21,11 @@ public class PlayerShoot : MonoBehaviour
     
     //sound that plays when shot still onCooldown;
     public AudioClip shotOnCooldown;
-    //sound that plays when there is no ammo
-    public AudioClip noAmmo;
+
     // position of the mouse
     private Vector3 mousePos;
     // cooldown variables
     private float cooldownLeft = 0;
-    private float reloadLeft = 0;
     public float recoilRot = 55f;
     private float gunRot = 0f;
     private AudioSource audioSource;
@@ -77,22 +75,6 @@ public class PlayerShoot : MonoBehaviour
                 player.setAiming(false);
             }
 
-            // enter reload
-            if(player.gun != null && player.gun.ammoLeft < player.gun.ammoCapacity && Input.GetKeyDown("r") && !player.isReloading())
-            {
-                player.setReloading(true);
-                reloadLeft = player.gun.reloadTime;
-                audioSource.PlayOneShot(player.gun.reloadSound, 0.5f);
-            }
-            // countdown reload
-            if(player.isReloading())
-            {
-                reloadLeft -= Time.deltaTime;
-                if(reloadLeft <= 0f){
-                    player.gun.ammoLeft = player.gun.ammoCapacity;
-                    player.setReloading(false);
-                }
-            }
 
             
             // while aiming
@@ -122,21 +104,16 @@ public class PlayerShoot : MonoBehaviour
                 }
 
                 // fire
-                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0)) && player.gun.ammoLeft > 0 && !player.isReloading()){
+                if (cooldownLeft <= 0f && (Input.GetMouseButtonDown(0))){
                     player.setShooting(true);// set player state
                     Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);// shoot bullet
                     audioSource.PlayOneShot(player.gun.gunshotSound, 0.13f);
-                    player.gun.ammoLeft--;// decrease ammo
                     cooldownLeft = player.gun.fireRate;// reset weapon cooldown
                     //kickback
                     gunRot = recoilRot;
                     // muzzle flash
                     muzzleFlash.SetActive(true);
                     flashTimer = muzzleFlashTime;
-                }
-
-                else if (Input.GetMouseButtonDown(0) && player.gun.ammoLeft <= 0 && !player.isReloading()){
-                    audioSource.PlayOneShot(noAmmo, 0.9f);
                 }
 
                 else if (cooldownLeft > 0f && Input.GetMouseButtonDown(0)){
