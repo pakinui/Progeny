@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeBlock : MonoBehaviour
+public class PounceBlock : MonoBehaviour
 {
     //to access booleans to see if all objs have been interacted with
     //public HouseInteract house;
     public GameObject block;
-    //have obj been interacted with
-    public bool melee = false;
+    //has pounce enemy been killed
+    public bool pounceKilled = false;
 
     private Player player;
     private ThoughtBubble bubble;
@@ -32,13 +32,13 @@ public class MeleeBlock : MonoBehaviour
         if(coll.tag == "Player"){
             //if all three objs have been interated with
             //then remove door block
-            if(melee){
+            if(pounceKilled){
                 block.SetActive(false);//could probably destroy it?
             }else{
                 //if all three objects havent been interacted
                 //with then trigger thought bubble
-                bubble.SetBubbleText("i should kill this enemy before i go ahead...");
-                bubble.ShowBubbleForSeconds(3);
+                bubble.SetBubbleText("i should kill this pouncer before i go ahead...");
+                bubble.ShowBubbleForSeconds(4);
             }
         }
     }

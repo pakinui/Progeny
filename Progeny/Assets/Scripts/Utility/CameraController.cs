@@ -65,7 +65,7 @@ using UnityEngine;
             // reassigning player position
             playerPos = player.transform.position;
 
-            if(!player.isShooting()  && player.isAllowedMovement()){
+            if(!player.isShooting() && !player.isHitting() && player.isAllowedMovement()){
                 camSpeed = smoothSpeed;
                 // reassigning the movement direction vairiable
                 if(Input.GetAxis("Horizontal") > 0){
