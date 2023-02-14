@@ -180,7 +180,11 @@ public class Player : MonoBehaviour
     public void setPushing(bool x){pushing = x;}
 
     public bool isHitting(){return hitting;}
-    public void setHitting(bool x){hitting = x;}
+    public void setHitting(bool x){
+        hitting = x;
+        if(x == true) {
+            combatTimer = outOfCombatDuration;
+        }}
 
     public bool isAiming(){return aiming;}
     public void setAiming(bool x)
