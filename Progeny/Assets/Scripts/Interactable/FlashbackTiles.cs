@@ -25,7 +25,7 @@ public class FlashbackTiles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.Find("Player").GetComponent<Player>();
+        
         thought =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
         orange.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
@@ -59,7 +59,7 @@ public class FlashbackTiles : MonoBehaviour
         green.SetActive(true);
         completed = true;
         Destroy(orange);
-        if(afterThought != null){
+        if(afterThought != ""){
             //thought bubble after the flashback
             thought.SetBubbleText(afterThought);
             thought.ShowBubbleForSeconds(2);
@@ -69,6 +69,7 @@ public class FlashbackTiles : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D tile){
         if(tile.tag == "Player"){
+            thought.hideBubble();
             orange.SetActive(true);
             green.SetActive(false);
             countdown = true;
