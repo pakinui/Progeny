@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // direction of player.
     private bool facingRight = true;
     // player states
-    public bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting, reloading = false;
+    public bool moving, crouching, climbing, vaulting, falling, pushing, hitting, aiming, shooting = false;
     // default movement speed of player
     public float movementSpeed;
 
@@ -89,8 +89,7 @@ public class Player : MonoBehaviour
     {
         GUI.Label(new Rect(30,30, 100, 100), "Health: " + currentHealth.ToString());
         GUI.Label(new Rect(30,45, 200, 100), "Melee Cooldown: " + playerMelee.GetCooldownLeft().ToString("0.0"));
-        if(gun != null) {GUI.Label(new Rect(30,60, 100, 100), "Ammo: " + gun.ammoLeft);}
-        if(gun != null) {GUI.Label(new Rect(30,75, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
+        if(gun != null) {GUI.Label(new Rect(30,60, 200, 100), "Shot Cooldown: " + playerShoot.GetCooldownLeft().ToString("0.0"));}
     }
 
     // method to flip the player
@@ -210,9 +209,6 @@ public class Player : MonoBehaviour
     }
     public float getCombatTimer(){return combatTimer;}
 
-    public bool isReloading(){return reloading;}
-    public void setReloading(bool x){reloading = x;}
-
     public bool isAllowedMovement(){return allowMovement;}
     public void setAllowedMovement(bool x){allowMovement = x;}
 
@@ -266,8 +262,6 @@ public class Player : MonoBehaviour
         hitting = false;
         aiming = false;
         shooting = false;
-        reloading = false;
-        gun.ammoLeft = gun.ammoCapacity;
 
         
     }
