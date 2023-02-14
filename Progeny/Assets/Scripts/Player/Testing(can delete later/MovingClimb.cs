@@ -64,6 +64,7 @@ public class MovingClimb : MonoBehaviour
             if (pushable)
             {
                 player.setPushing(true);
+                box.mass = 30;
             }
 
         }
