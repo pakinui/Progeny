@@ -59,7 +59,7 @@ public class FlashbackTiles : MonoBehaviour
         green.SetActive(true);
         completed = true;
         Destroy(orange);
-        if(afterThought != null){
+        if(afterThought != ""){
             //thought bubble after the flashback
             thought.SetBubbleText(afterThought);
             thought.ShowBubbleForSeconds(2);
@@ -69,6 +69,7 @@ public class FlashbackTiles : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D tile){
         if(tile.tag == "Player"){
+            thought.hideBubble();
             orange.SetActive(true);
             green.SetActive(false);
             countdown = true;
