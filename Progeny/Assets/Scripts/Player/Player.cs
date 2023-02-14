@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
 
     public ReturnToCheckpoint returnPlayer;
 
+    public Vector3 climbPosition;//where the player should move after climbing
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
@@ -247,6 +249,12 @@ public class Player : MonoBehaviour
 
     }
 
+    public void ClimbAction(){
+        Debug.Log("climb pos: " + climbPosition);
+        transform.position = climbPosition;
+        climbing = false;
+        //startPlayerMovement();
+    }
 
 
 
