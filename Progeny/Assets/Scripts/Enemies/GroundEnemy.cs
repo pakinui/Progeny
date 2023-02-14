@@ -257,7 +257,6 @@ public class GroundEnemy : MonoBehaviour
         if(state == State.Pounce && !pounceCollide){
             pounceCollide = true;
             rb.velocity *= slowdownPounceCollideAmount;
-            Debug.Log("Slowdown successful");
         }
     }
 
