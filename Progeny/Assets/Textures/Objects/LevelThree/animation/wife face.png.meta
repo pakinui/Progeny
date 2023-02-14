@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46d0ab3a8fc798e478571a84e1e2580a
+guid: 165b9f18c05c9a54992192fd4c85961e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,259 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ipad wife faces_0
+      name: wife face_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 636
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6380771fba5267a4d9ff470e0d30e724
+      internalID: 1536201804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 636
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e309df28f97ca408663ccb5f4c6957
+      internalID: -584510132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 636
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8eadc6207471e4e9f8a855891ea494
+      internalID: -119697412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_3
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 636
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d0a3a4682fe6c4f93141e5543324da
+      internalID: -1070529085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae5fa83636f11d48a33c58cf5a31fd4
+      internalID: -1392559274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 424
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fe37a61e2096e4c87ce26007542977
+      internalID: 545828736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 424
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff2c40ff970d1848a6d46f749466af8
+      internalID: 1876810878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 424
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0473b61b59da18b488ef4fa8e7cd8757
+      internalID: -224768005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b02b76ddecbaf419b38ba028739949
+      internalID: 949403459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_9
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 212
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bae806294e9b5040982952f940d80ef
+      internalID: 595816608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_10
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 212
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52924b54ed602f543b20509408b64620
+      internalID: 1186503424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 212
+        width: 155
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2825441ee13b249bd8f57a456b93d8
+      internalID: -2031658066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife face_12
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63ea6f0cce6cd1a48a2ac363921bab9a
-      internalID: 1912207539
+      spriteID: fe4dfef2f4c16b442b8e25eb6256d33f
+      internalID: -141928752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ipad wife faces_1
+      name: wife face_13
       rect:
         serializedVersion: 2
         x: 155
@@ -152,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8101ed3ccd249bb4095dc556903f2041
-      internalID: -910895043
+      spriteID: d90bd2ffd55189a4593ae2d94478ac30
+      internalID: 1250755977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ipad wife faces_2
+      name: wife face_14
       rect:
         serializedVersion: 2
         x: 310
@@ -173,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba299ce769e73f4182f357254642a93
-      internalID: -1184532587
+      spriteID: c0fb07f2e1b2ae949b78af1ffb96c48b
+      internalID: -1256306696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ipad wife faces_3
+      name: wife face_15
       rect:
         serializedVersion: 2
         x: 465
@@ -194,197 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03f90409b78afe1499d6c97efcf5fa7b
-      internalID: 1414452305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_4
-      rect:
-        serializedVersion: 2
-        x: 620
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0341f2b175b2204e80d11098a2989a0
-      internalID: 1500225888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_5
-      rect:
-        serializedVersion: 2
-        x: 775
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaa3eb7529d7ca64497df49ddf1f3a22
-      internalID: -195236195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_6
-      rect:
-        serializedVersion: 2
-        x: 930
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67ca46db8d7dcae4d89cadc6868fd0d7
-      internalID: -1599947793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_7
-      rect:
-        serializedVersion: 2
-        x: 1085
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb0b973a1555bb746a04f9bc0b3fe3d3
-      internalID: 1983056377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_8
-      rect:
-        serializedVersion: 2
-        x: 1240
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c4f6c2e7b1e05d44884745a8655f6fb
-      internalID: -1445228795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_9
-      rect:
-        serializedVersion: 2
-        x: 1395
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bffed38606651ed4fbf37c8f472d96ec
-      internalID: -2010797688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_10
-      rect:
-        serializedVersion: 2
-        x: 1550
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d6fea9abb27ad64381d49c3fe72d6d1
-      internalID: -1251483397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_11
-      rect:
-        serializedVersion: 2
-        x: 1705
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa68a1a5409c6a8409bf4b970f037441
-      internalID: -1509651873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ipad wife faces_12
-      rect:
-        serializedVersion: 2
-        x: 1860
-        y: 0
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23af31030b41b6c4786289d4b0cff961
-      internalID: 336672634
+      spriteID: d6a70323b9265ff4681fddd19ce0108b
+      internalID: 1419126069
       vertices: []
       indices: 
       edges: []
@@ -400,19 +463,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ipad wife faces_2: -1184532587
-      ipad wife faces_12: 336672634
-      ipad wife faces_7: 1983056377
-      ipad wife faces_0: 1912207539
-      ipad wife faces_5: -195236195
-      ipad wife faces_4: 1500225888
-      ipad wife faces_1: -910895043
-      ipad wife faces_8: -1445228795
-      ipad wife faces_3: 1414452305
-      ipad wife faces_9: -2010797688
-      ipad wife faces_11: -1509651873
-      ipad wife faces_6: -1599947793
-      ipad wife faces_10: -1251483397
+      wife face_13: 1250755977
+      wife face_2: -119697412
+      wife face_3: -1070529085
+      wife face_12: -141928752
+      wife face_9: 595816608
+      wife face_10: 1186503424
+      wife face_11: -2031658066
+      wife face_14: -1256306696
+      wife face_15: 1419126069
+      wife face_5: 545828736
+      wife face_7: -224768005
+      wife face_8: 949403459
+      wife face_6: 1876810878
+      wife face_4: -1392559274
+      wife face_1: -584510132
+      wife face_0: 1536201804
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -12,12 +12,15 @@ public class iPad : MonoBehaviour
     public Canvas canvas;
     public GameObject speech;
     public TextMeshProUGUI text;
-
     public Animator anim;
+    public Sprite[] scientistImg;
+    
+    public GameObject scientistObject;
+
 
     private Player player;
     private ThoughtBubble thought;
-
+    private SpriteRenderer scientist;
     //story stuff
     //text to display
     public TextAsset file;
@@ -37,6 +40,7 @@ public class iPad : MonoBehaviour
     private bool pause = true;
 
     private float flatTime = 1.2f;
+    private int currImg = 0;
     
     
     
@@ -47,7 +51,7 @@ public class iPad : MonoBehaviour
        thought =  GameObject.FindWithTag("ThoughtBubble").GetComponent<ThoughtBubble>();
        //anim = GetComponent<Animator>();
        textLines = null;
-        
+        scientist = scientistObject.GetComponent<SpriteRenderer>();
         currLine = 0;
         endLine = 0;
         speech.SetActive(false);
@@ -65,8 +69,7 @@ public class iPad : MonoBehaviour
                 watching = true;
                 display.SetActive(false);
                 iPadVideo.SetActive(true);
-                
-                Debug.Log("reaching");
+    
             }
         }else if(watching && !watched){
             //currently watchign video
@@ -77,6 +80,8 @@ public class iPad : MonoBehaviour
                     anim.SetTrigger("Start");
                     pause = false;
                     speech.SetActive(true);//speech img
+                    //scientist.SetActive(true);
+                    //scientist.sprite = scientistImg[currImg++];
                     if(file != null){
                         textLines = (file.text.Split('\n'));
                     }else{
@@ -90,6 +95,7 @@ public class iPad : MonoBehaviour
                 }
             }else{
                 if(Input.GetKeyDown(KeyCode.Space)){
+                    
                     currLine++;
                     NextSlide();
                 }
@@ -123,14 +129,15 @@ public class iPad : MonoBehaviour
     //to change wife sprite on screen
     public void NextSlide(){
 
-        if(currLine > endLine){
+        if(currLine > endLine || currImg > 23){
             speech.SetActive(false);
             //player.startPlayerMovement();
             anim.SetTrigger("flat");
-            
+            scientistObject.SetActive(false);
             watched = true;
         }else{
             text.text = textLines[currLine];
+            scientist.sprite = scientistImg[currImg++];
         }
     }
 
