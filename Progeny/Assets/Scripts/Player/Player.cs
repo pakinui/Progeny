@@ -255,9 +255,9 @@ public class Player : MonoBehaviour
         startPlayerMovement();
     }
 
-    public void StrikeAction(){
-        playerMelee.Swing();
-    }
+    // public void StrikeAction(){
+    //     playerMelee.Swing();
+    // }
 
 
 
