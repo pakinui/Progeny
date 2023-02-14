@@ -14,6 +14,7 @@ public class DashTutorial : MonoBehaviour
 
 
     private Player player;
+    private PlayerMelee pm;
     private StoryText story;
     private GroundEnemy enemy;
     private BoxCollider2D triggerRb;
@@ -34,6 +35,7 @@ public class DashTutorial : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         story = GameObject.FindWithTag("StorySquare").GetComponent<StoryText>();
         enemy = dashEnemy.GetComponent<GroundEnemy>();
+        pm = player.GetComponent<PlayerMelee>();
        
     }
 
@@ -83,13 +85,12 @@ public class DashTutorial : MonoBehaviour
             }
 
             if(currentlyParryTutorial){
-                Debug.Log(playerPos + 1.0f + enemyPos);
+                pm.setMelee(false);
                 if((playerPos + 2.0f) > enemyPos){
-
+                    pm.setMelee(true);
                     if(!Input.GetMouseButtonDown(1)){
                         Time.timeScale = 0;
                     }else{
-                        
                         Time.timeScale = 1;
                         currentlyParryTutorial = false;
                         Destroy(display);
