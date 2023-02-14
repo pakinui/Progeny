@@ -48,11 +48,11 @@ public class PlayerCrouch : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") || Input.GetKeyDown(KeyCode.LeftControl))
         {
             crouchPressed = true;
         }
-        else if (Input.GetButtonUp("Crouch"))
+        else if (!Input.GetButton("Crouch") && !Input.GetKey(KeyCode.LeftControl))
         {
             crouchPressed = false;
         }
