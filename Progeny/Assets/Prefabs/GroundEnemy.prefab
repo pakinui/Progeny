@@ -284,9 +284,9 @@ MonoBehaviour:
   pounceChance: 0.5
   pounceSpeedVertical: 5.5
   pounceSpeedHorizontal: 9.5
-  dashSpeed: 11.5
+  dashSpeed: 13
   prepareDuration: 0.75
-  slowdownMeleeCollideAmount: 0.75
+  slowdownMeleeCollideAmount: 0.63
   ricochetMeleeAmount: 0.7
   slowdownPounceCollideAmount: 0.7
   deathObj: {fileID: 3248279191767196207, guid: 99189f7418c215247a32dba4edc550d2, type: 3}
