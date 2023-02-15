@@ -18,6 +18,8 @@ public class BarnFire : MonoBehaviour
 
     public iPad tablet;
 
+    
+
     public bool finishedVideo = false;
 
     
@@ -42,44 +44,6 @@ public class BarnFire : MonoBehaviour
         ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if(finishedVideo){
-    //         //ipad video done
-    //         //decision to light barn on fire or not
-
-
-    //     }else if(waiting && !videoPlaying){
-    //         if(timeRemaining <= 0 ){
-    //             //ipad is charged
-    //             tablet.Charged();
-    //             videoPlaying = true;
-    //         }else{
-
-    //             timeRemaining -= Time.deltaTime;
-    //         }
-    //     }else if(!videoPlaying){
-    //         if(contact){
-    //         if(Input.GetKeyDown("e")){
-    //             display.SetActive(false);
-    //             cart.SetActive(false);
-    //             //add black screen for a lil transistion
-    //             player.transform.position = new Vector3(221.3287f, -2.990383f, 7.8f);
-    //             thought.SetBubbleText("okay now i just have to wait until it arrives");
-    //             thought.ShowBubbleForSeconds(2);
-    //             player.Flip();
-    //             contact = false;
-    //             waiting = true;
-                
-    //         }
-            
-    //     }
-    //     }
-        
-        
-    // }
 
     //Update is called once per frame
     void Update()
