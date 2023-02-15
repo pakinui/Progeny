@@ -21,11 +21,12 @@ public class iPad : MonoBehaviour
 
     public GameObject decisionScreen;
     public GameObject finalEnemies;
-
+    public AudioClip spareDecisionSound;
 
     private Player player;
     private ThoughtBubble thought;
     private SpriteRenderer scientist;
+    private AudioSource camAudioSource;
     //story stuff
     //text to display
     public TextAsset file;
@@ -66,6 +67,7 @@ public class iPad : MonoBehaviour
         currLine = 0;
         endLine = 0;
         speech.SetActive(false);
+        camAudioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
        
     }
 
@@ -82,6 +84,8 @@ public class iPad : MonoBehaviour
                         //no fire spawn heaps of monsters
                         finalKey = true;
                         finalEnemies.SetActive(true);
+                        camAudioSource.clip = spareDecisionSound;
+                        camAudioSource.Play();
                     }else if(Input.GetKeyDown("q")){
                         //fire animation
                         barn.fireAnimation.SetActive(true);
