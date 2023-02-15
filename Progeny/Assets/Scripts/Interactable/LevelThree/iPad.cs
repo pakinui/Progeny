@@ -19,6 +19,10 @@ public class iPad : MonoBehaviour
     public GameObject scientistObject;
     public BarnFire barn;// to access booleans
 
+    public GameObject decisionScreen;
+    public GameObject finalEnemies;
+
+
     private Player player;
     private ThoughtBubble thought;
     private SpriteRenderer scientist;
@@ -42,6 +46,9 @@ public class iPad : MonoBehaviour
     private bool storyTextDone = false;
     private bool pause = true;
     private bool charged = false;
+    private float timeTillDecision = 2f;
+    private bool finalDecision = false;
+    private bool finalKey = false;
 
     private float flatTime = 1.2f;
     private int currImg = 0;
@@ -65,7 +72,32 @@ public class iPad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(contact && !watching && !watched){
+
+        if(finalDecision){
+            if(timeTillDecision <= 0){
+                
+                if(!finalKey){
+                    decisionScreen.SetActive(true);
+                    if(Input.GetKeyDown("e")){
+                        //no fire spawn heaps of monsters
+                        finalKey = true;
+                        finalEnemies.SetActive(true);
+                    }else if(Input.GetKeyDown("q")){
+                        //fire animation
+                        barn.fireAnimation.SetActive(true);
+                        finalKey = true;
+                    }
+                    
+                }else{
+                    //if key has been pressed
+                    decisionScreen.SetActive(false);
+                }
+                
+
+            }else{
+                timeTillDecision -= Time.deltaTime;
+            }
+        }else if(contact && !watching && !watched){
             if(Input.GetKeyDown("e")){
                 thought.hideBubble();
                 player.stopPlayerMovement();
@@ -131,7 +163,6 @@ public class iPad : MonoBehaviour
         pause = true;
         contact = false;
         gameObject.SetActive(true);
-
     }
 
     public void CloseVideo(){
@@ -141,13 +172,19 @@ public class iPad : MonoBehaviour
         watched = true;
         iPadVideo.SetActive(false);
         speech.SetActive(false);
-        player.startPlayerMovement();
-        gameObject.SetActive(false);
+        scientistObject.SetActive(false);
+        
         if(!charged){
+            player.startPlayerMovement();
+            gameObject.SetActive(false);
             thought.SetBubbleText("you've got to be joking me it went flat?!?!");
             thought.ShowBubbleForSeconds(2);
         }else{
-            Destroy(this.gameObject);
+            //moster screams so we know its trapped
+            thought.SetBubbleText("its trapped. hes trapped ... my son.");
+            thought.ShowBubbleForSeconds(2);
+            //Destroy(this.gameObject);
+            finalDecision = true;
         }
         
     }
