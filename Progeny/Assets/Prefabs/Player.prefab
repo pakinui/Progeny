@@ -586,8 +586,8 @@ MonoBehaviour:
   hasObtainedMelee: 1
   meleeEnabled: 0
   meleeSound: {fileID: 8300000, guid: a34052becd9609944abc7aa7903cbb28, type: 3}
-  attackDuration: 0.1
-  cooldown: 0.5
+  attackDuration: 0.15
+  cooldown: 0.45
 --- !u!114 &1012909204
 MonoBehaviour:
   m_ObjectHideFlags: 0
