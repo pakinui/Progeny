@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Effect
+  m_Name: Effects
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 799f48cd4ccacde4f9762b40605ca75a
   m_Children: []
@@ -50,7 +50,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 3a59054a472311e4baebcd60a5e3ad10
-    name: VolumeOfEffect
+    name: VolumeOfEffects
   - guid: 187ac43f9b422c64db1633f3005da135
     name: VolumeOfMaster
   - guid: 1182db64d234931479086780e72578e7

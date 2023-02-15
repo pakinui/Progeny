@@ -839,6 +839,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6665153967938085286, guid: 98c62ee482f45e443ba7e48661e0c8bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c62ee482f45e443ba7e48661e0c8bf, type: 3}
 --- !u!4 &158834801 stripped
@@ -7085,7 +7089,7 @@ AudioSource:
   m_GameObject: {fileID: 802163432}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3145376468204799806, guid: 5f788317829a1b4469465146a5900001, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -7536,6 +7540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7724017182288381184, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3145376468204799806, guid: 5f788317829a1b4469465146a5900001, type: 2}
     - target: {fileID: 613461573, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: hasObtainedMelee
       value: 0
@@ -8793,6 +8801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216258416}
     m_Modifications:
+    - target: {fileID: 1823680073, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3145376468204799806, guid: 5f788317829a1b4469465146a5900001, type: 2}
     - target: {fileID: 4174507615990268468, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_IsActive
       value: 1

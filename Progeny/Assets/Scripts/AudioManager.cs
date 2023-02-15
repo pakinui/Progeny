@@ -6,17 +6,13 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Slider Slider1;
     public Slider musicSlider;
-    public Slider Slider3;
+    public Slider effectsSlider;
 
     private void OnEnable()
     {
         audioMixer.SetFloat("VolumeOfMusic", PlayerPrefs.GetFloat("VolumeOfMusic", 0.75f));
-    }
-    public void SetMasterVolume()
-    {
-        //audioMixer.SetFloat( "VolumeOfMusic", Slider1.value );
+        audioMixer.SetFloat("VolumeOfEffects", PlayerPrefs.GetFloat("VolumeOfEffects", 0.75f));
     }
 
     public void SetMusicVolume()
@@ -24,13 +20,14 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
     }
 
-    public void SetMusic2Volume()
+    public void SetEffectsVolume()
     {
-        //audioMixer.SetFloat( "Music2Param", Slider3.value );
+        audioMixer.SetFloat("VolumeOfEffects", Mathf.Log10(effectsSlider.value) * 20);
     }
 
     private void OnDisable()
     {
         PlayerPrefs.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
+        PlayerPrefs.SetFloat("VolumeOfEffects", Mathf.Log10(effectsSlider.value) * 20);
     }
 }
