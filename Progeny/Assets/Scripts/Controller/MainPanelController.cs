@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainPanelController : MonoBehaviour
 {
     public GameObject optionPanel;
+    public GameObject creditsPanel;
     
     public void PlayGame()
     {
@@ -16,6 +17,12 @@ public class MainPanelController : MonoBehaviour
     {
         Debug.Log("Option Game");
         optionPanel.SetActive(true);
+    }
+
+    public void CreditsGame()
+    {
+        Debug.Log("Credits Game");
+        creditsPanel.SetActive(true);
     }
     
     public void QuitGame()
