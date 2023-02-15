@@ -28,9 +28,10 @@ public class PlayerAnimationController : MonoBehaviour
        FalseAll();
         
         
-        if(player.GetCurrentHealth() <= 0)anim.SetBool("dying", true);
+        if(player.GetCurrentHealth() <= 0){
+           
 
-        else if(player.isHitting()){ 
+        }else if(player.isHitting()){ 
             if(!startedHit){
                 anim.SetBool("isStriking", true);
                 //anim.SetTrigger("strike"); 

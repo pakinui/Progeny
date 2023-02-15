@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
 
     public Vector3 climbPosition;//where the player should move after climbing
 
+    private PlayerAnimationController ac;
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour
         playerMove = GetComponent<PlayerMove>();
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+
+        ac = GetComponent<PlayerAnimationController>();
     }
     // Update is called once per frame
     public void Update(){
@@ -128,8 +132,10 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         else if (health <= 0){
+            
             audioSource.PlayOneShot(deathSound, 0.5f);
             health = 0;//to make sure health doesnt go below 0
+            ac.anim.SetTrigger("death");
         }
         currentHealth = health;
     }
@@ -238,6 +244,7 @@ public class Player : MonoBehaviour
     public void NoHealth(){
         stopPlayerMovement();
         currentHealth = 0;
+        
     }
     public void Die()
     {

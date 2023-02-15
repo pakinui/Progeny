@@ -27,7 +27,7 @@ public class GroundEnemyAttack : MonoBehaviour
             player.SetCurrentHealth(newHealth = player.GetCurrentHealth() - attackDamage);
             //if (newHealth <= 0) {player.Die();}
             //if(newHealth <= 0){player.SetCu}
-
+        
             player.setRed(true);
         }
     }
