@@ -20,6 +20,7 @@ public class PlayerMelee : MonoBehaviour
     public float cooldown;
     private float cooldownLeft = 0f;
     private AudioSource audioSource;
+    private PlayerAnimationController ac;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class PlayerMelee : MonoBehaviour
         if(hasObtainedMelee){
             meleeEnabled = true;
         }
+        ac = player.GetComponent<PlayerAnimationController>();
     }
 
     // Update is called once per frame
@@ -38,16 +40,19 @@ public class PlayerMelee : MonoBehaviour
             if(player.isAiming()){
                 player.setAiming(false);
             }
-            Swing();
+            //Swing();
+            ac.anim.SetTrigger("strike");
         }
         if(player.isHitting()){
             attackLeft -= Time.deltaTime;
+           // Debug.Log("att: " + attackLeft);
             if(attackLeft <= 0f){
                 // hide weapon and change player state
                 meleeWeapon.SetActive(false);
                 player.setHitting(false);
             }
         } else if(!player.isHitting() && cooldownLeft > 0){
+            //Debug.Log("cool : " + cooldownLeft);
             cooldownLeft -= Time.deltaTime;
         }
     }

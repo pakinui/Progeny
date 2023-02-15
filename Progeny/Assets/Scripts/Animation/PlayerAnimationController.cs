@@ -33,11 +33,9 @@ public class PlayerAnimationController : MonoBehaviour
         else if(player.isHitting()){ 
             if(!startedHit){
                 anim.SetBool("isStriking", true);
-                anim.SetTrigger("strike"); 
-            }else{
+                //anim.SetTrigger("strike"); 
                 startedHit = true;
             }
-            
         }else if(!player.isHitting()){
             startedHit = false;
         }
