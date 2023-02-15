@@ -132,6 +132,7 @@ public class GroundEnemy : MonoBehaviour
         {
             case State.Idle:
                 sr.color = new Color(255f, 255f, 255f, 1f);
+                color = sr.color;
                 break;
             case State.Approach:
                 sr.color = new Color(255f, 255f, 255f, 1f);
@@ -284,11 +285,10 @@ public class GroundEnemy : MonoBehaviour
                 gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
-                sr.color = new Color(255f, 0f, 0f, 1f);
-                isRed = true;
-                damageTimer = damageDuration;
-            }
-            
+            }    
+            sr.color = new Color(255f, 0f, 0f, 1f);
+            isRed = true;
+            damageTimer = damageDuration;
         }
         if(!playerCollide && meleeCollide && !hasTakenMelee)
         {

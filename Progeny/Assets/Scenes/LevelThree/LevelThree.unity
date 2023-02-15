@@ -772,10 +772,10 @@ Transform:
   - {fileID: 1156558119}
   - {fileID: 756866922}
   - {fileID: 746396722}
-  - {fileID: 49884574}
+  - {fileID: 246247449}
   - {fileID: 685437677}
   - {fileID: 608511804}
-  - {fileID: 45304238}
+  - {fileID: 1647524070}
   - {fileID: 2133144968}
   - {fileID: 461456489}
   - {fileID: 1882939454}
@@ -2634,6 +2634,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5977074574008371646, guid: eb9aba3dc3fbaa448aa0a77a2dead7ca, type: 3}
   m_PrefabInstance: {fileID: 222242354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &246247449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4195359494059996821, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+  m_PrefabInstance: {fileID: 130242769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &266382595
 GameObject:
@@ -5946,20 +5951,8 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: maxHealth
       value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
-      propertyPath: currentSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
-      propertyPath: movementSpeed
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724733, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_Enabled
@@ -7806,7 +7799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591452100568464077, guid: ca130ea071e3d1c40ad0af9a2767c2b2, type: 3}
       propertyPath: spawnFrequency
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca130ea071e3d1c40ad0af9a2767c2b2, type: 3}
@@ -9257,6 +9250,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1647524070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4195359494059996821, guid: a17869a9b7f209d4d9cf510a79a21016, type: 3}
+  m_PrefabInstance: {fileID: 150073645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1652212278
 PrefabInstance:
   m_ObjectHideFlags: 0
