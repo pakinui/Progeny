@@ -941,7 +941,6 @@ GameObject:
   - component: {fileID: 2275873278365377352}
   - component: {fileID: 2275873278365377359}
   - component: {fileID: 6998155199864117741}
-  - component: {fileID: 1748920920}
   m_Layer: 5
   m_Name: SettingsPanel
   m_TagString: Untagged
@@ -1033,22 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf84356583274f93981d0bca936c97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1748920920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275873278365377357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67674428d5fef144e9ccdee4860a2ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 5f788317829a1b4469465146a5900001, type: 2}
-  Slider1: {fileID: 3059986280621661591}
-  musicSlider: {fileID: 3059986280621661591}
-  Slider3: {fileID: 0}
 --- !u!1 &2275873279138230255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,7 +2393,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1748920920}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 1

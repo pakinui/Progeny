@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        audioMixer.SetFloat("VolumeOfMusic", PlayerPrefs.GetFloat("VolumeOfMusic", 0));
+        audioMixer.SetFloat("VolumeOfMusic", PlayerPrefs.GetFloat("VolumeOfMusic", 0.75f));
     }
     public void SetMasterVolume()
     {
@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume()
     {
-        audioMixer.SetFloat("VolumeOfMusic", musicSlider.value);
+        audioMixer.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
     }
 
     public void SetMusic2Volume()
@@ -31,6 +31,6 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerPrefs.SetFloat("VolumeOfMusic", musicSlider.value);
+        PlayerPrefs.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
     }
 }
