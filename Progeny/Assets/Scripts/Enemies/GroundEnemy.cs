@@ -37,6 +37,7 @@ public class GroundEnemy : MonoBehaviour
     private float prepareTimer;
     // reference to player
     private GameObject player;
+    public GameObject deathObj;
     // references to enemy components
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -278,13 +279,16 @@ public class GroundEnemy : MonoBehaviour
             if(health == 0){
                 //Destroy(this.gameObject);
                 //dont destroy so checkpoint can revive them
+                GameObject death = Instantiate(deathObj);
+                death.transform.position = transform.position;
                 gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
+                sr.color = new Color(255f, 0f, 0f, 1f);
+                isRed = true;
+                damageTimer = damageDuration;
             }
-            sr.color = new Color(255f, 0f, 0f, 1f);
-            isRed = true;
-            damageTimer = damageDuration;
+            
         }
         if(!playerCollide && meleeCollide && !hasTakenMelee)
         {

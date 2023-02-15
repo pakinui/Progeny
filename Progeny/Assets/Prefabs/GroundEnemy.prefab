@@ -289,4 +289,5 @@ MonoBehaviour:
   slowdownMeleeCollideAmount: 0.75
   ricochetMeleeAmount: 0.7
   slowdownPounceCollideAmount: 0.7
+  deathObj: {fileID: 3248279191767196207, guid: 99189f7418c215247a32dba4edc550d2, type: 3}
   startingPosition: {x: 0, y: 0}
