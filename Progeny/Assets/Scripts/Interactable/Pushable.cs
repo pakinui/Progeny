@@ -28,6 +28,8 @@ public class Pushable : MonoBehaviour
         SetPushable(isPushable); 
     }
 
+    
+
     public void SetPushable(bool b){
         isPushable = b;
         if(isPushable){

@@ -36,7 +36,7 @@ public class MeleeTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(interactZone && Input.GetKeyDown("e")){
+        if(interactZone && Input.GetKeyDown("e") && !meleePickedUp){
             //gameObject.SetActive(false);
             block.melee = true;
             Destroy(display);

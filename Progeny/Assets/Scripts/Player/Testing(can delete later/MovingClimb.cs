@@ -31,13 +31,13 @@ public class MovingClimb : MonoBehaviour
 
     // time left for climbing animation to finish
     private float climbTime = 1.1f;
-
-
-    //private float animationTime = 3;
-
-    public PlayerAnimation playerAnimation;
     private PlayerAnimationController ac;
 
+    private float playerWidth;
+    private float playerHeight;
+    
+    private float currPlayerHeight;
+    private float currPlayerWeight;
     //boolean to see if character is currently climbing
     private bool currClimbing;
 
@@ -51,6 +51,8 @@ public class MovingClimb : MonoBehaviour
         tempMass = box.mass;
         // assigning references
         ac = player.GetComponent<PlayerAnimationController>();
+        
+        
 
     }
 
@@ -94,74 +96,47 @@ public class MovingClimb : MonoBehaviour
         {
             if (!currClimbing && climbable)
             {
+                box.mass = 100;
+                
                 currClimbing = true;
                 player.setPushing(false);
-                ac.anim.SetTrigger("climbing");
+                
                 player.stopPlayerMovement();
                 player.setClimbing(true);
 
                 // stop box from moving
-
-                box.mass = 100;
-
-                //wait for animation TODO
-                Debug.Log("player :" + player.transform.position.x + " || " + player.transform.position.y);
                 //teleport character
                 if (gameObject.tag == "RightClimb")
                 {
-                    x = player.transform.position.x - (playerMove.render.bounds.size.x /2.0f);
+                    x = boxX -0.1f;
                    
                 }
                 else if (gameObject.tag == "LeftClimb")
                 {
-                    x = player.transform.position.x + (playerMove.render.bounds.size.x /2.0f);
+                    x = boxX + 0.1f;
                     
                 }
-                y = (playerMove.render.bounds.size.y / 2.0f) + (boxY+0.1f);
+                y = (player.playerHeight/2f) + (boxY+0.2f);
 
                 player.climbPosition = new Vector3(x, y, player.transform.position.z);
+
+                if(shortClimb){
+                    //if this climb is short
+                    
+                    ac.anim.SetTrigger("shortClimb");
+                    
+                }else{
+                    ac.anim.SetTrigger("climbing");
+                }
         
                 //player.transform.position = new Vector3(x, y, player.transform.position.z);
                 //player.setClimbing(false);
-            }else if (currClimbing){
-                if(climbTime <= 0) {
-                    player.ClimbAction();
-                    currClimbing = false;
-                }else{
-                    Debug.Log("time: " + climbTime);
-                    climbTime -= Time.deltaTime;
-                }
             }
             
             
-        }
-        else if (userInput != 0f)
-        {
-            //player is pushing left or right buttons
-            //start pushing animation
-
-
-        }
-
-        // if (currClimbing && climbingTimeRemaining < 0)
-        // {
-
-        //     player.transform.position = new Vector3(x, y, player.transform.position.z);
-        //     currClimbing = false;
-        //     box.mass = tempMass;//return to normal mass
-        //     player.setClimbing(false);
-        //     climbingTimeRemaining = 1.2f;
-
-
-        // }
-        // else if (currClimbing)
-        // {
-
-        //     climbingTimeRemaining -= Time.deltaTime;
-
             
-        // }
-
+        }
+   
         boxX = transform.position.x;
         boxY = transform.position.y;
     }

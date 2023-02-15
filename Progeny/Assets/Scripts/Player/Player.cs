@@ -54,6 +54,9 @@ public class Player : MonoBehaviour
 
     private PlayerAnimationController ac;
 
+    public float playerWidth;
+    public float playerHeight;
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;

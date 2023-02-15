@@ -20,7 +20,8 @@ public class PlayerMove : MonoBehaviour
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<Renderer>();
-        
+        player.playerHeight = render.bounds.size.y;
+        player.playerWidth = render.bounds.size.x;
     }
 
     // Update is called once per frame

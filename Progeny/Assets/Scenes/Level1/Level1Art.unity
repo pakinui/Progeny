@@ -695,6 +695,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &133313454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4784152480164725105, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
+  m_PrefabInstance: {fileID: 4784152479423668257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &158834800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7631,6 +7636,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724727, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Size.x
+      value: 0.50668883
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Size.y
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.118344426
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276491471710724728, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: maxHealth
       value: 200
@@ -8483,7 +8516,6 @@ MonoBehaviour:
   box: {fileID: 2016998572}
   pushable: 0
   climbable: 1
-  playerAnimation: {fileID: 0}
 --- !u!212 &1061817628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19932,6 +19964,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216258416}
     m_Modifications:
+    - target: {fileID: 4784152478955254288, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
+      propertyPath: pushObj
+      value: 
+      objectReference: {fileID: 133313454}
     - target: {fileID: 4784152478960101270, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
       propertyPath: m_Name
       value: PushObject
@@ -19980,6 +20016,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784152479219933198, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
+      propertyPath: pushObj
+      value: 
+      objectReference: {fileID: 133313454}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
 --- !u!114 &4784152479423668258 stripped
@@ -19987,7 +20027,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4074523688597985992, guid: 79ba99fd73ac882428c3126ea2af2f94, type: 3}
   m_PrefabInstance: {fileID: 4784152479423668257}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 133313454}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114e23215da97b84aab41efb27e6c923, type: 3}

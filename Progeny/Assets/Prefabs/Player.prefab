@@ -486,6 +486,8 @@ MonoBehaviour:
   currentHealth: 0
   returnPlayer: {fileID: 0}
   climbPosition: {x: 0, y: 0, z: 0}
+  playerWidth: 0
+  playerHeight: 0
 --- !u!114 &8978308827140214577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +586,7 @@ MonoBehaviour:
   hasObtainedMelee: 1
   meleeEnabled: 0
   meleeSound: {fileID: 8300000, guid: a34052becd9609944abc7aa7903cbb28, type: 3}
-  attackDuration: 0.2
+  attackDuration: 0.1
   cooldown: 0.5
 --- !u!114 &1012909204
 MonoBehaviour:
