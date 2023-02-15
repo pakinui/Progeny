@@ -37,6 +37,7 @@ public class FlyingEnemy : MonoBehaviour
     [Range(1f,5f)]
     public float bobScaleVariance; // Variance on bobScale
 
+    public GameObject deathObj;
     public Transform shotPrefab;
     private GameObject player;
     private SpriteRenderer sr;
@@ -252,7 +253,11 @@ public class FlyingEnemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             health -= 1;
-            if(health == 0) Destroy(this.gameObject);
+            if(health == 0) {
+                GameObject dead = Instantiate(deathObj);
+                dead.transform.position = transform.position;
+                Destroy(this.gameObject);
+            }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
