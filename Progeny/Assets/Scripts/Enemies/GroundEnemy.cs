@@ -35,6 +35,11 @@ public class GroundEnemy : MonoBehaviour
     public float ricochetMeleeAmount = 0.7f;
     public float slowdownPounceCollideAmount = 0.8f;
     private float prepareTimer;
+    public AudioClip approachSound;
+    public AudioClip groundDashPrepSound;
+    public AudioClip[] hurtSounds;
+    private AudioSource audioSource;
+
     // reference to player
     private GameObject player;
     public GameObject deathObj;
@@ -82,6 +87,7 @@ public class GroundEnemy : MonoBehaviour
         startingPosition = rb.transform.position;
         //Debug.Log("start: " + startingPosition);
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -161,6 +167,7 @@ public class GroundEnemy : MonoBehaviour
                 //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             case State.DashPrep:
+                audioSource.PlayOneShot(groundDashPrepSound, 0.3f);
                 sr.color = Color.blue;
                 color = sr.color;
                 prepareTimer = prepareDuration;
@@ -179,6 +186,7 @@ public class GroundEnemy : MonoBehaviour
         if(!dead){
             if(Vector2.Distance(player.transform.position, transform.position) <= idleRange)
         {
+            audioSource.PlayOneShot(approachSound, 0.25f);
             SwitchState(State.Approach);
         }
         }
@@ -348,6 +356,8 @@ public class GroundEnemy : MonoBehaviour
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
+            int randomValue = Random.Range(0, hurtSounds.Length);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         if(!playerCollide && meleeCollide && !hasTakenMelee && !dead)
         {
@@ -369,6 +379,8 @@ public class GroundEnemy : MonoBehaviour
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
+            int randomValue = Random.Range(0, hurtSounds.Length);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
             if (state == State.Dash){
                 rb.velocity *= -ricochetMeleeAmount;
                 Flip();
@@ -393,6 +405,14 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
+    private void Die(){
+        GameObject death = Instantiate(deathObj);
+        death.transform.position = transform.position;
+        if (!facingLeft){
+            death.transform.rotation = transform.rotation;
+        }
+        gameObject.SetActive(false);
+    }
 
     public void resetPosition(){
         rb.transform.position = startingPosition;
@@ -401,7 +421,6 @@ public class GroundEnemy : MonoBehaviour
             Flip();
         }
         health = 3;
-        prepareTimer = prepareDuration;
         SwitchState(State.Idle);
         gameObject.SetActive(true);
     }
