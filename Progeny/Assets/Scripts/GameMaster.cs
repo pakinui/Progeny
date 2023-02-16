@@ -100,10 +100,11 @@ public class GameMaster : MonoBehaviour
     public void setCheckpoint(Vector3 pos)
     {
         lastCheckpointPos = pos;
+        Debug.Log(pos);
     }
 
 
-    public Vector2 getLastCheckpoint(){return lastCheckpointPos;}
+    public Vector3 getLastCheckpoint(){return lastCheckpointPos;}
 
     
     

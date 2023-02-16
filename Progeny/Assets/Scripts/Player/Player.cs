@@ -59,8 +59,10 @@ public class Player : MonoBehaviour
     public float playerHeight;
     
     public bool dead = false;
-
+    
+    //public GamePanelController gpc;
     private HealthBar healthBar;
+    public float playerZPosition; //this should never change for parallax
     
 
     // Start is called before the first frame update
@@ -71,6 +73,7 @@ public class Player : MonoBehaviour
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+       //gpc = GameObject.Find("GamePanel").GetComponent<GamePanelController>();
 
         arm = GameObject.Find("player-arm");
         arm.SetActive(false);
@@ -82,6 +85,9 @@ public class Player : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         ac = GetComponent<PlayerAnimationController>();
+
+        playerZPosition = transform.position.z;
+        
     }
     // Update is called once per frame
     public void Update(){
@@ -149,7 +155,10 @@ public class Player : MonoBehaviour
             dead = true;
             //Debug.Log("trigger death");
         }
-        currentHealth = health;
+        if(!dead){
+            currentHealth = health;
+        }
+        
     }
     
     // red accessor
@@ -264,9 +273,9 @@ public class Player : MonoBehaviour
         //canvas.deathPanel.SetActive(true);
         //Debug.Log("current Health :" + currentHealth);
         --currentHealth;
-        //Debug.Log("die");
+        
         ac.anim.SetTrigger("resetToIdle");
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         
 
 
@@ -287,7 +296,9 @@ public class Player : MonoBehaviour
     public void resetPlayer(){
         
         currentHealth = maxHealth;
+        
         transform.position = gm.getLastCheckpoint();
+        
         startPlayerMovement();
         moving = false;
         crouching = false;
@@ -299,7 +310,9 @@ public class Player : MonoBehaviour
         aiming = false;
         shooting = false;
         dead = false;
+        //Debug.Log("currasdent Health :" + currentHealth);
         healthBar.ResetHealthbar();
+        //Debug.Log("cuqqrrent Health :" + currentHealth);
     }
 
    

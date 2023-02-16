@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
 
     private Player player;
     private int maxHealth; //player max health = 300
-    private float health = 300;
+    private float health = 200;
     private int currIndex = 0;
     private bool dead = false;
     
@@ -37,15 +37,15 @@ public class HealthBar : MonoBehaviour
         }
         
 
-        if(currIndex > 28 && !dead){
+        if(currIndex > 18 && !dead){
             bars.SetActive(false); // to show 0 health
             dead = true;
             //Debug.Log("dead bitch");
-            health = 300;
+            health = 200;
             currIndex = 0;
         
             currentBars.sprite = healthBars[0];
-            
+           /// Debug.Log(player.GetCurrentHealth() + ", " + currIndex);
             
         }else if (!dead){
             currentBars.sprite = healthBars[currIndex];

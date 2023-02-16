@@ -45,7 +45,7 @@ public class Checkpoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player" && !checkPointReached){
-            gm.setCheckpoint(other.transform.position);
+            gm.setCheckpoint(new Vector3  (other.transform.position.x, other.transform.position.y, other.transform.position.z));
             this.checkPointReached = true;
             
         }
