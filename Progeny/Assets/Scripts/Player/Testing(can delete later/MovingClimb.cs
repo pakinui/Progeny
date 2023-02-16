@@ -109,38 +109,36 @@ public class MovingClimb : MonoBehaviour
                 if (gameObject.tag == "RightClimb")
                 {
                     x = boxX -0.1f;
+                    
+                    if(!shortClimb){
+                        player.transform.position = new Vector3((x + 0.85f), player.transform.position.y ,player.transform.position.z);
+                    }
                    
                 }
                 else if (gameObject.tag == "LeftClimb")
                 {
                     x = boxX + 0.1f;
+                    if(!shortClimb){
+                        player.transform.position = new Vector3((x - 0.95f), player.transform.position.y ,player.transform.position.z);
+                    }
+                    
                     
                 }
-                y = (player.playerHeight/2f) + (boxY+0.2f);
+                y = (player.playerHeight/2f) + (boxY+0.1f);
 
                 player.climbPosition = new Vector3(x, y, player.transform.position.z);
+                //1.83
+                
 
                 if(shortClimb){
-                    //if this climb is short
-                    
                     ac.anim.SetTrigger("shortClimb");
-                    
                 }else{
                     ac.anim.SetTrigger("climbing");
                 }
-        
-                //player.transform.position = new Vector3(x, y, player.transform.position.z);
-                //player.setClimbing(false);
             }
-            
-            
-            
         }
-   
         boxX = transform.position.x;
         boxY = transform.position.y;
     }
-
-
 }
 

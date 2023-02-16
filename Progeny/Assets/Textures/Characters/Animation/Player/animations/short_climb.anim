@@ -20,24 +20,22 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -209190761, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.1
       value: {fileID: -424214881, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.2
+    - time: 0.1
       value: {fileID: 1194303076, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.3
+    - time: 0.2
       value: {fileID: 192221184, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.4
+    - time: 0.3
       value: {fileID: -1452254925, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.5
+    - time: 0.4
       value: {fileID: 1617184039, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.6
+    - time: 0.5
       value: {fileID: -174475229, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.7
+    - time: 0.6
       value: {fileID: 1581864304, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.8
+    - time: 0.7
       value: {fileID: -2095095518, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
-    - time: 0.9
+    - time: 0.8
       value: {fileID: 1468076674, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
     attribute: m_Sprite
     path: 
@@ -58,7 +56,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -209190761, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
     - {fileID: -424214881, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
     - {fileID: 1194303076, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
     - {fileID: 192221184, guid: a69810c0272b1404e92e8d0baa198103, type: 3}
@@ -73,7 +70,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.90000004
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -93,7 +90,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
+  - time: 0.9
     functionName: ClimbAction
     data: 
     objectReferenceParameter: {fileID: 0}
