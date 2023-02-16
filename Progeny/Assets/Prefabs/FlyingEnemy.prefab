@@ -154,8 +154,8 @@ MonoBehaviour:
   health: 1
   damageDuration: 1
   idleRange: 9999999
-  approachRange: 1.5
-  returnRange: 0.5
+  attackRange: 1.5
+  returnRange: 20
   speed: 15
   prepareDuration: 0.65
   bobRate: 15
