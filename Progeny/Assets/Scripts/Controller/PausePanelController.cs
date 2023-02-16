@@ -9,10 +9,6 @@ public class PausePanelController : MonoBehaviour
 
     private Player player;
 
-    void Start(){
-        player = GameObject.Find("Player").GetComponent<Player>();
-    }
-
     void Update(){
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Space)){
             ClosePanel();
@@ -22,6 +18,7 @@ public class PausePanelController : MonoBehaviour
     private void OnEnable()
     {
         Time.timeScale = 0;
+        player = GameObject.Find("Player").GetComponent<Player>();
         player.stopPlayerMovement();
     }
 
