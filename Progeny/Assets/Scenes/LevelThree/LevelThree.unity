@@ -8522,8 +8522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47f9194781a73e4d81f3a345c2363c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changingLevel: 0
+  startingLevel: 1
+  nextLevelName: 
   timeOrder: 0.5
   lastCheckpointPos: {x: -26, y: -2, z: 7.6}
+  currentLevel: 
 --- !u!4 &1497709523
 Transform:
   m_ObjectHideFlags: 0
@@ -9792,7 +9796,7 @@ GameObject:
   - component: {fileID: 1775071830}
   m_Layer: 0
   m_Name: Tiles
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

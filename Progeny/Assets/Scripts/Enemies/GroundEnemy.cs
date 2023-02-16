@@ -95,8 +95,7 @@ public class GroundEnemy : MonoBehaviour
 
     void OnEnable()
     {
-        health = 3;
-        damageDuration = 1;
+        damageDuration = 0.3f;
         isJumping = false;
         pounceCollide = false;
         meleeCollide = false;
@@ -166,7 +165,6 @@ public class GroundEnemy : MonoBehaviour
                 color = sr.color;
                 break;
             case State.Approach:
-                sr.color = new Color(255f, 255f, 255f, 1f);
                 color = sr.color;
                 break;
             case State.PouncePrep:
@@ -427,6 +425,7 @@ public class GroundEnemy : MonoBehaviour
     }
 
     public void resetPosition(){
+        health = 3;
         rb.transform.position = startingPosition;
         rb.velocity = new Vector2(0, 0);
         if(!facingLeft){
