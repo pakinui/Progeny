@@ -171,7 +171,6 @@ GameObject:
   - component: {fileID: 4195359494059996817}
   - component: {fileID: 4195359494059996816}
   - component: {fileID: 1782454343}
-  - component: {fileID: 1782454350}
   m_Layer: 7
   m_Name: GroundEnemy
   m_TagString: Enemy
@@ -363,12 +362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  health: 100
+  health: 3
   damageDuration: 0.3
   idleRange: 16
   approachRange: 6
   speed: 6
-  pounceChance: 0
+  pounceChance: 0.5
   pounceSpeedVertical: 5.5
   pounceSpeedHorizontal: 9.5
   dashSpeed: 13
@@ -398,16 +397,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1782454350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4195359494059996819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f547c2246ac940549a3b3094fe9d7e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
