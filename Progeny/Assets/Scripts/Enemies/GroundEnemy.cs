@@ -39,11 +39,12 @@ public class GroundEnemy : MonoBehaviour
     public AudioClip dashPrepSound;
     public AudioClip pouncePrepSound;
     public AudioClip[] hurtSounds;
+    public AudioClip[] deathSounds;
+    public GameObject deathObject;
     private AudioSource audioSource;
 
     // reference to player
     private GameObject player;
-    public GameObject deathObj;
     // references to enemy components
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -339,23 +340,22 @@ public class GroundEnemy : MonoBehaviour
                     //on the ground
                     Debug.Log("norm death: " + state);
                     anim.SetTrigger("normalDeath");
-                    dead = true;
                 }else if (state == State.Pounce && !dead){
                    
                      Debug.Log("air death: " + state);
                      anim.SetTrigger("airDeath");
-                     dead = true;
                 }
-                anim.SetBool("dead", true);
+                Death();
                 //gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
-            }    
-            sr.color = new Color(255f, 0f, 0f, 1f);
-            isRed = true;
-            damageTimer = damageDuration;
-            int randomValue = Random.Range(0, hurtSounds.Length);
-            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+            }else{   
+                sr.color = new Color(255f, 0f, 0f, 1f);
+                isRed = true;
+                damageTimer = damageDuration;
+                int randomValue = Random.Range(0, hurtSounds.Length);
+                audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+            }
         }
         if(!playerCollide && meleeCollide && !hasTakenMelee && !dead)
         {
@@ -371,20 +371,33 @@ public class GroundEnemy : MonoBehaviour
                     Debug.Log("air2 death");
                     anim.SetTrigger("airDeath");
                 }
-                dead = true;
-                anim.SetBool("dead", true);
+                Death();
             } 
-            sr.color = new Color(255f, 0f, 0f, 1f);
-            isRed = true;
-            damageTimer = damageDuration;
-            int randomValue = Random.Range(0, hurtSounds.Length);
-            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
-            if (state == State.Dash){
-                rb.velocity *= -ricochetMeleeAmount;
-                Flip();
+            else{
+                sr.color = new Color(255f, 0f, 0f, 1f);
+                isRed = true;
+                damageTimer = damageDuration;
+                int randomValue = Random.Range(0, hurtSounds.Length);
+                audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+                if (state == State.Dash){
+                    rb.velocity *= -ricochetMeleeAmount;
+                    Flip();
+                
+                hasTakenMelee = true;
+                }
             }
-            hasTakenMelee = true;
         }
+    }
+
+    public void Death(){
+        sr.color = new Color(255f, 255f, 255f, 1f);
+        dead = true;
+        anim.SetBool("dead", true);
+        GameObject deathObj = Instantiate(deathObject);
+        AudioSource deathAudio = deathObj.GetComponent<AudioSource>();
+        int randomValue = Random.Range(0, deathSounds.Length);
+        deathAudio.clip = deathSounds[randomValue];
+        deathAudio.Play();
     }
 
     //so death animation can play before obj is invis
@@ -401,15 +414,6 @@ public class GroundEnemy : MonoBehaviour
         else if (other.tag == "MeleeWeapon"){
             meleeCollide = false;
         }
-    }
-
-    private void Die(){
-        GameObject death = Instantiate(deathObj);
-        death.transform.position = transform.position;
-        if (!facingLeft){
-            death.transform.rotation = transform.rotation;
-        }
-        gameObject.SetActive(false);
     }
 
     public void resetPosition(){

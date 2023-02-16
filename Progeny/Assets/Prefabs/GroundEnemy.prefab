@@ -383,7 +383,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eeeb556c6ad7bf54b8f149959f2ddfa5, type: 3}
   - {fileID: 8300000, guid: 99bb4e87be04b004c96edea1e2bba1dd, type: 3}
   - {fileID: 8300000, guid: e67038d7662a06740aed31e87bd663a6, type: 3}
-  deathObj: {fileID: 3248279191767196207, guid: 99189f7418c215247a32dba4edc550d2, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 52ccfad6db2056648889396990459653, type: 3}
+  - {fileID: 8300000, guid: eb6dfbb4d0edfb149aa98104a260d400, type: 3}
+  deathObject: {fileID: 493160248546792194, guid: 657c99f606c922c4ebbc046e112f9577, type: 3}
   startingPosition: {x: 0, y: 0}
 --- !u!95 &1782454343
 Animator:
