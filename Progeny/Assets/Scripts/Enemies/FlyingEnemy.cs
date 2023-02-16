@@ -258,12 +258,7 @@ public class FlyingEnemy : MonoBehaviour
             Destroy(other.gameObject);
             health -= 1;
             if(health == 0) {
-                GameObject dead = Instantiate(deathObj);
-                dead.transform.position = transform.position;
-                if (!facingLeft){
-                    dead.transform.rotation = transform.rotation;
-                }
-                Destroy(this.gameObject);
+                Death();
             }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
@@ -272,10 +267,21 @@ public class FlyingEnemy : MonoBehaviour
         else if(other.tag == "MeleeWeapon")
         {
             health -= 1;
-            if(health == 0) Destroy(this.gameObject);
+            if(health == 0) {
+                Death();
+            }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
         }
+    }
+
+    public void Death(){
+        GameObject dead = Instantiate(deathObj);
+        dead.transform.position = transform.position;
+        if (!facingLeft){
+            dead.transform.rotation = transform.rotation;
+        }
+        Destroy(this.gameObject);
     }
 }
