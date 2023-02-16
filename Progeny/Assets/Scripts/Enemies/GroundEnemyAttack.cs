@@ -7,7 +7,7 @@ public class GroundEnemyAttack : MonoBehaviour
     // reference to the player
     Player player;
     // damage dealt to player on successful atttack (currently does a third)
-    public float attackDamage = 20;
+    public float attackDamage = 20f;
 
     // Start is called before the first frame update
     void Start()

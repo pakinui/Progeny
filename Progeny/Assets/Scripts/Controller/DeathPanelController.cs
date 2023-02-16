@@ -9,6 +9,9 @@ public class DeathPanelController : MonoBehaviour
     private Player player;
     private ReturnToCheckpoint rtc;
     private Canvas canvas;
+    public GameObject healthBar;
+
+    private HealthBar hb;
     
 
     private void OnEnable()
@@ -16,8 +19,10 @@ public class DeathPanelController : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         rtc = player.GetComponent<ReturnToCheckpoint>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        hb = healthBar.GetComponent<HealthBar>();
         Time.timeScale = 0;
         player.stopPlayerMovement();
+        healthBar.SetActive(false);
     }
 
     public void RedirectToMainMenu()
@@ -33,6 +38,11 @@ public class DeathPanelController : MonoBehaviour
         //Time.timeScale = 1;
         
         rtc.resetLevel();
+        
+        
+       
+        
+        //healthBar.SetActive(true);
         
         gameObject.SetActive(false);
         

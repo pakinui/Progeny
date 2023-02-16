@@ -347,11 +347,11 @@ public class GroundEnemy : MonoBehaviour
                 //dont destroy so checkpoint can revive them
                 if(state != State.Pounce && !dead){
                     //on the ground
-                    Debug.Log("norm death: " + state);
+                    //Debug.Log("norm death: " + state);
                     anim.SetTrigger("normalDeath");
                 }else if (state == State.Pounce && !dead){
                    
-                     Debug.Log("air death: " + state);
+                     //Debug.Log("air death: " + state);
                      anim.SetTrigger("airDeath");
                 }
                 Death();

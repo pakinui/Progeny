@@ -57,6 +57,9 @@ public class Player : MonoBehaviour
     public float playerWidth;
     public float playerHeight;
 
+    private HealthBar healthBar;
+    private bool dead = false;
+
     // Start is called before the first frame update
     public void Start(){
         currentSpeed = movementSpeed;
@@ -64,6 +67,7 @@ public class Player : MonoBehaviour
 
         gm = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
 
         arm = GameObject.Find("player-arm");
         arm.SetActive(false);
@@ -130,15 +134,17 @@ public class Player : MonoBehaviour
 
     //adds health to value (subtracts if negative)
     public void SetCurrentHealth(float health){
-        if (currentHealth > health && health > 0){
+        if (currentHealth > health && health > 0 && !dead){
             int randomValue = Random.Range(0, hurtSounds.Length);
             audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
-        else if (health <= 0){
+        else if (health <= 0 && !dead){
             
             audioSource.PlayOneShot(deathSound, 0.5f);
             health = 0;//to make sure health doesnt go below 0
             ac.anim.SetTrigger("death");
+            dead = true;
+            //Debug.Log("trigger death");
         }
         currentHealth = health;
     }
@@ -247,6 +253,7 @@ public class Player : MonoBehaviour
     public void NoHealth(){
         stopPlayerMovement();
         currentHealth = 0;
+        //Debug.Log("no health");
         
     }
     public void Die()
@@ -254,7 +261,10 @@ public class Player : MonoBehaviour
         //canvas.deathPanel.SetActive(true);
         //Debug.Log("current Health :" + currentHealth);
         --currentHealth;
-
+        //Debug.Log("die");
+        ac.anim.SetTrigger("resetToIdle");
+        currentHealth = maxHealth;
+        
 
 
     }
@@ -284,8 +294,8 @@ public class Player : MonoBehaviour
         hitting = false;
         aiming = false;
         shooting = false;
-
-        
+        dead = false;
+        healthBar.ResetHealthbar();
     }
 
    

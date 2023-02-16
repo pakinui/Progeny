@@ -64,6 +64,7 @@ public class FlashbackTiles : MonoBehaviour
             thought.SetBubbleText(afterThought);
             thought.ShowBubbleForSeconds(2);
         }
+        Destroy(this.gameObject);//so errors arent thrown after dying and flashback not being found
     }
 
 

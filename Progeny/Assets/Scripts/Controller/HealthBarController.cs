@@ -9,6 +9,7 @@ public class HealthBarController : MonoBehaviour
     public int maxHealth;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public Sprite[] healthBars;
     
     // Start is called before the first frame update
     private Player player;
