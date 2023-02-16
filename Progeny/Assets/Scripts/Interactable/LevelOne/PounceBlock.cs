@@ -24,22 +24,17 @@ public class PounceBlock : MonoBehaviour
 
 
     void Update(){
-
-
+        if(pounceKilled){
+            bubble.hideBubble();
+            Destroy(block);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll){
         if(coll.tag == "Player"){
-            //if all three objs have been interated with
-            //then remove door block
-            if(pounceKilled){
-                block.SetActive(false);//could probably destroy it?
-            }else{
-                //if all three objects havent been interacted
-                //with then trigger thought bubble
-                bubble.SetBubbleText("i should kill this pouncer before i go ahead...");
-                bubble.ShowBubbleForSeconds(4);
-            }
+            bubble.SetBubbleText("i should kill this pouncer before i go ahead...");
+            bubble.ShowBubbleForSeconds(4);
         }
     }
-}
+
+ }

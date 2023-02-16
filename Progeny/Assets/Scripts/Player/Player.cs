@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // default movement speed of player
     public float movementSpeed;
 
+    public AudioClip[] climbAudio;
     // sounds the player makes when hurt
     public AudioClip[] hurtSounds;
 
@@ -56,6 +57,8 @@ public class Player : MonoBehaviour
 
     public float playerWidth;
     public float playerHeight;
+    
+    public bool dead = false;
 
     private HealthBar healthBar;
     private bool dead = false;
@@ -139,7 +142,7 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         else if (health <= 0 && !dead){
-            
+            dead = true;
             audioSource.PlayOneShot(deathSound, 0.5f);
             health = 0;//to make sure health doesnt go below 0
             ac.anim.SetTrigger("death");
@@ -282,6 +285,7 @@ public class Player : MonoBehaviour
 
 
     public void resetPlayer(){
+        dead = false;
         currentHealth = maxHealth;
         transform.position = gm.getLastCheckpoint();
         startPlayerMovement();

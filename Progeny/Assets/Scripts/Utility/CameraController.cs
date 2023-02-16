@@ -97,10 +97,12 @@ using UnityEngine;
 
         public void Mute(bool mute, float cDuration){
             if (mute){
-                audioSource.volume = initialVolume;
+                if (audioSource != null)
+                    audioSource.volume = initialVolume;
             }
             else{
-                audioSource.volume = 0;
+                if (audioSource != null)
+                    audioSource.volume = 0;
             }
             reduceVolume = mute;
             changeDuration = cDuration;
