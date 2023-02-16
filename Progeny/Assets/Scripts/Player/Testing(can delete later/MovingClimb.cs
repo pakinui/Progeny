@@ -18,6 +18,7 @@ public class MovingClimb : MonoBehaviour
     private PlayerMove playerMove;
     private Player player;
 
+    private AudioSource playerAudioSource;
 
     private float boxX;
     private float boxY;
@@ -51,7 +52,7 @@ public class MovingClimb : MonoBehaviour
         tempMass = box.mass;
         // assigning references
         ac = player.GetComponent<PlayerAnimationController>();
-        
+        playerAudioSource = player.GetComponent<AudioSource>();
         
 
     }
@@ -96,6 +97,8 @@ public class MovingClimb : MonoBehaviour
         {
             if (!currClimbing && climbable)
             {
+                int randomValue = Random.Range(0, player.climbAudio.Length);
+                playerAudioSource.PlayOneShot(player.climbAudio[randomValue], 0.25f);
                 box.mass = 100;
                 
                 currClimbing = true;
