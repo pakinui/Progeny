@@ -388,8 +388,8 @@ public class GroundEnemy : MonoBehaviour
                 damageTimer = damageDuration;
                 int randomValue = Random.Range(0, hurtSounds.Length);
                 audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
-                audioSource.PlayOneShot(meleeParry, 0.25f);
                 if (state == State.Dash){
+                    audioSource.PlayOneShot(meleeParry, 0.25f);
                     rb.velocity *= -ricochetMeleeAmount;
                     Flip();
                 
