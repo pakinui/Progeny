@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: -7724017182288381184}
   - component: {fileID: 1703243278}
   - component: {fileID: 1703243279}
+  - component: {fileID: 3297721009595913960}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -474,7 +475,7 @@ MonoBehaviour:
   hitting: 0
   aiming: 0
   shooting: 0
-  movementSpeed: 4
+  movementSpeed: 3.75
   climbAudio:
   - {fileID: 8300000, guid: aec190a0cb703aa42831599d110b213e, type: 3}
   - {fileID: 8300000, guid: fe8bdf36f3c43024181ed393b7911d0a, type: 3}
@@ -492,6 +493,7 @@ MonoBehaviour:
   climbPosition: {x: 0, y: 0, z: 0}
   playerWidth: 0
   playerHeight: 0
+  dead: 0
 --- !u!114 &8978308827140214577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,3 +917,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPanel: {fileID: 0}
   reset: 0
+--- !u!114 &3297721009595913960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276491471335496202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f854fc7209ada14887b8abbd24f4238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 3423010630120244692, guid: d60dbc0006e6bd84399cd1caa74aa4df, type: 3}

@@ -6698,7 +6698,7 @@ MonoBehaviour:
   - {fileID: 1822891256, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
   - {fileID: 241178442, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
   - {fileID: 1054262781, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  currentBars: {fileID: 616434528}
+  bars: {fileID: 0}
 --- !u!1 &702594548
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,6 +7818,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 613461573, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: hasObtainedMelee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297721009595913960, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471335496202, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
@@ -9081,6 +9085,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -3145376468204799806, guid: 5f788317829a1b4469465146a5900001, type: 2}
+    - target: {fileID: 4174507615990268468, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
+      propertyPath: m_Name
+      value: TheRevolver
+      objectReference: {fileID: 0}
     - target: {fileID: 4174507615990268468, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -18713,6 +18721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c84500a7ca46a18ce5e9d6829b301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!1 &1895359326
 GameObject:
   m_ObjectHideFlags: 0
