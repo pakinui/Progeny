@@ -8,9 +8,9 @@ public class GameMaster : MonoBehaviour
     private FadeToBlack ftb;
     private CameraController cameraController;
 
-    private bool changingLevel = false;
-    private bool startingLevel = true;
-    private string nextLevelName;
+    [SerializeField] private bool changingLevel = false;
+    [SerializeField] private bool startingLevel = true;
+    [SerializeField] private string nextLevelName;
 
     private float slowMoDuration;
     public float timeOrder;
@@ -19,7 +19,13 @@ public class GameMaster : MonoBehaviour
     private Player player;
     private PlayerMelee pm;
     public Vector3 lastCheckpointPos;
-
+    
+    public string currentLevel = string.Empty;
+    
+    public void ContinueGame(){
+        SceneManager.LoadScene(currentLevel);
+    }
+    
     void Awake(){
         if(instance == null){
             instance = this;
@@ -45,8 +51,14 @@ public class GameMaster : MonoBehaviour
         else if (startingLevel){
             ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
             cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
-            player = GameObject.Find("Player").GetComponent<Player>();
-            StartLevel();
+            var tmp_player = GameObject.Find("Player");
+            if (tmp_player != null)
+            {
+                player = tmp_player.GetComponent<Player>();
+                currentLevel = SceneManager.GetActiveScene().name;
+                StartLevel();
+            }
+                
             startingLevel = false;
         }
     }
@@ -68,24 +80,27 @@ public class GameMaster : MonoBehaviour
     public void NextLevel(string sceneName){
         ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         StartCoroutine(ftb.FadeBlackSquare(true, 0.25f));
-        cameraController.Mute(true, 4f);
+        cameraController?.Mute(true, 4f);
         nextLevelName = sceneName;
         changingLevel = true;
-        player.stopPlayerMovement();
+        player?.stopPlayerMovement();
     }
 
     private void StartLevel(){
         ftb.InstantBlack();
         StartCoroutine(ftb.FadeBlackSquare(false, 0.25f));
-        cameraController.Mute(false, 4f);
+        cameraController?.Mute(false, 4f);
     }
 
     public void slowMo(float t){
         slowMoDuration = t;
     }
 
-    
-    public void setCheckpoint(Vector3 pos){lastCheckpointPos = pos;}
+
+    public void setCheckpoint(Vector3 pos)
+    {
+        lastCheckpointPos = pos;
+    }
 
 
     public Vector2 getLastCheckpoint(){return lastCheckpointPos;}
