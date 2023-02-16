@@ -30,7 +30,7 @@ public class GroundEnemy : MonoBehaviour
     public float pounceSpeedVertical = 7;
     public float pounceSpeedHorizontal = 10;
     public float dashSpeed = 10;
-    public float prepareDuration = 1.5f; // time to wait before pounce
+    public float prepareDuration = 1.0f; // time to wait before pounce
     public float slowdownMeleeCollideAmount = 0.8f;
     public float ricochetMeleeAmount = 0.7f;
     public float slowdownPounceCollideAmount = 0.8f;
@@ -65,6 +65,11 @@ public class GroundEnemy : MonoBehaviour
     //starting position for checkpoints
     public Vector2 startingPosition;
 
+    //animation stuff
+    private GroundEnemyController gec;
+    private Animator anim;
+    private bool startDash = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +80,8 @@ public class GroundEnemy : MonoBehaviour
 
         startingPosition = rb.transform.position;
         //Debug.Log("start: " + startingPosition);
+        gec = GetComponent<GroundEnemyController>();
+        anim = GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -167,6 +174,7 @@ public class GroundEnemy : MonoBehaviour
 
     void Approach()
     {
+        anim.SetTrigger("approach");
         CheckFacing();
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
         rb.velocity = velocity;
@@ -209,7 +217,12 @@ public class GroundEnemy : MonoBehaviour
 
     void DashPrep()
     {
+        
         CheckFacing();
+        if(!startDash){
+            anim.SetTrigger("dashPrep");
+            startDash = true;
+        }
         prepareTimer -= Time.deltaTime;
         if(prepareTimer <= 0){
             SwitchState(State.Dash);
@@ -217,8 +230,11 @@ public class GroundEnemy : MonoBehaviour
     }
 
     void Dash(){
+        
         if (!dashStart){
+            anim.SetTrigger("dash");
             dashStart = true;
+            startDash = false;
             rb.velocity = new Vector2(direction * dashSpeed, 0);
             fangs.SetActive(true);
         }

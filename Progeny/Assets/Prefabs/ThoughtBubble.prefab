@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 499ec43ff188dd24fb5e1ca369dafc74, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -367,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e97d29fdab86424b87a7f0f71c1d8ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
   showBubble: 0
   bubble: {fileID: 7942472801277666391}
   theText: {fileID: 7942472801265218120}
