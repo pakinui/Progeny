@@ -39,6 +39,7 @@ public class GroundEnemy : MonoBehaviour
     public AudioClip dashPrepSound;
     public AudioClip pouncePrepSound;
     public AudioClip[] hurtSounds;
+    public AudioClip meleeParry;
     public AudioClip[] deathSounds;
     public GameObject deathObject;
     private AudioSource audioSource;
@@ -379,6 +380,7 @@ public class GroundEnemy : MonoBehaviour
                 damageTimer = damageDuration;
                 int randomValue = Random.Range(0, hurtSounds.Length);
                 audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+                audioSource.PlayOneShot(meleeParry, 0.25f);
                 if (state == State.Dash){
                     rb.velocity *= -ricochetMeleeAmount;
                     Flip();

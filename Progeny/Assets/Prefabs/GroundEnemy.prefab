@@ -383,6 +383,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eeeb556c6ad7bf54b8f149959f2ddfa5, type: 3}
   - {fileID: 8300000, guid: 99bb4e87be04b004c96edea1e2bba1dd, type: 3}
   - {fileID: 8300000, guid: e67038d7662a06740aed31e87bd663a6, type: 3}
+  meleeParry: {fileID: 8300000, guid: cfcf99338f5034d4cbf8ef8ee126debe, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 52ccfad6db2056648889396990459653, type: 3}
   - {fileID: 8300000, guid: eb6dfbb4d0edfb149aa98104a260d400, type: 3}
