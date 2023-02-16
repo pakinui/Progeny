@@ -21,7 +21,7 @@ public class GroundEnemyAttack : MonoBehaviour
     // attack
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !this.transform.parent.gameObject.GetComponent<GroundEnemy>().dead)
         {    
             float newHealth;
             player.SetCurrentHealth(newHealth = player.GetCurrentHealth() - attackDamage);

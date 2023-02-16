@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
 
     public float playerWidth;
     public float playerHeight;
+    
+    public bool dead = false;
 
     // Start is called before the first frame update
     public void Start(){
@@ -135,8 +137,8 @@ public class Player : MonoBehaviour
             int randomValue = Random.Range(0, hurtSounds.Length);
             audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
-        else if (health <= 0){
-            
+        else if (health <= 0 && !dead){
+            dead = true;
             audioSource.PlayOneShot(deathSound, 0.5f);
             health = 0;//to make sure health doesnt go below 0
             ac.anim.SetTrigger("death");
@@ -273,6 +275,7 @@ public class Player : MonoBehaviour
 
 
     public void resetPlayer(){
+        dead = false;
         currentHealth = maxHealth;
         transform.position = gm.getLastCheckpoint();
         startPlayerMovement();

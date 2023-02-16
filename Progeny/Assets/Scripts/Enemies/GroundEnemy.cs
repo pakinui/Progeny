@@ -77,7 +77,7 @@ public class GroundEnemy : MonoBehaviour
     private Animator anim;
     private bool startDash = false;
     private bool startPounce = false;
-    private bool dead = false;
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
