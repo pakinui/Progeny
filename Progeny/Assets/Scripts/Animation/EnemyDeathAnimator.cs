@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyDeathAnimator : MonoBehaviour
 {
+    public AudioClip[] deathSounds;
     public Sprite[] deathSprites;
     private SpriteRenderer animRenderer;
     public float framesPerSecond;
+    private AudioSource audioSource;
     private float timeAtAnimStart;
     private float clipLength;
     private float activeTime;
@@ -15,7 +17,11 @@ public class EnemyDeathAnimator : MonoBehaviour
     {
         animRenderer = GetComponent<Renderer>() as SpriteRenderer;
         timeAtAnimStart = Time.timeSinceLevelLoad;
-        clipLength = GetComponent<AudioSource>().clip.length;
+        audioSource = GetComponent<AudioSource>();
+        int randomValue = Random.Range(0, deathSounds.Length);
+        audioSource.clip = deathSounds[randomValue];
+        clipLength = audioSource.clip.length;
+        audioSource.Play();
     }
 
     // Update is called once per frame
