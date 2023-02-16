@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: This must be Pharma...
+  bubbleText: this must be Pharma...
   isTimed: 1
   bubbleTime: 1
 --- !u!61 &322573250
@@ -7210,7 +7210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: I can't get in through the door because of the water, maybe I could
+  bubbleText: i can't get in through the door because of the water, maybe I could
     climb through the broken window?
   isTimed: 1
   bubbleTime: 4
@@ -8267,7 +8267,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 1436103869}
   display: {fileID: 839073251}
   interactBackground: {fileID: 951176046}
-  thoughtText: If today is the 10th that means that they should both be at her work.
+  thoughtText: if today is the 10th that means that they should both be at her work.
   familyPhoto: 0
   workLetter: 0
   calendar: 1
@@ -8875,7 +8875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: If I can make it to Pharma my family might be there.
+  bubbleText: if I can make it to Pharma my family might be there.
   isTimed: 1
   bubbleTime: 2
 --- !u!1 &1187988481
@@ -10643,7 +10643,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 412106766}
   display: {fileID: 1833515787}
   interactBackground: {fileID: 951176046}
-  thoughtText: My wife works at Pharma, and her name is Juliette. Maybe I'll be able
+  thoughtText: my wife works at Pharma, and her name is Juliette. maybe I'll be able
     to remember more when I see her.
   familyPhoto: 0
   workLetter: 1
@@ -11228,7 +11228,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 1319174672}
   display: {fileID: 776294103}
   interactBackground: {fileID: 951176046}
-  thoughtText: I can't believe I don't remember them. I wonder how old our son is?
+  thoughtText: i can't believe i don't remember them. i wonder how old our son is?
   familyPhoto: 1
   workLetter: 0
   calendar: 0

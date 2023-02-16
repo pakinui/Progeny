@@ -27,7 +27,7 @@ public class HasJerryCan : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll){
         if(coll.tag == "Player"){
-            thought.SetBubbleText("I should get those jerry cans to kill the monster.");
+            thought.SetBubbleText("i should get those jerry cans to kill the monster.");
             thought.ShowBubbleForSeconds(2);
         }
     }

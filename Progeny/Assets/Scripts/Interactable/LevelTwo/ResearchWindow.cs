@@ -24,7 +24,7 @@ public class ResearchWindow : MonoBehaviour
         if(coll.tag == "Player"){
             display.SetActive(true);
             contact = true;
-            thought.SetBubbleText("maybe I could climb through this window?");
+            thought.SetBubbleText("maybe i could climb through this window?");
             thought.ShowBubbleForSeconds(2);
         }
     }

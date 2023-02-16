@@ -48,7 +48,7 @@ public class PetrolInteract : MonoBehaviour
 
             //thought bubble to hint the player why the
             //need to cans
-            thought.SetBubbleText("I could use those jerry cans to start a fire and kill the monsterI could use those jerry cans to start a fire and d");
+            thought.SetBubbleText("i could use those jerry cans to light fire to the barn...");
             thought.ShowBubbleForSeconds(2);
 
             if(Input.GetKeyDown("e")){

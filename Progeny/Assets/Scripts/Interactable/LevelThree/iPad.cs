@@ -181,11 +181,11 @@ public class iPad : MonoBehaviour
         if(!charged){
             player.startPlayerMovement();
             gameObject.SetActive(false);
-            thought.SetBubbleText("you've got to be joking me it went flat?!?!");
+            thought.SetBubbleText("you've got to be joking me, it went flat?!?!");
             thought.ShowBubbleForSeconds(2);
         }else{
             //moster screams so we know its trapped
-            thought.SetBubbleText("its trapped. hes trapped ... my son.");
+            thought.SetBubbleText("it's trapped. he's trapped ... my son.");
             thought.ShowBubbleForSeconds(2);
             //Destroy(this.gameObject);
             finalDecision = true;

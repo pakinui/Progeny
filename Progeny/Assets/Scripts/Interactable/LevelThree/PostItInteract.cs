@@ -51,7 +51,7 @@ public class PostItInteract : MonoBehaviour
         interactBackground.SetActive(false);
         imgOpen = false;
         player.startPlayerMovement();
-        bubble.SetBubbleText("Maybe I could trap it at Bates Farm?\n I just need to find something that will hurt it.");
+        bubble.SetBubbleText("maybe i could trap it at Bates Farm?\n i just need to find something that will hurt it.");
         bubble.ShowBubbleForSeconds(3);
         Destroy(this.gameObject);
     }
