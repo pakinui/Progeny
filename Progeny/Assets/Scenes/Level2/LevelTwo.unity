@@ -889,7 +889,7 @@ RectTransform:
   - {fileID: 29838155}
   - {fileID: 696134345}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -962,7 +962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266805056 stripped
 GameObject:
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: This must be Pharma...
+  bubbleText: this must be Pharma...
   isTimed: 1
   bubbleTime: 1
 --- !u!61 &322573250
@@ -1479,7 +1479,7 @@ Transform:
   - {fileID: 1634014724}
   - {fileID: 1966784674}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396396713
 GameObject:
@@ -3941,7 +3941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5135859692813111358, guid: 1613d7a9d8595174f80ee7d1dae70e63, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5135859692813111358, guid: 1613d7a9d8595174f80ee7d1dae70e63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4551,75 +4551,6 @@ Transform:
   m_Father: {fileID: 1739695049}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &522453206
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4174507615990268468, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507615990268470, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824645, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_Name
-      value: GunPickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.81072044
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.3697109
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507616314824646, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174507617097987227, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a85299ea1732f8247b0619a30ddd6bd5, type: 3}
 --- !u!1 &531357717
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,7 +7286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: I can't get in through the door because of the water, maybe I could
+  bubbleText: i can't get in through the door because of the water, maybe I could
     climb through the broken window?
   isTimed: 1
   bubbleTime: 4
@@ -7454,7 +7385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942472803063250719, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7942472803063250719, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8004,7 +7935,7 @@ Transform:
   - {fileID: 1640340346}
   - {fileID: 7857745876527791356}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913355232
 GameObject:
@@ -8054,7 +7985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938537142
 GameObject:
@@ -8339,7 +8270,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 1436103869}
   display: {fileID: 839073251}
   interactBackground: {fileID: 951176046}
-  thoughtText: If today is the 10th that means that they should both be at her work.
+  thoughtText: if today is the 10th that means that they should both be at her work.
   familyPhoto: 0
   workLetter: 0
   calendar: 1
@@ -8947,7 +8878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3369dff6f2c761142805624c54a0e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleText: If I can make it to Pharma my family might be there.
+  bubbleText: if I can make it to Pharma my family might be there.
   isTimed: 1
   bubbleTime: 2
 --- !u!1 &1187988481
@@ -8982,7 +8913,7 @@ Transform:
   - {fileID: 743085812}
   - {fileID: 322573248}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188134359
 GameObject:
@@ -10030,7 +9961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724612, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10110,7 +10041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: currentSpeed
-      value: 5
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: currentHealth
@@ -10118,7 +10049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724730, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: movementSpeed
-      value: 5
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 7276491471710724733, guid: 7f41d58f82041624d950c0fc85776c79, type: 3}
       propertyPath: m_Enabled
@@ -10721,7 +10652,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 412106766}
   display: {fileID: 1833515787}
   interactBackground: {fileID: 951176046}
-  thoughtText: My wife works at Pharma, and her name is Juliette. Maybe I'll be able
+  thoughtText: my wife works at Pharma, and her name is Juliette. maybe I'll be able
     to remember more when I see her.
   familyPhoto: 0
   workLetter: 1
@@ -10853,7 +10784,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1557360625
 Rigidbody2D:
@@ -11306,7 +11237,7 @@ MonoBehaviour:
   bigPhoto: {fileID: 1319174672}
   display: {fileID: 776294103}
   interactBackground: {fileID: 951176046}
-  thoughtText: I can't believe I don't remember them. I wonder how old our son is?
+  thoughtText: i can't believe i don't remember them. i wonder how old our son is?
   familyPhoto: 1
   workLetter: 0
   calendar: 0
@@ -12013,7 +11944,7 @@ Transform:
   - {fileID: 1762376122}
   - {fileID: 521358327}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1743830359
 GameObject:
@@ -12501,7 +12432,7 @@ Transform:
   m_Children:
   - {fileID: 410778232}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1833515785
 PrefabInstance:
@@ -13672,7 +13603,7 @@ Transform:
   - {fileID: 722663378}
   - {fileID: 320649664}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3296453761171390048
 PrefabInstance:

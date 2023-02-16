@@ -156,8 +156,8 @@ MonoBehaviour:
   idleRange: 9999999
   attackRange: 1.5
   returnRange: 20
-  speed: 15
-  prepareDuration: 0.65
+  speed: 12.5
+  prepareDuration: 0.75
   bobRate: 25
   avgBobScale: 1
   bobScaleVariance: 4.08

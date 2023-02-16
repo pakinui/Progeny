@@ -40,7 +40,7 @@ public class DoorBlock : MonoBehaviour
             }else{
                 //if all three objects havent been interacted
                 //with then trigger thought bubble
-                bubble.SetBubbleText("There might be more some more clues to where my family is that I havent found yet.");
+                bubble.SetBubbleText("there might be more some more clues to where my family is that I haven't found yet.");
                 bubble.ShowBubbleForSeconds(2);
             }
         }

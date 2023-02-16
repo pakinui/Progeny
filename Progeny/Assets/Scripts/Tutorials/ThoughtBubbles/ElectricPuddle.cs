@@ -29,7 +29,7 @@ public class ElectricPuddle : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll){
         if(coll.tag == "Player"){
-            thought.SetBubbleText("that water is electric, i shouldnt touch it");
+            thought.SetBubbleText("that water is electric, i shouldn't touch it");
             thought.ShowBubbleForSeconds(2);
 
             //decrease health
