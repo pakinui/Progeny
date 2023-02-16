@@ -25,16 +25,22 @@ public class Parallax : MonoBehaviour
     
     float parallaxFactor => Mathf.Abs(distanceFromPlayer) / clippingPlane;
 
+    float startPos;
+    
     public void Start(){
         // 
         startPosition = transform.position;
         startZ = transform.position.z;
+        startPos = transform.position.y;
+        
     }
 
     public void Update(){
         // 
         Vector2 newPos = startPosition + travel * parallaxFactor;
-        transform.position = new Vector3(newPos.x, newPos.y, startZ);
+        transform.position = new Vector3(newPos.x, startPos, startZ);
+        
+        
     }
 }
 

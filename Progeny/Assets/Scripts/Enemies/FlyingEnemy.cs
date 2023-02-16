@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 using Random=UnityEngine.Random;
 using System;
@@ -24,9 +25,9 @@ public class FlyingEnemy : MonoBehaviour
     private bool isRed = false;
 
     public float idleRange; // range enemy will swap from idle to approach
-    public float approachRange; // range enemy will swap from approach to prepare
+    public float attackRange; // range enemy will swap from approach to prepare
     public float returnRange; // range enemy will return to after attacking - MUST BE GREATER THAN APPROACH
-    public float speed = 4;
+    public float speed;
     public float prepareDuration = 1.5f;
     private float prepareTimer;
     // public float waitDuration = 1.5f;
@@ -39,6 +40,11 @@ public class FlyingEnemy : MonoBehaviour
 
     public GameObject deathObj;
     public Transform shotPrefab;
+    public AudioClip prepareSound;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
+    private AudioMixerGroup audioMixerGroup;
     private GameObject player;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -49,6 +55,8 @@ public class FlyingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioMixerGroup = GetComponent<AudioSource>().outputAudioMixerGroup;
         player = GameObject.FindWithTag("Player");
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();
@@ -59,6 +67,12 @@ public class FlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // if stuck on a wall, change direction
+        if(Mathf.Abs(rb.velocity.x) < speed){
+            if(direction == 1){ direction = -1; }
+            else { direction = 1; }
+            Flip();
+        }
 
         if(player.GetComponent<Player>().GetCurrentHealth() < 0) Destroy(this.gameObject);
         switch (state)
@@ -130,18 +144,16 @@ public class FlyingEnemy : MonoBehaviour
 
     void Approach()
     {
+        CheckFacing();
+
         // Change in vertical distance 
 		float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
-
-        CheckFacing();
+        // set velocity
         Vector2 velocity = new Vector2(direction * speed, dy);
         rb.velocity = velocity;
 
-        
-		// Move the game object on the vertical axis
-		//transform.Translate(new Vector3(0, dy, 0));
-
-        if (Math.Abs(player.transform.position.x - transform.position.x) <= approachRange)
+        // if the player is within attacking range
+        if (Math.Abs(player.transform.position.x - transform.position.x) <= attackRange)
         {
             rb.velocity = new Vector2(0, 0);
             SwitchState(State.Prepare);
@@ -151,6 +163,8 @@ public class FlyingEnemy : MonoBehaviour
     void Prepare()
     {
         CheckFacing();
+        // audioSource.clip = prepareSound;
+        // audioSource.Play();
         prepareTimer = Timer(prepareTimer);
         if (prepareTimer <= 0){
             SwitchState(State.Attack);
@@ -159,12 +173,20 @@ public class FlyingEnemy : MonoBehaviour
 
     void Attack()
     {
+        audioSource.clip = attackSound;
+        audioSource.Play();
         // Create a projectile object from 
         // the shot prefab
         Transform shot = Instantiate(shotPrefab);
         // Set the position of the projectile object
         // to the position of the firing game object
         shot.position = transform.position;
+        // get retreat direction randomly
+        if(Random.Range(0f,1f) > 0.5f){
+            direction = 1;
+        }else{
+            direction = -1;
+        }
         SwitchState(State.Return);
     }
 
@@ -176,40 +198,22 @@ public class FlyingEnemy : MonoBehaviour
     // }
 
     void Return(){
-        if (originalPosition.x > transform.position.x)
-        {
-            direction = 1;
-            if (facingLeft)
-            {
-                Flip();
-            }
+        if(direction == 1){
+            if (facingLeft){ Flip(); }
+        }else{
+            if (!facingLeft){ Flip(); }
         }
-        else if (originalPosition.x < transform.position.x)
-        {
-            direction = -1;
-            if (!facingLeft)
-            {
-                Flip();
-            }
+
+        // Change in vertical distance 
+		float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
+        // set velocity
+        Vector2 velocity = new Vector2(direction * speed, dy);
+        rb.velocity = velocity;
+
+        if(Mathf.Abs(player.transform.position.x - transform.position.x) >= returnRange){
+            SwitchState(State.Approach);
         }
-        else
-        {
-            direction = 0;
-        }
-        Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
-        if (Math.Abs(originalPosition.x - transform.position.x) > returnRange)
-        {
-            rb.velocity = velocity;
-            // Change in vertical distance 
-            float dy = (avgBobScale * Random.Range(0, bobScaleVariance)) * Mathf.Sin(bobRate * Time.time);
-            // Move the game object on the vertical axis
-            transform.Translate(new Vector3(0, dy, 0));
-        } 
-        else if (Math.Abs(originalPosition.x - transform.position.x) <= returnRange)
-        {
-            rb.velocity = new Vector2(0, 0);
-            SwitchState(State.Idle);
-        }
+
     }
 
     private void Flip()
@@ -254,9 +258,7 @@ public class FlyingEnemy : MonoBehaviour
             Destroy(other.gameObject);
             health -= 1;
             if(health == 0) {
-                GameObject dead = Instantiate(deathObj);
-                dead.transform.position = transform.position;
-                Destroy(this.gameObject);
+                Death();
             }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
@@ -265,10 +267,21 @@ public class FlyingEnemy : MonoBehaviour
         else if(other.tag == "MeleeWeapon")
         {
             health -= 1;
-            if(health == 0) Destroy(this.gameObject);
+            if(health == 0) {
+                Death();
+            }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
         }
+    }
+
+    public void Death(){
+        GameObject dead = Instantiate(deathObj);
+        dead.transform.position = transform.position;
+        if (!facingLeft){
+            dead.transform.rotation = transform.rotation;
+        }
+        Destroy(this.gameObject);
     }
 }

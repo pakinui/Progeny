@@ -26,6 +26,7 @@ using UnityEngine;
         public float rightEdgeX = 189.62f;
         
         private bool reduceVolume = false;
+        private float initialVolume;
         private float changeDuration = 0;
         private float muteDuration = 0;
 
@@ -44,6 +45,7 @@ using UnityEngine;
             playerPos = player.transform.position;
             targetPos = new Vector3(playerPos.x + xOffset, yOffset-3, -10f);
             audioSource = GetComponent<AudioSource>();
+            initialVolume = audioSource.volume;
         }
 
 
@@ -52,10 +54,10 @@ using UnityEngine;
                 muteDuration -= Time.deltaTime;
             }
             if (reduceVolume && audioSource.volume > 0){
-                audioSource.volume -= Time.deltaTime / changeDuration;
+                audioSource.volume -= Time.deltaTime * initialVolume / changeDuration;
             }
-            else if (!reduceVolume && audioSource.volume < 1 && muteDuration <= 0){
-                audioSource.volume += Time.deltaTime / changeDuration;
+            else if (!reduceVolume && audioSource.volume < initialVolume && muteDuration <= 0){
+                audioSource.volume += Time.deltaTime * initialVolume / changeDuration;
             }
         }
 
@@ -96,7 +98,7 @@ using UnityEngine;
         public void Mute(bool mute, float cDuration){
             if (mute){
                 if (audioSource != null)
-                    audioSource.volume = 1;
+                    audioSource.volume = initialVolume;
             }
             else{
                 if (audioSource != null)
@@ -108,7 +110,7 @@ using UnityEngine;
 
         public void Mute(bool mute, float cDuration, float mDuration){
             if (mute){
-                audioSource.volume = 1;
+                audioSource.volume = initialVolume;
             }
             else{
                 audioSource.volume = 0;

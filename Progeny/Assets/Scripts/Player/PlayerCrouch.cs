@@ -12,10 +12,11 @@ public class PlayerCrouch : MonoBehaviour
     private Player player;
     private BoxCollider2D bc;
     
-    public Vector2 targetColliderSize = new Vector2(0.45f, 1.25f);
-    private Vector2 originalColliderSize;
+    public Vector3 targetColliderSize = new Vector3(0.45f, 1.25f, 0f);
+    private Vector3 originalColliderSize;
     
     private float crouchTimer;
+    private float zPos;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerCrouch : MonoBehaviour
         
         bc = GetComponent<BoxCollider2D>();
         originalColliderSize = bc.size;
+        zPos = player.transform.position.z;
     }
     
     void BeginCrouch()
@@ -32,9 +34,9 @@ public class PlayerCrouch : MonoBehaviour
         // set player state
         player.setCrouching(true);
         // decrease the player collider's size and adjust its position to avoid a short fall
-        bc.size = new Vector2(targetColliderSize.x, targetColliderSize.y);
+        bc.size = new Vector3(targetColliderSize.x, targetColliderSize.y, zPos);
         //collider.size = Vector2.Lerp(originalColliderSize, targetColliderSize, crouchDuration);
-        transform.position = new Vector2(transform.position.x, transform.position.y - ((originalColliderSize.y - targetColliderSize.y) / 2));
+        transform.position = new Vector3(transform.position.x, transform.position.y - ((originalColliderSize.y - targetColliderSize.y) / 2),zPos);
     }
     
     void EndCrouch()
@@ -42,8 +44,8 @@ public class PlayerCrouch : MonoBehaviour
         // set player state
         player.setCrouching(false);
         // increase the player collider's size and adjust its position
-        bc.size = new Vector2(originalColliderSize.x, originalColliderSize.y);
-        transform.position = new Vector2(transform.position.x, transform.position.y + ((originalColliderSize.y - targetColliderSize.y) / 2));
+        bc.size = new Vector3(originalColliderSize.x, originalColliderSize.y, zPos);
+        transform.position = new Vector3(transform.position.x, transform.position.y + ((originalColliderSize.y - targetColliderSize.y) / 2), zPos);
     }
     
     private void Update()

@@ -30,14 +30,22 @@ public class GroundEnemy : MonoBehaviour
     public float pounceSpeedVertical = 7;
     public float pounceSpeedHorizontal = 10;
     public float dashSpeed = 10;
-    public float prepareDuration = 1.5f; // time to wait before pounce
+    public float prepareDuration = 1.0f; // time to wait before pounce
     public float slowdownMeleeCollideAmount = 0.8f;
     public float ricochetMeleeAmount = 0.7f;
     public float slowdownPounceCollideAmount = 0.8f;
     private float prepareTimer;
+    public AudioClip approachSound;
+    public AudioClip dashPrepSound;
+    public AudioClip pouncePrepSound;
+    public AudioClip[] hurtSounds;
+    public AudioClip meleeParry;
+    public AudioClip[] deathSounds;
+    public GameObject deathObject;
+    private AudioSource audioSource;
+
     // reference to player
     private GameObject player;
-    public GameObject deathObj;
     // references to enemy components
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -65,6 +73,12 @@ public class GroundEnemy : MonoBehaviour
     //starting position for checkpoints
     public Vector2 startingPosition;
 
+    //animation stuff
+    private Animator anim;
+    private bool startDash = false;
+    private bool startPounce = false;
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,21 +89,32 @@ public class GroundEnemy : MonoBehaviour
 
         startingPosition = rb.transform.position;
         //Debug.Log("start: " + startingPosition);
+        anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
     {
+        health = 3;
+        damageDuration = 1;
+        isJumping = false;
+        pounceCollide = false;
+        meleeCollide = false;
+        playerCollide = false;
+        hasTakenMelee = false;
+        startDash = false;
+        startPounce = false;
         player = GameObject.Find("Player");
         sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(255f, 255f, 255f, 1f);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        pounceCollide = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (state)
+        if(!dead){
+            switch (state)
         {
             case State.Idle:
                 Idle();
@@ -124,11 +149,17 @@ public class GroundEnemy : MonoBehaviour
                 hasTakenMelee = false;
             }
         }
+        }else{
+            rb.velocity = new Vector2(0, 0);
+        }
+        
     }
 
     void SwitchState(State nextState){
-        state = nextState;
-        switch (nextState)
+        
+        if(!dead){
+            state = nextState;
+            switch (nextState)
         {
             case State.Idle:
                 sr.color = new Color(255f, 255f, 255f, 1f);
@@ -139,6 +170,7 @@ public class GroundEnemy : MonoBehaviour
                 color = sr.color;
                 break;
             case State.PouncePrep:
+                audioSource.PlayOneShot(pouncePrepSound, 0.2f);
                 sr.color = Color.yellow;
                 color = sr.color;
                 prepareTimer = prepareDuration;
@@ -147,6 +179,7 @@ public class GroundEnemy : MonoBehaviour
                 //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             case State.DashPrep:
+                audioSource.PlayOneShot(dashPrepSound, 0.3f);
                 sr.color = Color.blue;
                 color = sr.color;
                 prepareTimer = prepareDuration;
@@ -155,18 +188,26 @@ public class GroundEnemy : MonoBehaviour
                 //sr.color = new Color(255f, 255f, 0f, 1f);
                 break;
         }
+        }
+        
     }
 
     void Idle()
     {
-        if(Vector2.Distance(player.transform.position, transform.position) <= idleRange)
+        
+        if(!dead){
+            if(Vector2.Distance(player.transform.position, transform.position) <= idleRange)
         {
+            audioSource.PlayOneShot(approachSound, 0.25f);
             SwitchState(State.Approach);
+        }
         }
     }
 
     void Approach()
     {
+        if(!dead){
+            anim.SetTrigger("approach");
         CheckFacing();
         Vector2 velocity = new Vector2(direction * speed, rb.velocity.y);
         rb.velocity = velocity;
@@ -180,24 +221,34 @@ public class GroundEnemy : MonoBehaviour
                 SwitchState(State.DashPrep);
             }
         }
+        }
     }
 
     void PouncePrep()
     {
-        CheckFacing();
+        
+            CheckFacing();
+        if(!startPounce){
+            anim.SetTrigger("pouncePrep");
+            startPounce = true;
+        }
         prepareTimer -= Time.deltaTime;
         if (prepareTimer <= 0){
             SwitchState(State.Pounce);
         }
     } 
+        
 
     void Pounce()
     {
         
-        if (rb.velocity.y == 0 && !isJumping){
+        
+            if (rb.velocity.y == 0 && !isJumping){
+            anim.SetTrigger("pounce");
            rb.velocity = new Vector2(direction * pounceSpeedHorizontal, pounceSpeedVertical);
            fangs.SetActive(true);
            isJumping = true;
+           startPounce = false;
         }
         else if (rb.velocity.y == 0 && isJumping){
             isJumping = false;
@@ -205,20 +256,32 @@ public class GroundEnemy : MonoBehaviour
             pounceCollide = false;
             SwitchState(State.Approach);         
         }
+        
     }
 
     void DashPrep()
     {
-        CheckFacing();
+        
+            CheckFacing();
+        if(!startDash){
+            anim.SetTrigger("dashPrep");
+            startDash = true;
+        }
         prepareTimer -= Time.deltaTime;
         if(prepareTimer <= 0){
             SwitchState(State.Dash);
         }
+        
+        
     }
 
     void Dash(){
-        if (!dashStart){
+        
+       
+            if (!dashStart){
+            anim.SetTrigger("dash");
             dashStart = true;
+            startDash = false;
             rb.velocity = new Vector2(direction * dashSpeed, 0);
             fangs.SetActive(true);
         }
@@ -227,6 +290,8 @@ public class GroundEnemy : MonoBehaviour
             fangs.SetActive(false);
             SwitchState(State.Approach);
         }
+        
+        
     }
 
     private void Flip()
@@ -264,7 +329,7 @@ public class GroundEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {   
-        if(other.tag =="Player"){
+        if(other.tag =="Player" && !dead){
             playerCollide = true;
             if (state == State.Dash){
                 rb.velocity *= slowdownMeleeCollideAmount;
@@ -273,40 +338,83 @@ public class GroundEnemy : MonoBehaviour
         else if(other.tag =="MeleeWeapon"){
             meleeCollide = true;
         }
-        else if(other.tag == "Bullet")
+        else if(other.tag == "Bullet" && !dead)
         {
             Destroy(other.gameObject);
             health -= 1;
-            if(health == 0){
+            if(health <= 0){
                 //Destroy(this.gameObject);
                 //dont destroy so checkpoint can revive them
-                GameObject death = Instantiate(deathObj);
-                death.transform.position = transform.position;
-                gameObject.SetActive(false);
+                if(state != State.Pounce && !dead){
+                    //on the ground
+                    Debug.Log("norm death: " + state);
+                    anim.SetTrigger("normalDeath");
+                }else if (state == State.Pounce && !dead){
+                   
+                     Debug.Log("air death: " + state);
+                     anim.SetTrigger("airDeath");
+                }
+                Death();
+                //gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
-            }    
-            sr.color = new Color(255f, 0f, 0f, 1f);
-            isRed = true;
-            damageTimer = damageDuration;
+            }else{   
+                sr.color = new Color(255f, 0f, 0f, 1f);
+                isRed = true;
+                damageTimer = damageDuration;
+                int randomValue = Random.Range(0, hurtSounds.Length);
+                audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+            }
         }
-        if(!playerCollide && meleeCollide && !hasTakenMelee)
+        if(!playerCollide && meleeCollide && !hasTakenMelee && !dead)
         {
             health -= 1;
-            if(health == 0){
+            if(health <= 0){
                 //Destroy(this.gameObject);
                 //dont destroy for checkpoint
-                gameObject.SetActive(false);
+                if(!isJumping && !dead){
+                    //on the ground
+                    Debug.Log("melee death");
+                    anim.SetTrigger("meleeDeath");
+                }else if ( state == State.Pounce && !dead){
+                    Debug.Log("air2 death");
+                    anim.SetTrigger("airDeath");
+                }
+                Death();
             } 
-            sr.color = new Color(255f, 0f, 0f, 1f);
-            isRed = true;
-            damageTimer = damageDuration;
-            if (state == State.Dash){
-                rb.velocity *= -ricochetMeleeAmount;
-                Flip();
+            else{
+                sr.color = new Color(255f, 0f, 0f, 1f);
+                isRed = true;
+                damageTimer = damageDuration;
+                int randomValue = Random.Range(0, hurtSounds.Length);
+                audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
+                if (state == State.Dash){
+                    audioSource.PlayOneShot(meleeParry, 0.25f);
+                    rb.velocity *= -ricochetMeleeAmount;
+                    Flip();
+                
+                hasTakenMelee = true;
+                }
             }
-            hasTakenMelee = true;
         }
+    }
+
+    public void Death(){
+        sr.color = new Color(255f, 255f, 255f, 1f);
+        dead = true;
+        anim.SetBool("dead", true);
+        GameObject deathObj = Instantiate(deathObject);
+        AudioSource deathAudio = deathObj.GetComponent<AudioSource>();
+        int randomValue = Random.Range(0, deathSounds.Length);
+        deathAudio.clip = deathSounds[randomValue];
+        deathAudio.Play();
+    }
+
+    //so death animation can play before obj is invis
+    public void Invisible(){
+        gameObject.SetActive(false);
+        dead = false;
+        anim.SetBool("dead", false);
     }
 
     private void OnTriggerExit2D(Collider2D other){
@@ -318,15 +426,12 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
-
     public void resetPosition(){
         rb.transform.position = startingPosition;
         rb.velocity = new Vector2(0, 0);
         if(!facingLeft){
             Flip();
         }
-        health = 3;
-        prepareTimer = prepareDuration;
         SwitchState(State.Idle);
         gameObject.SetActive(true);
     }

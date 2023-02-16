@@ -8,6 +8,10 @@ public class CritterNest : MonoBehaviour
     private bool isRed = false;
     public float redDuration = 1;
     private float redTimer;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
+    public GameObject deathObject;
+    private AudioSource audioSource;
     private Transform player; // reference to the player (for distance)
     public GameObject critter; // reference to the critter object to be spawned
     public int health; // shots taken to destroy nest
@@ -20,6 +24,7 @@ public class CritterNest : MonoBehaviour
     //sprite renderer for colour
     private SpriteRenderer sr;
     private int startingHealth;
+    private List<FlyingEnemy> spawnList = new List<FlyingEnemy>();
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +33,7 @@ public class CritterNest : MonoBehaviour
         spawnTimer = spawnFrequency;
         sr = GetComponent<SpriteRenderer>();
         startingHealth = health;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,8 +45,9 @@ public class CritterNest : MonoBehaviour
             if(spawnTimer <= 0)
             {
                 //for(int i = 0; i < spawnQuantity; i++){
-                Transform spawn = Instantiate(critter).transform;
-                spawn.position = transform.position;
+                GameObject spawn = Instantiate(critter, this.transform);
+                spawn.transform.position = transform.position;
+                spawnList.Add(spawn.GetComponent<FlyingEnemy>());
                 spawnTimer = spawnFrequency;
                 //}
                 // spawnLimit--;
@@ -60,9 +67,11 @@ public class CritterNest : MonoBehaviour
         if(other.tag == "Bullet"){
             Destroy(other.gameObject);
             health--;
+            audioSource.PlayOneShot(hurtSound, 0.25f);
             if(health == 0){
                 //Destroy(this.gameObject);
                 this.gameObject.SetActive(false);
+                DestroyNest();
             }
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
@@ -76,9 +85,23 @@ public class CritterNest : MonoBehaviour
         health = startingHealth;
         redTimer = 0;
         spawnTimer = spawnFrequency;
+        foreach(var spawn in spawnList){
+            if (spawn != null){
+                Destroy(spawn);
+            }
+        }
     }
 
     public void DestroyNest(){
-        Destroy(this.gameObject);
+        GameObject deathObj = Instantiate(deathObject);
+        AudioSource deathAudio = deathObj.GetComponent<AudioSource>();
+        deathAudio.volume = 1f;
+        deathAudio.clip = deathSound;
+        deathAudio.Play();
+        foreach(var spawn in spawnList){
+            if (spawn != null){
+                spawn.Death();
+            }
+        }
     }
 }

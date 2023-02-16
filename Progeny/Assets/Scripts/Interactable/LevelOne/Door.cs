@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
         if (isUsable && Input.GetKeyDown("e")){
             isUsable = false;
             _animator.SetTrigger("OpenDoor");
-            audioSource.PlayOneShot(doorSound, 1f);
+            audioSource.PlayOneShot(doorSound, 0.5f);
             Destroy(display);
         }
     }
