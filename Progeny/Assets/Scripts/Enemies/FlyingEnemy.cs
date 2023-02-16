@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 using Random=UnityEngine.Random;
 using System;
@@ -39,6 +40,9 @@ public class FlyingEnemy : MonoBehaviour
 
     public GameObject deathObj;
     public Transform shotPrefab;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
+    private AudioMixerGroup audioMixerGroup;
     private GameObject player;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -49,6 +53,8 @@ public class FlyingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioMixerGroup = GetComponent<AudioSource>().outputAudioMixerGroup;
         player = GameObject.FindWithTag("Player");
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         sr = GetComponent<SpriteRenderer>();

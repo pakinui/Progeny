@@ -49,6 +49,7 @@ public class ThoughtBubble : MonoBehaviour
     public void ShowBubble(){
         bubble.SetActive(true);
         showBubble = true;
+        rb.transform.position = new Vector3 (player.transform.position.x - (bubbleLength), player.transform.position.y + 2f, bubbleZPos);
     }
 
     /**
