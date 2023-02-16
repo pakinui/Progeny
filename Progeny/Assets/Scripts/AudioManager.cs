@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
@@ -9,10 +10,22 @@ public class AudioManager : MonoBehaviour
     public Slider musicSlider;
     public Slider effectsSlider;
 
+    private void Start()
+    {
+        var musicsVolume = PlayerPrefs.GetFloat("VolumeOfMusics", 0);
+        var effectsVolume = PlayerPrefs.GetFloat("VolumeOfEffects", 0);
+
+        audioMixer.SetFloat("VolumeOfMusics", musicsVolume);
+        audioMixer.SetFloat("VolumeOfEffects", effectsVolume);
+
+    }
+
     private void OnEnable()
     {
-        audioMixer.SetFloat("VolumeOfMusic", PlayerPrefs.GetFloat("VolumeOfMusic", 0.75f));
-        audioMixer.SetFloat("VolumeOfEffects", PlayerPrefs.GetFloat("VolumeOfEffects", 0.75f));
+        musicSlider.value = MathF.Pow(10,  PlayerPrefs.GetFloat("VolumeOfMusic", 0) / 20.0f);
+        effectsSlider.value = MathF.Pow(10, PlayerPrefs.GetFloat("VolumeOfEffects", 0) / 20.0f);
+        // SetEffectsVolume();
+        // SetMusicVolume();
     }
 
     public void SetMusicVolume()
