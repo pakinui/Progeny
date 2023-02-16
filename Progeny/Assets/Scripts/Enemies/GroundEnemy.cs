@@ -35,6 +35,11 @@ public class GroundEnemy : MonoBehaviour
     public float ricochetMeleeAmount = 0.7f;
     public float slowdownPounceCollideAmount = 0.8f;
     private float prepareTimer;
+    public AudioClip approachSound;
+    public AudioClip groundDashPrepSound;
+    public AudioClip[] hurtSounds;
+    private AudioSource audioSource;
+
     // reference to player
     private GameObject player;
     public GameObject deathObj;
@@ -82,6 +87,7 @@ public class GroundEnemy : MonoBehaviour
         //Debug.Log("start: " + startingPosition);
         gec = GetComponent<GroundEnemyController>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -154,6 +160,7 @@ public class GroundEnemy : MonoBehaviour
                 //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             case State.DashPrep:
+                audioSource.PlayOneShot(groundDashPrepSound, 0.3f);
                 sr.color = Color.blue;
                 color = sr.color;
                 prepareTimer = prepareDuration;
@@ -168,6 +175,7 @@ public class GroundEnemy : MonoBehaviour
     {
         if(Vector2.Distance(player.transform.position, transform.position) <= idleRange)
         {
+            audioSource.PlayOneShot(approachSound, 0.25f);
             SwitchState(State.Approach);
         }
     }
@@ -305,6 +313,8 @@ public class GroundEnemy : MonoBehaviour
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
+            int randomValue = Random.Range(0, hurtSounds.Length);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         if(!playerCollide && meleeCollide && !hasTakenMelee)
         {
@@ -317,6 +327,8 @@ public class GroundEnemy : MonoBehaviour
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
             damageTimer = damageDuration;
+            int randomValue = Random.Range(0, hurtSounds.Length);
+            audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
             if (state == State.Dash){
                 rb.velocity *= -ricochetMeleeAmount;
                 Flip();
