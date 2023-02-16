@@ -254,6 +254,9 @@ public class FlyingEnemy : MonoBehaviour
             if(health == 0) {
                 GameObject dead = Instantiate(deathObj);
                 dead.transform.position = transform.position;
+                if (!facingLeft){
+                    dead.transform.rotation = transform.rotation;
+                }
                 Destroy(this.gameObject);
             }
             sr.color = new Color(255f, 0f, 0f, 1f);
