@@ -36,7 +36,8 @@ public class GroundEnemy : MonoBehaviour
     public float slowdownPounceCollideAmount = 0.8f;
     private float prepareTimer;
     public AudioClip approachSound;
-    public AudioClip groundDashPrepSound;
+    public AudioClip dashPrepSound;
+    public AudioClip pouncePrepSound;
     public AudioClip[] hurtSounds;
     private AudioSource audioSource;
 
@@ -152,6 +153,7 @@ public class GroundEnemy : MonoBehaviour
                 color = sr.color;
                 break;
             case State.PouncePrep:
+                audioSource.PlayOneShot(pouncePrepSound, 0.2f);
                 sr.color = Color.yellow;
                 color = sr.color;
                 prepareTimer = prepareDuration;
@@ -160,7 +162,7 @@ public class GroundEnemy : MonoBehaviour
                 //sr.color = new Color(0, 255f, 0f, 1f);
                 break;
             case State.DashPrep:
-                audioSource.PlayOneShot(groundDashPrepSound, 0.3f);
+                audioSource.PlayOneShot(dashPrepSound, 0.3f);
                 sr.color = Color.blue;
                 color = sr.color;
                 prepareTimer = prepareDuration;

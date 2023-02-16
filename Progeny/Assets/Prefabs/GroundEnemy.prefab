@@ -378,7 +378,8 @@ MonoBehaviour:
   ricochetMeleeAmount: 0.55
   slowdownPounceCollideAmount: 0.65
   approachSound: {fileID: 8300000, guid: f96a1305e2ffac7479252fb9d46995f2, type: 3}
-  groundDashPrepSound: {fileID: 8300000, guid: 651ccfd9fdee0784e9596e140001977f, type: 3}
+  dashPrepSound: {fileID: 8300000, guid: 651ccfd9fdee0784e9596e140001977f, type: 3}
+  pouncePrepSound: {fileID: 8300000, guid: e15e1e904405c5045b841f343ab390b2, type: 3}
   hurtSounds:
   - {fileID: 8300000, guid: eeeb556c6ad7bf54b8f149959f2ddfa5, type: 3}
   - {fileID: 8300000, guid: 99bb4e87be04b004c96edea1e2bba1dd, type: 3}
