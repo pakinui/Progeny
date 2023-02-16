@@ -11,14 +11,11 @@ public class DeathPanelController : MonoBehaviour
     private Canvas canvas;
     
 
-    void Start(){
+    private void OnEnable()
+    {
         player = GameObject.Find("Player").GetComponent<Player>();
         rtc = player.GetComponent<ReturnToCheckpoint>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        
-    }
-    private void OnEnable()
-    {
         Time.timeScale = 0;
         player.stopPlayerMovement();
     }
