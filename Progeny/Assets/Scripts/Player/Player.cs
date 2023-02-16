@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // default movement speed of player
     public float movementSpeed;
 
+    public AudioClip[] climbAudio;
     // sounds the player makes when hurt
     public AudioClip[] hurtSounds;
 
