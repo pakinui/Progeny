@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        musicSlider.value = MathF.Pow(10,  PlayerPrefs.GetFloat("VolumeOfMusic", 0) / 20.0f);
+        musicSlider.value = MathF.Pow(10,  PlayerPrefs.GetFloat("VolumeOfMusics", 0) / 20.0f);
         effectsSlider.value = MathF.Pow(10, PlayerPrefs.GetFloat("VolumeOfEffects", 0) / 20.0f);
         // SetEffectsVolume();
         // SetMusicVolume();
@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume()
     {
-        audioMixer.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
+        audioMixer.SetFloat("VolumeOfMusics", Mathf.Log10(musicSlider.value) * 20);
     }
 
     public void SetEffectsVolume()
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerPrefs.SetFloat("VolumeOfMusic", Mathf.Log10(musicSlider.value) * 20);
+        PlayerPrefs.SetFloat("VolumeOfMusics", Mathf.Log10(musicSlider.value) * 20);
         PlayerPrefs.SetFloat("VolumeOfEffects", Mathf.Log10(effectsSlider.value) * 20);
     }
 }
