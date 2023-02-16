@@ -95,11 +95,19 @@ public class GroundEnemy : MonoBehaviour
 
     void OnEnable()
     {
+        health = 3;
+        damageDuration = 1;
+        isJumping = false;
+        pounceCollide = false;
+        meleeCollide = false;
+        playerCollide = false;
+        hasTakenMelee = false;
+        startDash = false;
+        startPounce = false;
         player = GameObject.Find("Player");
         sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(255f, 255f, 255f, 1f);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        pounceCollide = false;
     }
 
     // Update is called once per frame
@@ -424,7 +432,6 @@ public class GroundEnemy : MonoBehaviour
         if(!facingLeft){
             Flip();
         }
-        health = 3;
         SwitchState(State.Idle);
         gameObject.SetActive(true);
     }
