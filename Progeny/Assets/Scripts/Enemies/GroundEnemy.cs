@@ -302,11 +302,7 @@ public class GroundEnemy : MonoBehaviour
             Destroy(other.gameObject);
             health -= 1;
             if(health == 0){
-                //Destroy(this.gameObject);
-                //dont destroy so checkpoint can revive them
-                GameObject death = Instantiate(deathObj);
-                death.transform.position = transform.position;
-                gameObject.SetActive(false);
+                Die();
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
             }    
@@ -320,9 +316,7 @@ public class GroundEnemy : MonoBehaviour
         {
             health -= 1;
             if(health == 0){
-                //Destroy(this.gameObject);
-                //dont destroy for checkpoint
-                gameObject.SetActive(false);
+                Die();
             } 
             sr.color = new Color(255f, 0f, 0f, 1f);
             isRed = true;
@@ -346,6 +340,14 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
+    private void Die(){
+        GameObject death = Instantiate(deathObj);
+        death.transform.position = transform.position;
+        if (!facingLeft){
+            death.transform.rotation = transform.rotation;
+        }
+        gameObject.SetActive(false);
+    }
 
     public void resetPosition(){
         rb.transform.position = startingPosition;
@@ -354,7 +356,6 @@ public class GroundEnemy : MonoBehaviour
             Flip();
         }
         health = 3;
-        prepareTimer = prepareDuration;
         SwitchState(State.Idle);
         gameObject.SetActive(true);
     }

@@ -364,12 +364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  health: 100
+  health: 3
   damageDuration: 0.3
   idleRange: 16
   approachRange: 6
   speed: 6
-  pounceChance: 0
+  pounceChance: 0.5
   pounceSpeedVertical: 5.5
   pounceSpeedHorizontal: 9.5
   dashSpeed: 13
