@@ -40,6 +40,8 @@ public class FlyingEnemy : MonoBehaviour
 
     public GameObject deathObj;
     public Transform shotPrefab;
+    public AudioClip prepareSound;
+    public AudioClip attackSound;
     public AudioClip deathSound;
     private AudioSource audioSource;
     private AudioMixerGroup audioMixerGroup;
@@ -161,6 +163,8 @@ public class FlyingEnemy : MonoBehaviour
     void Prepare()
     {
         CheckFacing();
+        // audioSource.clip = prepareSound;
+        // audioSource.Play();
         prepareTimer = Timer(prepareTimer);
         if (prepareTimer <= 0){
             SwitchState(State.Attack);
@@ -169,6 +173,8 @@ public class FlyingEnemy : MonoBehaviour
 
     void Attack()
     {
+        audioSource.clip = attackSound;
+        audioSource.Play();
         // Create a projectile object from 
         // the shot prefab
         Transform shot = Instantiate(shotPrefab);
