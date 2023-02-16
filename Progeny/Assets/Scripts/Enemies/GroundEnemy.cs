@@ -347,10 +347,6 @@ public class GroundEnemy : MonoBehaviour
                      dead = true;
                 }
                 anim.SetBool("dead", true);
-                
-                
-                GameObject death = Instantiate(deathObj);
-                death.transform.position = transform.position;
                 //gameObject.SetActive(false);
             }else if(state == State.Idle){
                 SwitchState(State.Approach);
