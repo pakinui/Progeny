@@ -390,9 +390,8 @@ public class GroundEnemy : MonoBehaviour
                     audioSource.PlayOneShot(meleeParry, 0.25f);
                     rb.velocity *= -ricochetMeleeAmount;
                     Flip();
-                
-                hasTakenMelee = true;
                 }
+                hasTakenMelee = true;
             }
         }
     }
