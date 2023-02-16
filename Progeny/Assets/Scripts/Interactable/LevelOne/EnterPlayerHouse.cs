@@ -38,6 +38,7 @@ public class EnterPlayerHouse : MonoBehaviour
         if(isTriggered){
             if(Input.GetKeyDown("e")){
                 Destroy(display);
+                Destroy(this.gameObject);
                 gm.NextLevel("LevelTwo");
             }
         }
