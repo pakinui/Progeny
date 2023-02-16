@@ -87,7 +87,7 @@ public class CritterNest : MonoBehaviour
         spawnTimer = spawnFrequency;
         foreach(var spawn in spawnList){
             if (spawn != null){
-                Destroy(spawn);
+                spawn.Death();
             }
         }
     }
