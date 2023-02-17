@@ -38,6 +38,7 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void Update(){
@@ -49,16 +50,10 @@ public class GameMaster : MonoBehaviour
             }
         }
         else if (startingLevel){
-            ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
             cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
-            var tmp_player = GameObject.Find("Player");
-            if (tmp_player != null)
-            {
-                player = tmp_player.GetComponent<Player>();
-                currentLevel = SceneManager.GetActiveScene().name;
-                StartLevel();
-            }
-                
+            ftb = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+            currentLevel = SceneManager.GetActiveScene().name;
+            StartLevel();
             startingLevel = false;
         }
     }
@@ -83,7 +78,12 @@ public class GameMaster : MonoBehaviour
         cameraController?.Mute(true, 4f);
         nextLevelName = sceneName;
         changingLevel = true;
-        player?.stopPlayerMovement();
+        if (SceneManager.GetActiveScene().name != "MainMenu"){
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            if (player != null){
+                player?.stopPlayerMovement();
+            }
+        }
     }
 
     private void StartLevel(){
