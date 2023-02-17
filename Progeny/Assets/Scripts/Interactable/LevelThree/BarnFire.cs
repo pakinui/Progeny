@@ -35,6 +35,9 @@ public class BarnFire : MonoBehaviour
     
 
     private float timeRemaining = 2f;
+    private float talkTime = 3f;
+    private bool talking = false;
+    private bool done = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,15 +57,32 @@ public class BarnFire : MonoBehaviour
             //decision to light barn on fire or not
 
         }else if(contact){
-            if(Input.GetKeyDown("e")){
+            if(Input.GetKeyDown("e") && !talking){
                 display.SetActive(false);
-                cart.SetActive(false);
-                //add black screen for a lil transistion
-                StartCoroutine(ftb.FadeBlackSquare(true, 0.5f));
-                contact = false;
-                transition = true;
+                
+                    player.stopPlayerMovement();
+                thought.SetBubbleText("i just need to cover this place in the petrol");
+                    thought.ShowBubbleForSeconds(2);
+                   
+                
+               
+                
 
+            }else if(talking){
+                    cart.SetActive(false);
+                    //add black screen for a lil transistion
+                    StartCoroutine(ftb.FadeBlackSquare(true, 0.5f));
+                    contact = false;
+                    transition = true;
+                
             }
+
+             if(!talking && talkTime <= 0){
+                    
+                    talking = true;
+                }else if(!talking){
+                    talkTime -= Time.deltaTime;
+                }
         }
         if(transition){
 
@@ -71,7 +91,7 @@ public class BarnFire : MonoBehaviour
                 StartCoroutine(ftb.FadeBlackSquare(false, 0.5f));
                 player.transform.position = new Vector3(221.3287f, -2.990383f, 7.8f);
                 //fireAnimation.SetActive(true);
-                thought.SetBubbleText("okay now i just have to wait until it arrives");
+                thought.SetBubbleText("the iPad is charged, ill finish the video while I wait");
                 thought.ShowBubbleForSeconds(2);
                 player.Flip();
                 transition = false;
@@ -101,7 +121,7 @@ public class BarnFire : MonoBehaviour
         if(coll.tag == "Player"){
             contact = true;
             display.SetActive(true);
-            player.stopPlayerMovement();
+            //player.stopPlayerMovement();
         }
     }
 
