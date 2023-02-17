@@ -7377,20 +7377,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7942472801265218120, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_fontSize
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7942472801265218120, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c83e1f57bd4175246a7c9b49cd4f5182, type: 2}
+      objectReference: {fileID: 11400000, guid: 0e65844997e7efe4f8cf0810e9754502, type: 2}
     - target: {fileID: 7942472801265218120, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7942472801265218120, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 4944294880915959570, guid: c83e1f57bd4175246a7c9b49cd4f5182, type: 2}
+      objectReference: {fileID: 6493950807243113496, guid: 0e65844997e7efe4f8cf0810e9754502, type: 2}
     - target: {fileID: 7942472801277666473, guid: 9e431c403bc0e7542958b0b66790cd7e, type: 3}
       propertyPath: m_Color.a
       value: 0.7294118
