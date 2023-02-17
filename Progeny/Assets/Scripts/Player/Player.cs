@@ -180,8 +180,10 @@ public class Player : MonoBehaviour
         if(x == true){
             redTimer = redDuration;
             sr.color = new Color(255f, 0f, 0f, 1f);
+            arm.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 1f);
         }else{
             sr.color = new Color(255f, 255f, 255f, 1f);
+            arm.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 1f);
         }
         
     }
