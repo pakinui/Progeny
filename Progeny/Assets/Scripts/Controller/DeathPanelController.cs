@@ -16,6 +16,7 @@ public class DeathPanelController : MonoBehaviour
 
     private void OnEnable()
     {
+        
         player = GameObject.Find("Player").GetComponent<Player>();
         rtc = player.GetComponent<ReturnToCheckpoint>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();

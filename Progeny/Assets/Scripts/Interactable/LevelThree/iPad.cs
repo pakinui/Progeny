@@ -48,11 +48,19 @@ public class iPad : MonoBehaviour
     private bool pause = true;
     private bool charged = false;
     private float timeTillDecision = 2f;
-    private bool finalDecision = false;
+    public bool finalDecision = false;
+    public int decision = 0; // 0 = fire, 1 = no fire
     private bool finalKey = false;
 
     private float flatTime = 1.2f;
     private int currImg = 0;
+
+    public GameObject endObject;
+    private GameEnd endPanel;
+    public GameObject PauseOverlay;
+
+    private float afterDecisionWait = 2.0f;
+    private bool afterDecision = false;
     
     
     
@@ -68,6 +76,7 @@ public class iPad : MonoBehaviour
         endLine = 0;
         speech.SetActive(false);
         camAudioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        endPanel = endObject.GetComponent<GameEnd>();
        
     }
 
@@ -76,20 +85,54 @@ public class iPad : MonoBehaviour
     {
 
         if(finalDecision){
-            if(timeTillDecision <= 0){
+            if (afterDecision){
+
+                if(endPanel.decision == 1){
+                    //fight
+                    
+
+                }else{
+                    if(afterDecisionWait <= 0){
+                        endObject.SetActive(true);
+                        gameObject.SetActive(false);
+                    }else{
+                        afterDecisionWait -= Time.deltaTime;
+                    }
+                }
+                
+
+            }else if(timeTillDecision <= 0){
                 
                 if(!finalKey){
                     decisionScreen.SetActive(true);
                     if(Input.GetKeyDown("e")){
                         //no fire spawn heaps of monsters
-                        finalKey = true;
+                        player.startPlayerMovement();
                         finalEnemies.SetActive(true);
                         camAudioSource.clip = spareDecisionSound;
                         camAudioSource.Play();
+                        
+                        decisionScreen.SetActive(false);
+                        finalKey = true;
+                        endPanel.decision = 1;
+                        decision = 1;
+                        endPanel.showing = true;
+                        afterDecision = true;
+                        player.finalDecisionMade = true;
+
                     }else if(Input.GetKeyDown("q")){
                         //fire animation
+                        
                         barn.fireAnimation.SetActive(true);
+                        //player.finalDecisionMade = true;
+                        
+                        //Debug.Log("chosen");
                         finalKey = true;
+                        endPanel.decision = 0;
+                        decision = 0;
+                        endPanel.showing = true;
+                        decisionScreen.SetActive(false);
+                        afterDecision = true;
                     }
                     
                 }else{

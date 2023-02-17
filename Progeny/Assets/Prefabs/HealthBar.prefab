@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3444273618971221233}
   - component: {fileID: 3444273618971221235}
   - component: {fileID: 3444273618971221234}
-  m_Layer: 5
-  m_Name: background
+  m_Layer: 0
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 88c295585cba68b40aa3c3c3cf4e4f1d, type: 3}
   m_Color: {r: 0.1137255, g: 0.18039216, b: 0.15686275, a: 1}
   m_FlipX: 0
@@ -99,37 +99,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBars:
-  - {fileID: -2139239537, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -1479494759, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -345576465, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 521195358, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1360485493, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -772744356, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -134802865, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -381619789, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -795753334, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 809227006, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -1405446695, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1936533693, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 905694556, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -798004490, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1124996574, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 459626354, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1530020182, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -529452839, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1561720647, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -613909638, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1917539151, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -1409180930, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -590247559, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -1881830300, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: -1453500731, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1887205928, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1106203941, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1822891256, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 241178442, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  - {fileID: 1054262781, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
-  currentBars: {fileID: 3444273620450180779}
+  - {fileID: -509063645, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 1744517832, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1779506347, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -2109315871, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1760558676, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 1748973325, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -597774755, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 1115651443, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1004872867, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 160703080, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1450258126, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1064444076, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 702647964, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -849977764, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -497132888, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 1988100172, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1155184345, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -108153117, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: -1981870942, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  - {fileID: 15638435, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
+  bars: {fileID: 3444273620450180777}
 --- !u!1 &3444273619218147503
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +143,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3444273619218147503}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.92, y: -4.3, z: 3.6087694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -172,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444273620450180778}
   - component: {fileID: 3444273620450180779}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: currentBars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,8 +224,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
-  m_Sprite: {fileID: -2139239537, guid: 3b7f90ff20d11664695bde63a6864bcb, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -509063645, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
   m_Color: {r: 0.5268779, g: 0.6037736, b: 0.5739923, a: 1}
   m_FlipX: 0
   m_FlipY: 0

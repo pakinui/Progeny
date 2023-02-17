@@ -59,6 +59,14 @@ public class Player : MonoBehaviour
     public float playerHeight;
     
     public bool dead = false;
+
+    // true if they die after choosing to spare their kid
+    // need so the death screen isnt triggered but the ending screen is
+    public bool finalDecisionMade = false; 
+    public iPad ipad;
+
+    public GameObject endObject;
+    private GameEnd gameEnd;
     
     //public GamePanelController gpc;
     private HealthBar healthBar;
@@ -87,6 +95,7 @@ public class Player : MonoBehaviour
         ac = GetComponent<PlayerAnimationController>();
 
         playerZPosition = transform.position.z;
+        gameEnd = endObject.GetComponent<GameEnd>();
         
     }
     // Update is called once per frame
@@ -148,6 +157,7 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(hurtSounds[randomValue], 0.25f);
         }
         else if (health <= 0 && !dead){
+            
             
             audioSource.PlayOneShot(deathSound, 0.5f);
             health = 0;//to make sure health doesnt go below 0
@@ -271,10 +281,22 @@ public class Player : MonoBehaviour
     public void Die()
     {
         //canvas.deathPanel.SetActive(true);
-        //Debug.Log("current Health :" + currentHealth);
-        --currentHealth;
+        Debug.Log("current Health :" + currentHealth);
+
+        if(finalDecisionMade){
+            //trigger end panel not death panel
+            
+                endObject.SetActive(true);
+                gameEnd.EndDeathScreen();
+                Time.timeScale = 0;
+            
+
+        }else{
+            --currentHealth;
         
-        ac.anim.SetTrigger("resetToIdle");
+            ac.anim.SetTrigger("resetToIdle");
+        }
+        
         //currentHealth = maxHealth;
         
 
