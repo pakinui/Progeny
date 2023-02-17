@@ -37,7 +37,7 @@ public class GameEnd : MonoBehaviour
             
             
             if(decision == 0){
-                Debug.Log("asd game end");
+
                 fireText.SetActive(true);
                 //fire
                 player.stopPlayerMovement();
@@ -45,14 +45,14 @@ public class GameEnd : MonoBehaviour
             
                 
             }else{
-Debug.Log("asdasdf game end");
+
                 //no fire
                 player.finalDecisionMade = true;
                 
                 
             }
         }else{
-            Debug.Log("aaaaasd game end");
+  
         }
     }
 

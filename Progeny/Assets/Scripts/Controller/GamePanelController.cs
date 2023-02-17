@@ -16,7 +16,7 @@ namespace Controller
         {
             if (player.GetCurrentHealth() < 0 )
             {
-                Debug.Log("dying game panel");
+                //Debug.Log("dying game panel");
                 deathpanel.SetActive(true);
             }else{
                 deathpanel.SetActive(false);
