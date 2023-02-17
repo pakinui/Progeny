@@ -39,7 +39,7 @@ public class DeathPanelController : MonoBehaviour
 
         
      
-            Debug.Log("dying death panel");
+
         player = GameObject.Find("Player").GetComponent<Player>();
         rtc = player.GetComponent<ReturnToCheckpoint>();
         rtc.resetLevel();
