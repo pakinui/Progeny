@@ -45,7 +45,7 @@ public class PetrolInteract : MonoBehaviour
     {
         if(contact){
             
-
+            
             //thought bubble to hint the player why the
             //need to cans
             thought.SetBubbleText("i could use those jerry cans to light fire to the barn...");

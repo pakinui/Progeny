@@ -15136,7 +15136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3444273619218147496, guid: 7e9e3755ab377cb409edd459e563fc26, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6087694
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 3444273619218147496, guid: 7e9e3755ab377cb409edd459e563fc26, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18261,6 +18261,10 @@ PrefabInstance:
     - target: {fileID: 7125016121612090595, guid: fd147e2b61972480299edc255f691994, type: 3}
       propertyPath: m_Name
       value: DeathPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125016121612090595, guid: fd147e2b61972480299edc255f691994, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1886741229, guid: fd147e2b61972480299edc255f691994, type: 3}
