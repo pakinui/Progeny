@@ -34,7 +34,7 @@ public class MainPanelController : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play Game");
-        SceneManager.LoadScene("Level1Art");
+        gm.NextLevel("Level1Art");
     }
     
     public void OptionGame()
