@@ -163,11 +163,12 @@ public class Player : MonoBehaviour
             health = 0;//to make sure health doesnt go below 0
             ac.anim.SetTrigger("death");
             dead = true;
-            //Debug.Log("trigger death");
+            Debug.Log("trigger death");
         }
         if(!dead){
             currentHealth = health;
         }
+        Debug.Log("curr health: " + health);
         
     }
     
@@ -275,7 +276,7 @@ public class Player : MonoBehaviour
     public void NoHealth(){
         stopPlayerMovement();
         currentHealth = 0;
-        //Debug.Log("no health");
+        Debug.Log("no health");
         
     }
     public void Die()
@@ -318,7 +319,7 @@ public class Player : MonoBehaviour
     public void resetPlayer(){
         
         currentHealth = maxHealth;
-        
+        Debug.Log("reset player :" + currentHealth);
         transform.position = gm.getLastCheckpoint();
         
         startPlayerMovement();

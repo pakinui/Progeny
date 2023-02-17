@@ -12,6 +12,8 @@ public class DeathPanelController : MonoBehaviour
     public GameObject healthBar;
 
     private HealthBar hb;
+
+    private bool restarted = false;
     
 
     private void OnEnable()
@@ -24,6 +26,7 @@ public class DeathPanelController : MonoBehaviour
         Time.timeScale = 0;
         player.stopPlayerMovement();
         healthBar.SetActive(false);
+        restarted = false;
     }
 
     public void RedirectToMainMenu()
@@ -33,19 +36,23 @@ public class DeathPanelController : MonoBehaviour
 
     public void Restart()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        //reset from checkpoint
-        //Time.timeScale = 1;
         
+     
+            Debug.Log("dying death panel");
+        player = GameObject.Find("Player").GetComponent<Player>();
+        rtc = player.GetComponent<ReturnToCheckpoint>();
         rtc.resetLevel();
         
-        
+        gameObject.SetActive(false);
        
         
         //healthBar.SetActive(true);
         
-        gameObject.SetActive(false);
+        
+        //reset from checkpoint
+        //Time.timeScale = 1;
+        
         
         
     }

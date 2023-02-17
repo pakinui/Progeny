@@ -33,7 +33,7 @@ public class ReturnToCheckpoint : MonoBehaviour
     }
 
     public void resetLevel(){
-        
+        Debug.Log("reset");
         player.resetPlayer();
         reset = true;
         //deathPanel.SetActive(false);

@@ -14,9 +14,12 @@ namespace Controller
 
         private void Update()
         {
-            if (player.GetCurrentHealth() < 0)
+            if (player.GetCurrentHealth() < 0 )
             {
+                Debug.Log("dying game panel");
                 deathpanel.SetActive(true);
+            }else{
+                deathpanel.SetActive(false);
             }
             if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !pausePanel.activeSelf)
             {
