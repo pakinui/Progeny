@@ -13730,7 +13730,7 @@ PrefabInstance:
       objectReference: {fileID: 2061443385}
     - target: {fileID: 8257758226042727528, guid: 50f6a205457e1ed4aa9b9160e1091b51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 55.136993
+      value: 55.137024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f6a205457e1ed4aa9b9160e1091b51, type: 3}
@@ -15160,6 +15160,11 @@ PrefabInstance:
       objectReference: {fileID: -509063645, guid: d7a8e028d50438c4a8a69e88452ef0aa, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9e3755ab377cb409edd459e563fc26, type: 3}
+--- !u!1 &1646584135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3444273618971221232, guid: 7e9e3755ab377cb409edd459e563fc26, type: 3}
+  m_PrefabInstance: {fileID: 1646584134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1660332607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18149,6 +18154,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 460863368}
     m_Modifications:
+    - target: {fileID: 5735715308460317438, guid: fd147e2b61972480299edc255f691994, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1646584135}
     - target: {fileID: 7125016121612090594, guid: fd147e2b61972480299edc255f691994, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18237,7 +18246,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathPanel
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1886741229, guid: fd147e2b61972480299edc255f691994, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fd147e2b61972480299edc255f691994, type: 3}
 --- !u!224 &1886741227 stripped
 RectTransform:
