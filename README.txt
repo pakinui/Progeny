@@ -23,9 +23,9 @@ Known Bugs
 
 Credits
 	Oliver Kenning - programmer, designer, composer
-    Poppy Schlaadt - artist, programmer, designer
-    Jack Searle - programmer, designer
-    Ruiyi Qian - programmer
+	Poppy Schlaadt - artist, programmer, designer
+	Jack Searle - programmer, designer
+	Ruiyi Qian - programmer
 
 Audio
 All music made by Oliver Kenning
@@ -37,4 +37,7 @@ All music made by Oliver Kenning
     It’s Over Soon (Level 3 Piano Music)
 
 Sound effects used with a free licence from Pixabay, Zapsplat and Mixkit.
+
+You can play Progeny online by going to the following link:
+https://cosc360.otago.ac.nz/games/2023/Progeny
 
